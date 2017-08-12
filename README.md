@@ -2,10 +2,12 @@
 This is a python script to randomize XCOM2 character customizations for me
 
 ## TO DO
-    [ ] Backstory function incorporates 'majority dead' in narrative
-    [ ] Implement other racial first names (male and female)
-    [ ] Implement other racial last names
-    [ ] Implement other racial city lists
+	[ ] Expand on Character Info
+    	[ ] Backstory function incorporates 'majority dead' in narrative
+    	[ ] Implement other racial first names (male and female)
+    	[ ] Implement other racial last names
+    	[ ] Implement other racial city lists
+    	[ ] Implement family into background, dead or alive
 
 ## NOTES/RESEARCH
 [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
