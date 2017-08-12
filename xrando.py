@@ -1,15 +1,7 @@
 from random import randint
 import os
 
-# TEMPLATE
 '''
-Character Info:
-First Name
-Last Name
-Biography (Optional)
-Nationality
-Gender
-
 Props:
 Helmet/Hat
 Arms
@@ -38,8 +30,10 @@ Weapon Color:
 Voice:
 Attitude:
 '''
-
-listOfNations = [ 
+####################
+### GLOBAL LISTS ###
+####################
+listOfNations = [ \
     "Argentina", "Australia", "Belgium", "Brazil", "Canada", "China", \
     "Egypt", "France", "Germany", "Greece", "India", "Ireland", "Israel", \
     "Italy", "Japan", "Mexico", "Netherlands", "Nigeria", "Norway", \
@@ -48,6 +42,35 @@ listOfNations = [
 ]
 
 listOfGenders = [ "Male", "Female" ]
+
+listOfColorSchemes = [ \
+    "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+    "Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+    "Random Chaos", "Earthy", "Urban", \
+]
+
+listOfHelmetHats = [ \
+    "None", "Ballcap", "Backwards Ballcap", \
+    "Bandana", "Headband", "Boonie Hat", \
+    "Beanie", "Dress Hat", "Recon Hood", \
+    "Shemagh Scarf", "Delta 1", "Delta 2", \
+    "Delta 3", "Delta 4", "Plated 1", \
+    "Plated 2", "Plated 3", "Plated 4", \
+    "Hockey Mask", "Powered 1", "Powered 2", \
+    "Powered 3", "Powered 4", "Kaiser Helmet", \
+    "Gas Mask", "Metal Skull", "Metal Skulls with Horns", \
+    "Metal Skulls with Mohawk", "Welder's Mask", "Space Helmet", \
+    "Space Helmet with Feather Mohawk", "Space Mask", "Knight Helm A", \
+    "Knight Helm B", "Voodoo Top Hat A", "Voodoo Top Hat B", \
+    "Tintable Skull Paint Hockey Mask", "Skull Paint Hockey Mask", "Tintable Hockey Mask", \
+    "Goggles on Eyes", "Goggles on Forehead", "Spider Mask", \
+    "Muzzle with Glowing Visor", "Muzzle with Goggles on Eyes", "Muzzle with Goggles on Forehead", \
+    "Muzzle", "Aviator Helmet", "Aviator Helmet with Goggles on Eyes", \
+    "Aviator Helmet with Goggles on Forehead", "Android", "ADVENT Captain", \
+    "ADVENT StunLancer", "ADVENT ShieldBearer", "ADVENT Trooper", \
+    "Avatar", "Andromedon", "Floppy Bonnie", \
+    "Long Hood", "Ski Mask", \
+]
 
 
 def rando_backstory(name, nationality, gender):
@@ -370,7 +393,15 @@ def convert_num_to_word(number, capitalize = False):
 if __name__ == "__main__":
     ### LOCAL VARIABLES ###
     charOptions = {}
-    charInfoList = ["Name", "Biography", "Nationality", "Gender"]
+    charInfoList = [ "Name", "Biography", "Nationality", "Gender" ]
+    propsOptions = {}
+    propsList = [ \
+        "Helmet/Hat", "Arms", "Legs", \
+        "Torso", "Upper Face Prop", "Lower Face Prop", \
+        "Armor Pattern", "Weapon Pattern", "Face Paint", \
+        "Left Arm Tattoo", "Right Arm Tattoo", "Tattoo Color", \
+        "Scars"\
+    ]
     
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -385,14 +416,23 @@ if __name__ == "__main__":
                                                charOptions["Nationality"], \
                                                charOptions["Gender"])
 
+    # 2. PROPS
+    # 2.1. Helmet/Hat
+
     ### PRINT RANDOMIZED OPTIONS ###
-    print("CHARACTER INFO:")
+    # 1. CHARACTER INFO
+    print("CHARACTER INFO:\n")
     for key in charInfoList:
         if key in charOptions.keys():
             print("\t{}:  {}".format(key, charOptions[key]))
-
     print("\n")
 
+    # 2. PROPS
+    print("PROPS:\n")
+    for key in propsList:
+        if key in propsOptions.keys():
+            print("\t{}:  {}".format(key, propsOptions[key]))
+    print("\n")
 
 
 
