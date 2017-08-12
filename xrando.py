@@ -30,9 +30,15 @@ Weapon Color:
 Voice:
 Attitude:
 '''
-####################
-### GLOBAL LISTS ###
-####################
+
+
+######################################################
+######################################################
+#################### GLOBAL LISTS ####################
+######################################################
+######################################################
+
+
 listOfNations = [ \
     "Argentina", "Australia", "Belgium", "Brazil", "Canada", "China", \
     "Egypt", "France", "Germany", "Greece", "India", "Ireland", "Israel", \
@@ -71,6 +77,32 @@ listOfHelmetHats = [ \
     "Avatar", "Andromedon", "Floppy Bonnie", \
     "Long Hood", "Ski Mask", \
 ]
+
+listOfArmorArms = [ \
+    "Arms 0", "Arms 1", "Arms 2", \
+    "Arms 3", "Arms 4", "Arms 5", \
+    "Arms 6", "Arms 7", "Arms 8", \
+    "Arms 9", "Arms 10", "Arms 11", \
+]
+
+listOfArmorLegs = [ \
+    "Legs 0", "Legs 1", "Legs 2", \
+    "Legs 3", "Legs 4", "Legs 5", \
+    "Legs 6", "Legs 7", \
+]
+
+listOfArmorTorso = [ \
+    "Torso 0", "Torso 1", "Torso 2", \
+    "Torso 3", "Torso 4", "Torso 5", \
+    "Torso 6", "Torso 7", \
+]
+
+
+######################################################
+######################################################
+################## HELPER FUNCTIONS ##################
+######################################################
+######################################################
 
 
 def rando_backstory(name, nationality, gender):
@@ -390,6 +422,73 @@ def convert_num_to_word(number, capitalize = False):
     return retVal
 
 
+def rando_helmet_hat():
+    ### LOCAL VARIABLES ###
+    retVal = listOfHelmetHats[randint(0, listOfHelmetHats.__len__() - 1)]
+
+    return retVal
+
+
+def rando_armor():
+    '''
+        PURPOSE:    Choose a set of styles for the character's armor
+        INPUT:      None
+        OUTPUT:     A tuple of strings ("<Arms>", "<Legs>", "<Torso>", "<Style>")
+        NOTE:       Styles include: "Base", "Anarchy", "Chaotic"
+    '''
+    ### LOCAL VARIABLES ###
+    style = ""
+    tmpInt = 0
+    retArm = ""
+    retLeg = ""
+    retTorso = ""
+
+    ### CHOOSE STYLE ###
+    tmpInt = randint(1, 10)
+    if tmpInt <= 4:
+        style = "Base"
+    elif tmpInt <= 8:
+        style = "Anarchy"
+    else:
+        style = "Chaotic"
+
+    ### RANDOMIZE ARM ###
+    if style == "Base":
+        tmpInt = randint(0, 6)
+    elif style == "Anarchy":
+        tmpInt = randint(7, 11)
+    else:
+        tmpInt = randint(0, 11)
+    retArm = listOfArmorArms[tmpInt]
+
+    ### RANDOMIZE LEG ###
+    if style == "Base":
+        tmpInt = randint(0, 4)
+    elif style == "Anarchy":
+        tmpInt = randint(5, 7)
+    else:
+        tmpInt = randint(0, 7)
+    retLeg = listOfArmorLegs[tmpInt]
+
+    ### RANDOMIZE TORSO ###
+    if style == "Base":
+        tmpInt = randint(0, 4)
+    elif style == "Anarchy":
+        tmpInt = randint(5, 7)
+    else:
+        tmpInt = randint(0, 7)
+    retTorso = listOfArmorTorso[tmpInt]
+
+    return tuple((retArm, retLeg, retTorso, style))
+
+
+######################################################
+######################################################
+################### MAIN EXECUTION ###################
+######################################################
+######################################################
+
+
 if __name__ == "__main__":
     ### LOCAL VARIABLES ###
     charOptions = {}
@@ -418,21 +517,28 @@ if __name__ == "__main__":
 
     # 2. PROPS
     # 2.1. Helmet/Hat
+    propsOptions["Helmet/Hat"] = rando_helmet_hat()
+    # 2.2. Armor
+    propsOptions["Arms"], propsOptions["Legs"], propsOptions["Torso"], \
+    propsOptions["Armor Style"] = rando_armor()
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
-    print("CHARACTER INFO:\n")
+    print("\n")
+    print("CHARACTER INFO:")
     for key in charInfoList:
         if key in charOptions.keys():
             print("\t{}:  {}".format(key, charOptions[key]))
     print("\n")
 
     # 2. PROPS
-    print("PROPS:\n")
+    print("PROPS:")
     for key in propsList:
         if key in propsOptions.keys():
             print("\t{}:  {}".format(key, propsOptions[key]))
     print("\n")
+
+    # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
 
 
 
