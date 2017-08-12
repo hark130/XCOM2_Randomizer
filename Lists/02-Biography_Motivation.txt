@@ -26,28 +26,13 @@ New ADVENT sanctions were announced, causing a radical shift in the local popula
 <name> took up arms because <his/her> deepest wish is for humanity to live in peace one day.
 More than anything, <name> wanted a new direction in life so <he/she> gave up her old life to take up arms against the ADVENT Administration. 
 <name> has joined the resistance for mysterious reasons but Central Officer Bradford vouches for <him/her>.
-
-
-
-
-    1-3: Disease or pestilence
-
-    4-6: Buildings destroyed
-
-    7-9: Enemy (Q) (R) of the PC or Party is actively opposing them
-
-    10-12: Loss of items of value
-
-    13-15: Curse (T) has been activated
-
-    16-18: People have been injured
-
-    19-20: Haunted (S)
-4-6: Outbreak of large plague or pestilence
-
-7-9: A large loss of monetary wealth
-
-10-12: Many items of value have been lost or destroyed
+<name> left everything behind when an ADVENT operation destroyed the aparment building <he/she> owned.  Now <he/she> fights against the alien oppression.
+<name> was secretly compiling information on alien and ADVENT operations around the globe until his data store was taken.  He came to XCOM with the intel he could remember and continues his work while not in the field.
+<name>'s family were injured during an ADVENT raid in his subdivision and it was more than <he/she> could bear.  Moving them to a resistance camp for safety and joining XCOM was the only choice left.
+<name> was previously employed in an ADVENT processing facility.  Haunted by the thousands of souls that have disappeared into ADVENT facilities, <he/she> could no long stand to work for such a shady organization.  Taking what information <he/she> could, <he/she> joined a local resistance cell and eventually was recruited into XCOM.
+Damage to a nearby ADVENT facility was the final straw that caused <name> to see the light.  Whatever ADVENT was guarding inside caused a large outbreak of virulent plague.  Abandoning <his/her> now infected home, <he/she> sought out the rebels to fight against the evils perpetrated by the aliens.
+<name> was doing well, financially.  In an unexplained seizure, ADVENT forces emptied <his/her> accounts leaving <him/her> without any money.  Penniless, <name> decided to rise up.
+<name> successfully managed a growing art collection as a side hobby in <his/her> spare time.  Inexplicably, all of <his/her> art work were either taken or ruined by a local ADVENT Officer.  Disgruntled, <he/she> took up the sword and was eventually recruited into XCOM.
 
 13-15: Many buildings have been damaged or the land has been damaged
 
