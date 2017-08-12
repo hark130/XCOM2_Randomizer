@@ -43,7 +43,6 @@ Damage to a nearby ADVENT facility was the final straw that caused <name> to see
 
     1-3: Wrongfully jailed or persecuted
 
-    4-6: Racial crusade
 
     7-9: Revenge for theft or deception
 
