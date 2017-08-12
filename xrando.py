@@ -73,6 +73,7 @@ def rando_backstory(name, nationality, gender):
     motherName = ""
     fatherName = ""
     homeTown = ""
+    motivation = ""
 
     ### PARSE NAME ###
     nameList = name.split(" ")
@@ -137,11 +138,66 @@ def rando_backstory(name, nationality, gender):
         retVal = retVal + " in " + rando_city_state(nationality) + "."
     else:
         retVal = retVal + "."
+    retVal = retVal + "\n\t\t"
+    # Motivation
+    retVal = retVal + rando_motivation(firstName, gender)
+
+    return retVal
+
+
+def rando_motivation(firstName, gender):
+    ### INPUT VALIDATION ###
+    if not isinstance(firstName, str):
+        raise TypeError('firstName is not a string')
+    elif not isinstance(gender, str):
+        raise TypeError('gender is not a string')
+    elif gender not in listOfGenders:
+        raise ValueError('Invalid gender')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    listOfMotivations = []
+    motivationFile = os.path.join("Lists", "02-Biography_Motivation.txt")
+
+    ### READ MOTIVATIONS ###
+    if os.path.isfile(motivationFile) is False:
+        raise OSError('Unable to find necessary list file')
+
+    with open(motivationFile, "r") as motiveFile:    
+        [listOfMotivations.append(motive) for motive in motiveFile.read().split('\n') if motive.__len__() > 0]
+
+    ### RANDOMIZE A MOTIVATION ###
+    retVal = retVal + listOfMotivations[randint(0, listOfMotivations.__len__() - 1)]
+
+    ### REPLACE ALL PLACEHOLDERS ###
+    # Replace Name
+    retVal = retVal.replace("<name>", firstName)
+    # Replace <his/her>
+    if gender == "Male":
+        retVal = retVal.replace("<his/her>", "his")
+    else:
+        retVal = retVal.replace("<his/her>", "her")
+    # Replace <he/she>
+    if gender == "Male":
+        retVal = retVal.replace("<he/she>", "he")
+    else:
+        retVal = retVal.replace("<he/she>", "she")
+    # Replace <him/her>
+    if gender == "Male":
+        retVal = retVal.replace("<him/her>", "him")
+    else:
+        retVal = retVal.replace("<him/her>", "her")
+    # Add newlines and tabs
+    retVal = retVal.replace(".  ", ".\n\t\t    ")
 
     return retVal
 
 
 def rando_city_state(nationality):
+    ### INPUT VALIDATION ###
+    if not isinstance(nationality, str):
+        raise TypeError('nationality is not a string')
+
     ### LOCAL VARIABLES ###
     retVal = ""
     listOfCityStates = []
