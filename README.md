@@ -16,3 +16,6 @@ This is a python script to randomize XCOM2 character customizations for me
   * 2 Colors - Complementary
   * 3 Colors - Triad
   * Random Chaos
+NOTE:  Helmet and upper face prop cannot be equipped together
+NOTE:  Weapon patterns and armor patterns are identical
+NOTE:  Left arm tattoo and right arm tattoo list are identical
