@@ -45,72 +45,21 @@ Attempting to right wrongs from within the system, <name> crossed a line.  Accus
 <name> is not saint.  <name> committed the crime <he/she> was accused of and imprisoned for.  Regardless, <name> didn't deserve the treatment <he/she> received while incarcerated.  Bitter and hardened, <name> managed to escape the ADVENT prison when XCOM forces attacked his prisoner transport convoy.  <name> followed them until they begrudgingly agreed to accept <him/her> into XCOM.
 Unable to emotionally deal with everything happening around <him/her>, <name> just snapped one day and attacked an ADVENT troop.  That day, <name>'s old life ended and a new one began.  A new resistance cell formed around <name> and was eventually absorbed into the larger fight, eventually recruiting <name> into XCOM itself.
 Homeless and starving after losing everything after an ADVENT raid, <name> was resigned to stealing to survive. READY!
-    10-12: Committed major crime of theft, murder or rape (or this can be substituted with anarchy)
-
-    13-15: Committed religious crime
-
-    16-18: Got tangled up with a Mystery Cult (DD)
-
-    19-20: Unjustly accused
-
-
-    1-3: Commune with avatar
-
-    4-6: Map a location
-
-    7-9: Deliver a message
-
-    10-12: Recover a minor Treasure (U)
-
-    13-15: Deliver a package
-
-    16-18: Destroy a minor monster/cleanse a tainted area
-
-    19-20: Rediscover a local forgotten place
-
-
-    1-3: Awaken a sleeping NPC
-
-    4-6: Recover or destroy an Artifact (C)
-
-    7-9: Aid or Slay an NPC
-
-    10-12: Slay a monster
-
-    13-15: Liberate or enslave an NPC
-
-    16-18: Discover a lost foreign land
-
-    19-20: Save or destroy the world
-
-
-
-    1-3: Freeing an innocent from imprisonment
-
-    4-6: Correct a long-standing error
-
-    7-9: Helping unfortunates with financial aid
-
-    10-12: Spreading a charitable political message or religious doctrine
-
-    13-15: Helping local children or relatives to overcome oppression
-
-    16-18: Heal the sick and comfort the dying
-
-    19-20: Using Artifact (C) to spread goodwill
-
-
-
-    1-3: Political power is dead or arrested/exiled
-
-    4-6: Business in trouble
-
-
-
-
-
-
-
-
-
-
+<name> murdered <his/her> sector's ADVENT Officer.  Plain and simple.  No explanation was givent other than to say it needed to be done.  Soon after, <he/she> was recruited by an extreme offshoot of the region's resistance element.  Eventually, <his/her> tactical knowledge led to <him/her> being recruited for an XCOM field team and the rest is history.
+An arrest warrant was issued for <name> after <he/she> defaced an Avatar statue in <his/her> neighborhood's park.  After going into hiding, <he/she> was recruited for <his/her> ability to infiltrate public places.
+Unjustly accused of a fabricated crime, <name> went underground and eventually found sanctuary in a rural resistance settlement.  Since then, <he/she> has been aiding the resistance ever since.
+<name> accidentally discovered cryptic reference to a classified ADVENT facility.  Raising suspicion in <his/her> resulting investigations, <he/she> turned to XCOM for assistance and has been working with them ever since.
+<name> spent <his/her> younger years ferrying messages between remote resistance outposts.  This very important role eventually put <him/her> in contact with an XCOM team who, shortly after, recruited <him/her>.
+<name> was tasked by a local resistance cell with delivering a mysterious package to a waiting XCOM team.  Shortly after the rendevouz, <he/she> learned that the <his/her> resistance cell had been wiped out by an ADVENT raid.  Having nothing to return to, <name> stayed with that XCOM squad and joined their fight against the alien overlords.
+<name> learned of a Berserker plaguing the outskirts of <his/her> urban neighborhood.  Turning to an XCOM squad in the area, <he/she> was able to aid them in killing the beast.  Impressed with <name>, <he/she> was recruited on the spot and has been working with XCOM field teams ever since.
+<name> learned of a remote, abandoned setttlement lost to time and ADVENT-purged public records.  Providing its location to the local resistance cell leader gave regional fugitives refuge and safety.  When XCOM learned of this, <he/she> was recruited for a field team.
+<name> discovered an alien artifact that had been thrown from its transport during a recent XCOM raid.  Working through local resistance cells, <he/she> was able to eventually get word to an XCOM communications officer, eventually turning that raid mission into a success.  For <his/her> assistance and diligence, <he/she> was recruited into XCOM.
+<name> provided medical aid and shelter to an XCOM soldier that had narrowly escaped an ADVENT ambush.  After the soldier returned to XCOM, <name> was recruited into service and has been aiding XCOM in any way <he/she> can.
+Specializing in setting traps and ambushes, <name> made a name for <him/her>self in taking down lone aliens and ADVENT troops in urban settings.  Eventually, XCOM was able to recruit <him/her> into their ranks.
+Given a rare opportunity, <name> was able to free a captured XCOM agent and help them return to safety.  <name> continued to aid XCOM in ferrying all manner of refugees as a link in a new underground network of safe houses.  Eventually, <he/she> was compromised but was able to escape to another safe house in the network.  Today, <name> has joined an XCOM field team and continues to aid people who wish to escape to safety.
+Through <his/her> connections, <name> was able to free an innocent prisoner even though <his/her> involvement was eventually discovered.  Narrowly escaping capture, <name> escaped to a resistance safe house and was later recruited in XCOM.
+<name> used all of the resources at <his/her> disposal to fund and aid XCOM missions in the region until ADVENT discovered <his/her> involvement.  XCOM never forgot and recruited <name> into a field team.
+<name> was able to spark a local riot through an impassioned speech against ADVENT and its Administration.  Local ADVENT forces took a huge loss as they were unprepared for the sudden uprising.  <name>'s charisma and fervor led to resistance recruitment and, shortly after, was asked to join XCOM.
+<name> spent all of <his/her> resources in aiding local children who had lost their families, creating an orphanage of sorts.  Local resistance cells recruited from that orphanage until it was shut down by ADVENT forces.  <name> <him/her>self was recruited by the resistance cell and eventually noticed by an XCOM-affiliated agent in the area.
+<name> studied medicine and first aid in an effort to help the sick and comfort the dying in <his/her> rural settlement.  When the settlement fell to ADVENT forces, <name> was exfiltrated to an XCOM safe house and later recruited to a field team where <he/she> could really do some good.
+Plagued by ADVENT intereference, <name>'s small business was faltering.  Liquidating <his/her> assets, <he/she> donated everything to a local resistance cell.  Impressed with this selfless act, <name> was recruited into XCOM as a logistician and eventually nominated to a field team.
