@@ -549,7 +549,10 @@ if __name__ == "__main__":
     # 1.1. Nationality
     charOptions["Nationality"] = listOfNations[randint(0, listOfNations.__len__() - 1)]
     # 1.2. Gender
-    charOptions["Gender"] = listOfGenders[randint(0, listOfGenders.__len__() - 1)]
+    if randint(1, 100) > 49:
+        charOptions["Gender"] = listOfGenders[1]
+    else:
+        charOptions["Gender"] = listOfGenders[0]
     # 1.3. Name
     charOptions["Name"] = rando_name(charOptions["Nationality"], charOptions["Gender"])
     # 1.4. Backstory
