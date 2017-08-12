@@ -100,6 +100,13 @@ listOfUpperFaceProps = [
     "Eyepatch", "Eyebrow Ring", "Earring", \
     "Lip Ring", "Nose Ring", "Nose Stud", \
 ]
+
+listOfLowerFaceProps = [ \
+    "None", "Cigarette", "Cigar", \
+    "XCOM Bandana", "Skull Bandana", "Biker Bandana", \
+    "Striped Bandana", "Samurai Mask A", "Samurai Mask B", \
+    "Muton Mask", \
+]
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
@@ -524,6 +531,49 @@ def rando_upper_face(gender):
     return retVal
 
 
+def rando_lower_face(nationality):
+    ### INPUT VALIDATION ###
+    if not isinstance(nationality, str):
+        raise TypeError('nationality is not a string')
+    elif nationality not in listOfNations:
+        raise ValueError('Invalid nationality')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    tmpInt = 0
+    lastIndex = listOfLowerFaceProps.__len__() - 1
+    smokeWeight = 0  # Increased likelihood of choosing a cigarrette
+    cigarWeight = 0  # Increased likelihood of choosing a cigar
+
+    ### DETERMINE WEIGHTS ###
+    # Smoke Weight
+    if nationality == "Russia":
+        smokeWeight = 3
+    elif nationality in [ "Belgium", "China", "Greece", "South Korea", "Ukraine", "Japan", "Germany", "Italy" ]:
+        smokeWeight = 2
+    else:
+        smokeWeight = 0
+    # Cigar Weight
+    if nationality == "Mexico":
+        cigarWeight = 3
+    elif nationality == "Brazil":
+        cigarWeight = 2
+    elif nationality == "USA":
+        cigarWeight = 1
+
+    ### RANDOMIZE LOWER FACE PROP ###
+    tmpInt = randint(0, lastIndex + smokeWeight + cigarWeight)
+
+    if tmpInt <= lastIndex:
+        retVal = listOfLowerFaceProps[tmpInt]
+    elif tmpInt <= (lastIndex + smokeWeight):
+        retVal = "Cigarette"
+    else:
+        retVal = "Cigar"
+
+    return retVal
+
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -569,7 +619,7 @@ if __name__ == "__main__":
     # 2.3. Upper Face
     propsOptions["Upper Face Prop"] = rando_upper_face(charOptions["Gender"])
     # 2.4. Lower Face
-    # propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Gender"])
+    propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Nationality"])
 
 
     ### PRINT RANDOMIZED OPTIONS ###
