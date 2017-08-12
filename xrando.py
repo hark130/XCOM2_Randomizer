@@ -3,10 +3,6 @@ import os
 
 '''
 Props:
-Helmet/Hat
-Arms
-Legs
-Torso
 Upper Face Prop
 Lower Face Prop
 Armor Pattern (Optional)
@@ -97,12 +93,71 @@ listOfArmorTorso = [ \
     "Torso 6", "Torso 7", \
 ]
 
-
+listOfUpperFaceProps = [
+    "None", "Aviators", "Sports Sunglasses", \
+    "Dark Sunglasses", "Hippie Sunglasses", "Half-framed Glasses", \
+    "Thick-rimmed Glasses", "Hippie Glasses", "Monocle", \
+    "Eyepatch", "Eyebrow Ring", "Earring", \
+    "Lip Ring", "Nose Ring", "Nose Stud", \
+]
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
 ######################################################
 ######################################################
+
+
+########################
+### HELPER FUNCTIONS ###
+########################
+
+
+def convert_num_to_word(number, capitalize = False):
+    ### INPUT VALIDATION ###
+    if not isinstance(number, int):
+        raise TypeError("number is not an integer")
+    elif not isinstance(capitalize, bool):
+        raise TypeError("capitalize is not a bool")
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+
+    ### CONVERSION ###
+    if number > 9 or number < 0:
+        retVal = str(number)
+    elif number == 0:
+        retVal = "None"
+    elif number == 1:
+        retVal = "One"
+    elif number == 2:
+        retVal = "Two"
+    elif number == 3:
+        retVal = "Three"
+    elif number == 4:
+        retVal = "Four"
+    elif number == 5:
+        retVal = "Five"
+    elif number == 6:
+        retVal = "Six"
+    elif number == 7:
+        retVal = "Seven"
+    elif number == 8:
+        retVal = "Eight"
+    elif number == 9:
+        retVal = "Nine"
+    else:
+        # How did we get here?!
+        raise ValueError("number '{}' is invalid".format(number))
+
+    if capitalize is False:
+        retVal = retVal.lower()
+
+    return retVal
+
+
+################################
+### CHARACTER INFO FUNCTIONS ###
+################################
 
 
 def rando_backstory(name, nationality, gender):
@@ -379,47 +434,9 @@ def rando_name(nationality, gender):
     return retVal
 
 
-def convert_num_to_word(number, capitalize = False):
-    ### INPUT VALIDATION ###
-    if not isinstance(number, int):
-        raise TypeError("number is not an integer")
-    elif not isinstance(capitalize, bool):
-        raise TypeError("capitalize is not a bool")
-
-    ### LOCAL VARIABLES ###
-    retVal = ""
-
-    ### CONVERSION ###
-    if number > 9 or number < 0:
-        retVal = str(number)
-    elif number == 0:
-        retVal = "None"
-    elif number == 1:
-        retVal = "One"
-    elif number == 2:
-        retVal = "Two"
-    elif number == 3:
-        retVal = "Three"
-    elif number == 4:
-        retVal = "Four"
-    elif number == 5:
-        retVal = "Five"
-    elif number == 6:
-        retVal = "Six"
-    elif number == 7:
-        retVal = "Seven"
-    elif number == 8:
-        retVal = "Eight"
-    elif number == 9:
-        retVal = "Nine"
-    else:
-        # How did we get here?!
-        raise ValueError("number '{}' is invalid".format(number))
-
-    if capitalize is False:
-        retVal = retVal.lower()
-
-    return retVal
+######################
+### PROP FUNCTIONS ###
+######################
 
 
 def rando_helmet_hat():
@@ -482,6 +499,31 @@ def rando_armor():
     return tuple((retArm, retLeg, retTorso, style))
 
 
+def rando_upper_face(gender):
+    ### INPUT VALIDATION ###
+    if not isinstance(gender, str):
+        raise TypeError('gender is not a string')
+    elif gender not in listOfGenders:
+        raise ValueError('Invalid gender')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    tmpInt = 0
+    lastIndex = listOfUpperFaceProps.__len__() - 1
+
+    ### RANDOMIZE UPPER FACE PROP ###
+    if gender == "Male":
+        # Decrease chance of 10 - 14 selection for men
+        tmpInt = randint(0, lastIndex + 10)  # 0 - 24
+        if tmpInt > lastIndex:  # If it's 15 - 24...
+            tmpInt = tmpInt - (lastIndex + 1)  # ...Sub 15 to get 0 - 9
+    else:
+        tmpInt = randint(0, lastIndex)  # 0 - 14
+    retVal = listOfUpperFaceProps[tmpInt]
+
+    return retVal
+
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -521,6 +563,11 @@ if __name__ == "__main__":
     # 2.2. Armor
     propsOptions["Arms"], propsOptions["Legs"], propsOptions["Torso"], \
     propsOptions["Armor Style"] = rando_armor()
+    # 2.3. Upper Face
+    propsOptions["Upper Face Prop"] = rando_upper_face(charOptions["Gender"])
+    # 2.4. Lower Face
+    # propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Gender"])
+
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
@@ -537,7 +584,6 @@ if __name__ == "__main__":
         if key in propsOptions.keys():
             print("\t{}:  {}".format(key, propsOptions[key]))
     print("\n")
-
     # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
 
 
