@@ -1,0 +1,148 @@
+<name> joined out of love for freedom and liberty.
+<name> hates the aliens, plain and simple.
+<name> appears to be on a mission to prove <his/her> combat prowess and leadership ability through the fight against the ADVENT.
+Narrowly escaping previous imprisonment, <name> is afraid to ever go back.  <he/she> would rather die fighting than rot away in a prison.
+<name> seemingly needs to fight against this alien occupation.
+<name> upholds the ideals <his/her> country was originally founded on and can't sit back while the aliens subvert that national pride.
+<name> doesn't think we can win this fight but has vowed to die trying.
+<name> seems to have a disturbing collection of severed viper tongues.  What better way to add to the collection than to join XCOM as a field agent.
+<name> joined a local resistance cell after ADVENT issued an unfounded warrant for his arrest.
+<name> won't speak of <his/her> motivation for joining XCOM but few volunteers are more dedicated to the cause than <him/her>.  There is no doubt as to where <his/her> loyalty lies.
+<name> joined XCOM with the fervent hope that Dr. Tygan might help <him/her> search for family members that have been taken by ADVENT.
+After learning some secret details regarding the Avatar Project, <name> immediately brought them to the attention of the resistance.  Discovered by ADVENT forces, <he/she> can never return to their normal life again.  Instead, they have joined the fight.
+<name> sought out XCOM scientists for medical treatment after being rescued from an ADVENT indoctrination facility.  Dr. Tygan was able to help <name> recover and <he/she> has stayed on to fight back ever since.
+<name> discovered a new weapon the ADVENT Administration has been researching and has brought it to the attention of local rebel forces.  Since <his/her> treachery has been discovered, <he/she> has had no choice but to join the resistance against these alien invaders.
+A close friend of <name>'s was killed in cold blood by a local ADVENT Trooper.  Angry with grief, <name> sought out a nearby resistance cell to stop this from ever happening again.
+<name>'s hometown was brutally attacked for no known reason.  Barely escaping alive, <he/she> joined the nearest resistance cell to stop that from ever happening again.
+<name>'s apartment building was taken captive, enmasse, while <he/she> was out.  Fearful of <his/her> life, <he/she> had no choice but to join the battle against tyranny.
+An epidemic ripped through <names>'s population center, killing thousands.  The ADVENT Administration merely blockaded the subdivision to let the disease run its course.  Thousands died.  Not only did <name> survive the plauge but <he/she> also managed to escape.  The truth was spread and <name> joined a local resistance cell shortly after.
+After discovering <his/her> spouse was an ADVENT Forces informant, the shame drove <name> to join XCOM in the fight against the aliens.
+Feeling shame upon discovering <his/her> spouse was unfaithful with a local ADVENT Officer, <name> assassinated the officer and joined the rebellion.
+Previously a wealthy citizen, all of <name>'s worldly possessions were taken by the local ADVENT forces.  This drove <him/her> into the welcoming arms of the local rebels and eventually XCOM.
+A shift in the administration's taxation has caused unrest and <name> was swept up into the riots and fighting that ensued.  Joining anti-alien rebels was an inevitable next step.
+Corruption rumors abound in the local ADVENT Administration, <name> was searching for evidence of murder and treachery.  <his/her> search eventually led <him/her> to XCOM.
+A local religious figure was rumored to have been killed, exiled, or worse.  <name> decided that the aliens had to pay.
+New ADVENT sanctions were announced, causing a radical shift in the local population's mood.  <name> had finally had enough and decided to join the fight.
+<name> took up arms because <his/her> deepest wish is for humanity to live in peace one day.
+More than anything, <name> wanted a new direction in life so <he/she> gave up her old life to take up arms against the ADVENT Administration. 
+<name> has joined the resistance for mysterious reasons but Central Officer Bradford vouches for <him/her>.
+
+
+
+
+    1-3: Disease or pestilence
+
+    4-6: Buildings destroyed
+
+    7-9: Enemy (Q) (R) of the PC or Party is actively opposing them
+
+    10-12: Loss of items of value
+
+    13-15: Curse (T) has been activated
+
+    16-18: People have been injured
+
+    19-20: Haunted (S)
+4-6: Outbreak of large plague or pestilence
+
+7-9: A large loss of monetary wealth
+
+10-12: Many items of value have been lost or destroyed
+
+13-15: Many buildings have been damaged or the land has been damaged
+
+16-18: Many people have been killed
+
+19-20: PC or Party has attracted the attention of an Enemy (Q) (R)
+
+
+    1-3: Wrongfully jailed or persecuted
+
+    4-6: Racial crusade
+
+    7-9: Revenge for theft or deception
+
+    10-12: Revenge for personal death(s)
+
+    13-15: Religious crusade (local or part of a Faithquest)
+
+    16-18: Political persecution
+
+    19-20: Social status destroyed or socially exiled
+
+
+    1-3: Committed political crime
+
+    4-6: Escaped from detention for crime
+
+    7-9: Committed minor crime of theft, fraud or assualt
+
+    10-12: Committed major crime of theft, murder or rape (or this can be substituted with anarchy)
+
+    13-15: Committed religious crime
+
+    16-18: Got tangled up with a Mystery Cult (DD)
+
+    19-20: Unjustly accused
+
+
+    1-3: Commune with avatar
+
+    4-6: Map a location
+
+    7-9: Deliver a message
+
+    10-12: Recover a minor Treasure (U)
+
+    13-15: Deliver a package
+
+    16-18: Destroy a minor monster/cleanse a tainted area
+
+    19-20: Rediscover a local forgotten place
+
+
+    1-3: Awaken a sleeping NPC
+
+    4-6: Recover or destroy an Artifact (C)
+
+    7-9: Aid or Slay an NPC
+
+    10-12: Slay a monster
+
+    13-15: Liberate or enslave an NPC
+
+    16-18: Discover a lost foreign land
+
+    19-20: Save or destroy the world
+
+
+
+    1-3: Freeing an innocent from imprisonment
+
+    4-6: Correct a long-standing error
+
+    7-9: Helping unfortunates with financial aid
+
+    10-12: Spreading a charitable political message or religious doctrine
+
+    13-15: Helping local children or relatives to overcome oppression
+
+    16-18: Heal the sick and comfort the dying
+
+    19-20: Using Artifact (C) to spread goodwill
+
+
+
+    1-3: Political power is dead or arrested/exiled
+
+    4-6: Business in trouble
+
+
+
+
+
+
+
+
+
+
