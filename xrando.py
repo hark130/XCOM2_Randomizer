@@ -141,6 +141,22 @@ listOfFaces = [ \
     "Face D", "Face E", "Face F", \
 ]
 
+listOfHairStyles = [ \
+    "Bald", "Long Curls", "Long Layers", \
+    "Brushed Up Short", "Short", "Simple Short", \
+    "Slicked-back Ponytail", "Loose Ponytail Thick", "Loose Ponytail", \
+    "Slicked-back Braid", "Loose Braid", "Man Bun", \
+    "Buzzcut Fade", "Buzzcut", "Short Curly", \
+    "Flat Top", "Receding Hair Medium", "Receding Hair Short", \
+    "Parted", "Afro", "Dreadlocks", \
+    "Dreads Ponytail", "Cornrows", "Wild Dreadlocks", \
+    "Wild Dreads Ponytail", "Spiky Mohawk", "Mohawk", \
+    "Viking", "Blowout", "Top Knot Fade", \
+    "Top Knot", "Tall Mohawk", "Tall Mohawk Fade", \
+    "Short Mohawk Striped", "Short Mohawk", "Top Braid", \
+    "Spikes", "Pigtails", "Pigtails Fade", \
+    "Avatar", \
+]
 
 
 
@@ -838,9 +854,9 @@ def rando_tattoos(armorStyle):
     stopSlice = listOfTattoos[listOfTattoos.__len__() - 1]
     retVal = tuple(("None", "None", None))  # No tattoo default
     tmpInt = randint(1, 100)
-    numTattos = 0
+    numTattoos = 0
     leftTattoo = "None"
-    rightTatto = "None"
+    rightTattoo = "None"
     tattooColor = None
     dupeTattoo = False
     tattooStylizedList = []
@@ -848,40 +864,40 @@ def rando_tattoos(armorStyle):
     ### TRUNCATE EXISTING LIST ###
     if armorStyle == listOfArmorStyles[0]:    # "Base"
         if tmpInt > 90:
-            numTattos = 2
+            numTattoos = 2
             dupeTattoo = True
         elif tmpInt > 75:
-            numTattos = 2
+            numTattoos = 2
         elif tmpInt > 40:
-            numTattos = 1
+            numTattoos = 1
         else:
             return retVal
     elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
         if tmpInt > 95:
-            numTattos = 2
+            numTattoos = 2
             dupeTattoo = True
         elif tmpInt > 65:
-            numTattos = 2
+            numTattoos = 2
         elif tmpInt > 30:
-            numTattos = 1
+            numTattoos = 1
         else:
             return retVal
     elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
-        numTattos = randint(0, 2)
-        if numTattos == 2:
+        numTattoos = randint(0, 2)
+        if numTattoos == 2:
             if randint(0, 1) == 1:
                 dupeTattoo = True
-        elif numTattos == 0:
+        elif numTattoos == 0:
             return retVal
     elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
         return retVal
     elif armorStyle == listOfArmorStyles[4]:  # "Alien"
         if tmpInt > 50:
-            numTattos = 1
+            numTattoos = 1
             startSlice = "Chryssalid Killer"
             stopSlice = "Electric Alien"
         if tmpInt > 75:
-            numTattos = 2
+            numTattoos = 2
         if tmpInt > 90:
             dupeTattoo = True
         else:
@@ -892,25 +908,110 @@ def rando_tattoos(armorStyle):
     tattooStylizedList = listOfTattoos[listOfTattoos.index(startSlice):listOfTattoos.index(stopSlice) + 1]
 
     ### RANDOMIZE TATTOOS ###
-    if numTattos == 2:
-        leftTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
-        rightTatto = leftTatto
+    if numTattoos == 2:
+        leftTattoo = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+        rightTattoo = leftTattoo
         if dupeTattoo == False:
-            while rightTatto == leftTatto:
-                rightTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
-    elif numTattos == 1:
+            while rightTattoo == leftTattoo:
+                rightTattoo = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+    elif numTattoos == 1:
         if randint(0, 1) == 1:
-            rightTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+            rightTattoo = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
         else:
-            leftTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]             
+            leftTattoo = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]             
     else:
         return retVal
 
     ### SET COLOR ###
-    if numTattos > 0:
+    if numTattoos > 0:
         tattooColor = "94"  # Hard coded until color is implemented
 
-    return tuple((leftTatto, rightTatto, tattooColor))
+    return tuple((leftTattoo, rightTattoo, tattooColor))
+
+
+def rando_hair_style(armorStyle, gender, nationality, race):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+    elif not isinstance(gender, str):
+        raise TypeError('gender is not a string')
+    elif gender not in listOfGenders:
+        raise ValueError('Invalid gender')
+    elif not isinstance(nationality, str):
+        raise TypeError('nationality is not a string')
+    elif nationality not in listOfNations:
+        raise ValueError('Invalid nationality')
+    elif not isinstance(race, str):
+        raise TypeError('gender is not a string')
+    elif race not in listOfRaces:
+        raise ValueError('Invalid race')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    startSlice = ""
+    stopSlice = ""
+    tmpInt = randint(1, 100)
+    hairStylizedList = listOfHairStyles
+
+    ### TRUNCATE EXISTING LIST ###
+    # Adjust for Gender
+    if gender == listOfGenders[0]:            # "Male"
+        hairStylizedList.remove("Pigtails")
+        hairStylizedList.remove("Pigtails Fade")
+    else:                                     # "Female"
+        hairStylizedList.remove("Receding Hair Medium")
+        hairStylizedList.remove("Receding Hair Short")
+    # Adjust for Nationality
+    if nationality in [ "South Africa", "Nigeria" ]:
+        hairStylizedList.insert(hairStylizedList.index("Afro"), "Afro")
+        hairStylizedList.insert(hairStylizedList.index("Dreadlocks"), "Dreadlocks")
+        hairStylizedList.insert(hairStylizedList.index("Dreads Ponytail"), "Dreads Ponytail")
+        hairStylizedList.insert(hairStylizedList.index("Cornrows"), "Cornrows")
+        hairStylizedList.insert(hairStylizedList.index("Wild Dreadlocks"), "Wild Dreadlocks")
+        hairStylizedList.insert(hairStylizedList.index("Wild Dreads Ponytail"), "Wild Dreads Ponytail")
+    # Adjust for Race
+    if race == listOfRaces[1]:
+        hairStylizedList.insert(hairStylizedList.index("Afro"), "Afro")
+        hairStylizedList.insert(hairStylizedList.index("Dreadlocks"), "Dreadlocks")
+        hairStylizedList.insert(hairStylizedList.index("Dreads Ponytail"), "Dreads Ponytail")
+        hairStylizedList.insert(hairStylizedList.index("Cornrows"), "Cornrows")
+        hairStylizedList.insert(hairStylizedList.index("Wild Dreadlocks"), "Wild Dreadlocks")
+        hairStylizedList.insert(hairStylizedList.index("Wild Dreads Ponytail"), "Wild Dreads Ponytail")
+
+    # Adjust for Style
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        if tmpInt > 25:
+            startSlice = "Bald"
+            stopSlice = "Blowout"
+        else:
+            startSlice = hairStylizedList[0]
+            stopSlice = hairStylizedList[hairStylizedList.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        if tmpInt > 25:
+            startSlice = "Top Knot Fade"
+            stopSlice = "Avatar"
+        else:
+            startSlice = hairStylizedList[0]
+            stopSlice = hairStylizedList[hairStylizedList.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        startSlice = hairStylizedList[0]
+        stopSlice = hairStylizedList[hairStylizedList.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        startSlice = "Bald"
+        stopSlice = "Parted"
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        startSlice = hairStylizedList[0]
+        stopSlice = hairStylizedList[hairStylizedList.__len__() - 1]
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+
+    hairStylizedList = hairStylizedList[hairStylizedList.index(startSlice):hairStylizedList.index(stopSlice) + 1]
+
+    retVal = hairStylizedList[randint(0, hairStylizedList.__len__() - 1)]
+
+    return retVal
 
 
 ######################################################
@@ -950,7 +1051,8 @@ if __name__ == "__main__":
     else:
         charOptions["Gender"] = listOfGenders[0]
     # 1.3. Name
-    charOptions["Name"] = rando_name(charOptions["Nationality"], charOptions["Gender"])
+    charOptions["Name"] = rando_name(charOptions["Nationality"], \
+                                     charOptions["Gender"])
     # 1.4. Backstory
     charOptions["Biography"] = rando_backstory(charOptions["Name"], \
                                                charOptions["Nationality"], \
@@ -968,7 +1070,8 @@ if __name__ == "__main__":
     # 2.5. Armor Pattern
     propsOptions["Armor Pattern"] = rando_armor_pattern(propsOptions["Armor Style"])
     # 2.5. Weapon Pattern
-    propsOptions["Weapon Pattern"] = rando_weapon_pattern(propsOptions["Armor Style"], propsOptions["Armor Pattern"])
+    propsOptions["Weapon Pattern"] = rando_weapon_pattern(propsOptions["Armor Style"], \
+                                                          propsOptions["Armor Pattern"])
     # 2.6. Face Paint
     propsOptions["Face Paint"] = rando_face_paint(propsOptions["Armor Style"])
     # 2.7. Left and Right Arm Tattoos
@@ -979,16 +1082,22 @@ if __name__ == "__main__":
     # 3. APPEARANCE
     # 3.1. Face
     appearanceOptions["Face"] = listOfFaces[randint(0, listOfFaces.__len__() - 1)]
-    # 3.2. All Hair Styles
-    # 3.2.1. Hair
-    # 3.2.2. Facial Hair
-    # 3.3. Hair Color
-    # 3.4. Eye Color
     # 3.5. Race
     #     0 - Caucasian
     #     1 - Afican
     #     2 - Asian
     #     3 - Hispanic
+    ############# IMPLEMENT THIS FOR REAL... JUST LATER ############################
+    appearanceOptions["Race"] = listOfRaces[randint(0, listOfRaces.__len__() - 1)]
+    # 3.2. All Hair Styles
+    # 3.2.1. Hair
+    appearanceOptions["Hair"] = rando_hair_style(propsOptions["Armor Style"], \
+                                                 charOptions["Gender"], \
+                                                 charOptions["Nationality"], \
+                                                 appearanceOptions["Race"])
+    # 3.2.2. Facial Hair
+    # 3.3. Hair Color
+    # 3.4. Eye Color
     # 3.6. Skin Color
     # 3.7. Main Armor Color
     # 3.8. Secondary Armor Color
