@@ -11,6 +11,11 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Expand on Props
     	[ ] Establish color selection for tattoos (implement color wheel?)
     	[ ] Armor style ADVENT only gets long sleeve arms
+    	[ ] Refactor tattoo % based on data (don't forget to inflate):
+    		[ ] In America, the percentage of people with tattoos is 42% for adults.
+    		[ ] Percentage of people with tattoos in Canada: 38% of adults.
+    		[ ] Percentage of people with tattoos in Ireland: 36% of adults.
+    		[ ] Percentage of people with tattoos in UK: 29% of adults.
     [ ] Refactor dictionary into a class
     	[ ] Utilize members instead of variables/parameters to influence randomizations
     		[ ] Any 'Muton' armor gets 'Muton' mask or 'Muton' face paint
