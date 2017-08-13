@@ -123,6 +123,25 @@ listOfPatterns = [ \
     "Alien Structure", "Viper Armor", "Alien Cell", \
     "Muton Armor", "Snake Skin", \
 ]
+
+listOfFacePaint = [ \
+    "None", "Ethereal Divide", "Blood Splatter", \
+    "Warrior Skull", "Celtic Warrior", "Killer Clown", \
+    "Heavy Metal", "Bandit", "Kabuki Paint", \
+    "Midnight Warrior", "Archon", "Beserker", \
+    "Cryssalid", "Faceless", "GateKeeper", \
+    "Muton", "Maori A", "Maori B", \
+    "Maori C", "Maori D", "Arid", \
+    "Eye Black", "Sharpshooter", "Skull", \
+]
+
+listOfTattoos = [ \
+    "None", "Chryssalid Killer", "Berserker Hunter", \
+    "Snake Wrap", "Sliced Sectoid", "XCOM Sleever", \
+    "Electric Alien", "Bar Code", "Death Sleeve", \
+    "Earth Sleeve", "Ace in the Hole", "Shadow Wolf", \
+    "Shen", \
+]
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
@@ -651,11 +670,6 @@ def rando_armor_pattern(armorStyle):
     patternStylizedList = []
 
     ### TRUNCATE EXISTING LIST ###
-    if armorStyle == listOfArmorStyles[0]:
-        startSlice = "None"
-        stopSlice = "Powered 4"
-
-    ### TRUNCATE EXISTING LIST ###
     if armorStyle == listOfArmorStyles[0]:   # "Base"
         startSlice = "None"
         stopSlice = "Shemagh"
@@ -745,6 +759,147 @@ def rando_weapon_pattern(armorStyle, armorPattern):
     return retVal
 
 
+def rando_face_paint(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    startSlice = ""
+    stopSlice = ""
+    tmpInt = randint(1, 100)
+    facePaintStylizedList = []
+
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        if tmpInt > 50:
+            startSlice = "Arid"
+            stopSlice = "Skull"
+        else:
+            return "None"
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        if tmpInt > 66:
+            startSlice = "Ethereal Divice"
+            stopSlice = "Midnight Warrior"
+        if tmpInt > 33:
+            startSlice = "Maori A"
+            stopSlice = "Maori D"
+        else:
+            startSlice = listOfFacePaint[0]
+            stopSlice = listOfFacePaint[listOfFacePaint.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        startSlice = listOfFacePaint[0]
+        stopSlice = listOfFacePaint[listOfFacePaint.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        return "None"
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        startSlice = "Archon"
+        stopSlice = "Muton"
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+
+    facePaintStylizedList = listOfFacePaint[listOfFacePaint.index(startSlice):listOfFacePaint.index(stopSlice) + 1]
+    facePaintStylizedList.append("None")
+
+    retVal = facePaintStylizedList[randint(0, facePaintStylizedList.__len__() - 1)]
+
+    return retVal
+
+
+def rando_tattoos(armorStyle):
+    '''
+        INPUT:      Style of armor (see: listOfArmorStyles)
+        OUTPUT:     A tuple of strings ("<Left Tattoo>", "<Right Tattoo>", "<Tattoo Color>")
+        NOTE:       Current tattoo color is hard-coded to black until color wheel functionality is implemented    
+    '''
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    startSlice = listOfTattoos[0]
+    stopSlice = listOfTattoos[listOfTattoos.__len__() - 1]
+    retVal = tuple(("None", "None", None))  # No tattoo default
+    tmpInt = randint(1, 100)
+    numTattos = 0
+    leftTattoo = "None"
+    rightTatto = "None"
+    tattooColor = None
+    dupeTattoo = False
+    tattooStylizedList = []
+
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        if tmpInt > 90:
+            numTattos = 2
+            dupeTattoo = True
+        elif tmpInt > 75:
+            numTattos = 2
+        elif tmpInt > 40:
+            numTattos = 1
+        else:
+            return retVal
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        if tmpInt > 95:
+            numTattos = 2
+            dupeTattoo = True
+        elif tmpInt > 65:
+            numTattos = 2
+        elif tmpInt > 30:
+            numTattos = 1
+        else:
+            return retVal
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        numTattos = randint(0, 2)
+        if numTattos == 2:
+            if randint(0, 1) == 1:
+                dupeTattoo = True
+        elif numTattos == 0:
+            return retVal
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        return retVal
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        if tmpInt > 50:
+            numTattos = 1
+            startSlice = "Chryssalid Killer"
+            stopSlice = "Electric Alien"
+        if tmpInt > 75:
+            numTattos = 2
+        if tmpInt > 90:
+            dupeTattoo = True
+        else:
+            return retVal
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+
+    tattooStylizedList = listOfTattoos[listOfTattoos.index(startSlice):listOfTattoos.index(stopSlice) + 1]
+
+    ### RANDOMIZE TATTOOS ###
+    if numTattos == 2:
+        leftTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+        rightTatto = leftTatto
+        if dupeTattoo == False:
+            while rightTatto == leftTatto:
+                rightTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+    elif numTattos == 1:
+        if randint(0, 1) == 1:
+            rightTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]
+        else:
+            leftTatto = tattooStylizedList[randint(0, tattooStylizedList.__len__() - 1)]             
+    else:
+        return retVal
+
+    ### SET COLOR ###
+    if numTattos > 0:
+        tattooColor = "94"  # Hard coded until color is implemented
+
+    return tuple((leftTatto, rightTatto, tattooColor))
+
 
 ######################################################
 ######################################################
@@ -795,6 +950,10 @@ if __name__ == "__main__":
     propsOptions["Armor Pattern"] = rando_armor_pattern(propsOptions["Armor Style"])
     # 2.5. Weapon Pattern
     propsOptions["Weapon Pattern"] = rando_weapon_pattern(propsOptions["Armor Style"], propsOptions["Armor Pattern"])
+    # 2.6. Face Paint
+    propsOptions["Face Paint"] = rando_face_paint(propsOptions["Armor Style"])
+    # 2.7. Left and Right Arm Tattoos
+    propsOptions["Left Arm Tattoo"], propsOptions["Right Arm Tattoo"], propsOptions["Tattoo Color"] = rando_tattoos(propsOptions["Armor Style"])
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
