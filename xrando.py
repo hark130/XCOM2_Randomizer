@@ -74,6 +74,11 @@ listOfHelmetHats = [ \
     "Long Hood", "Ski Mask", \
 ]
 
+listOfArmorStyles = [ \
+    "Base", "Anarchy", "Chaotic", \
+    "ADVENT", "Alien", \
+]
+
 listOfArmorArms = [ \
     "Arms 0", "Arms 1", "Arms 2", \
     "Arms 3", "Arms 4", "Arms 5", \
@@ -106,6 +111,17 @@ listOfLowerFaceProps = [ \
     "XCOM Bandana", "Skull Bandana", "Biker Bandana", \
     "Striped Bandana", "Samurai Mask A", "Samurai Mask B", \
     "Muton Mask", \
+]
+
+listOfPatterns = [ \
+    "None", "Digital", "Classic", \
+    "Alien", "Tundra", "Hex", \
+    "Arid", "Blots", "Classic 2", \
+    "Happy", "Zebra", "Plaid", \
+    "Tiger", "Hearts", "Dots", \
+    "Stripes", "Wild", "Shemagh", \
+    "Alien Structure", "Viper Armor", "Alien Cell", \
+    "Muton Armor", "Snake Skin", \
 ]
 ######################################################
 ######################################################
@@ -446,9 +462,46 @@ def rando_name(nationality, gender):
 ######################
 
 
-def rando_helmet_hat():
+def rando_helmet_hat(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
     ### LOCAL VARIABLES ###
-    retVal = listOfHelmetHats[randint(0, listOfHelmetHats.__len__() - 1)]
+    retVal = ""
+    helmetStylizedList = []
+    startSlice = ""
+    stopSlice = ""
+    # print("List of Helmets/Hats:\t{}".format(listOfHelmetHats))  # DEBUGGING
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        startSlice = "None"
+        stopSlice = "Powered 4"
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        startSlice = "Kaiser Helmet"
+        stopSlice = "Android"
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        startSlice = listOfHelmetHats[0]
+        stopSlice = listOfHelmetHats[listOfHelmetHats.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        startSlice = "ADVENT Captain"
+        stopSlice = "ADVENT Trooper"
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        startSlice = "Avatar"
+        stopSlice = "Andromedon"
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+    # print("List of Helmets/Hats:\t{}".format(listOfHelmetHats))  # DEBUGGING
+    # print("Helmet Stylized List:\t{}".format(helmetStylizedList))  # DEBUGGING
+    helmetStylizedList = listOfHelmetHats[listOfHelmetHats.index(startSlice):\
+        listOfHelmetHats.index(stopSlice) + 1]
+    # print("Helmet Stylized List:\t{}".format(helmetStylizedList))  # DEBUGGING
+    helmetStylizedList.append("None")
+    # print("Helmet Stylized List:\t{}".format(helmetStylizedList))  # DEBUGGING
+
+    retVal = helmetStylizedList[randint(0, helmetStylizedList.__len__() - 1)]
+    # print("Helmet Return Value:\t{}".format(retVal))  # DEBUGGING
 
     return retVal
 
@@ -461,49 +514,59 @@ def rando_armor():
         NOTE:       Styles include: "Base", "Anarchy", "Chaotic"
     '''
     ### LOCAL VARIABLES ###
-    style = ""
+    armorStyle = ""
     tmpInt = 0
     retArm = ""
     retLeg = ""
     retTorso = ""
 
     ### CHOOSE STYLE ###
-    tmpInt = randint(1, 10)
-    if tmpInt <= 4:
-        style = "Base"
-    elif tmpInt <= 8:
-        style = "Anarchy"
-    else:
-        style = "Chaotic"
+    tmpInt = randint(1, 13)             # 1 - 13
+    if tmpInt <= 5:                     # 1 - 5
+        armorStyle = listOfArmorStyles[0]     # "Base"
+    elif tmpInt <= 10:                  # 6 - 10
+        armorStyle = listOfArmorStyles[1]    # "Anarchy"
+    elif tmpInt <= 11:                  # 11
+        armorStyle = listOfArmorStyles[2]    # "Chaotic"
+    elif tmpInt <= 12:                  # 12
+        armorStyle = listOfArmorStyles[3]    # "ADVENT"
+    else:                               # 13
+        armorStyle = listOfArmorStyles[4]    # "Alien"
 
     ### RANDOMIZE ARM ###
-    if style == "Base":
+    if armorStyle in [ "Base", "ADVENT", "Alien" ]:
         tmpInt = randint(0, 6)
-    elif style == "Anarchy":
+    elif armorStyle == "Anarchy":
         tmpInt = randint(7, 11)
-    else:
+    elif armorStyle == "Chaotic":
         tmpInt = randint(0, 11)
+    else:
+        raise ValueError('This armor style has not yet been implemented')
     retArm = listOfArmorArms[tmpInt]
 
     ### RANDOMIZE LEG ###
-    if style == "Base":
+    if armorStyle in [ "Base", "ADVENT", "Alien" ]:
         tmpInt = randint(0, 4)
-    elif style == "Anarchy":
+    elif armorStyle == "Anarchy":
         tmpInt = randint(5, 7)
-    else:
+    elif armorStyle == "Chaotic":
         tmpInt = randint(0, 7)
+    else:
+        raise ValueError('This armor style has not yet been implemented')
     retLeg = listOfArmorLegs[tmpInt]
 
     ### RANDOMIZE TORSO ###
-    if style == "Base":
+    if armorStyle in [ "Base", "ADVENT", "Alien" ]:
         tmpInt = randint(0, 4)
-    elif style == "Anarchy":
+    elif armorStyle == "Anarchy":
         tmpInt = randint(5, 7)
-    else:
+    elif armorStyle == "Chaotic":
         tmpInt = randint(0, 7)
+    else:
+        raise ValueError('This armor style has not yet been implemented')
     retTorso = listOfArmorTorso[tmpInt]
 
-    return tuple((retArm, retLeg, retTorso, style))
+    return tuple((retArm, retLeg, retTorso, armorStyle))
 
 
 def rando_upper_face(gender):
@@ -574,6 +637,55 @@ def rando_lower_face(nationality):
     return retVal
 
 
+def rando_pattern(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    startSlice = ""
+    stopSlice = ""
+    patternStylizedList = []
+
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:
+        startSlice = "None"
+        stopSlice = "Powered 4"
+
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:   # "Base"
+        startSlice = "None"
+        stopSlice = "Shemagh"
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        startSlice = "None"
+        stopSlice = "Shemagh"
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        startSlice = listOfPatterns[0]
+        stopSlice = listOfPatterns[listOfPatterns.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        return "None"
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        startSlice = "Alien Structure"
+        stopSlice = "Snake Skin"
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+    # print("Pattern Stylized List:\t{}".format(patternStylizedList))  # DEBUGGING
+    patternStylizedList = listOfPatterns
+    # print("Pattern Stylized List:\t{}".format(patternStylizedList))  # DEBUGGING
+    # print("Start:\t{}\nStop:\t{}\n".format(startSlice, stopSlice))  # DEBUGGING
+    patternStylizedList = listOfPatterns[listOfPatterns.index(startSlice):listOfPatterns.index(stopSlice) + 1]
+    # print("Pattern Stylized List:\t{}".format(patternStylizedList))  # DEBUGGING
+    patternStylizedList.append("None")
+    # print("Pattern Stylized List:\t{}".format(patternStylizedList))  # DEBUGGING
+
+    retVal = patternStylizedList[randint(0, patternStylizedList.__len__() - 1)]
+    # print("Pattern Return Value:\t{}".format(retVal))  # DEBUGGING
+
+    return retVal
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -611,16 +723,16 @@ if __name__ == "__main__":
                                                charOptions["Gender"])
 
     # 2. PROPS
-    # 2.1. Helmet/Hat
-    propsOptions["Helmet/Hat"] = rando_helmet_hat()
-    # 2.2. Armor
-    propsOptions["Arms"], propsOptions["Legs"], propsOptions["Torso"], \
-    propsOptions["Armor Style"] = rando_armor()
+    # 2.1. Armor
+    propsOptions["Arms"], propsOptions["Legs"], propsOptions["Torso"], propsOptions["Armor Style"] = rando_armor()
+    # 2.2. Helmet/Hat
+    propsOptions["Helmet/Hat"] = rando_helmet_hat(propsOptions["Armor Style"])
     # 2.3. Upper Face
     propsOptions["Upper Face Prop"] = rando_upper_face(charOptions["Gender"])
     # 2.4. Lower Face
     propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Nationality"])
-
+    # 2.5. Armor Pattern
+    propsOptions["Armor Pattern"] = rando_pattern(propsOptions["Armor Style"])
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
