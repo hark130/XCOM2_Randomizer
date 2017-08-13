@@ -2,17 +2,6 @@ from random import randint
 import os
 
 '''
-Props:
-Upper Face Prop
-Lower Face Prop
-Armor Pattern (Optional)
-Weapon Pattern (Optional)
-Face Paint
-Left Arm Tattoo
-Right Arm Tattoo
-Tattoo Color
-Scars
-
 Face:
 Hair:
 Facial Hair:
@@ -920,6 +909,13 @@ if __name__ == "__main__":
         "Left Arm Tattoo", "Right Arm Tattoo", "Tattoo Color", \
         "Scars"\
     ]
+    appearanceOptions = {}
+    appearanceList = [ \
+        "Face", "Hair", "Facial Hair", \
+        "Hair Color", "Eye Color", "Race", \
+        "Skin Color", "Main Armor Color", "Secondary Armor Color", \
+        "Weapon Color", "Voice", "Attitude", \
+    ]
     
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -954,6 +950,8 @@ if __name__ == "__main__":
     propsOptions["Face Paint"] = rando_face_paint(propsOptions["Armor Style"])
     # 2.7. Left and Right Arm Tattoos
     propsOptions["Left Arm Tattoo"], propsOptions["Right Arm Tattoo"], propsOptions["Tattoo Color"] = rando_tattoos(propsOptions["Armor Style"])
+    # 2.8. Scars
+    # Not implementing scars because I want to choose scars as my characters get injured on mission
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
@@ -971,6 +969,9 @@ if __name__ == "__main__":
             print("\t{}:  {}".format(key, propsOptions[key]))
     print("\n")
     # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+
+    # 3. APPEARANCE
+
 
 
 
