@@ -8,6 +8,10 @@ Facial Hair:
 Hair Color:
 Eye Color:
 Race:
+    0 - Caucasian
+    1 - Afican
+    2 - Asian
+    3 - Hispanic
 Skin Color:
 Main Armor Color:
 Secondary Armor Color:
@@ -131,6 +135,11 @@ listOfTattoos = [ \
     "Earth Sleeve", "Ace in the Hole", "Shadow Wolf", \
     "Shen", \
 ]
+
+listOfFaces = [ \
+    "Face A", "Face B", "Face C", \
+    "Face D", "Face E", "Face F", \
+]
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
@@ -138,9 +147,9 @@ listOfTattoos = [ \
 ######################################################
 
 
-########################
-### HELPER FUNCTIONS ###
-########################
+################################
+### GENERIC HELPER FUNCTIONS ###
+################################
 
 
 def convert_num_to_word(number, capitalize = False):
