@@ -16,6 +16,9 @@ This is a python script to randomize XCOM2 character customizations for me
     		[ ] Percentage of people with tattoos in Canada: 38% of adults.
     		[ ] Percentage of people with tattoos in Ireland: 36% of adults.
     		[ ] Percentage of people with tattoos in UK: 29% of adults.
+    [ ] Expand on Appearance
+    	[ ] Everyone from Norway has Blue eyes (or colored contacts) and fair skin
+    	[ ] Base eye color on race (or colored contacts)
     [ ] Refactor dictionary into a class
     	[ ] Utilize members instead of variables/parameters to influence randomizations
     		[ ] Any 'Muton' armor gets 'Muton' mask or 'Muton' face paint
