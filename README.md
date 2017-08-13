@@ -8,6 +8,15 @@ This is a python script to randomize XCOM2 character customizations for me
     	[ ] Implement other racial last names
     	[ ] Implement other racial city lists
     	[ ] Implement family into background, dead or alive
+    [ ] Expand on Props
+    	[ ] Establish color selection for tattoos (implement color wheel?)
+    	[ ] Armor style ADVENT only gets long sleeve arms
+    [ ] Refactor dictionary into a class
+    	[ ] Utilize members instead of variables to influence decisions
+    		[ ] Any 'Muton' armor gets 'Muton' mask or 'Muton' face paint
+    		[ ] Allows for easier themed creation
+    		[ ] Colors better matched based on established color scheme
+    		[ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
 
 ## NOTES/RESEARCH
 [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
