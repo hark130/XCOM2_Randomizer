@@ -976,26 +976,52 @@ if __name__ == "__main__":
     # 2.8. Scars
     # Not implementing scars because I want to choose scars as my characters get injured on mission
 
+    # 3. APPEARANCE
+    # 3.1. Face
+    appearanceOptions["Face"] = listOfFaces[randint(0, listOfFaces.__len__() - 1)]
+    # 3.2. All Hair Styles
+    # 3.2.1. Hair
+    # 3.2.2. Facial Hair
+    # 3.3. Hair Color
+    # 3.4. Eye Color
+    # 3.5. Race
+    #     0 - Caucasian
+    #     1 - Afican
+    #     2 - Asian
+    #     3 - Hispanic
+    # 3.6. Skin Color
+    # 3.7. Main Armor Color
+    # 3.8. Secondary Armor Color
+    # 3.9. Weapon Color
+    # 3.10. Voice
+    # 3.11. Attitude
+
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
     print("\n")
     print("CHARACTER INFO:")
     for key in charInfoList:
         if key in charOptions.keys():
-            print("\t{}:  {}".format(key, charOptions[key]))
+            if charOptions[key] != None:
+                print("\t{}:  {}".format(key, charOptions[key]))
     print("\n")
 
     # 2. PROPS
     print("PROPS:")
     for key in propsList:
         if key in propsOptions.keys():
-            print("\t{}:  {}".format(key, propsOptions[key]))
+            if propsOptions[key] != None:
+                print("\t{}:  {}".format(key, propsOptions[key]))
     print("\n")
     # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
 
     # 3. APPEARANCE
-
-
+    print("APPEARANCE:")
+    for key in appearanceList:
+        if key in appearanceOptions.keys():
+            if appearanceOptions[key] != None:
+                print("\t{}:  {}".format(key, appearanceOptions[key]))
+    print("\n")
 
 
 
