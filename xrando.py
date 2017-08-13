@@ -637,7 +637,7 @@ def rando_lower_face(nationality):
     return retVal
 
 
-def rando_pattern(armorStyle):
+def rando_armor_pattern(armorStyle):
     ### INPUT VALIDATION ###
     if not isinstance(armorStyle, str):
         raise TypeError('armorStyle is not a string')
@@ -686,6 +686,66 @@ def rando_pattern(armorStyle):
 
     return retVal
 
+
+def rando_weapon_pattern(armorStyle, armorPattern):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+    elif not isinstance(armorPattern, str):
+        raise TypeError('armorPattern is not a string')
+    elif armorPattern not in listOfPatterns:
+        raise ValueError('Invalid armorPattern')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    startSlice = ""
+    stopSlice = ""
+    tmpInt = randint(1, 100)
+    weaponPatternStylizedList = []
+
+    ### TRUNCATE EXISTING LIST ###
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        if tmpInt > 60:
+            startSlice = "None"
+            stopSlice = "Shemagh"
+        elif tmpInt > 80:
+            return armorPattern
+        else:
+            return "None"
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        if tmpInt > 25:
+            startSlice = "None"
+            stopSlice = "Shemagh"
+        elif tmpInt > 75:
+            startSlice = listOfPatterns[0]
+            stopSlice = listOfPatterns[listOfPatterns.__len__() - 1]
+        else:
+            return armorPattern
+    elif armorStyle == listOfArmorStyles[2]:  # "Chaotic"
+        startSlice = listOfPatterns[0]
+        stopSlice = listOfPatterns[listOfPatterns.__len__() - 1]
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        return "None"
+    elif armorStyle == listOfArmorStyles[4]:  # "Alien"
+        if tmpInt > 50:
+            startSlice = "Alien Structure"
+            stopSlice = "Snake Skin"
+        else:
+            return "None"
+    else:
+        raise ValueError('This armor style has not yet been implemented')
+
+    weaponPatternStylizedList = listOfPatterns[listOfPatterns.index(startSlice):listOfPatterns.index(stopSlice) + 1]
+    weaponPatternStylizedList.append("None")
+
+    retVal = weaponPatternStylizedList[randint(0, weaponPatternStylizedList.__len__() - 1)]
+
+    return retVal
+
+
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -732,7 +792,9 @@ if __name__ == "__main__":
     # 2.4. Lower Face
     propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Nationality"])
     # 2.5. Armor Pattern
-    propsOptions["Armor Pattern"] = rando_pattern(propsOptions["Armor Style"])
+    propsOptions["Armor Pattern"] = rando_armor_pattern(propsOptions["Armor Style"])
+    # 2.5. Weapon Pattern
+    propsOptions["Weapon Pattern"] = rando_weapon_pattern(propsOptions["Armor Style"], propsOptions["Armor Pattern"])
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
