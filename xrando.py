@@ -137,7 +137,7 @@ listOfFacePaint = [ \
 
 listOfTattoos = [ \
     "None", "Chryssalid Killer", "Berserker Hunter", \
-    "Snake Wrap", "Sliced Sectoid", "XCOM Sleever", \
+    "Snake Wrap", "Sliced Sectoid", "XCOM Sleeve", \
     "Electric Alien", "Bar Code", "Death Sleeve", \
     "Earth Sleeve", "Ace in the Hole", "Shadow Wolf", \
     "Shen", \
