@@ -969,6 +969,15 @@ def rando_race(nationality):
             retVal = listOfRaces[2]     # "2 - Asian"
         else:
             retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "Brazil":
+        if tmpInt <= 74:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 98:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "Canada":
         if tmpInt <= 75:
             retVal = listOfRaces[0]     # "0 - Caucasian"
@@ -1204,10 +1213,10 @@ def rando_race(nationality):
         else:
             retVal = listOfRaces[3]     # "3 - Hispanic"
     else:
-        raise ValueError('This nationality has not yet been implemented')
+        raise ValueError("{} has not yet been implemented".format(nationality))
 
     return retVal
-    
+
 
 def rando_hair_style(armorStyle, gender, nationality, race):
     ### INPUT VALIDATION ###
