@@ -945,17 +945,30 @@ def rando_race(nationality):
     if nationality == "Argentina":
         if tmpInt <= 97:
             retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[2]     # "2 - Asian"
         else:
             retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "Australia":
         if tmpInt <= 92:
             retVal = listOfRaces[0]     # "0 - Caucasian"
-        elif tmpInt <= 99:
+        elif tmpInt <= 93:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
             retVal = listOfRaces[2]     # "2 - Asian"
         else:
-            retVal = listOfRaces[1]     # "1 - Afican"
+            retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "Belgium":
-        retVal = listOfRaces[0]         # "0 - Caucasian"
+        if tmpInt <= 100:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "Canada":
         if tmpInt <= 75:
             retVal = listOfRaces[0]     # "0 - Caucasian"
@@ -966,7 +979,14 @@ def rando_race(nationality):
         else:
             retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "China":
-        retVal = listOfRaces[2]         # "2 - Asian"
+        if tmpInt <= 0:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
     elif nationality == "Egypt":
         if tmpInt <= 1:
             retVal = listOfRaces[0]     # "0 - Caucasian"
@@ -988,7 +1008,7 @@ def rando_race(nationality):
     elif nationality == "Germany":
         if tmpInt <= 97:
             retVal = listOfRaces[0]     # "0 - Caucasian"
-        elif tmpInt <= 97:
+        elif tmpInt <= 0:
             retVal = listOfRaces[1]     # "1 - Afican"
         elif tmpInt <= 100:
             retVal = listOfRaces[2]     # "2 - Asian"
@@ -997,7 +1017,7 @@ def rando_race(nationality):
     elif nationality == "Greece":
         if tmpInt <= 99:
             retVal = listOfRaces[0]     # "0 - Caucasian"
-        elif tmpInt <= 99:
+        elif tmpInt <= 0:
             retVal = listOfRaces[1]     # "1 - Afican"
         elif tmpInt <= 100:
             retVal = listOfRaces[2]     # "2 - Asian"
@@ -1111,16 +1131,83 @@ def rando_race(nationality):
             retVal = listOfRaces[2]     # "2 - Asian"
         else:
             retVal = listOfRaces[3]     # "3 - Hispanic"
-    '''
-    "Argentina", "Australia", "Belgium", "Brazil", "Canada", "China", \
-    "Egypt", "France", "Germany", "Greece", "India", "Ireland", "Israel", \
-    "Italy", "Japan", "Mexico", "Netherlands", "Nigeria", "Norway", \
-    "Poland", "Russia", "Saudi Arabia", "Scotland", "South Africa", \
-    "South Korea", "Spain", "Sweden", "Ukraine", "United Kingdom", "USA", \
+    elif nationality == "Scotland":
+        if tmpInt <= 97:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "South Africa":
+        if tmpInt <= 14:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 97:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "South Korea":
+        if tmpInt <= 0:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 100:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "Spain":
+        if tmpInt <= 0:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "Sweden":
+        if tmpInt <= 98:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 99:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "Ukraine":
+        if tmpInt <= 96:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 0:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 98:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "United Kingdom":
+        if tmpInt <= 94:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 97:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 99:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    elif nationality == "USA":
+        if tmpInt <= 65:
+            retVal = listOfRaces[0]     # "0 - Caucasian"
+        elif tmpInt <= 78:
+            retVal = listOfRaces[1]     # "1 - Afican"
+        elif tmpInt <= 83:
+            retVal = listOfRaces[2]     # "2 - Asian"
+        else:
+            retVal = listOfRaces[3]     # "3 - Hispanic"
+    else:
+        raise ValueError('This nationality has not yet been implemented')
 
-    "0 - Caucasian", "1 - Afican", "2 - Asian", \
-    "3 - Hispanic", \
-    '''
+    return retVal
+    
 
 def rando_hair_style(armorStyle, gender, nationality, race):
     ### INPUT VALIDATION ###
