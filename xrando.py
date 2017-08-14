@@ -1,3 +1,4 @@
+from copy import deepcopy
 from random import randint
 import os
 
@@ -158,13 +159,15 @@ listOfHairStyles = [ \
     "Avatar", \
 ]
 
-
-
-
-
-
-
-
+listOfFacialHair = [ \
+    "None", "Goatee", "Chin Curatin", \
+    "Goatee and Moustache", "Thick Beard", "Horseshoe Moustache", \
+    "Moustache", "Mutton Chops", "Sideburns", \
+    "Mutton Chops and 'Stache", "Short Sideburns", "Scruffy Beard", \
+    "Sideburns and Goatee", "Five o'clock Shadow", "Stubble Goatee", \
+    "Short Horseshoe Moustache", "Short Moustache", "Stubble Mutton Chops", \
+    "Stubble Sideburns", "Scrappy Beard", \
+]
 
 listOfRaces = [ \
     "0 - Caucasian", "1 - Afican", "2 - Asian", \
@@ -1303,6 +1306,89 @@ def rando_hair_style(armorStyle, gender, nationality, race):
     return retVal
 
 
+def rando_facial_hair(armorStyle, gender, nationality, race):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+    elif not isinstance(gender, str):
+        raise TypeError('gender is not a string')
+    elif gender not in listOfGenders:
+        raise ValueError('Invalid gender')
+    elif not isinstance(nationality, str):
+        raise TypeError('nationality is not a string')
+    elif nationality not in listOfNations:
+        raise ValueError('Invalid nationality')
+    elif not isinstance(race, str):
+        raise TypeError('gender is not a string')
+    elif race not in listOfRaces:
+        raise ValueError('Invalid race')
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    startSlice = ""
+    stopSlice = ""
+    tmpInt = randint(1, 100)
+    facialHairStylizedList = deepcopy(listOfFacialHair)
+
+    ### TRUNCATE EXISTING LIST ###
+    # Adjust for Gender
+    if gender == listOfGenders[1]:            # "Female"
+        return None
+    # Adjust for Nationality
+    elif nationality in [ "Nigeria" ]:
+        if tmpInt <= 75:
+            return "None"
+    elif nationality in [ "South Africa" ]:
+        for style in facialHairStylizedList:
+            if style.find("tache") >= 0:
+                facialHairStylizedList.remove(style)
+    elif nationality in [ "Israel" ]:
+        for style in listOfFacialHair:
+            # print("Israel:\t{}?".format(style))  # DEBUGGING
+            if style.find("eard") >= 0:
+                facialHairStylizedList.append(style)
+    elif nationality in [ "Egypt", "Germany", "USA" ]:
+        for style in listOfFacialHair:
+            # print("List of Facial Hair:\t{}\n".format(listOfFacialHair))  # DEBUGGING
+            if style.find("tache") >= 0:
+                facialHairStylizedList.append(style)
+    # print("1. Facial Hair List:\t{}\n".format(facialHairStylizedList))  # DEBUGGING
+    # Randomize again to avoid patterns
+    tmpInt = randint(1, 100)
+
+    # Adjust for Race
+    if race in [ listOfRaces[1] ]:
+        if tmpInt <= 75:
+            return "None"
+    elif race in [ listOfRaces[2] ]:
+        if tmpInt <= 50:
+            return "None"
+        else:
+            for style in listOfFacialHair:
+                # print("Asian:\t{}?".format(style))  # DEBUGGING
+                if (style.find("cruffy") >= 0) or (style.find("rappy") >= 0) or (style.find("tubble") >= 0):
+                    facialHairStylizedList.append(style)
+    # print("2. Facial Hair List:\t{}\n".format(facialHairStylizedList))  # DEBUGGING
+    # Randomize AGAIN to avoid patterns
+    tmpInt = randint(1, 100)
+
+    # Adjust for Style
+    if armorStyle == listOfArmorStyles[0]:    # "Base"
+        if tmpInt > 50:
+            return "None"
+    elif armorStyle == listOfArmorStyles[1]:  # "Anarchy"
+        if tmpInt > 75:
+            return "None"
+    elif armorStyle == listOfArmorStyles[3]:  # "ADVENT"
+        return "None"
+    # print("3. Facial Hair List:\t{}\n".format(facialHairStylizedList))  # DEBUGGING
+    retVal = facialHairStylizedList[randint(0, facialHairStylizedList.__len__() - 1)]
+
+    return retVal
+
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -1372,10 +1458,6 @@ if __name__ == "__main__":
     # 3.1. Face
     appearanceOptions["Face"] = listOfFaces[randint(0, listOfFaces.__len__() - 1)]
     # 3.5. Race
-    #     0 - Caucasian
-    #     1 - Afican
-    #     2 - Asian
-    #     3 - Hispanic
     appearanceOptions["Race"] = rando_race(charOptions["Nationality"])
     # 3.2. All Hair Styles
     # 3.2.1. Hair
@@ -1384,6 +1466,10 @@ if __name__ == "__main__":
                                                  charOptions["Nationality"], \
                                                  appearanceOptions["Race"])
     # 3.2.2. Facial Hair
+    appearanceOptions["Facial Hair"] = rando_facial_hair(propsOptions["Armor Style"], \
+                                                         charOptions["Gender"], \
+                                                         charOptions["Nationality"], \
+                                                         appearanceOptions["Race"])
     # 3.3. Hair Color
     # 3.4. Eye Color
     # 3.6. Skin Color
