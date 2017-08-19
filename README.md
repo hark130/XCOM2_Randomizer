@@ -8,6 +8,9 @@ This is a python script to randomize XCOM2 character customizations for me
     	[ ] Implement other racial last names
     	[ ] Implement other racial city lists
     	[ ] Implement family into background, dead or alive
+      [ ] Include a certain number of Jrs. and IIIds
+      [ ] Format the biography to match default in-game creations
+      [ ] Implement age
     [ ] Expand on Props
     	[ ] Establish color selection for tattoos (implement color wheel?)
     	[ ] Armor style ADVENT only gets long sleeve arms
@@ -26,6 +29,19 @@ This is a python script to randomize XCOM2 character customizations for me
     		[ ] Colors better matched based on established color scheme
     		[ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
     		[ ] Mentions of certain words (see: prison, torture) will generate a starting scar
+    [ ] Implemenet Color class
+      [ ] Attributes
+        [ ] Number
+        [ ] Hue
+        [ ] Saturation
+        [ ] Value
+        [ ] Type (see: Primary, Secondary, Tertiary)
+        [ ] Brightness (see: Light, Medium, Dark)
+        [ ] Wheel (see: Greyscale, Blue, Blue-Green, Green, Yellow-Green)
+      [ ] Methods
+        [ ] Determine Type
+        [ ] Determine Brightness
+        [ ] Determine Wheel
 
 ## NOTES/RESEARCH
 [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
@@ -35,9 +51,12 @@ This is a python script to randomize XCOM2 character customizations for me
   * 2 Colors - Analogous
   * 2 Colors - Complementary
   * 3 Colors - Triad
+  * 3 Colors - Split Complementary
+  * 3 Colors - Secondary
   * Random Chaos
   * Earthy
   * Urban
+  * Emo (Monochromatic Black)
 NOTE:  Helmet and upper face prop cannot be equipped together
 NOTE:  Weapon patterns and armor patterns are identical
 NOTE:  Left arm tattoo and right arm tattoo list are identical
