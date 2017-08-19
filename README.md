@@ -30,7 +30,7 @@ This is a python script to randomize XCOM2 character customizations for me
     		[ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
     		[ ] Mentions of certain words (see: prison, torture) will generate a starting scar
     [ ] Implemenet Color class
-      [ ] Attributes
+      [ ] Members
         [ ] Number
         [ ] Hue
         [ ] Saturation
@@ -42,6 +42,19 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] Determine Type
         [ ] Determine Brightness
         [ ] Determine Wheel
+    [ ] Implement Color Palette
+      [ ] Members
+        [ ] Number of Colors in Vector
+        [ ] Vector of Colors
+      [ ] Methods
+        [ ] Find a complementary color
+          [ ] Monochromatic
+          [ ] 2 Colors
+          [ ] 3 Colors
+          [ ] Random
+          [ ] Earthy
+          [ ] Urban
+          [ ] Emo
 
 ## NOTES/RESEARCH
 [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
