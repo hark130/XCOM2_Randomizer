@@ -48,13 +48,17 @@ This is a python script to randomize XCOM2 character customizations for me
         [X] Determine Type
         [X] Determine Brightness
         [X] Determine Wheel
-    [ ] Implement Color Palette class
-      [ ] Members
-        [ ] Number of Colors in List
-        [ ] List of Colors
-      [ ] Methods
-        [ ] Find a complementary color
-          [ ] Monochromatic
+    [/] Implement Color Palette class
+      [X] Members
+        [x] Number of Colors in List [NOT IMPLEMENTED]
+        [X] List of Colors
+      [/] Methods
+        [X] Count a color
+        [/] Find a complementary color
+          [/] Monochromatic
+            [X] Primary
+            [ ] Secondary
+            [ ] Tertiary
           [ ] 2 Colors
           [ ] 3 Colors
           [ ] Random
@@ -62,6 +66,10 @@ This is a python script to randomize XCOM2 character customizations for me
           [ ] Urban
           [ ] Emo
           [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
+      [/] Inherit Child Color Palette Classes
+        [X] Main Armor Color
+        [ ] Secondary Armor Color
+        [ ] Weapon Color
 
 
 ## NOTES/RESEARCH
