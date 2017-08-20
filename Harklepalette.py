@@ -36,6 +36,7 @@ class Color:
 	def determine_wheel_color(self):
 		### LOCAL VARIABLES ###
 		retVal = "UNDEFINED"
+		greyscaleSatThresh = 20  # Saturation threshold for a hue to be considered Greyscale
 		redHue = 0
 		redOrangeHue = 19
 		orangeHue = 38
@@ -52,7 +53,9 @@ class Color:
 		violetRedHue = 330
 		upperLimitHue = 360
 
-		if self.hue >= redHue and self.hue < ((redHue + redOrangeHue) / 2):
+		if self.sat <= greyscaleSatThresh:
+			retVal = "Greyscale"
+		elif self.hue >= redHue and self.hue < ((redHue + redOrangeHue) / 2):
 			retVal = "Red"
 		elif self.hue >= ((redHue + redOrangeHue) / 2) and self.hue < ((redOrangeHue + orangeHue) / 2):
 			retVal = "Red Orange"
