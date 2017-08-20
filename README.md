@@ -22,6 +22,11 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Expand on Appearance
     	[ ] Everyone from Norway has Blue eyes (or colored contacts) and fair skin
     	[ ] Base eye color on race (or colored contacts)
+      [ ] Rando_Color_Scheme
+        [ ] Modify (see: uncomment) randomization algorithm once more Color Schemes are implemented in ColorPalette
+        [ ] Investigate ADVENT armor appearance and tie that to "ADVENT" armor style
+        [ ] Investigate Alien armor appearance and tie that to "Alien" armor style
+        [ ] Chaotic should have an increased chance for Random Chaos color scheme
     [ ] Refactor dictionary into a class
     	[ ] Utilize members instead of variables/parameters to influence randomizations
     		[ ] Any 'Muton' armor gets 'Muton' mask or 'Muton' face paint
@@ -45,8 +50,8 @@ This is a python script to randomize XCOM2 character customizations for me
         [X] Determine Wheel
     [ ] Implement Color Palette class
       [ ] Members
-        [ ] Number of Colors in Vector
-        [ ] Vector of Colors
+        [ ] Number of Colors in List
+        [ ] List of Colors
       [ ] Methods
         [ ] Find a complementary color
           [ ] Monochromatic
@@ -56,9 +61,15 @@ This is a python script to randomize XCOM2 character customizations for me
           [ ] Earthy
           [ ] Urban
           [ ] Emo
+          [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
+
 
 ## NOTES/RESEARCH
-[COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
+### IMPLEMENTING NEW COLOR SCHEMES
+Update:
+  * Harklepalette: ColorPalette.implementedSchemes[]
+  * xrando: rando_color_scheme()
+###[COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
   * Monochromatic - Primary
   * Monochromatic - Secondary
   * Monochromatic - Tertiary
@@ -71,6 +82,7 @@ This is a python script to randomize XCOM2 character customizations for me
   * Earthy
   * Urban
   * Emo (Monochromatic Black)
-NOTE:  Helmet and upper face prop cannot be equipped together
-NOTE:  Weapon patterns and armor patterns are identical
-NOTE:  Left arm tattoo and right arm tattoo list are identical
+### MISC
+  * Helmet and upper face prop cannot be equipped together
+  * Weapon patterns and armor patterns are identical
+  * Left arm tattoo and right arm tattoo list are identical
