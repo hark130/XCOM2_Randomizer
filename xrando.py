@@ -1510,6 +1510,10 @@ if __name__ == "__main__":
     # 3.7.3. Randomize a Main Armor Color
     appearanceOptions["Main Armor Color"] = mainArmorColors.get_color()
     # 3.8. Secondary Armor Color
+    # 3.8.1. Instanstiate Secondary Armor Colors Object
+    secondaryArmorColors = SecondayArmorPalette(armorColorScheme)
+    # 3.8.2. Randomize a Secondary Armor Color
+    appearanceOptions["Secondary Armor Color"] = secondaryArmorColors.get_color(appearanceOptions["Main Armor Color"])
     # 3.9. Weapon Color
     # 3.10. Voice
     # 3.11. Attitude
