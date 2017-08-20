@@ -1,5 +1,7 @@
 from copy import deepcopy
+from Harklepalette import Color
 from random import randint
+# import Harklepalette
 import os
 
 '''
@@ -1506,3 +1508,75 @@ if __name__ == "__main__":
                 print("\t{}:  {}".format(key, appearanceOptions[key]))
     print("\n")
 
+    ### TESTING ###
+    test = Color(0, 72, 59, 20)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(3, 33, 57, 58)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(4, 31, 47, 84)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(5, 206, 20, 14)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(14, 21, 93, 90)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(34, 82, 14, 31)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(55, 19, 21, 31)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    test = Color(56, 200, 18, 13)
+    print("Color Num:\t{}".format(test.num))
+    print("Color Hue:\t{}".format(test.hue))
+    print("Color Sat:\t{}".format(test.sat))
+    print("Color Val:\t{}".format(test.val))
+    print("Color Type:\t{}".format(test.colorType))
+    print("Brightness:\t{}".format(test.brightness))
+    print("Wheel Color:\t{}\n".format(test.wheelColor))
