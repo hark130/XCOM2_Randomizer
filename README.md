@@ -29,20 +29,21 @@ This is a python script to randomize XCOM2 character customizations for me
     		[ ] Colors better matched based on established color scheme
     		[ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
     		[ ] Mentions of certain words (see: prison, torture) will generate a starting scar
-    [ ] Implemenet Color class
-      [ ] Members
-        [ ] Number
-        [ ] Hue
-        [ ] Saturation
-        [ ] Value
-        [ ] Type (see: Primary, Secondary, Tertiary)
-        [ ] Brightness (see: Light, Medium, Dark)
-        [ ] Wheel (see: Greyscale, Blue, Blue-Green, Green, Yellow-Green)
-      [ ] Methods
-        [ ] Determine Type
-        [ ] Determine Brightness
-        [ ] Determine Wheel
-    [ ] Implement Color Palette
+    [ ] Refactor redundant (?) determine_wheel_color() elif chain so the redundancies aren't redundant
+    [X] Implemenet Color class
+      [X] Members
+        [X] Number
+        [X] Hue
+        [X] Saturation
+        [X] Value
+        [X] Type (see: Primary, Secondary, Tertiary)
+        [X] Brightness (see: Light, Medium, Dark)
+        [X] Wheel (see: Greyscale, Blue, Blue-Green, Green, Yellow-Green)
+      [X] Methods
+        [X] Determine Type
+        [X] Determine Brightness
+        [X] Determine Wheel
+    [ ] Implement Color Palette class
       [ ] Members
         [ ] Number of Colors in Vector
         [ ] Vector of Colors
