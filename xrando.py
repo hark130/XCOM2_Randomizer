@@ -1,5 +1,6 @@
 from copy import deepcopy
 from Harklepalette import Color
+from Harklepalette import MainArmorPalette
 from random import randint
 # import Harklepalette
 import os
@@ -43,8 +44,9 @@ listOfGenders = [ "Male", "Female" ]
 
 listOfColorSchemes = [ \
     "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-    "Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-    "Random Chaos", "Earthy", "Urban", \
+    "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+    "3 Colors - Split Complementary", "3 Colors - Secondary", "Random Chaos", \
+    "Earthy", "Urban", "Emo", \
 ]
 
 listOfHelmetHats = [ \
@@ -175,6 +177,8 @@ listOfRaces = [ \
     "0 - Caucasian", "1 - Afican", "2 - Asian", \
     "3 - Hispanic", \
 ]
+
+
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
@@ -1391,6 +1395,24 @@ def rando_facial_hair(armorStyle, gender, nationality, race):
     return retVal
 
 
+def rando_color_scheme(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    tmpInt = randint(0, listOfColorSchemes.__len__() - 1)
+    
+    ### RANDOMIZE A COLOR SCHEME ###
+    ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
+    # retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
+    retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
+    # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
+
+    return retVal
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -1417,7 +1439,11 @@ if __name__ == "__main__":
         "Skin Color", "Main Armor Color", "Secondary Armor Color", \
         "Weapon Color", "Voice", "Attitude", \
     ]
-    
+    armorColorScheme = ""
+    mainArmorColors = None
+    secondaryArmorColors = None
+    weaponArmorColors = None
+
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
     # 1.1. Nationality
@@ -1476,6 +1502,13 @@ if __name__ == "__main__":
     # 3.4. Eye Color
     # 3.6. Skin Color
     # 3.7. Main Armor Color
+    # 3.7.1. Randomize a Color Scheme
+    armorColorScheme = rando_color_scheme(propsOptions["Armor Style"])
+    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
+    # 3.7.2. Instanstiate Main Armor Colors Object
+    mainArmorColors = MainArmorPalette(armorColorScheme)
+    # 3.7.3. Randomize a Main Armor Color
+    appearanceOptions["Main Armor Color"] = mainArmorColors.get_color()
     # 3.8. Secondary Armor Color
     # 3.9. Weapon Color
     # 3.10. Voice
@@ -1502,81 +1535,91 @@ if __name__ == "__main__":
 
     # 3. APPEARANCE
     print("APPEARANCE:")
+    print("\t{}:\t{}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
     for key in appearanceList:
         if key in appearanceOptions.keys():
             if appearanceOptions[key] != None:
                 print("\t{}:  {}".format(key, appearanceOptions[key]))
     print("\n")
 
-    ### TESTING ###
-    test = Color(0, 72, 59, 20)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # ### TESTING ###
+    # test = Color(0, 72, 59, 20)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(3, 33, 57, 58)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(3, 33, 57, 58)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(4, 31, 47, 84)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(4, 31, 47, 84)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(5, 206, 20, 14)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(5, 206, 20, 14)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(14, 21, 93, 90)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(14, 21, 93, 90)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(34, 82, 14, 31)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(34, 82, 14, 31)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(55, 19, 21, 31)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(55, 19, 21, 31)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    test = Color(56, 200, 18, 13)
-    print("Color Num:\t{}".format(test.num))
-    print("Color Hue:\t{}".format(test.hue))
-    print("Color Sat:\t{}".format(test.sat))
-    print("Color Val:\t{}".format(test.val))
-    print("Color Type:\t{}".format(test.colorType))
-    print("Brightness:\t{}".format(test.brightness))
-    print("Wheel Color:\t{}\n".format(test.wheelColor))
+    # test = Color(56, 200, 18, 13)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
+
+    # test = Color(76, 60, 100, 100)
+    # print("Color Num:\t{}".format(test.num))
+    # print("Color Hue:\t{}".format(test.hue))
+    # print("Color Sat:\t{}".format(test.sat))
+    # print("Color Val:\t{}".format(test.val))
+    # print("Color Type:\t{}".format(test.colorType))
+    # print("Brightness:\t{}".format(test.brightness))
+    # print("Wheel Color:\t{}\n".format(test.wheelColor))
