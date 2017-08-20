@@ -4,7 +4,16 @@ class Color:
 	wheelColor = ""
 	colorType = ""
 	brightness = ""
-
+	validColors = [ \
+		"Greyscale", "Red", "Red Orange", \
+		"Orange", "Orange Yellow", "Yellow", \
+		"Yellow Green", "Green", "Green Blue", \
+		"Blue", "Blue Indigo", "Indigo", \
+		"Indigo Violet", "Violet", "Violet Red", \
+	]
+	validTypes = [ \
+		"Primary", "Secondary", "Tertiary", \
+	]
 
 	def __init__(self, number, hue, saturation, value):
 		### INPUT VALIDATION ###
@@ -53,6 +62,7 @@ class Color:
 		violetRedHue = 330
 		upperLimitHue = 360
 
+		### DETERMINE WHEEL COLOR ###
 		if self.sat <= greyscaleSatThresh:
 			retVal = "Greyscale"
 		elif self.hue >= redHue and self.hue < ((redHue + redOrangeHue) / 2):
@@ -92,10 +102,25 @@ class Color:
 
 
 	def determine_color_type(self):
+		### LOCAL VARIABLES ###
 		retVal = "UNDEFINED"
 
+		### INPUT VALIDATION ###
+		if self.wheelColor == "" or self.wheelColor == "UNDEFINED":
+			pass  # Return "UNDEFINED"
+		elif self.wheelColor not in self.validColors:
+			raise ValueError("Invalid wheel color")
+		else:
+			### DETERMINE COLOR TYPE ###
+			if self.wheelColor == "Red" or self.wheelColor == "Yellow" or self.wheelColor == "Blue":
+				retVal = "Primary"
+			elif self.wheelColor == "Orange" or self.wheelColor == "Green" or self.wheelColor == "Violet":
+				retVal = "Secondary"
+			else:
+				retVal = "Tertiary"
 
 		return retVal
+
 
 	def determine_brightness(self):
 		### LOCAL VARIABLES ###
@@ -105,20 +130,14 @@ class Color:
 		mediumThresh = lightThresh * 2
 		satWeight = .5
 		valWeight = 2 - satWeight
-		validColors = [ \
-			"Greyscale", "Red", "Red Orange", \
-			"Orange", "Orange Yellow", "Yellow", \
-			"Yellow Green", "Green", "Green Blue", \
-			"Blue", "Blue Indigo", "Indigo", \
-			"Indigo Violet", "Violet", "Violet Red", \
-		]
 
 		### INPUT VALIDATION ###
 		if self.wheelColor == "" or self.wheelColor == "UNDEFINED":
 			pass  # Return "UNDEFINED"
-		elif self.wheelColor not in validColors:
+		elif self.wheelColor not in self.validColors:
 			raise ValueError("Invalid wheel color")
 		else:
+			### DETERMINE BRIGHTNESS ###
 			brightVal = (self.sat * satWeight) + ((100 - self.val) * valWeight)
 			if brightVal <= lightThresh:
 				retVal = "Light"
