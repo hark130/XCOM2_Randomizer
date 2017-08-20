@@ -98,8 +98,36 @@ class Color:
 		return retVal
 
 	def determine_brightness(self):
+		### LOCAL VARIABLES ###
+		retVal = "UNDEFINED"
+		brightVal = 0  # Used to hold the computed sum of saturation and value
+		lightThresh = (100 + 100) / 3
+		mediumThresh = lightThresh * 2
+		satWeight = .5
+		valWeight = 2 - satWeight
+		validColors = [ \
+			"Greyscale", "Red", "Red Orange", \
+			"Orange", "Orange Yellow", "Yellow", \
+			"Yellow Green", "Green", "Green Blue", \
+			"Blue", "Blue Indigo", "Indigo", \
+			"Indigo Violet", "Violet", "Violet Red", \
+		]
 
-		return "b"
+		### INPUT VALIDATION ###
+		if self.wheelColor == "" or self.wheelColor == "UNDEFINED":
+			pass  # Return "UNDEFINED"
+		elif self.wheelColor not in validColors:
+			raise ValueError("Invalid wheel color")
+		else:
+			brightVal = (self.sat * satWeight) + ((100 - self.val) * valWeight)
+			if brightVal <= lightThresh:
+				retVal = "Light"
+			elif brightVal <= mediumThresh:
+				retVal = "Medium"
+			else:
+				retVal = "Dark"
+
+		return retVal
 
 
 
