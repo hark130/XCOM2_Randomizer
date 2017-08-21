@@ -66,10 +66,10 @@ This is a python script to randomize XCOM2 character customizations for me
           [ ] Urban
           [ ] Emo
           [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
-      [/] Inherit Child Color Palette Classes
+      [X] Inherit Child Color Palette Classes
         [X] Main Armor Color
-        [ ] Secondary Armor Color
-        [ ] Weapon Color
+        [X] Secondary Armor Color
+        [X] Weapon Color
 
 
 ## NOTES/RESEARCH
