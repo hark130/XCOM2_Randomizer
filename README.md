@@ -37,6 +37,8 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Refactor redundant (?) determine_wheel_color() elif chain so the redundancies aren't redundant
     [ ] Refacotr redundant (?) division of mono_primary(), mono_secondary(), etc into a single function
     [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
+    [ ] Implement a get_color() wrapper in Weapon Color Palette to sometimes, based on armor style, return normal colored weapons (see: Greyscale)
+    [ ] WRT Main and Secondary Armor colors, Dark (or at least Medium) probably looks better with Light and vice versa... especially Greyscale
     [X] Implemenet Color class
       [X] Members
         [X] Number
@@ -57,10 +59,10 @@ This is a python script to randomize XCOM2 character customizations for me
       [/] Methods
         [X] Count a color
         [/] Find a complementary color
-          [/] Monochromatic
+          [X] Monochromatic
             [X] Primary
             [X] Secondary
-            [ ] Tertiary
+            [X] Tertiary
           [ ] 2 Colors
           [ ] 3 Colors
           [ ] Random
@@ -77,6 +79,8 @@ This is a python script to randomize XCOM2 character customizations for me
 ### IMPLEMENTING NEW COLOR SCHEMES
 Update:
   * Harklepalette: ColorPalette.implementedSchemes[]
+  * Harklepalette: ColorPalette.get_color()
+  * Harklepalette: Add new method (called by ColorPalette.get_color())
   * xrando: rando_color_scheme()
 ###[COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
   * Monochromatic - Primary
