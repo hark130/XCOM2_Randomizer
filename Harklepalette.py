@@ -244,7 +244,8 @@ class ColorPalette:
 			raise RuntimeError("How did we get here?!")
 
 		### EXTRACT THE COLOR NUMBER ###
-		retVal = randColor.num
+		# retVal = randColor.num
+		retVal = randColor
 
 		return retVal
 
