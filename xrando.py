@@ -1,6 +1,7 @@
 from copy import deepcopy
 from Harklepalette import Color
 from Harklepalette import MainArmorPalette
+from Harklepalette import SecondaryArmorPalette
 from random import randint
 # import Harklepalette
 import os
@@ -1511,7 +1512,7 @@ if __name__ == "__main__":
     appearanceOptions["Main Armor Color"] = mainArmorColors.get_color()
     # 3.8. Secondary Armor Color
     # 3.8.1. Instanstiate Secondary Armor Colors Object
-    secondaryArmorColors = SecondayArmorPalette(armorColorScheme)
+    secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
     # 3.8.2. Randomize a Secondary Armor Color
     appearanceOptions["Secondary Armor Color"] = secondaryArmorColors.get_color(appearanceOptions["Main Armor Color"])
     # 3.9. Weapon Color
