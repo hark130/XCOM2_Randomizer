@@ -1444,6 +1444,9 @@ if __name__ == "__main__":
     mainArmorColors = None
     secondaryArmorColors = None
     weaponArmorColors = None
+    mainColorObject = None  # Variable to hold Color object returned by MainArmorPalette.get_color()
+    secondaryColorObject = None  # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
+    weaponColorObject = None  # Variable to hold Color object returned by WeaponColorPalette.get_color()
 
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -1508,13 +1511,17 @@ if __name__ == "__main__":
     # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
     # 3.7.2. Instanstiate Main Armor Colors Object
     mainArmorColors = MainArmorPalette(armorColorScheme)
-    # 3.7.3. Randomize a Main Armor Color
-    appearanceOptions["Main Armor Color"] = mainArmorColors.get_color()
+    # 3.7.3. Get Color object
+    mainColorObject = mainArmorColors.get_color()
+    # 3.7.4. Randomize a Main Armor Color
+    appearanceOptions["Main Armor Color"] = mainColorObject.num
     # 3.8. Secondary Armor Color
     # 3.8.1. Instanstiate Secondary Armor Colors Object
     secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
-    # 3.8.2. Randomize a Secondary Armor Color
-    appearanceOptions["Secondary Armor Color"] = secondaryArmorColors.get_color(appearanceOptions["Main Armor Color"])
+    # 3.8.2. Randomize a Secondary Armor Color Object
+    secondaryColorObject = secondaryArmorColors.get_color(mainColorObject)
+    # 3.8.3. Store the Object's number
+    appearanceOptions["Secondary Armor Color"] = secondaryColorObject.num
     # 3.9. Weapon Color
     # 3.10. Voice
     # 3.11. Attitude
