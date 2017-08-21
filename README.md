@@ -82,7 +82,7 @@ Update:
   * Harklepalette: ColorPalette.get_color()
   * Harklepalette: Add new method (called by ColorPalette.get_color())
   * xrando: rando_color_scheme()
-###[COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
+### [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
   * Monochromatic - Primary
   * Monochromatic - Secondary
   * Monochromatic - Tertiary
