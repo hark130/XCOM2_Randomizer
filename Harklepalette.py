@@ -190,7 +190,7 @@ class ColorPalette:
 		"Earthy", "Urban", "Emo", \
 	]
 	implementedSchemes = [ \
-		"Monochromatic - Primary", "Monochromatic - Secondary", \
+		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -269,6 +269,8 @@ class ColorPalette:
 			retVal = self.get_mono_primary(colorToMatch)
 		elif self.scheme == "Monochromatic - Secondary":
 			retVal = self.get_mono_secondary(colorToMatch)
+		elif self.scheme == "Monochromatic - Tertiary":
+			retVal = self.get_mono_tertiary(colorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
@@ -309,7 +311,10 @@ class ColorPalette:
 		# 2. Count the colors in the list
 		numColors = self.count_colors(matchThisColor)
 		if numColors <= 0:
-			raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
+			matchThisColor = "Greyscale"
+			numColors = self.count_colors(matchThisColor)
 		# 3. Randomly choose a color
 		randNum = randint(1, numColors)
 		# 4. Find the randNum'th Color in this palette's list
@@ -351,7 +356,53 @@ class ColorPalette:
 		# 2. Count the colors in the list
 		numColors = self.count_colors(matchThisColor)
 		if numColors <= 0:
-			raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
+			matchThisColor = "Greyscale"
+			numColors = self.count_colors(matchThisColor)
+		# 3. Randomly choose a color
+		randNum = randint(1, numColors)
+		# 4. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == matchThisColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
+		return retVal
+
+
+	def get_mono_tertiary(self, colorToMatch = None):
+		'''
+			PURPOSE:	Get a tertiary color from the list of Colors in this palette
+			INPUT:		colorToMatch - Color class to match against
+			OUTPUT:		Color class of Type "Tertiary" that matches colorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a tertiary wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list to match that wheelColor
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  			# Function's return value of type Color
+		matchThisColor = None  	# Tertiary color to match
+		numColors = 0  			# Holds of the number of given tertiary color in the list
+		randNum = 0				# Holds a randomized value
+
+		### GET TERTIARY COLOR ###
+		# 1. Determine tertiary color
+		if colorToMatch is None:  # This is the starting color
+			matchThisColor = self.listOfTertiaryColors[randint(0, self.listOfTertiaryColors.__len__() - 1)]
+		else:
+			matchThisColor = colorToMatch.wheelColor  # This is the color to match
+		# 2. Count the colors in the list
+		numColors = self.count_colors(matchThisColor)
+		if numColors <= 0:
+			# raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
+			matchThisColor = "Greyscale"
+			numColors = self.count_colors(matchThisColor)
 		# 3. Randomly choose a color
 		randNum = randint(1, numColors)
 		# 4. Find the randNum'th Color in this palette's list
