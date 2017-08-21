@@ -190,10 +190,18 @@ class ColorPalette:
 		"Earthy", "Urban", "Emo", \
 	]
 	implementedSchemes = [ \
-		"Monochromatic - Primary", \
+		"Monochromatic - Primary", "Monochromatic - Secondary", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
+	]
+	listOfSecondaryColors = [ \
+		"Orange", "Green", "Violet", \
+	]
+	listOfTertiaryColors = [ \
+		"Red Orange", "Orange Yellow", "Yellow Green", \
+		"Green Blue", "Blue Indigo", "Indigo", \
+		"Indigo Violet", "Violet Red", \
 	]
 	scheme = ""
 
@@ -239,9 +247,10 @@ class ColorPalette:
 		if not isinstance(colorToMatch, Color) and colorToMatch is not None:
 			print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			raise TypeError("Color to match is not of type Color or NoneType")
-		elif colorToMatch is not None:
-			if colorToMatch.colorType != "Primary":
-				raise ValueError("This function does not match non-Primary colors")
+		########### WHY WAS THIS HERE? ###########
+		# elif colorToMatch is not None:
+		# 	if colorToMatch.colorType != "Primary":
+		# 		raise ValueError("This function does not match non-Primary colors")
 		elif self.scheme not in self.implementedSchemes:
 			# print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
@@ -257,14 +266,16 @@ class ColorPalette:
 		### CALL CORRESPONDING METHOD ###
 		if self.scheme == "Monochromatic - Primary":
 			# Get Primary Armor Color
-			randColor = self.get_mono_primary(colorToMatch)
+			retVal = self.get_mono_primary(colorToMatch)
+		elif self.scheme == "Monochromatic - Secondary":
+			retVal = self.get_mono_secondary(colorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
 
 		### EXTRACT THE COLOR NUMBER ###
 		# retVal = randColor.num
-		retVal = randColor
+		# retVal = randColor
 
 		return retVal
 
@@ -311,6 +322,46 @@ class ColorPalette:
 
 		# print("get_mono_primary() Randomized Color:\n")  # DEBUGGING
 		# print_color_object(retVal)  # DEBUGGING
+		return retVal
+
+
+	def get_mono_secondary(self, colorToMatch = None):
+		'''
+			PURPOSE:	Get a secondary color from the list of Colors in this palette
+			INPUT:		colorToMatch - Color class to match against
+			OUTPUT:		Color class of Type "Secondary" that matches colorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a secondary wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list to match that wheelColor
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  			# Function's return value of type Color
+		matchThisColor = None  	# Secondary color to match
+		numColors = 0  			# Holds of the number of given secondary color in the list
+		randNum = 0				# Holds a randomized value
+
+		### GET SECONDARY COLOR ###
+		# 1. Determine secondary color
+		if colorToMatch is None:  # This is the starting color
+			matchThisColor = self.listOfSecondaryColors[randint(0, self.listOfSecondaryColors.__len__() - 1)]
+		else:
+			matchThisColor = colorToMatch.wheelColor  # This is the color to match
+		# 2. Count the colors in the list
+		numColors = self.count_colors(matchThisColor)
+		if numColors <= 0:
+			raise ValueError("Could not find any {} colors".format(matchThisColor))
+		# 3. Randomly choose a color
+		randNum = randint(1, numColors)
+		# 4. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == matchThisColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
 		return retVal
 
 

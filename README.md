@@ -35,6 +35,8 @@ This is a python script to randomize XCOM2 character customizations for me
     		[ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
     		[ ] Mentions of certain words (see: prison, torture) will generate a starting scar
     [ ] Refactor redundant (?) determine_wheel_color() elif chain so the redundancies aren't redundant
+    [ ] Refacotr redundant (?) division of mono_primary(), mono_secondary(), etc into a single function
+    [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
     [X] Implemenet Color class
       [X] Members
         [X] Number
@@ -57,7 +59,7 @@ This is a python script to randomize XCOM2 character customizations for me
         [/] Find a complementary color
           [/] Monochromatic
             [X] Primary
-            [ ] Secondary
+            [X] Secondary
             [ ] Tertiary
           [ ] 2 Colors
           [ ] 3 Colors
@@ -65,7 +67,6 @@ This is a python script to randomize XCOM2 character customizations for me
           [ ] Earthy
           [ ] Urban
           [ ] Emo
-          [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
       [X] Inherit Child Color Palette Classes
         [X] Main Armor Color
         [X] Secondary Armor Color

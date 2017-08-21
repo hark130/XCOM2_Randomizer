@@ -1427,7 +1427,8 @@ def rando_color_scheme(armorStyle):
     ### RANDOMIZE A COLOR SCHEME ###
     ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
     # retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
-    retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
+    # retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
+    retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
