@@ -2,6 +2,8 @@ from copy import deepcopy
 from Harklepalette import Color
 from Harklepalette import MainArmorPalette
 from Harklepalette import SecondaryArmorPalette
+from Harklepalette import WeaponColorPalette
+from Harklepalette import print_color_object
 from random import randint
 # import Harklepalette
 import os
@@ -190,6 +192,22 @@ listOfRaces = [ \
 ################################
 ### GENERIC HELPER FUNCTIONS ###
 ################################
+
+
+# def print_color_object(colorToPrint):
+#     ### INPUT VALIDATION ###
+#     if not isinstance(colorToPrint, Color):
+#         raise TypeError("Color to print is not a Color object")
+
+#     print("Color Num:\t{}".format(colorToPrint.num))
+#     print("Color Hue:\t{}".format(colorToPrint.hue))
+#     print("Color Sat:\t{}".format(colorToPrint.sat))
+#     print("Color Val:\t{}".format(colorToPrint.val))
+#     print("Color Type:\t{}".format(colorToPrint.colorType))
+#     print("Brightness:\t{}".format(colorToPrint.brightness))
+#     print("Wheel Color:\t{}\n".format(colorToPrint.wheelColor))
+
+#     return
 
 
 def convert_num_to_word(number, capitalize = False):
@@ -1443,7 +1461,7 @@ if __name__ == "__main__":
     armorColorScheme = ""
     mainArmorColors = None
     secondaryArmorColors = None
-    weaponArmorColors = None
+    weaponColors = None
     mainColorObject = None  # Variable to hold Color object returned by MainArmorPalette.get_color()
     secondaryColorObject = None  # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
     weaponColorObject = None  # Variable to hold Color object returned by WeaponColorPalette.get_color()
@@ -1511,18 +1529,25 @@ if __name__ == "__main__":
     # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
     # 3.7.2. Instanstiate Main Armor Colors Object
     mainArmorColors = MainArmorPalette(armorColorScheme)
-    # 3.7.3. Get Color object
+    # 3.7.3. Randomize a Main Armor Color
     mainColorObject = mainArmorColors.get_color()
-    # 3.7.4. Randomize a Main Armor Color
+    # 3.7.4. Store the Main Armor Color Object's number
     appearanceOptions["Main Armor Color"] = mainColorObject.num
     # 3.8. Secondary Armor Color
     # 3.8.1. Instanstiate Secondary Armor Colors Object
     secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
     # 3.8.2. Randomize a Secondary Armor Color Object
     secondaryColorObject = secondaryArmorColors.get_color(mainColorObject)
-    # 3.8.3. Store the Object's number
+    # 3.8.3. Store the Secondary Armor Color Object's number
     appearanceOptions["Secondary Armor Color"] = secondaryColorObject.num
     # 3.9. Weapon Color
+    # 3.9.1. Instantiate Weapon Color Object
+    weaponColors = WeaponColorPalette(armorColorScheme)
+    # 3.9.2. Randomize a Weapon Color Object
+    weaponColorObject = weaponColors.get_color(mainColorObject)
+    
+    # 3.9.3. Store the Weapon Color Object's number
+    appearanceOptions["Weapon Color"] = weaponColorObject.num
     # 3.10. Voice
     # 3.11. Attitude
 
@@ -1554,84 +1579,10 @@ if __name__ == "__main__":
                 print("\t{}:  {}".format(key, appearanceOptions[key]))
     print("\n")
 
-    # ### TESTING ###
-    # test = Color(0, 72, 59, 20)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
+    ### TESTING ###
+    # print_color_object(mainColorObject)  # DEBUGGING
+    # print_color_object(secondaryColorObject)  # DEBUGGING
+    # print_color_object(weaponColorObject)  # DEBUGGING
+    # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
 
-    # test = Color(3, 33, 57, 58)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
 
-    # test = Color(4, 31, 47, 84)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(5, 206, 20, 14)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(14, 21, 93, 90)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(34, 82, 14, 31)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(55, 19, 21, 31)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(56, 200, 18, 13)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
-
-    # test = Color(76, 60, 100, 100)
-    # print("Color Num:\t{}".format(test.num))
-    # print("Color Hue:\t{}".format(test.hue))
-    # print("Color Sat:\t{}".format(test.sat))
-    # print("Color Val:\t{}".format(test.val))
-    # print("Color Type:\t{}".format(test.colorType))
-    # print("Brightness:\t{}".format(test.brightness))
-    # print("Wheel Color:\t{}\n".format(test.wheelColor))
