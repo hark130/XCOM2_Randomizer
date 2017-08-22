@@ -254,7 +254,6 @@ class ColorPalette:
 			OUTPUT:  	A "valid color" from validColors
 			NOTE: 		If offset is 0, will return a randomized "valid color"
 		'''
-		##################### DON'T FORGET TO IMPLEMENT OFFSET 0 FUNCTIONALITY #####################
 		### INPUT VALIDATION ###
 		if not isinstance(startingColor, str):
 			raise TypeError("Starting color is not a string")
@@ -278,10 +277,12 @@ class ColorPalette:
 		else:
 			numColors = self.validColors.__len__() - 1 # 15 --> 14
 
-		# newOffset = offset % numColors  # Just in case offset is larger than the length of the list
-		currIndex = self.validColors.index(startingColor)  # Get the index of the starting color
-		newIndex = (currIndex + offset) % (numColors + 1)
-		retVal = self.validColors[newIndex]
+		if offset != 0:
+			currIndex = self.validColors.index(startingColor)  # Get the index of the starting color
+			newIndex = (currIndex + offset) % (numColors + 1)
+			retVal = self.validColors[newIndex]
+		else:
+			retVal = self.validColors[randint(0, self.validColors.__len__() - 1)]
 
 		return retVal
 
