@@ -398,6 +398,37 @@ class SpecialTests(SpinTest):
 				self.assertTrue(tmpRetVal in self.palette.validColors)
 
 
+	def test_02_Offset_Zero(self):
+		### LOCAL VARIABLES ###
+		numIterations = 10	# Number of times to loop through valid colors
+		tmpRetVal = None  	# Temporarily holds return value from spin_a_color
+		expectedKey = 0 	# Holds the calculated key of the expected return value
+		staticOffset = 0	# Offset parameter for this test
+		skipGrey = True 	# skipGreyscale parameter for this test
+		testCounter = 0		# Counts the number of function calls that have been made
+		randFailCount = 0	# Counts the number of times tmpRetVal == self.colorDict[key]
+
+		### RUN THE TESTS ###
+		for num in range(1, numIterations):
+			for key in self.colorDict.keys():
+				try:
+					tmpRetVal = self.palette.spin_a_color(self.colorDict[key], staticOffset, skipGrey)
+				except Exception as err:
+					self.fail("Raised an exception")
+				else:
+					# Increment test counter
+					testCounter += 1
+					# Verify return value is valid
+					self.assertTrue(tmpRetVal in self.palette.validColors)
+					# Check tmpRetVal against the startingColor parameter
+					if tmpRetVal == self.colorDict[key]:
+						randFailCount += 1
+
+		### CHECK THE NUMBER OF FAILURES TO RANDOMIZE A COLOR ###
+		if (randFailCount / testCounter) > .25:
+			self.fail("spin_a_color does not appear to be randomizing return values on offset 0")
+
+
 if __name__ == "__main__":
 
 	# Run all the tests!
