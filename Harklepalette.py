@@ -174,11 +174,12 @@ class ColorPalette:
 
 	listOfColors = []  # This will hold all the colors available in this specific palette
 	validColors = [ \
-		"Greyscale", "Red", "Red Orange", \
+		"Red", "Red Orange", \
 		"Orange", "Orange Yellow", "Yellow", \
 		"Yellow Green", "Green", "Green Blue", \
 		"Blue", "Blue Indigo", "Indigo", \
 		"Indigo Violet", "Violet", "Violet Red", \
+		"Greyscale", \
 	]
 	validTypes = [ \
 		"Primary", "Secondary", "Tertiary", \
@@ -191,6 +192,7 @@ class ColorPalette:
 	]
 	implementedSchemes = [ \
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+		"2 Colors - Analogous", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -242,6 +244,48 @@ class ColorPalette:
 		return retVal
 
 
+	def spin_a_color(self, startingColor, offset, skipGreyscale):
+		'''
+			PURPOSE:	Spin the wheel of color to find an offset
+			INPUT:  	
+						startingColor - A valid color as the starting location
+						offset - Positive or negative number to spin the wheel
+						skipGreyscale - type(bool) True, ignore "Greyscale"
+			OUTPUT:  	A "valid color" from validColors
+			NOTE: 		If offset is 0, will return a randomized "valid color"
+		'''
+		##################### DON'T FORGET TO IMPLEMENT OFFSET 0 FUNCTIONALITY #####################
+		### INPUT VALIDATION ###
+		if not isinstance(startingColor, str):
+			raise TypeError("Starting color is not a string")
+		elif not isinstance(offset, int):
+			raise TypeError("Offset is not an integer")
+		elif not isinstance(skipGreyscale, bool):
+			raise TypeError("Skip Greyscale is not a bool")
+		elif startingColor not in self.validColors:
+			raise ValueError("Invalid starting color")
+
+		### LOCAL VARIABLES ###
+		retVal = None  # validColor name to return
+		numColors = 0  # Number of colors to spin through
+		# newOffset = 0  # Modified offset
+		currIndex = 0  # Current index of the starting color
+		newIndex = 0   # Index of the color that got spun
+
+		### CALCULATIONS ###
+		if skipGreyscale is True:
+			numColors = self.validColors.__len__() - 2  # 15 --> 13
+		else:
+			numColors = self.validColors.__len__() - 1 # 15 --> 14
+
+		# newOffset = offset % numColors  # Just in case offset is larger than the length of the list
+		currIndex = self.validColors.index(startingColor)  # Get the index of the starting color
+		newIndex = (currIndex + offset) % (numColors + 1)
+		retVal = self.validColors[newIndex]
+
+		return retVal
+
+
 	def get_color(self, colorToMatch = None):
 		### INPUT VALIDATION ###
 		if not isinstance(colorToMatch, Color) and colorToMatch is not None:
@@ -271,6 +315,8 @@ class ColorPalette:
 			retVal = self.get_mono_secondary(colorToMatch)
 		elif self.scheme == "Monochromatic - Tertiary":
 			retVal = self.get_mono_tertiary(colorToMatch)
+		elif self.scheme == "2 Colors - Analogous":
+			retVal = self.get_two_analogous(colorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
@@ -383,6 +429,49 @@ class ColorPalette:
 							randomly select a Color from the palette's list to match that wheelColor
 						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
 							select a Color from the palette's list to match that wheelColor
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  			# Function's return value of type Color
+		matchThisColor = None  	# Tertiary color to match
+		numColors = 0  			# Holds of the number of given tertiary color in the list
+		randNum = 0				# Holds a randomized value
+
+		### GET TERTIARY COLOR ###
+		# 1. Determine tertiary color
+		if colorToMatch is None:  # This is the starting color
+			matchThisColor = self.listOfTertiaryColors[randint(0, self.listOfTertiaryColors.__len__() - 1)]
+		else:
+			matchThisColor = colorToMatch.wheelColor  # This is the color to match
+		# 2. Count the colors in the list
+		numColors = self.count_colors(matchThisColor)
+		if numColors <= 0:
+			# raise ValueError("Could not find any {} colors".format(matchThisColor))
+			# print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
+			matchThisColor = "Greyscale"
+			numColors = self.count_colors(matchThisColor)
+		# 3. Randomly choose a color
+		randNum = randint(1, numColors)
+		# 4. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == matchThisColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
+		return retVal
+
+
+	def get_two_analogous(self, colorToMatch = None):
+		'''
+			PURPOSE:	Get an analogous color from the list of Colors in this palette
+			INPUT:		colorToMatch - Color class to match against
+			OUTPUT:		Color class that is analogous to colorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list analogous to that wheelColor
 		'''
 		### LOCAL VARIABLES ###
 		retVal = None  			# Function's return value of type Color
