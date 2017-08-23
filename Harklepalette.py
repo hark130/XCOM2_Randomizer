@@ -25,13 +25,14 @@ class Color:
 	colorType = ""
 	brightness = ""
 	validColors = [ \
-		"Greyscale", "Red", "Red Orange", \
+		"Red", "Red Orange", \
 		"Orange", "Orange Yellow", "Yellow", \
 		"Yellow Green", "Green", "Green Blue", \
 		"Blue", \
 		# "Blue", "Blue Indigo", "Indigo", \
 		"Blue Violet", "Violet", "Violet Red", \
 		# "Indigo Violet", "Violet", "Violet Red", \
+		"Greyscale", \
 	]
 	validTypes = [ \
 		"Primary", "Secondary", "Tertiary", \
@@ -222,6 +223,11 @@ class ColorPalette:
 		"Violet Red", \
 	]
 	scheme = ""
+	# # Store the colors selected under this palette
+	# mainColor = Color(0, 0, 0, 0)
+	# secondaryColor = Color(0, 0, 0, 0)
+	# weaponColor = Color(0, 0, 0, 0)
+
 
 	def __init__(self, scheme):
 		### INPUT VALIDATION ###
@@ -303,15 +309,14 @@ class ColorPalette:
 		return retVal
 
 
-	def get_color(self, colorToMatch = None):
+	def get_color(self, colorToMatch = None, secondColorToMatch = None):
 		### INPUT VALIDATION ###
 		if not isinstance(colorToMatch, Color) and colorToMatch is not None:
 			print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			raise TypeError("Color to match is not of type Color or NoneType")
-		########### WHY WAS THIS HERE? ###########
-		# elif colorToMatch is not None:
-		# 	if colorToMatch.colorType != "Primary":
-		# 		raise ValueError("This function does not match non-Primary colors")
+		elif not isinstance(secondColorToMatch, Color) and secondColorToMatch is not None:
+			print("get_color():\secondColorToMatch is of type {}\n".format(secondColorToMatch))  # DEBUGGING
+			raise TypeError("Second color to match is not of type Color or NoneType")
 		elif self.scheme not in self.implementedSchemes:
 			# print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
@@ -327,13 +332,13 @@ class ColorPalette:
 		### CALL CORRESPONDING METHOD ###
 		if self.scheme == "Monochromatic - Primary":
 			# Get Primary Armor Color
-			retVal = self.get_mono_primary(colorToMatch)
+			retVal = self.get_mono_primary(colorToMatch, secondColorToMatch)
 		elif self.scheme == "Monochromatic - Secondary":
-			retVal = self.get_mono_secondary(colorToMatch)
+			retVal = self.get_mono_secondary(colorToMatch, secondColorToMatch)
 		elif self.scheme == "Monochromatic - Tertiary":
-			retVal = self.get_mono_tertiary(colorToMatch)
+			retVal = self.get_mono_tertiary(colorToMatch, secondColorToMatch)
 		elif self.scheme == "2 Colors - Analogous":
-			retVal = self.get_two_analogous(colorToMatch)
+			retVal = self.get_two_analogous(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
@@ -345,10 +350,12 @@ class ColorPalette:
 		return retVal
 
 
-	def get_mono_primary(self, colorToMatch = None):
+	def get_mono_primary(self, colorToMatch = None, secondColorToMatch = None):
 		'''
 			PURPOSE:	Get a primary color from the list of Colors in this palette
-			INPUT:		colorToMatch - Color class to match against
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
 			OUTPUT:		Color class of Type "Primary" that matches colorToMatch
 			NOTE:
 						If colorToMatch is None, will randomly select a primary wheelColor and then
@@ -393,10 +400,12 @@ class ColorPalette:
 		return retVal
 
 
-	def get_mono_secondary(self, colorToMatch = None):
+	def get_mono_secondary(self, colorToMatch = None, secondColorToMatch = None):
 		'''
 			PURPOSE:	Get a secondary color from the list of Colors in this palette
-			INPUT:		colorToMatch - Color class to match against
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
 			OUTPUT:		Color class of Type "Secondary" that matches colorToMatch
 			NOTE:
 						If colorToMatch is None, will randomly select a secondary wheelColor and then
@@ -436,10 +445,12 @@ class ColorPalette:
 		return retVal
 
 
-	def get_mono_tertiary(self, colorToMatch = None):
+	def get_mono_tertiary(self, colorToMatch = None, secondColorToMatch = None):
 		'''
 			PURPOSE:	Get a tertiary color from the list of Colors in this palette
-			INPUT:		colorToMatch - Color class to match against
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
 			OUTPUT:		Color class of Type "Tertiary" that matches colorToMatch
 			NOTE:
 						If colorToMatch is None, will randomly select a tertiary wheelColor and then
@@ -479,10 +490,12 @@ class ColorPalette:
 		return retVal
 
 
-	def get_two_analogous(self, colorToMatch = None):
+	def get_two_analogous(self, colorToMatch = None, secondColorToMatch = None):
 		'''
 			PURPOSE:	Get an analogous color from the list of Colors in this palette
-			INPUT:		colorToMatch - Color class to match against
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
 			OUTPUT:		Color class that is analogous to colorToMatch
 			NOTE:
 						If colorToMatch is None, will randomly select a wheelColor and then
