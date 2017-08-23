@@ -1,9 +1,9 @@
 from copy import deepcopy
 from Harklepalette import Color
 from Harklepalette import MainArmorPalette
+from Harklepalette import print_color_object
 from Harklepalette import SecondaryArmorPalette
 from Harklepalette import WeaponColorPalette
-from Harklepalette import print_color_object
 from random import randint
 # import Harklepalette
 import os
@@ -1432,6 +1432,7 @@ def rando_color_scheme(armorStyle):
     # retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
     # retVal = listOfColorSchemes[2]  # Monochromatic - Tertiary Colors
     retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
+    # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
@@ -1584,9 +1585,9 @@ if __name__ == "__main__":
     print("\n")
 
     ### TESTING ###
-    # print_color_object(mainColorObject)  # DEBUGGING
-    # print_color_object(secondaryColorObject)  # DEBUGGING
-    # print_color_object(weaponColorObject)  # DEBUGGING
+    print_color_object(mainColorObject)  # DEBUGGING
+    print_color_object(secondaryColorObject)  # DEBUGGING
+    print_color_object(weaponColorObject)  # DEBUGGING
     # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
 
 
