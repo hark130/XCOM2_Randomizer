@@ -492,7 +492,7 @@ class ColorPalette:
 		if randNum == 0:
 			randNum = -1
 		# 3. Determine the color at that offset
-		analogousColor = spin_a_color(matchThisColor, randNum, True)
+		analogousColor = self.spin_a_color(matchThisColor, randNum, True)
 		# 4. Count the colors in the list
 		numColors = self.count_colors(analogousColor)
 		if numColors <= 0:
