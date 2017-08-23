@@ -510,6 +510,59 @@ class ColorPalette:
 
 		return retVal
 
+	
+	def get_two_complementary(self, colorToMatch = None):
+		'''
+			PURPOSE:	Get a complementary color from the list of Colors in this palette
+			INPUT:		colorToMatch - Color class to match against
+			OUTPUT:		Color class that is complementary to colorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list complementary to that wheelColor
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  			# Function's return value of type Color
+		matchThisColor = None  		# Color to match
+		complementaryColor = None	# wheelColor string used to randomize the return value
+		numColors = 0  			# Holds of the number of given tertiary color in the list
+		randNum = 0			# Holds a randomized value
+		offset = 0			# Holds the calculated offset for the inevitable spin_a_color() function call
+
+		### GET COLOR ###
+		# 1. Determine starting color
+		if colorToMatch is None:  # This is the starting color
+			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
+		else:
+			matchThisColor = colorToMatch.wheelColor  # This is the color to match
+		# 2. Determine offset 
+		if (self.validColors.__len__() - 1) % 2 == 0:  # Even (NOTE: Minus 1 for Greyscale)
+			offset = (self.validColors.__len__() - 1) / 2
+		else:  # Odd
+			randNum = randint(0, 1)
+			if randNum == 0:
+				randNum = -1
+			offset = (self.validColors.__len__() - 1 + randNum) / 2
+		# 3. Determine the color at that offset
+		analogousColor = spin_a_color(matchThisColor, offset, True)
+		# 4. Count the colors in the list
+		numColors = self.count_colors(analogousColor)
+		if numColors <= 0:
+			analogousColor = "Greyscale"
+			numColors = self.count_colors(analogousColor)
+		# 3. Randomly choose a color
+		randNum = randint(1, numColors)
+		# 4. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == analogousColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
+		return retVal
+	
 
 class MainArmorPalette(ColorPalette):
 	'This class can randomly choose main armor colors from a collection based on established color schemes'
