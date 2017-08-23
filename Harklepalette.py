@@ -28,8 +28,10 @@ class Color:
 		"Greyscale", "Red", "Red Orange", \
 		"Orange", "Orange Yellow", "Yellow", \
 		"Yellow Green", "Green", "Green Blue", \
-		"Blue", "Blue Indigo", "Indigo", \
-		"Indigo Violet", "Violet", "Violet Red", \
+		"Blue", \
+		# "Blue", "Blue Indigo", "Indigo", \
+		"Blue Violet", "Violet", "Violet Red", \
+		# "Indigo Violet", "Violet", "Violet Red", \
 	]
 	validTypes = [ \
 		"Primary", "Secondary", "Tertiary", \
@@ -75,9 +77,10 @@ class Color:
 		greenHue = 120
 		greenBlueHue = 180
 		blueHue = 240
-		blueIndigoHue = 255
-		indigoHue = 270
-		indigoVioletHue = 285
+		# blueIndigoHue = 255
+		# indigoHue = 270
+		blueVioletHue = 270
+		# indigoVioletHue = 285
 		violetHue = 300
 		violetRedHue = 330
 		upperLimitHue = 360
@@ -101,16 +104,25 @@ class Color:
 			retVal = "Green"
 		elif self.hue >= ((greenHue + greenBlueHue) / 2) and self.hue < ((greenBlueHue + blueHue) / 2):
 			retVal = "Green Blue"
-		elif self.hue >= ((greenBlueHue + blueHue) / 2) and self.hue < ((blueHue + blueIndigoHue) / 2):
+		############## OLD VISIBLE LIGHT SPECTRUM COLORS ##############
+		# elif self.hue >= ((greenBlueHue + blueHue) / 2) and self.hue < ((blueHue + blueIndigoHue) / 2):
+		# 	retVal = "Blue"
+		# elif self.hue >= ((blueHue + blueIndigoHue) / 2) and self.hue < ((blueIndigoHue + indigoHue) / 2):
+		# 	retVal = "Blue Indigo"
+		# elif self.hue >= ((blueIndigoHue + indigoHue) / 2) and self.hue < ((indigoHue + indigoVioletHue) / 2):
+		# 	retVal = "Indigo"
+		# elif self.hue >= ((indigoHue + indigoVioletHue) / 2) and self.hue < ((indigoVioletHue + violetHue) / 2):
+		# 	retVal = "Indigo Violet"
+		# elif self.hue >= ((indigoVioletHue + violetHue) / 2) and self.hue < ((violetHue + violetRedHue) / 2):
+		# 	retVal = "Violet"
+		############## NEW COLOR WHEEL COLORS ##############
+		elif self.hue >= ((greenBlueHue + blueHue) / 2) and self.hue < ((blueHue + blueVioletHue) / 2):
 			retVal = "Blue"
-		elif self.hue >= ((blueHue + blueIndigoHue) / 2) and self.hue < ((blueIndigoHue + indigoHue) / 2):
-			retVal = "Blue Indigo"
-		elif self.hue >= ((blueIndigoHue + indigoHue) / 2) and self.hue < ((indigoHue + indigoVioletHue) / 2):
-			retVal = "Indigo"
-		elif self.hue >= ((indigoHue + indigoVioletHue) / 2) and self.hue < ((indigoVioletHue + violetHue) / 2):
-			retVal = "Indigo Violet"
-		elif self.hue >= ((indigoVioletHue + violetHue) / 2) and self.hue < ((violetHue + violetRedHue) / 2):
+		elif self.hue >= ((blueHue + blueVioletHue) / 2) and self.hue < ((blueVioletHue + violetHue) / 2):
+			retVal = "Blue Violet"
+		elif self.hue >= ((blueVioletHue + violetHue) / 2) and self.hue < ((violetHue + violetRedHue) / 2):
 			retVal = "Violet"
+		############## OLD COLOR WHEEL COLORS ##############
 		elif self.hue >= ((violetHue + violetRedHue) / 2) and self.hue < ((violetRedHue + upperLimitHue) / 2):
 			retVal = "Violet Red"
 		elif self.hue >= ((violetRedHue + upperLimitHue) / 2) and self.hue <= upperLimitHue:
@@ -177,8 +189,10 @@ class ColorPalette:
 		"Red", "Red Orange", \
 		"Orange", "Orange Yellow", "Yellow", \
 		"Yellow Green", "Green", "Green Blue", \
-		"Blue", "Blue Indigo", "Indigo", \
-		"Indigo Violet", "Violet", "Violet Red", \
+		"Blue", \
+		# "Blue", "Blue Indigo", "Indigo", \
+		"Blue Violet", "Violet", "Violet Red", \
+		# "Indigo Violet", "Violet", "Violet Red", \
 		"Greyscale", \
 	]
 	validTypes = [ \
@@ -202,8 +216,10 @@ class ColorPalette:
 	]
 	listOfTertiaryColors = [ \
 		"Red Orange", "Orange Yellow", "Yellow Green", \
-		"Green Blue", "Blue Indigo", "Indigo", \
-		"Indigo Violet", "Violet Red", \
+		# "Green Blue", "Blue Indigo", "Indigo", \
+		"Green Blue", "Blue Violet", \
+		# "Indigo Violet", "Violet Red", \
+		"Violet Red", \
 	]
 	scheme = ""
 
