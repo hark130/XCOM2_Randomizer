@@ -476,28 +476,33 @@ class ColorPalette:
 		'''
 		### LOCAL VARIABLES ###
 		retVal = None  			# Function's return value of type Color
-		matchThisColor = None  	# Tertiary color to match
+		matchThisColor = None  	# Color to match
+		analogousColor = None	# wheelColor string used to randomize the return value
 		numColors = 0  			# Holds of the number of given tertiary color in the list
 		randNum = 0				# Holds a randomized value
 
-		### GET TERTIARY COLOR ###
-		# 1. Determine tertiary color
+		### GET COLOR ###
+		# 1. Determine starting color
 		if colorToMatch is None:  # This is the starting color
-			matchThisColor = self.listOfTertiaryColors[randint(0, self.listOfTertiaryColors.__len__() - 1)]
+			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
 		else:
 			matchThisColor = colorToMatch.wheelColor  # This is the color to match
-		# 2. Count the colors in the list
-		numColors = self.count_colors(matchThisColor)
+		# 2. Randomize offset of -1 or 1
+		randNum = randint(0, 1)
+		if randNum == 0:
+			randNum = -1
+		# 3. Determine the color at that offset
+		analogousColor = spin_a_color(matchThisColor, randNum, True)
+		# 4. Count the colors in the list
+		numColors = self.count_colors(analogousColor)
 		if numColors <= 0:
-			# raise ValueError("Could not find any {} colors".format(matchThisColor))
-			# print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
-			matchThisColor = "Greyscale"
-			numColors = self.count_colors(matchThisColor)
+			analogousColor = "Greyscale"
+			numColors = self.count_colors(analogousColor)
 		# 3. Randomly choose a color
 		randNum = randint(1, numColors)
 		# 4. Find the randNum'th Color in this palette's list
 		for swatch in self.listOfColors:
-			if swatch.wheelColor == matchThisColor:
+			if swatch.wheelColor == analogousColor:
 				randNum -= 1
 				if randNum == 0:
 					retVal = swatch
