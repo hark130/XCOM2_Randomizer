@@ -25,11 +25,12 @@ class SpinTest(unittest.TestCase):
 		self.colorDict[6] = self.palette.validColors[6]		# "Green"
 		self.colorDict[7] = self.palette.validColors[7]		# "Green Blue"
 		self.colorDict[8] = self.palette.validColors[8]		# "Blue"
-		self.colorDict[9] = self.palette.validColors[9]		# "Blue Indigo"
-		self.colorDict[10] = self.palette.validColors[10]	# "Indigo"
-		self.colorDict[11] = self.palette.validColors[11]	# "Indigo Violet"
-		self.colorDict[12] = self.palette.validColors[12]	# "Violet"
-		self.colorDict[13] = self.palette.validColors[13]	# "Violet Red"
+		# self.colorDict[9] = self.palette.validColors[9]		# "Blue Indigo"
+		# self.colorDict[10] = self.palette.validColors[10]	# "Indigo"
+		# self.colorDict[11] = self.palette.validColors[11]	# "Indigo Violet"
+		self.colorDict[9] = self.palette.validColors[9]		# "Blue Violet"
+		self.colorDict[10] = self.palette.validColors[10]	# "Violet"
+		self.colorDict[11] = self.palette.validColors[11]	# "Violet Red"
 
 
 class NormalTests(SpinTest):
@@ -49,9 +50,9 @@ class NormalTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_02_Spin_Neg_One(self):
@@ -68,9 +69,9 @@ class NormalTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_03_Spin_Seven(self):
@@ -87,9 +88,9 @@ class NormalTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_04_Spin_Neg_Seven(self):
@@ -106,9 +107,9 @@ class NormalTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 class ErrorTests(SpinTest):
@@ -238,9 +239,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_02_Spin_Neg_Thirteen(self):
@@ -257,9 +258,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_03_Spin_Fourteen(self):
@@ -276,9 +277,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_04_Spin_Neg_Fourteen(self):
@@ -295,9 +296,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_05_Spin_Fifteen(self):
@@ -314,9 +315,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_06_Spin_Neg_Fifteen(self):
@@ -333,9 +334,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_07_Spin_A_Lot(self):
@@ -352,9 +353,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 	def test_08_Spin_Neg_A_Lot(self):
@@ -371,9 +372,9 @@ class BoundaryTests(SpinTest):
 			except Exception as err:
 				self.fail("Raised an exception")
 			else:
-				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 14)]))
+				# print("\nExpected Result:\t{}".format(self.colorDict[((key + staticOffset) % 12)]))
 				# print("Actual Result:\t\t{}".format(tmpRetVal))
-				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 14)])
+				self.assertTrue(tmpRetVal == self.colorDict[((key + staticOffset) % 12)])
 
 
 class SpecialTests(SpinTest):
