@@ -869,6 +869,24 @@ class ColorPalette:
 		return retVal
 	
 	
+	def get_random_colors(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get random colors from the list of Colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" (ignored)
+						secondColorToMatch - Secondary Armor Color (ignored)
+			OUTPUT:		Color class that has been completely randomized regardless of Main and Secondary
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		
+		### GET COLOR ###
+		# 1. Randomize color
+		retVal = self.listOfColors[randint(0, self.listOfColors.__len__() - 1)]
+
+		return retVal
+	
+	
 class MainArmorPalette(ColorPalette):
 	'This class can randomly choose main armor colors from a collection based on established color schemes'
 
