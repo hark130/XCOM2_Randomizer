@@ -207,7 +207,7 @@ class ColorPalette:
 	]
 	implementedSchemes = [ \
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-		"2 Colors - Analogous", \
+		"2 Colors - Analogous", "2 Colors - Complementary", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -339,6 +339,8 @@ class ColorPalette:
 			retVal = self.get_mono_tertiary(colorToMatch, secondColorToMatch)
 		elif self.scheme == "2 Colors - Analogous":
 			retVal = self.get_two_analogous(colorToMatch, secondColorToMatch)
+		elif self.scheme == "2 Colors - Complementary":
+			retVal = self.get_two_complementary(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
@@ -591,48 +593,61 @@ class ColorPalette:
 							select a Color from the palette's list complementary to that wheelColor
 		'''
 		### LOCAL VARIABLES ###
-		retVal = None  			# Function's return value of type Color
+		retVal = None  				# Function's return value of type Color
 		matchThisColor = None  		# Color to match
 		complementaryColor = None	# wheelColor string used to randomize the return value
-		numColors = 0  			# Holds of the number of given tertiary color in the list
-		randNum = 0			# Holds a randomized value
-		offset = 0			# Holds the calculated offset for the inevitable spin_a_color() function call
+		numColors = 0  				# Holds of the number of given tertiary color in the list
+		randNum = 0					# Holds a randomized value
+		offset = 0					# Holds the calculated offset for the inevitable spin_a_color() function call
 
 		### GET COLOR ###
 		# 1. Determine starting color
-		# Select Main
+		## 1.1. Select Main
 		if colorToMatch is None:  
 			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
-		# Select Weapon
+		## 1.2. Select Weapon
 		elif secondColorToMatch is not None:
 			randNum = randint(0, 1)
 			if randNum == 0:
 				matchThisColor = colorToMatch.wheelColor
 			else:
 				matchThisColor = secondColorToMatch.wheelColor
-		# Select Secondary
+		## 1.3. Select Secondary
 		else:
 			matchThisColor = colorToMatch.wheelColor
-		# 2. Determine offset 
-		if (self.validColors.__len__() - 1) % 2 == 0:  # Even (NOTE: Minus 1 for Greyscale)
-			offset = (self.validColors.__len__() - 1) / 2
-		else:  # Odd
-			randNum = randint(0, 1)
-			if randNum == 0:
-				randNum = -1
-			offset = (self.validColors.__len__() - 1 + randNum) / 2
-		# 3. Determine the color at that offset
-		analogousColor = spin_a_color(matchThisColor, offset, True)
-		# 4. Count the colors in the list
-		numColors = self.count_colors(analogousColor)
+
+		# 2. Determine the color to randomize from
+		## 2.1. Pick a color
+		if colorToMatch and secondColorToMatch:
+			### 2.1.a. If this is a Weapon Color, select from existing colors
+			complementaryColor = matchThisColor
+		else:
+			### 2.2.b. If this is not a Weapon Color, find an offset
+			#### 2.2.b.i Randomize offset for complementary color (NOTE: Should be 6)
+			if (self.validColors.__len__() - 1) % 2 == 0:  # Even (NOTE: Minus 1 for Greyscale)
+				offset = (self.validColors.__len__() - 1) / 2
+				print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+			else:  # Odd
+				randNum = randint(0, 1)
+				if randNum == 0:
+					randNum = -1
+				offset = (self.validColors.__len__() - 1 + randNum) / 2
+				print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+			#### 2.2.b.ii Determine the color at that offset
+			complementaryColor = self.spin_a_color(matchThisColor, int(offset), True)
+
+		# 3. Count the colors in the list
+		numColors = self.count_colors(complementaryColor)
 		if numColors <= 0:
-			analogousColor = "Greyscale"
-			numColors = self.count_colors(analogousColor)
-		# 3. Randomly choose a color
+			complementaryColor = "Greyscale"
+			numColors = self.count_colors(complementaryColor)
+
+		# 4. Randomly choose a color
 		randNum = randint(1, numColors)
-		# 4. Find the randNum'th Color in this palette's list
+
+		# 5. Find the randNum'th Color in this palette's list
 		for swatch in self.listOfColors:
-			if swatch.wheelColor == analogousColor:
+			if swatch.wheelColor == complementaryColor:
 				randNum -= 1
 				if randNum == 0:
 					retVal = swatch
