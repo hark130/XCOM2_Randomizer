@@ -654,6 +654,89 @@ class ColorPalette:
 
 		return retVal
 	
+	
+	def get_triad_color(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get a complementary color from the list of Colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
+			OUTPUT:		Color class that is in a triad color scheme with colorToMatch and secondColorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list complementary to that wheelColor
+						If colorToMatch and secondColorToMatch are both Color objects, will determine
+							the last remaining color in the triad and randomize a color to match
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		matchThisColor = None  		# Color to match
+		triadColor = None			# wheelColor string used to randomize the return value
+		numColors = 0  				# Holds of the number of given tertiary color in the list
+		randNum = 0					# Holds a randomized value
+		offset = 0					# Holds the calculated offset for the inevitable spin_a_color() function call
+
+		### GET COLOR ###
+		# 1. Determine starting color
+		## 1.1. Select Main
+		if colorToMatch is None:  
+			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
+		## 1.2. Select Weapon
+		elif secondColorToMatch is not None:
+			if self.spin_a_color(colorToMatch, 4, True).wheelColor != secondColorToMatch.wheelColor and \
+			self.spin_a_color(colorToMatch, -4, True).wheelColor != secondColorToMatch.wheelColor:
+				raise ValueError("Main and Secondary colors do not appear to be in a triad")
+			elif self.spin_a_color(colorToMatch, 4, True).wheelColor != secondColorToMatch.wheelColor:
+				matchThisColor = self.spin_a_color(colorToMatch, 4, True).wheelColor
+			else:
+				matchThisColor = self.spin_a_color(colorToMatch, -4, True).wheelColor		
+		## 1.3. Select Secondary
+		else:
+			matchThisColor = colorToMatch.wheelColor
+
+		# 2. Determine the color to randomize from
+		## 2.1. Pick a color
+		if colorToMatch and secondColorToMatch:
+			### 2.1.a. If this is a Weapon Color, select from existing colors
+			triadColor = matchThisColor
+		else:
+			### 2.2.b. If this is not a Weapon Color, find an offset
+			#### 2.2.b.i Randomize offset for complementary color (NOTE: Should be 4 or -4)
+			if (self.validColors.__len__() - 1) % 3 == 0:  # NOTE: Minus 1 for Greyscale
+				offset = (self.validColors.__len__() - 1) / 3
+				# print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+			else:  # Not a multiple of three (?)
+				randNum = randint(0, 1)
+				if randNum == 0:
+					randNum = -1
+				while ((self.validColors.__len__() - 1 + randNum) % 3 != 0):
+					randNum = randNum + randNum
+				offset = (self.validColors.__len__() - 1 + randNum) / 3
+				# print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+			#### 2.2.b.ii Determine the color at that offset
+			triadColor = self.spin_a_color(matchThisColor, int(offset), True)
+
+		# 3. Count the colors in the list
+		numColors = self.count_colors(triadColor)
+		if numColors <= 0:
+			triadColor = "Greyscale"
+			numColors = self.count_colors(triadColor)
+
+		# 4. Randomly choose a color
+		randNum = randint(1, numColors)
+
+		# 5. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == triadColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
+		return retVal
+	
 
 class MainArmorPalette(ColorPalette):
 	'This class can randomly choose main armor colors from a collection based on established color schemes'
