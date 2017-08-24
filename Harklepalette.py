@@ -738,6 +738,81 @@ class ColorPalette:
 		return retVal
 	
 
+	def get_three_split_complementary(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get a split complementary color from the list of Colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
+			OUTPUT:		Color class that is split complementary to colorToMatch and secondColorToMatch
+			NOTE:
+						If colorToMatch is None, will randomly select a wheelColor and then
+							randomly select a Color from the palette's list to match that wheelColor
+						If colorToMatch is a Color, will determine the Color's wheelColor and randomly
+							select a Color from the palette's list complementary to that wheelColor
+						If colorToMatch and secondColorToMatch are both Color objects, will determine
+							the last remaining color in the triad and randomize a color to match
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		matchThisColor = None  		# Color to match
+		splitColor = None			# wheelColor string used to randomize the return value
+		numColors = 0  				# Holds of the number of given tertiary color in the list
+		randNum = 0					# Holds a randomized value
+		offset = 0					# Holds the calculated offset for the inevitable spin_a_color() function call
+
+		### GET COLOR ###
+		# 1. Determine starting color
+		## 1.1. Select Main
+		if colorToMatch is None:  
+			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
+		## 1.2. Select Weapon
+		elif secondColorToMatch is not None:
+			if self.spin_a_color(colorToMatch, 5, True).wheelColor != secondColorToMatch.wheelColor and \
+			self.spin_a_color(colorToMatch, -5, True).wheelColor != secondColorToMatch.wheelColor:
+				raise ValueError("Main and Secondary colors do not appear to be split complementary")
+			elif self.spin_a_color(colorToMatch, 5, True).wheelColor != secondColorToMatch.wheelColor:
+				matchThisColor = self.spin_a_color(colorToMatch, 5, True).wheelColor
+			else:
+				matchThisColor = self.spin_a_color(colorToMatch, -5, True).wheelColor	
+		## 1.3. Select Secondary
+		else:
+			matchThisColor = colorToMatch.wheelColor
+
+		# 2. Determine the color to randomize from
+		## 2.1. Pick a color
+		if colorToMatch and secondColorToMatch:
+			### 2.1.a. If this is a Weapon Color, select from existing colors
+			splitColor = matchThisColor
+		else:
+			### 2.2.b. Randomize an offset
+			randNum = randint(0, 1)
+			if randNum == 0:
+				randNum = -1
+			randNum *= 5
+			#### 2.2.c Determine the color at that offset
+			splitColor = self.spin_a_color(matchThisColor, int(offset), True)
+
+		# 3. Count the colors in the list
+		numColors = self.count_colors(splitColor)
+		if numColors <= 0:
+			splitColor = "Greyscale"
+			numColors = self.count_colors(splitColor)
+
+		# 4. Randomly choose a color
+		randNum = randint(1, numColors)
+
+		# 5. Find the randNum'th Color in this palette's list
+		for swatch in self.listOfColors:
+			if swatch.wheelColor == splitColor:
+				randNum -= 1
+				if randNum == 0:
+					retVal = swatch
+					break
+
+		return retVal
+	
+	
 class MainArmorPalette(ColorPalette):
 	'This class can randomly choose main armor colors from a collection based on established color schemes'
 
