@@ -317,6 +317,8 @@ class ColorPalette:
 		elif not isinstance(secondColorToMatch, Color) and secondColorToMatch is not None:
 			print("get_color():\secondColorToMatch is of type {}\n".format(secondColorToMatch))  # DEBUGGING
 			raise TypeError("Second color to match is not of type Color or NoneType")
+		elif not colorToMatch and secondColorToMatch:
+			raise RuntimeError("Main color is blank but Secondary color is not")
 		elif self.scheme not in self.implementedSchemes:
 			# print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
@@ -514,19 +516,16 @@ class ColorPalette:
 		mainIndex = 0			# validColor index of the mainColor
 		secondIndex = 0			# validColor index of the secondaryColor
 
-		### INPUT VALIDATION ###
-		if not colorToMatch and secondColorToMatch:
-			raise RuntimeError("Main color is blank but Secondary color is not")
 		# Verify Main and Secondary are analogous to each other
-		elif colorToMatch is not None and secondColorToMatch is not None:
+		if colorToMatch is not None and secondColorToMatch is not None:
 			mainIndex = self.validColors.index(colorToMatch.wheelColor)
 			secondIndex = self.validColors.index(secondColorToMatch.wheelColor)
 			if ((mainIndex + 1) != secondIndex and (mainIndex - 1) != secondIndex) and \
 			((mainIndex + secondIndex) != (self.validColors.__len__() - 2)):
-				print("Main Color:\tIndex {}".format(mainIndex))  # DEBUGGING
-				print_color_object(colorToMatch)  # DEBUGGING
-				print("Secondary Color:\tIndex {}".format(secondIndex))  # DEBUGGING
-				print_color_object(secondColorToMatch)  # DEBUGGING
+				# print("Main Color:\tIndex {}".format(mainIndex))  # DEBUGGING
+				# print_color_object(colorToMatch)  # DEBUGGING
+				# print("Secondary Color:\tIndex {}".format(secondIndex))  # DEBUGGING
+				# print_color_object(secondColorToMatch)  # DEBUGGING
 				raise ValueError("Main and Secondary colors are not analogous to each other")
 
 		### GET COLOR ###
