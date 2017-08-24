@@ -813,6 +813,62 @@ class ColorPalette:
 		return retVal
 	
 	
+	def get_three_secondary(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get a triad color from the list of Colors in this palette that is also Secondary
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
+			OUTPUT:		Color class that is in a secondary triad color scheme with colorToMatch and secondColorToMatch
+			NOTE:
+						This function is actually a wrapper for get_three_triad.
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		matchThisColor = None  		# Color to match
+		numColors = 0  				# Holds of the number of given tertiary color in the list
+		randNum = 0					# Holds a randomized value
+		
+		### GET COLOR ###
+		# 1. Determine starting color
+		## 1.1. Select Main
+		if colorToMatch is None:
+			# 1.1.1. Pick a color
+			matchThisColor = self.listOfSecondaryColors[randint(0, self.listOfSecondaryColors.__len__() - 1)]
+			# 1.1.2. Count the colors in the list
+			numColors = self.count_colors(matchThisColor)
+			if numColors <= 0:
+				matchThisColor = "Greyscale"
+				numColors = self.count_colors(matchThisColor)
+
+			# 1.1.3. Randomly choose a color
+			randNum = randint(1, numColors)
+
+			# 1.1.4. Find the randNum'th Color in this palette's list
+			for swatch in self.listOfColors:
+				if swatch.wheelColor == matchThisColor:
+					randNum -= 1
+					if randNum == 0:
+						retVal = swatch
+						break
+		## 1.2. Select Weapon
+		elif secondColorToMatch is not None:
+			if colorToMatch.type != "Secondary":
+				raise ValueError("Main armor color is not a Secondary wheel color")
+			elif secondColorToMatch.type != "Secondary":
+				raise ValueError("Secondary armor color is not a Secondary wheel color")
+			else:
+				retVal = self.get_three_triad(colorToMatch, secondColorToMatch)
+		## 1.3. Select Secondary
+		else:
+			if colorToMatch.type != "Secondary":
+				raise ValueError("Main color is not a Secondary color")
+			else:
+				retVal = self.get_three_triad(colorToMatch, secondColorToMatch)
+			
+		return retVal
+	
+	
 class MainArmorPalette(ColorPalette):
 	'This class can randomly choose main armor colors from a collection based on established color schemes'
 
