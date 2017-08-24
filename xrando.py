@@ -48,7 +48,7 @@ listOfGenders = [ "Male", "Female" ]
 listOfColorSchemes = [ \
     "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
     "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-    "3 Colors - Split Complementary", "3 Colors - Secondary", "Random Chaos", \
+    "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
     "Earthy", "Urban", "Emo", \
 ]
 
@@ -1423,7 +1423,7 @@ def rando_color_scheme(armorStyle):
 
     ### LOCAL VARIABLES ###
     # tmpInt = randint(0, listOfColorSchemes.__len__() - 1)  # Uncomment this once more color schemes are implemented in ColorPalette
-    # tmpInt = randint(0, 3)
+    # tmpInt = randint(0, 4)
     
     ### RANDOMIZE A COLOR SCHEME ###
     ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
@@ -1431,8 +1431,8 @@ def rando_color_scheme(armorStyle):
     # retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
     # retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
     # retVal = listOfColorSchemes[2]  # Monochromatic - Tertiary Colors
-    retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
-    # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
+    # retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
+    retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
@@ -1549,7 +1549,7 @@ if __name__ == "__main__":
     # 3.9.1. Instantiate Weapon Color Object
     weaponColors = WeaponColorPalette(armorColorScheme)
     # 3.9.2. Randomize a Weapon Color Object
-    weaponColorObject = weaponColors.get_color(mainColorObject)
+    weaponColorObject = weaponColors.get_color(mainColorObject, secondaryColorObject)
     
     # 3.9.3. Store the Weapon Color Object's number
     appearanceOptions["Weapon Color"] = weaponColorObject.num
@@ -1585,6 +1585,7 @@ if __name__ == "__main__":
     print("\n")
 
     ### TESTING ###
+    print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
     print_color_object(mainColorObject)  # DEBUGGING
     print_color_object(secondaryColorObject)  # DEBUGGING
     print_color_object(weaponColorObject)  # DEBUGGING
