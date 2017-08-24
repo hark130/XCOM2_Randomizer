@@ -222,6 +222,8 @@ class ColorPalette:
 		# "Indigo Violet", "Violet Red", \
 		"Violet Red", \
 	]
+	# Assign colors to this list programtically during __init__()
+	listOfBrownColors = [ ]
 	scheme = ""
 	# # Store the colors selected under this palette
 	# mainColor = Color(0, 0, 0, 0)
@@ -308,6 +310,54 @@ class ColorPalette:
 
 		return retVal
 
+	
+	# Color(#HSV)
+	# Main
+	# self.listOfColors.append(Color(2, 32, 45, 26))
+	# self.listOfColors.append(Color(49, 25, 68, 22))
+	# self.listOfColors.append(Color(50, 24, 63, 13))
+	# self.listOfColors.append(Color(51, 26, 57, 16))
+	# self.listOfColors.append(Color(52, 24, 53, 18))
+	# self.listOfColors.append(Color(53, 22, 42, 22))
+	# self.listOfColors.append(Color(54, 20, 31, 26))
+	# self.listOfColors.append(Color(55, 19, 21, 31))
+	# Secondary
+	# self.listOfColors.append(Color(0, 39, 49, 14))
+	# self.listOfColors.append(Color(4, 43, 49, 17))
+	# self.listOfColors.append(Color(6, 33, 56, 31))
+	# self.listOfColors.append(Color(8, 34, 61, 22))
+	# self.listOfColors.append(Color(21, 24, 56, 20))
+	# self.listOfColors.append(Color(28, 40, 60, 20))
+	# self.listOfColors.append(Color(36, 27, 66, 23))
+	# self.listOfColors.append(Color(84, 19, 100, 48))
+	def is_it_brown(self, someColor):
+		### INPUT VALIDATION ###
+		if not isinstance(someColor, Color):
+			raise TypeError("Some color is not a Color at all")
+			
+		### LOCAL VARIABLES ###
+		retVal = False  # Default return value... prove it wrong
+		
+		### CHECK COLOR ###
+		# 1. Brown == Dark Orange
+		# https://en.wikipedia.org/wiki/Hue
+		if someColor.wheelColor == "Orange" and someColor.wheelColor == "Dark":
+			retVal = True
+		# 2. Low saturation in Yellow-Red region
+		# http://www.greatreality.com/color/ColorHVC.htm
+		## 2.1. Check Wheel Color against Saturation
+		if someColor.wheelColor in [ "Red", "Red Orange", "Orange", "Orange Yellow", "Yellow" ]:
+			if someColor.sat > 50:
+				retVal = True
+		## 2.2. Check Hue against Saturation
+		if someColor.hue >= 0 and someColor.hue <= 40:
+			if someColor.sat > 33:
+				retVal = True
+		# 3. ???
+		# http://www.december.com/html/spec/colorhsl.html		
+		
+		return retVal
+	
 
 	def get_color(self, colorToMatch = None, secondColorToMatch = None):
 		### INPUT VALIDATION ###
