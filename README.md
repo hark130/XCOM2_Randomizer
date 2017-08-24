@@ -59,13 +59,18 @@ This is a python script to randomize XCOM2 character customizations for me
         [X] List of Colors
       [/] Methods
         [X] Count a color
-        [/] Find a complementary color
+        [/] Find a color based on scheme
           [X] Monochromatic
             [X] Primary
             [X] Secondary
             [X] Tertiary
-          [ ] 2 Colors
+          [X] 2 Colors
+            [X] Analogous
+            [X] Complementary
           [ ] 3 Colors
+            [ ] Triad
+            [ ] Complementary
+            [ ] Secondary
           [ ] Random
           [ ] Earthy
           [ ] Urban
