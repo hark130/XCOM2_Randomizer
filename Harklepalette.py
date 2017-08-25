@@ -343,20 +343,42 @@ class ColorPalette:
 		# 1. Brown == Dark Orange
 		# https://en.wikipedia.org/wiki/Hue
 		if someColor.wheelColor == "Orange" and someColor.wheelColor == "Dark":
+			print("Dark Orange")  # DEBUGGING
+			print_color_object(someColor)  # DEBUGGING
+			retVal = True
+		# Wingin' It
+		elif someColor.wheelColor == "Red Orange" and someColor.wheelColor == "Dark":
+			print("Dark Red Orange")  # DEBUGGING
+			print_color_object(someColor)  # DEBUGGING
+			retVal = True
+		# Wingin' It
+		elif someColor.wheelColor == "Orange Yellow" and someColor.wheelColor == "Dark":
+			print("Dark Orange Yellow")  # DEBUGGING
+			print_color_object(someColor)  # DEBUGGING
 			retVal = True
 		# 2. Low saturation in Yellow-Red region
 		# http://www.greatreality.com/color/ColorHVC.htm
 		## 2.1. Check Wheel Color against Saturation
-		if someColor.wheelColor in [ "Red", "Red Orange", "Orange", "Orange Yellow", "Yellow" ]:
-			if someColor.sat > 50:
-				retVal = True
+		# if someColor.wheelColor in [ "Red", "Red Orange", "Orange", "Orange Yellow", "Yellow" ]:
+		# 	if someColor.sat > 50:
+		# 		retVal = True
 		## 2.2. Check Hue against Saturation
-		if someColor.hue >= 0 and someColor.hue <= 40:
-			if someColor.sat > 33:
-				retVal = True
+		# if someColor.hue >= 0 and someColor.hue <= 40:
+		# 	if someColor.sat > 33:
+		# 		retVal = True
 		# 3. ???
 		# http://www.december.com/html/spec/colorhsl.html		
-		
+		# 4. Wingin' It
+		if (someColor.hue >= 0 and someColor.hue <= 40) or someColor.hue >= 330:
+			if (someColor.sat - (someColor.val * 1)) >= 40:
+				retVal = True
+				# print_color_object(someColor)  # DEBUGGING
+		# 4. Wingin' It
+		if (someColor.hue >= 0 and someColor.hue <= 40) or someColor.hue >= 330:
+			if someColor.val <= 35:
+				retVal = True
+
+
 		return retVal
 	
 
@@ -973,6 +995,7 @@ class MainArmorPalette(ColorPalette):
 		# super().__init__(scheme)
 		self.scheme = scheme
 		self.listOfColors = []
+		self.listOfBrownColors = []
 		self.listOfColors.append(Color(0, 72, 59, 20))
 		self.listOfColors.append(Color(1, 118, 41, 24))
 		self.listOfColors.append(Color(2, 32, 45, 26))
@@ -1081,12 +1104,9 @@ class MainArmorPalette(ColorPalette):
 		self.listOfColors.append(Color(96, 210, 17, 9))
 		self.listOfColors.append(Color(97, 177, 43, 21))
 
-		# super().__init__(scheme)
-		# count = 0
-		# for swatch in self.listOfColors:
-		# 	count += 1
-		# print("Found {} Color objects in Main Armor Palette".format(count))  # DEBUGGING 
-
+		for swatch in self.listOfColors:
+			if self.is_it_brown(swatch):
+				self.listOfBrownColors.append(swatch)
 
 class SecondaryArmorPalette(ColorPalette):
 	'This class can randomly choose secondary armor colors from a collection based on established color schemes'
@@ -1104,6 +1124,7 @@ class SecondaryArmorPalette(ColorPalette):
 		# super().__init__(scheme)
 		self.scheme = scheme
 		self.listOfColors = []
+		self.listOfBrownColors = []
 		self.listOfColors.append(Color(0, 39, 49, 14))
 		self.listOfColors.append(Color(1, 48, 20, 20))
 		self.listOfColors.append(Color(2, 38, 28, 34))
@@ -1212,14 +1233,9 @@ class SecondaryArmorPalette(ColorPalette):
 		self.listOfColors.append(Color(96, 0, 0, 86))
 		self.listOfColors.append(Color(97, 177, 43, 20))
 
-		# super().__init__(scheme)
-
-		# for swatch in self.listOfColors:
-		# 	print_color_object(swatch)
-		# count = 0
-		# for swatch in self.listOfColors:
-		# 	count += 1
-		# print("Found {} Color objects in Secondary Armor Palette".format(count))  # DEBUGGING 
+		for swatch in self.listOfColors:
+			if self.is_it_brown(swatch):
+				self.listOfBrownColors.append(swatch)
 
 
 # class WeaponColorPalette(ColorPalette):
@@ -1229,131 +1245,4 @@ class WeaponColorPalette(MainArmorPalette):
 
 	def __init__(self, scheme):
 		super().__init__(scheme)
-
-	# def __init__(self, scheme):
-	# 	### INPUT VALIDATION ###
-	# 	if not isinstance(scheme, str):
-	# 		raise TypeError("Color scheme is not an string")
-	# 	elif scheme not in self.validSchemes:
-	# 		raise ValueError("Invalid color scheme")
-	# 	elif scheme not in self.implementedSchemes:
-	# 		raise RuntimeError("This valid color scheme has not yet been implemented")
-	# 	print("This is the WeaponColorPalette __init__()")  # DEBUGGING
-	# 	### INITIALIZAITON ###
-	# 	# super().__init__(scheme)
-	# 	self.scheme = scheme
-	# 	self.listOfColors = []
-	# 	self.listOfColors.append(Color(0, 72, 59, 20))
-	# 	self.listOfColors.append(Color(1, 118, 41, 24))
-	# 	self.listOfColors.append(Color(2, 32, 45, 26))
-	# 	self.listOfColors.append(Color(3, 33, 57, 58))
-	# 	self.listOfColors.append(Color(4, 31, 47, 84))
-	# 	self.listOfColors.append(Color(5, 206, 20, 14))
-	# 	self.listOfColors.append(Color(6, 194, 22, 31))
-	# 	self.listOfColors.append(Color(7, 0, 100, 40))
-	# 	self.listOfColors.append(Color(8, 0, 100, 23))
-	# 	self.listOfColors.append(Color(9, 357, 90, 24))
-
-	# 	self.listOfColors.append(Color(10, 359, 83, 27))
-	# 	self.listOfColors.append(Color(11, 358, 77, 29))
-	# 	self.listOfColors.append(Color(12, 357, 70, 30))
-	# 	self.listOfColors.append(Color(13, 356, 60, 31))
-	# 	self.listOfColors.append(Color(14, 21, 93, 90))
-	# 	self.listOfColors.append(Color(15, 17, 94, 58))
-	# 	self.listOfColors.append(Color(16, 19, 89, 59))
-	# 	self.listOfColors.append(Color(17, 23, 84, 60))
-	# 	self.listOfColors.append(Color(18, 25, 75, 62))
-	# 	self.listOfColors.append(Color(19, 26, 62, 62))
-
-	# 	self.listOfColors.append(Color(20, 28, 46, 63))
-	# 	self.listOfColors.append(Color(21, 43, 96, 100))
-	# 	self.listOfColors.append(Color(22, 35, 97, 73))
-	# 	self.listOfColors.append(Color(23, 37, 91, 71))
-	# 	self.listOfColors.append(Color(24, 39, 87, 71))
-	# 	self.listOfColors.append(Color(25, 42, 79, 68))
-	# 	self.listOfColors.append(Color(26, 45, 67, 67))
-	# 	self.listOfColors.append(Color(27, 44, 52, 68))
-	# 	self.listOfColors.append(Color(28, 78, 62, 22))
-	# 	self.listOfColors.append(Color(29, 68, 55, 11))
-
-	# 	self.listOfColors.append(Color(30, 70, 50, 14))
-	# 	self.listOfColors.append(Color(31, 69, 43, 17))
-	# 	self.listOfColors.append(Color(32, 72, 36, 22))
-	# 	self.listOfColors.append(Color(33, 79, 24, 26))
-	# 	self.listOfColors.append(Color(34, 82, 14, 31))
-	# 	self.listOfColors.append(Color(35, 222, 90, 34))
-	# 	self.listOfColors.append(Color(36, 223, 71, 16))
-	# 	self.listOfColors.append(Color(37, 223, 71, 20))
-	# 	self.listOfColors.append(Color(38, 220, 74, 24))
-	# 	self.listOfColors.append(Color(39, 217, 75, 28))
-
-	# 	self.listOfColors.append(Color(40, 213, 72, 31))
-	# 	self.listOfColors.append(Color(41, 211, 67, 33))
-	# 	self.listOfColors.append(Color(42, 256, 75, 31))
-	# 	self.listOfColors.append(Color(43, 268, 67, 15))
-	# 	self.listOfColors.append(Color(44, 262, 61, 19))
-	# 	self.listOfColors.append(Color(45, 259, 60, 24))
-	# 	self.listOfColors.append(Color(46, 257, 53, 29))
-	# 	self.listOfColors.append(Color(47, 256, 46, 36))
-	# 	self.listOfColors.append(Color(48, 250, 39, 43))
-	# 	self.listOfColors.append(Color(49, 25, 68, 22))
-
-	# 	self.listOfColors.append(Color(50, 24, 63, 13))
-	# 	self.listOfColors.append(Color(51, 26, 57, 16))
-	# 	self.listOfColors.append(Color(52, 24, 53, 18))
-	# 	self.listOfColors.append(Color(53, 22, 42, 22))
-	# 	self.listOfColors.append(Color(54, 20, 31, 26))
-	# 	self.listOfColors.append(Color(55, 19, 21, 31))
-	# 	self.listOfColors.append(Color(56, 200, 18, 13))
-	# 	self.listOfColors.append(Color(57, 195, 18, 17))
-	# 	self.listOfColors.append(Color(58, 206, 13, 22))
-	# 	self.listOfColors.append(Color(59, 210, 12, 27))
-
-	# 	self.listOfColors.append(Color(60, 206, 9, 32))
-	# 	self.listOfColors.append(Color(61, 192, 5, 37))
-	# 	self.listOfColors.append(Color(62, 204, 4, 44))
-	# 	self.listOfColors.append(Color(63, 240, 3, 45))
-	# 	self.listOfColors.append(Color(64, 240, 3, 54))
-	# 	self.listOfColors.append(Color(65, 240, 1, 60))
-	# 	self.listOfColors.append(Color(66, 0, 0, 68))
-	# 	self.listOfColors.append(Color(67, 240, 2, 75))
-	# 	self.listOfColors.append(Color(68, 0, 0, 81))
-	# 	self.listOfColors.append(Color(69, 0, 0, 88))
-
-	# 	self.listOfColors.append(Color(70, 356, 100, 63))
-	# 	self.listOfColors.append(Color(71, 9, 100, 35))
-	# 	self.listOfColors.append(Color(72, 6, 100, 25))
-	# 	self.listOfColors.append(Color(73, 15, 100, 100))
-	# 	self.listOfColors.append(Color(74, 15, 100, 84))
-	# 	self.listOfColors.append(Color(75, 19, 100, 48))
-	# 	self.listOfColors.append(Color(76, 60, 100, 100))
-	# 	self.listOfColors.append(Color(77, 51, 100, 100))
-	# 	self.listOfColors.append(Color(78, 43, 100, 85))
-	# 	self.listOfColors.append(Color(79, 114, 86, 72))
-
-	# 	self.listOfColors.append(Color(80, 91, 100, 37))
-	# 	self.listOfColors.append(Color(81, 100, 100, 20))
-	# 	self.listOfColors.append(Color(82, 235, 100, 100))
-	# 	self.listOfColors.append(Color(83, 237, 100, 100))
-	# 	self.listOfColors.append(Color(84, 237, 100, 71))
-	# 	self.listOfColors.append(Color(85, 261, 87, 100))
-	# 	self.listOfColors.append(Color(86, 256, 100, 65))
-	# 	self.listOfColors.append(Color(87, 259, 100, 35))
-	# 	self.listOfColors.append(Color(88, 300, 66, 100))
-	# 	self.listOfColors.append(Color(89, 321, 100, 100))
-
-	# 	self.listOfColors.append(Color(90, 333, 100, 88))
-	# 	self.listOfColors.append(Color(91, 0, 0, 100))
-	# 	self.listOfColors.append(Color(92, 0, 0, 100))
-	# 	self.listOfColors.append(Color(93, 0, 0, 86))
-	# 	self.listOfColors.append(Color(94, 207, 100, 4))
-	# 	self.listOfColors.append(Color(95, 204, 24, 8))
-	# 	self.listOfColors.append(Color(96, 210, 17, 9))
-	# 	self.listOfColors.append(Color(97, 177, 43, 21))
-
-	# 	# super().__init__(scheme)
-	# 	count = 0
-	# 	for swatch in self.listOfColors:
-	# 		count += 1
-	# 	print("Found {} Color objects in Weapon Color Palette".format(count))  # DEBUGGING 
 
