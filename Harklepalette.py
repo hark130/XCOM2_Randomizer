@@ -340,18 +340,18 @@ class ColorPalette:
 		retVal = False  # Default return value... prove it wrong
 		
 		### CHECK COLOR ###
-		# 1. Brown == Dark Orange
+		# 1.1. Brown == Dark Orange
 		# https://en.wikipedia.org/wiki/Hue
 		if someColor.wheelColor == "Orange" and someColor.wheelColor == "Dark":
 			print("Dark Orange")  # DEBUGGING
 			print_color_object(someColor)  # DEBUGGING
 			retVal = True
-		# Wingin' It
+		# 1.2. Wingin' It
 		elif someColor.wheelColor == "Red Orange" and someColor.wheelColor == "Dark":
 			print("Dark Red Orange")  # DEBUGGING
 			print_color_object(someColor)  # DEBUGGING
 			retVal = True
-		# Wingin' It
+		# 1.3. Wingin' It
 		elif someColor.wheelColor == "Orange Yellow" and someColor.wheelColor == "Dark":
 			print("Dark Orange Yellow")  # DEBUGGING
 			print_color_object(someColor)  # DEBUGGING
@@ -373,11 +373,18 @@ class ColorPalette:
 			if (someColor.sat - (someColor.val * 1)) >= 40:
 				retVal = True
 				# print_color_object(someColor)  # DEBUGGING
-		# 4. Wingin' It
+		# 5. Wingin' It
 		if (someColor.hue >= 0 and someColor.hue <= 40) or someColor.hue >= 330:
 			if someColor.val <= 35:
 				retVal = True
+		# 6. Wingin' It
+		if (someColor.hue >= 0 and someColor.hue <= 55) or someColor.hue >= 330:
+			if someColor.val <= 25:
+				retVal = True
 
+		# 7. Remove Greyscale colors
+		if (someColor.wheelColor == "Greyscale"):
+			retVal = False
 
 		return retVal
 	
