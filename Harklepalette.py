@@ -207,7 +207,8 @@ class ColorPalette:
 	]
 	implementedSchemes = [ \
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-		"2 Colors - Analogous", "2 Colors - Complementary", \
+		"2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+		"3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -238,7 +239,7 @@ class ColorPalette:
 		elif scheme not in self.validSchemes:
 			raise ValueError("Invalid color scheme")
 		elif scheme not in self.implementedSchemes:
-			raise RuntimeError("This valid color scheme has not yet been implemented")
+			raise RuntimeError("The '{}' color scheme has not yet been implemented".format(scheme))
 
 		### INITIALIZAITON ###
 		self.scheme = scheme
@@ -393,13 +394,21 @@ class ColorPalette:
 			retVal = self.get_two_analogous(colorToMatch, secondColorToMatch)
 		elif self.scheme == "2 Colors - Complementary":
 			retVal = self.get_two_complementary(colorToMatch, secondColorToMatch)
+		elif self.scheme == "3 Colors - Triad":
+			retVal = self.get_triad_color(colorToMatch, secondColorToMatch)
+		elif self.scheme == "3 Colors - Split Complementary":
+			retVal = self.get_three_split_complementary(colorToMatch, secondColorToMatch)
+		elif self.scheme == "3 Colors - Secondary":
+			retVal = self.get_three_secondary(colorToMatch, secondColorToMatch)
+		elif self.scheme == "Random":
+			retVal = self.get_random_colors(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
 
-		### EXTRACT THE COLOR NUMBER ###
-		# retVal = randColor.num
-		# retVal = randColor
+		# "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+		# "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+		# "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
 
 		return retVal
 
@@ -735,13 +744,17 @@ class ColorPalette:
 			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
 		## 1.2. Select Weapon
 		elif secondColorToMatch is not None:
-			if self.spin_a_color(colorToMatch, 4, True).wheelColor != secondColorToMatch.wheelColor and \
-			self.spin_a_color(colorToMatch, -4, True).wheelColor != secondColorToMatch.wheelColor:
+			# print("Main Type:\t{}".format(type(colorToMatch)))  # DEBUGGING
+			# print("2nd Type:\t{}".format(type(secondColorToMatch)))  # DEBUGGING
+			# print("Main Dir:\t{}".format(dir(colorToMatch)))  # DEBUGGING
+			# print("2nd Dir:\t{}".format(dir(secondColorToMatch)))  # DEBUGGING
+			if self.spin_a_color(colorToMatch.wheelColor, 4, True) != secondColorToMatch.wheelColor and \
+			self.spin_a_color(colorToMatch.wheelColor, -4, True) != secondColorToMatch.wheelColor:
 				raise ValueError("Main and Secondary colors do not appear to be in a triad")
-			elif self.spin_a_color(colorToMatch, 4, True).wheelColor != secondColorToMatch.wheelColor:
-				matchThisColor = self.spin_a_color(colorToMatch, 4, True).wheelColor
+			elif self.spin_a_color(colorToMatch.wheelColor, 4, True) != secondColorToMatch.wheelColor:
+				matchThisColor = self.spin_a_color(colorToMatch.wheelColor, 4, True)
 			else:
-				matchThisColor = self.spin_a_color(colorToMatch, -4, True).wheelColor		
+				matchThisColor = self.spin_a_color(colorToMatch.wheelColor, -4, True)		
 		## 1.3. Select Secondary
 		else:
 			matchThisColor = colorToMatch.wheelColor
@@ -809,7 +822,6 @@ class ColorPalette:
 		splitColor = None			# wheelColor string used to randomize the return value
 		numColors = 0  				# Holds of the number of given tertiary color in the list
 		randNum = 0					# Holds a randomized value
-		offset = 0					# Holds the calculated offset for the inevitable spin_a_color() function call
 
 		### GET COLOR ###
 		# 1. Determine starting color
@@ -818,13 +830,21 @@ class ColorPalette:
 			matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
 		## 1.2. Select Weapon
 		elif secondColorToMatch is not None:
-			if self.spin_a_color(colorToMatch, 5, True).wheelColor != secondColorToMatch.wheelColor and \
-			self.spin_a_color(colorToMatch, -5, True).wheelColor != secondColorToMatch.wheelColor:
+			# print("Main Type:\t{}".format(type(colorToMatch)))  # DEBUGGING
+			# print("2nd Type:\t{}".format(type(secondColorToMatch)))  # DEBUGGING
+			# print("Main Dir:\t{}".format(dir(colorToMatch)))  # DEBUGGING
+			# print("2nd Dir:\t{}".format(dir(secondColorToMatch)))  # DEBUGGING
+			if self.spin_a_color(colorToMatch.wheelColor, 5, True) != secondColorToMatch.wheelColor and \
+			self.spin_a_color(colorToMatch.wheelColor, -5, True) != secondColorToMatch.wheelColor:
+				# print_color_object(colorToMatch)  # DEBUGGING
+				# print_color_object(secondColorToMatch)  # DEBUGGING
+				# print("Main:\t{}".format(self.validColors.index(colorToMatch.wheelColor)))  # DEBUGGING
+				# print("2nd:\t{}".format(self.validColors.index(secondColorToMatch.wheelColor)))  # DEBUGGING
 				raise ValueError("Main and Secondary colors do not appear to be split complementary")
-			elif self.spin_a_color(colorToMatch, 5, True).wheelColor != secondColorToMatch.wheelColor:
-				matchThisColor = self.spin_a_color(colorToMatch, 5, True).wheelColor
+			elif self.spin_a_color(colorToMatch.wheelColor, 5, True) != secondColorToMatch.wheelColor:
+				matchThisColor = self.spin_a_color(colorToMatch.wheelColor, 5, True)
 			else:
-				matchThisColor = self.spin_a_color(colorToMatch, -5, True).wheelColor	
+				matchThisColor = self.spin_a_color(colorToMatch.wheelColor, -5, True)	
 		## 1.3. Select Secondary
 		else:
 			matchThisColor = colorToMatch.wheelColor
@@ -841,7 +861,7 @@ class ColorPalette:
 				randNum = -1
 			randNum *= 5
 			#### 2.2.c Determine the color at that offset
-			splitColor = self.spin_a_color(matchThisColor, int(offset), True)
+			splitColor = self.spin_a_color(matchThisColor, int(randNum), True)
 
 		# 3. Count the colors in the list
 		numColors = self.count_colors(splitColor)
@@ -871,7 +891,7 @@ class ColorPalette:
 						secondColorToMatch - Secondary Armor Color, of type "Color", if any
 			OUTPUT:		Color class that is in a secondary triad color scheme with colorToMatch and secondColorToMatch
 			NOTE:
-						This function is actually a wrapper for get_three_triad.
+						This function is actually a wrapper for get_triad_color.
 		'''
 		### LOCAL VARIABLES ###
 		retVal = None  				# Function's return value of type Color
@@ -903,18 +923,18 @@ class ColorPalette:
 						break
 		## 1.2. Select Weapon
 		elif secondColorToMatch is not None:
-			if colorToMatch.type != "Secondary":
+			if colorToMatch.colorType != "Secondary":
 				raise ValueError("Main armor color is not a Secondary wheel color")
-			elif secondColorToMatch.type != "Secondary":
+			elif secondColorToMatch.colorType != "Secondary":
 				raise ValueError("Secondary armor color is not a Secondary wheel color")
 			else:
-				retVal = self.get_three_triad(colorToMatch, secondColorToMatch)
+				retVal = self.get_triad_color(colorToMatch, secondColorToMatch)
 		## 1.3. Select Secondary
 		else:
-			if colorToMatch.type != "Secondary":
+			if colorToMatch.colorType != "Secondary":
 				raise ValueError("Main color is not a Secondary color")
 			else:
-				retVal = self.get_three_triad(colorToMatch, secondColorToMatch)
+				retVal = self.get_triad_color(colorToMatch, secondColorToMatch)
 			
 		return retVal
 	
@@ -947,7 +967,7 @@ class MainArmorPalette(ColorPalette):
 		elif scheme not in self.validSchemes:
 			raise ValueError("Invalid color scheme")
 		elif scheme not in self.implementedSchemes:
-			raise RuntimeError("This valid color scheme has not yet been implemented")
+			raise RuntimeError("The '{}' color scheme has not yet been implemented".format(scheme))
 		# print("This is the MainArmorPalette __init__()")  # DEBUGGING
 		### INITIALIZAITON ###
 		# super().__init__(scheme)
