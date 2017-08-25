@@ -1422,17 +1422,17 @@ def rando_color_scheme(armorStyle):
         raise ValueError('Invalid armorStyle')
 
     ### LOCAL VARIABLES ###
-    # tmpInt = randint(0, listOfColorSchemes.__len__() - 1)  # Uncomment this once more color schemes are implemented in ColorPalette
+    tmpInt = randint(0, listOfColorSchemes.__len__() - 1)  # Uncomment this once more color schemes are implemented in ColorPalette
     # tmpInt = randint(0, 4)
     
     ### RANDOMIZE A COLOR SCHEME ###
     ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
-    # retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
+    retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
     # retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
     # retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
     # retVal = listOfColorSchemes[2]  # Monochromatic - Tertiary Colors
     # retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
-    retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
+    # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
