@@ -1589,6 +1589,9 @@ if __name__ == "__main__":
     print_color_object(mainColorObject)  # DEBUGGING
     print_color_object(secondaryColorObject)  # DEBUGGING
     print_color_object(weaponColorObject)  # DEBUGGING
+    # print(dir(mainArmorColors))
+    # for swatch in mainArmorColors.listOfBrownColors:
+    #     print("{} is Brown".format(swatch.num))
     # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
 
 
