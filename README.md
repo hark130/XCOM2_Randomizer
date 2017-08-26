@@ -37,7 +37,7 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Refactor redundant (?) determine_wheel_color() elif chain so the redundancies aren't redundant
     [ ] Refacotr redundant (?) division of mono_primary(), mono_secondary(), etc into a single function
     [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
-    [ ] Implement a get_color() wrapper in Weapon Color Palette to sometimes, based on armor style, return normal colored weapons (see: Greyscale)
+    [ ] Implement a get_color() wrapper in Weapon Color Palette to sometimes, based on armor style, return normal colored weapons (see: Greyscale)  Function should vary percent chances for normal weapon color based on armor style
     [ ] WRT Main and Secondary Armor colors, Dark (or at least Medium) probably looks better with Light and vice versa... especially Greyscale
     [X] Extra input validation on get_color()... if colorToMatch == None and secondColorToMatch != None... error
     [X] Implemenet Color class
