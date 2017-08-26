@@ -74,7 +74,10 @@ This is a python script to randomize XCOM2 character customizations for me
             [ ] Complementary
             [ ] Secondary
           [ ] Random
-          [ ] Earthy
+          [/] Earthy
+            [X] 2 Colors
+            [?] 3 Colors
+            [ ] Random
           [ ] Urban
           [ ] Emo
       [X] Inherit Child Color Palette Classes
