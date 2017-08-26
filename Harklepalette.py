@@ -224,7 +224,9 @@ class ColorPalette:
 		"Violet Red", \
 	]
 	# Assign colors to this list programtically during __init__()
-	listOfBrownColors = [ ]
+	listOfBrownColors = []
+	# Assign browns and other select colors to this during __init__()
+	listOfEarthyColors = []
 	scheme = ""
 	# # Store the colors selected under this palette
 	# mainColor = Color(0, 0, 0, 0)
@@ -713,13 +715,13 @@ class ColorPalette:
 			#### 2.2.b.i Randomize offset for complementary color (NOTE: Should be 6)
 			if (self.validColors.__len__() - 1) % 2 == 0:  # Even (NOTE: Minus 1 for Greyscale)
 				offset = (self.validColors.__len__() - 1) / 2
-				print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+				# print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
 			else:  # Odd
 				randNum = randint(0, 1)
 				if randNum == 0:
 					randNum = -1
 				offset = (self.validColors.__len__() - 1 + randNum) / 2
-				print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
+				# print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
 			#### 2.2.b.ii Determine the color at that offset
 			complementaryColor = self.spin_a_color(matchThisColor, int(offset), True)
 
@@ -1003,6 +1005,7 @@ class MainArmorPalette(ColorPalette):
 		self.scheme = scheme
 		self.listOfColors = []
 		self.listOfBrownColors = []
+		self.listOfEarthyColors = []
 		self.listOfColors.append(Color(0, 72, 59, 20))
 		self.listOfColors.append(Color(1, 118, 41, 24))
 		self.listOfColors.append(Color(2, 32, 45, 26))
@@ -1114,6 +1117,18 @@ class MainArmorPalette(ColorPalette):
 		for swatch in self.listOfColors:
 			if self.is_it_brown(swatch):
 				self.listOfBrownColors.append(swatch)
+				# Browns are earthy colors as well
+				self.listOfEarthyColors.append(swatch)
+			elif swatch.num in [ 0, 1, 2, 3, 5, 6, 16, 23, 28, 29, \
+			                        30, 31, 32, 33, 34, 49, 50, 51, 52, 53, \
+			                        54, 55, 56, 57, 58, 59, 60, 61, 62, 63, \
+			                        64, 65, 71, 75, 78, 80, 81, 97 ]:
+			    self.listOfEarthyColors.append(swatch)
+
+		# print("Earth Tones:\t\n")
+		# for swatch in self.listOfEarthyColors:
+		# 	print_color_object(swatch)
+
 
 class SecondaryArmorPalette(ColorPalette):
 	'This class can randomly choose secondary armor colors from a collection based on established color schemes'
@@ -1132,6 +1147,7 @@ class SecondaryArmorPalette(ColorPalette):
 		self.scheme = scheme
 		self.listOfColors = []
 		self.listOfBrownColors = []
+		self.listOfEarthyColors = []
 		self.listOfColors.append(Color(0, 39, 49, 14))
 		self.listOfColors.append(Color(1, 48, 20, 20))
 		self.listOfColors.append(Color(2, 38, 28, 34))
@@ -1243,6 +1259,18 @@ class SecondaryArmorPalette(ColorPalette):
 		for swatch in self.listOfColors:
 			if self.is_it_brown(swatch):
 				self.listOfBrownColors.append(swatch)
+				# Browns are earthy colors as well
+				self.listOfEarthyColors.append(swatch)
+			# The first 70 Secondary Armor colors count as earth tones
+			elif swatch.num in [ x for x in range(0, 70) ]:  # Does not include 70
+			    self.listOfEarthyColors.append(swatch)
+			# There are more than just 70 earth tones in the Secondary Armor color palette
+			elif swatch.num in [ 71, 72, 79, 80, 81, 84, 87, 92, 93, 97 ]:
+				self.listOfEarthyColors.append(swatch)
+
+		# print("Earth Tones:\t\n")
+		# for swatch in self.listOfEarthyColors:
+		# 	print_color_object(swatch)
 
 
 # class WeaponColorPalette(ColorPalette):
