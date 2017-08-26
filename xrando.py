@@ -46,10 +46,11 @@ listOfNations = [ \
 listOfGenders = [ "Male", "Female" ]
 
 listOfColorSchemes = [ \
-    "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-    "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-    "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-    "Earthy", "Urban", "Emo", \
+        "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+        "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+        "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
+        "2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
+        "Urban", "Emo", "Parallel", \
 ]
 
 listOfHelmetHats = [ \
@@ -1427,12 +1428,13 @@ def rando_color_scheme(armorStyle):
     
     ### RANDOMIZE A COLOR SCHEME ###
     ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
-    retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
+    # retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
     # retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
     # retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
     # retVal = listOfColorSchemes[2]  # Monochromatic - Tertiary Colors
     # retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
     # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
+    retVal = listOfColorSchemes[9]  # 2 Colors - Earthy
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
@@ -1559,21 +1561,20 @@ if __name__ == "__main__":
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
     print("\n")
-    print("CHARACTER INFO:")
-    for key in charInfoList:
-        if key in charOptions.keys():
-            if charOptions[key] != None:
-                print("\t{}:  {}".format(key, charOptions[key]))
-    print("\n")
+    # print("CHARACTER INFO:")
+    # for key in charInfoList:
+    #     if key in charOptions.keys():
+    #         if charOptions[key] != None:
+    #             print("\t{}:  {}".format(key, charOptions[key]))
+    # print("\n")
 
     # 2. PROPS
-    print("PROPS:")
-    for key in propsList:
-        if key in propsOptions.keys():
-            if propsOptions[key] != None:
-                print("\t{}:  {}".format(key, propsOptions[key]))
-    print("\n")
-    # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+    # print("PROPS:")
+    # for key in propsList:
+    #     if key in propsOptions.keys():
+    #         if propsOptions[key] != None:
+    #             print("\t{}:  {}".format(key, propsOptions[key]))
+    # print("\n")
 
     # 3. APPEARANCE
     print("APPEARANCE:")
@@ -1593,5 +1594,9 @@ if __name__ == "__main__":
     # for swatch in mainArmorColors.listOfBrownColors:
     #     print("{} is Brown".format(swatch.num))
     # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
+    # for swatch in mainArmorColors.listOfColors:
+    #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
+    #         print("{} is light green?".format(swatch.num))
+    #         print_color_object(swatch)
 
 

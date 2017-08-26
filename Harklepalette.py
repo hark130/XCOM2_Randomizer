@@ -60,9 +60,9 @@ class Color:
 		self.hue = hue  		# Hue of the this color
 		self.sat = saturation  	# Saturation of this color
 		self.val = value  		# Value of this color
-		self.wheelColor = self.determine_wheel_color()	
-		self.colorType = self.determine_color_type()
-		self.brightness = self.determine_brightness()
+		self.wheelColor = self.determine_wheel_color()	# see: validColors[]
+		self.colorType = self.determine_color_type()	# Primary, Secondary, Tertiary
+		self.brightness = self.determine_brightness()	# Light, Medium, Dark
 
 
 	def determine_wheel_color(self):
@@ -203,12 +203,14 @@ class ColorPalette:
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
 		"2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
 		"3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-		"Earthy", "Urban", "Emo", \
+		"2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
+		"Urban", "Emo", "Parallel", \
 	]
 	implementedSchemes = [ \
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
 		"2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
 		"3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
+		"2 Colors - Earthy", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -433,6 +435,8 @@ class ColorPalette:
 			retVal = self.get_three_secondary(colorToMatch, secondColorToMatch)
 		elif self.scheme == "Random":
 			retVal = self.get_random_colors(colorToMatch, secondColorToMatch)
+		elif self.scheme == "2 Colors - Earthy":
+			retVal = self.get_two_earthy_colors(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
@@ -986,6 +990,181 @@ class ColorPalette:
 		retVal = self.listOfColors[randint(0, self.listOfColors.__len__() - 1)]
 
 		return retVal
+
+
+	def get_two_earthy_colors(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get earthy colors from the list of Colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
+			OUTPUT:		Color class that is in an earthy color along with colorToMatch and secondColorToMatch
+			NOTE:
+						This function is unique, as of yet, because it builds from a sub-list of earthy colors.
+						http://www.creativecolorschemes.com/resources/free-color-schemes/earth-tone-color-scheme.shtml
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		tmpColor = None 			# Temporary Color object
+		matchThisColor = None  		# Color to match
+		numColors = 0  				# Holds of the number of given tertiary color in the list
+		randNum = 0					# Holds a randomized value
+		maxIterations = 1000		# Maximum number of while loops			
+
+		### GET COLOR ###
+		# Two Color Schemes
+		# 1. Brown(dark) → Brown(light)
+		# 2. Brown(medium) → Brown(dark)
+		# 3. Green(dark) → Yellow
+		# 4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
+		# 5. Green(light) → Greyscale(dark)... NOT IMPLEMENTED
+		# 6. Brown(light) or Greyscale(light) → Brown(reddish)
+		# 7. Green(medium) → Brown(medium)
+		# 8. Orange → Green(dark)
+
+		# 1. Determine starting color
+		## 1.1. Select Main
+		if colorToMatch is None:
+			while randNum not in [ 1, 2, 3, 4, 6, 7, 8 ]:  # List of implemented schemes
+				randNum = randint(1,8)  # Random Two Color Earthy scheme
+			randNum = 8  # DEBUGGING
+			# print("Two Color Earthy Scheme:\t{}".format(randNum))  # DEBUGGING
+			while retVal is None:
+				# 1.1.1. Randomize an earthy color
+				tmpColor = self.listOfEarthyColors[randint(0, self.listOfEarthyColors.__len__() - 1)]
+				# 1.1.1.1. Brown(dark) → Brown(light)
+				if randNum == 1:
+					if self.is_it_brown(tmpColor):
+						if tmpColor.brightness == "Dark":
+							retVal = tmpColor
+				# 1.1.1.2. Brown(medium) → Brown(dark)
+				elif randNum == 2:
+					if self.is_it_brown(tmpColor):
+						if tmpColor.brightness == "Medium":
+							retVal = tmpColor
+				# 1.1.1.3. Green(dark) → Yellow
+				elif randNum == 3:
+					if tmpColor.wheelColor == "Green":
+						if tmpColor.brightness == "Dark":
+							retVal = tmpColor
+				# 1.1.1.4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
+				elif randNum == 4:
+					if self.is_it_brown(tmpColor):
+						if tmpColor.brightness == "Light":
+							retVal = tmpColor
+					elif tmpColor.wheelColor.find("Orange") >= 0:
+						if tmpColor.brightness == "Light":
+							retVal = tmpColor
+				# 1.1.1.5. Green(light) → Greyscale(dark)
+				# NOTE: Not implemented since there are no Light Green colors in 
+				# 	the Main Armor Color Palette
+				# elif randNum == 5:
+				# 	if tmpColor.wheelColor.find("Green") >= 0:
+				# 		if tmpColor.brightness == "Light":
+				# 			retVal = tmpColor
+				# 1.1.1.6. Brown(light) or Greyscale(light) → Brown(reddish)
+				elif randNum == 6:
+					if self.is_it_brown(tmpColor):
+						if tmpColor.brightness == "Light":
+							retVal = tmpColor
+					elif tmpColor.wheelColor == "Greyscale":
+						if tmpColor.brightness == "Light":
+							retVal = tmpColor
+				# 1.1.1.7. Green(medium) → Brown(medium)
+				elif randNum == 7:
+					if tmpColor.wheelColor == "Green":
+						if tmpColor.brightness == "Medium":
+							retVal = tmpColor
+				# 1.1.1.8. Orange → Green(dark)
+				elif randNum == 8:
+					if tmpColor.wheelColor == "Orange" and tmpColor.brightness != "Light" and not self.is_it_brown(tmpColor):
+						retVal = tmpColor
+				else:
+					raise RuntimeError("get_two_earthy_colors:\tHow did we get here?")
+				# Limit while loop iterations
+				if retVal is None:
+					maxIterations -= 1
+					if maxIterations <= 0:
+						raise RuntimeError("get_two_earthy_colors:\tCouldn't find a Main color match for scheme {}".format(randNum))
+		## 1.2. Select Secondary
+		elif secondColorToMatch is None:
+			while retVal is None:
+				# 1.1.1. Randomize an earthy color
+				tmpColor = self.listOfEarthyColors[randint(0, self.listOfEarthyColors.__len__() - 1)]
+				# 1.1.1.1. Brown(dark) → Brown(light)
+				if self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Dark":
+					# print("Two Color Earthy Scheme:\t1")  # DEBUGGING
+					if self.is_it_brown(tmpColor) and tmpColor.brightness != "Dark":
+						retVal = tmpColor
+				# 1.1.1.2. Brown(medium) → Brown(dark)
+				elif self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Medium":
+					# print("Two Color Earthy Scheme:\t2")  # DEBUGGING
+					if self.is_it_brown(tmpColor) and tmpColor.brightness == "Dark":
+						retVal = tmpColor
+				# 1.1.1.3. Green(dark) → Yellow
+				elif colorToMatch.wheelColor == "Green" and colorToMatch.brightness == "Dark":
+					# print("Two Color Earthy Scheme:\t3")  # DEBUGGING
+					if tmpColor.wheelColor.find("Yellow") >= 0:
+						retVal = tmpColor
+				# 1.1.1.4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
+				elif colorToMatch.wheelColor == "Orange" and colorToMatch.brightness == "Light":
+					# print("Two Color Earthy Scheme:\t4")  # DEBUGGING
+					if tmpColor.wheelColor == "Greyscale" and tmpColor.brightness == "Light":
+						retVal = tmpColor
+				# 1.1.1.5. Green(light) → Greyscale(dark)
+				# NOTE: Not implemented since there are no Light Green colors in 
+				# 	the Main Armor Color Palette
+				# elif colorToMatch.wheelColor.find("Green") >= 0 and colorToMatch.brightness == "Light":
+				# 	print("Two Color Earthy Scheme:\t5")  # DEBUGGING
+				# 	if tmpColor.wheelColor == "Greyscale" and tmpColor.brightness == "Dark":
+				# 		retVal = tmpColor
+				# 1.1.1.6. Brown(light) or Greyscale(light) → Brown(reddish)
+				elif (self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Light") or \
+				(colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Light"):
+					# print("Two Color Earthy Scheme:\t6")  # DEBUGGING
+					if self.is_it_brown(tmpColor) and tmpColor.wheelColor.find("Red") >= 0:
+						retVal = tmpColor
+				# 1.1.1.7. Green(medium) → Brown(medium)
+				elif colorToMatch.wheelColor == "Green" and colorToMatch.brightness == "Medium":
+					# print("Two Color Earthy Scheme:\t7")  # DEBUGGING
+					if self.is_it_brown(tmpColor) and tmpColor.brightness == "Medium":
+						retVal = tmpColor
+				# 1.1.1.8. Orange → Green(dark)
+				elif colorToMatch.wheelColor == "Orange" and colorToMatch.brightness != "Light" and not self.is_it_brown(colorToMatch):
+					# print("Two Color Earthy Scheme:\t8")  # DEBUGGING
+					if tmpColor.wheelColor.find("Green") >= 0 and tmpColor.brightness != "Light":
+						retVal = tmpColor
+				else:
+					raise RuntimeError("get_two_earthy_colors:\tHow did we get here?")
+				# Limit while loop iterations
+				if retVal is None:
+					maxIterations -= 1
+					if maxIterations <= 0:
+						raise RuntimeError("get_two_earthy_colors:\tCouldn't find a secondary color match for scheme {}".format(randNum))
+		## 1.3. Select Weapon
+		else:
+			retVal = colorToMatch
+
+		# print("Earthy color randomization took {} iterations\n".format(1000 - maxIterations))  # DEBUGGING
+		return retVal
+
+
+		# Three Color Schemes
+		# BBY
+		# BBO
+		# B(l)GGr
+		# G(l)GrB
+		# BBB
+		# BOY
+		# GrG(d)G(l)
+		# BBG(d)
+
+		# Rando
+
+
+		
+		
+
 	
 	
 class MainArmorPalette(ColorPalette):
@@ -1115,8 +1294,10 @@ class MainArmorPalette(ColorPalette):
 		self.listOfColors.append(Color(97, 177, 43, 21))
 
 		for swatch in self.listOfColors:
+			# Build the list of brown colors
 			if self.is_it_brown(swatch):
 				self.listOfBrownColors.append(swatch)
+			# Build the list of earthy colors
 				# Browns are earthy colors as well
 				self.listOfEarthyColors.append(swatch)
 			elif swatch.num in [ 0, 1, 2, 3, 5, 6, 16, 23, 28, 29, \
@@ -1124,6 +1305,23 @@ class MainArmorPalette(ColorPalette):
 			                        54, 55, 56, 57, 58, 59, 60, 61, 62, 63, \
 			                        64, 65, 71, 75, 78, 80, 81, 97 ]:
 			    self.listOfEarthyColors.append(swatch)
+			elif swatch.wheelColor == "Orange":
+				if swatch.brightness == "Medium" or swatch.brightness == "Dark":
+					self.listOfEarthyColors.append(swatch)
+				elif swatch.brightness == "Light":
+					self.listOfEarthyColors.append(swatch)
+					# print("This is being added as 'light brown'")  # DEBUGGING
+					# print_color_object(swatch)
+			elif swatch.wheelColor.find("Green") >= 0 and swatch.brightness == "Light":
+				self.listOfEarthyColors.append(swatch)
+				# print("This is being added as 'light green'")  # DEBUGGING
+				# print_color_object(swatch)
+			elif swatch.wheelColor == "Green" and swatch.brightness == "Medium":
+				self.listOfEarthyColors.append(swatch)
+				# print("This is being added as 'medium green'")  # DEBUGGING
+				# print_color_object(swatch)
+			elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
+				self.listOfEarthyColors.append(swatch)
 
 		# print("Earth Tones:\t\n")
 		# for swatch in self.listOfEarthyColors:
@@ -1266,6 +1464,8 @@ class SecondaryArmorPalette(ColorPalette):
 			    self.listOfEarthyColors.append(swatch)
 			# There are more than just 70 earth tones in the Secondary Armor color palette
 			elif swatch.num in [ 71, 72, 79, 80, 81, 84, 87, 92, 93, 97 ]:
+				self.listOfEarthyColors.append(swatch)
+			elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
 				self.listOfEarthyColors.append(swatch)
 
 		# print("Earth Tones:\t\n")
