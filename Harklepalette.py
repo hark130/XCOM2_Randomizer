@@ -210,7 +210,7 @@ class ColorPalette:
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
 		"2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
 		"3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-		"2 Colors - Earthy", \
+		"2 Colors - Earthy", "Random Earthy", \
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -437,13 +437,11 @@ class ColorPalette:
 			retVal = self.get_random_colors(colorToMatch, secondColorToMatch)
 		elif self.scheme == "2 Colors - Earthy":
 			retVal = self.get_two_earthy_colors(colorToMatch, secondColorToMatch)
+		elif self.scheme == "Random Earthy":
+			retVal = self.get_random_earthy_colors(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
 			raise RuntimeError("How did we get here?!")
-
-		# "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-		# "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-		# "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
 
 		return retVal
 
@@ -1149,18 +1147,22 @@ class ColorPalette:
 		return retVal
 
 
-		# Three Color Schemes
-		# BBY
-		# BBO
-		# B(l)GGr
-		# G(l)GrB
-		# BBB
-		# BOY
-		# GrG(d)G(l)
-		# BBG(d)
+	def get_random_earthy_colors(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get random earthy colors from the list of earthy colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" (ignored)
+						secondColorToMatch - Secondary Armor Color (ignored)
+			OUTPUT:		Earthy Color class that has been completely randomized regardless of Main and Secondary
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		
+		### GET COLOR ###
+		# 1. Randomize color
+		retVal = self.listOfEarthyColors[randint(0, self.listOfEarthyColors.__len__() - 1)]
 
-		# Rando
-
+		return retVal
 
 		
 		
