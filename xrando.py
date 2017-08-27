@@ -1,25 +1,11 @@
 from copy import deepcopy
+from Harklepalette import Color
+from Harklepalette import MainArmorPalette
+from Harklepalette import print_color_object
+from Harklepalette import SecondaryArmorPalette
+from Harklepalette import WeaponColorPalette
 from random import randint
 import os
-
-'''
-Face:
-Hair:
-Facial Hair:
-Hair Color:
-Eye Color:
-Race:
-    0 - Caucasian
-    1 - Afican
-    2 - Asian
-    3 - Hispanic
-Skin Color:
-Main Armor Color:
-Secondary Armor Color:
-Weapon Color:
-Voice:
-Attitude:
-'''
 
 
 ######################################################
@@ -40,9 +26,11 @@ listOfNations = [ \
 listOfGenders = [ "Male", "Female" ]
 
 listOfColorSchemes = [ \
-    "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-    "Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-    "Random Chaos", "Earthy", "Urban", \
+        "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+        "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+        "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
+        "2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
+        "Urban", "Goth", "Parallel", \
 ]
 
 listOfHelmetHats = [ \
@@ -173,6 +161,8 @@ listOfRaces = [ \
     "0 - Caucasian", "1 - Afican", "2 - Asian", \
     "3 - Hispanic", \
 ]
+
+
 ######################################################
 ######################################################
 ################## HELPER FUNCTIONS ##################
@@ -1389,6 +1379,21 @@ def rando_facial_hair(armorStyle, gender, nationality, race):
     return retVal
 
 
+def rando_color_scheme(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    tmpInt = randint(0, listOfColorSchemes.__len__() - 1)  # Uncomment this once more color schemes are implemented in ColorPalette
+    
+    ### RANDOMIZE A COLOR SCHEME ###
+    retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
+
+    return retVal
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -1415,7 +1420,14 @@ if __name__ == "__main__":
         "Skin Color", "Main Armor Color", "Secondary Armor Color", \
         "Weapon Color", "Voice", "Attitude", \
     ]
-    
+    armorColorScheme = ""
+    mainArmorColors = None
+    secondaryArmorColors = None
+    weaponColors = None
+    mainColorObject = None  # Variable to hold Color object returned by MainArmorPalette.get_color()
+    secondaryColorObject = None  # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
+    weaponColorObject = None  # Variable to hold Color object returned by WeaponColorPalette.get_color()
+
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
     # 1.1. Nationality
@@ -1474,8 +1486,30 @@ if __name__ == "__main__":
     # 3.4. Eye Color
     # 3.6. Skin Color
     # 3.7. Main Armor Color
+    # 3.7.1. Randomize a Color Scheme
+    armorColorScheme = rando_color_scheme(propsOptions["Armor Style"])
+    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
+    # 3.7.2. Instanstiate Main Armor Colors Object
+    mainArmorColors = MainArmorPalette(armorColorScheme)
+    # 3.7.3. Randomize a Main Armor Color
+    mainColorObject = mainArmorColors.get_color()
+    # 3.7.4. Store the Main Armor Color Object's number
+    appearanceOptions["Main Armor Color"] = mainColorObject.num
     # 3.8. Secondary Armor Color
+    # 3.8.1. Instanstiate Secondary Armor Colors Object
+    secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
+    # 3.8.2. Randomize a Secondary Armor Color Object
+    secondaryColorObject = secondaryArmorColors.get_color(mainColorObject)
+    # 3.8.3. Store the Secondary Armor Color Object's number
+    appearanceOptions["Secondary Armor Color"] = secondaryColorObject.num
     # 3.9. Weapon Color
+    # 3.9.1. Instantiate Weapon Color Object
+    weaponColors = WeaponColorPalette(armorColorScheme)
+    # 3.9.2. Randomize a Weapon Color Object
+    weaponColorObject = weaponColors.get_color(mainColorObject, secondaryColorObject)
+    
+    # 3.9.3. Store the Weapon Color Object's number
+    appearanceOptions["Weapon Color"] = weaponColorObject.num
     # 3.10. Voice
     # 3.11. Attitude
 
@@ -1496,13 +1530,46 @@ if __name__ == "__main__":
             if propsOptions[key] != None:
                 print("\t{}:  {}".format(key, propsOptions[key]))
     print("\n")
-    # print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
 
     # 3. APPEARANCE
     print("APPEARANCE:")
+    print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+    print("\tArmor Color Scheme:  {}".format(armorColorScheme))  # DEBUGGING
     for key in appearanceList:
         if key in appearanceOptions.keys():
             if appearanceOptions[key] != None:
                 print("\t{}:  {}".format(key, appearanceOptions[key]))
     print("\n")
+
+    ### TESTING ###
+    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
+    # print_color_object(mainColorObject)  # DEBUGGING
+    # print_color_object(secondaryColorObject)  # DEBUGGING
+    # print_color_object(weaponColorObject)  # DEBUGGING
+    # print(dir(mainArmorColors))
+    # for swatch in mainArmorColors.listOfBrownColors:
+    #     print("{} is Brown".format(swatch.num))
+    # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
+    # darkestColor = mainArmorColors.listOfColors[0]
+    # for swatch in mainArmorColors.listOfColors:
+    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
+    # #         print("{} is light green?".format(swatch.num))
+    # #         print_color_object(swatch)
+    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
+    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
+    #         darkestColor = swatch
+    # print("Darkest Main Color:")
+    # print_color_object(darkestColor)
+    # darkestColor = secondaryArmorColors.listOfColors[0]
+    # for swatch in secondaryArmorColors.listOfColors:
+    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
+    # #         print("{} is light green?".format(swatch.num))
+    # #         print_color_object(swatch)
+    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
+    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
+    #         darkestColor = swatch
+    # print("Darkest Secondary Color:")
+    # print_color_object(darkestColor)
+    # print_color_object(Color(94, 207, 100, 4))
+    # print_color_object(Color(95, 204, 24, 8))
 
