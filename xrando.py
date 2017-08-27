@@ -4,6 +4,7 @@ from Harklepalette import MainArmorPalette
 from Harklepalette import print_color_object
 from Harklepalette import SecondaryArmorPalette
 from Harklepalette import WeaponColorPalette
+from Harklepalette import EyeColorPalette
 from random import randint
 import os
 
@@ -457,7 +458,7 @@ def rando_first_name(nationality, gender):
     ### LOCAL VARIABLES ###
     retVal = ""
     listOfFirstNames = []
-    firstNameFile = os.path.join("Lists", "01-Name_First_" + gender + "_" + nationality + ".txt")
+    firstNameFile = os.path.join("Lists", "01-Name_First_" + gender + "_" + nationality.replace(" ", "_") + ".txt")
 
     ### READ FIRST NAME ###
     if os.path.isfile(firstNameFile) is False:
@@ -489,7 +490,7 @@ def rando_last_name(nationality):
     ### LOCAL VARIABLES ###
     retVal = ""
     listOfLastNames = []
-    lastNameFile = os.path.join("Lists", "01-Name_Last_" + nationality + ".txt")
+    lastNameFile = os.path.join("Lists", "01-Name_Last_" + nationality.replace(" ", "_") + ".txt")
 
     ### READ LAST NAME ###
     if os.path.isfile(lastNameFile) is False:
@@ -1575,9 +1576,11 @@ if __name__ == "__main__":
     mainArmorColors = None
     secondaryArmorColors = None
     weaponColors = None
-    mainColorObject = None  # Variable to hold Color object returned by MainArmorPalette.get_color()
-    secondaryColorObject = None  # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
-    weaponColorObject = None  # Variable to hold Color object returned by WeaponColorPalette.get_color()
+    eyeColors = None            # Holds EyeColorPalette object
+    mainColorObject = None      # Variable to hold Color object returned by MainArmorPalette.get_color()
+    secondaryColorObject = None # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
+    weaponColorObject = None    # Variable to hold Color object returned by WeaponColorPalette.get_color()
+    eyeColorObject = None       # Holds Color object returned by EyeColorPalette.get_eye_color()
 
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -1634,7 +1637,7 @@ if __name__ == "__main__":
                                                          charOptions["Nationality"], \
                                                          appearanceOptions["Race"])
     # 3.3. Hair Color
-    # 3.4. Eye Color
+
     # 3.6. Skin Color
     # 3.7. Main Armor Color
     # 3.7.1. Randomize a Color Scheme
@@ -1665,6 +1668,17 @@ if __name__ == "__main__":
     appearanceOptions["Voice"] = rando_voice(charOptions["Nationality"], appearanceOptions["Race"])
     # 3.11. Attitude
     appearanceOptions["Attitude"] = rando_attitude(propsOptions["Armor Style"])
+
+
+    # 3.4. Eye Color
+    # 3.4.1. Instantiate Eye Color Palette
+    # EyeColorPalette(scheme, armorStyle, nationality, race, gender, mainColor)
+    eyeColors = EyeColorPalette(armorColorScheme, propsOptions["Armor Style"], charOptions["Nationality"], \
+                                appearanceOptions["Race"], charOptions["Gender"], mainColorObject)
+    # 3.4.2. Randomize an Eye Color Object
+    # eyeColorObject = eyeColors.get_eye_color()
+    # 3.4.3. Store the Eye Color Object's number
+    # appearanceOptions["Eye Color"] = eyeColorObject.num
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
