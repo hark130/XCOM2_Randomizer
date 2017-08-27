@@ -162,6 +162,31 @@ listOfRaces = [ \
     "3 - Hispanic", \
 ]
 
+listOfVoices = [ \
+    "American English 1", "American English 2", "American English 3", \
+    "American English 4", "American English 5", "American English 6", \
+    "American English 7", "American English 8", "American English 9", \
+    "American English 10", \
+    "UK English 1", "UK English 2", "UK English 3", \
+    "Australian English 1", "Australian English 2", \
+    "French 1", "French 2", "French 3", \
+    "French 4", "French 5", "French 6", \
+    "French 7", "French 8", "French 9", \
+    "French 10", \
+    "German 1", "German 2", "German 3", \
+    "German 4", "German 5", "German 6", \
+    "German 7", "German 8", "German 9", \
+    "German 10", \
+    "Italian 1", "Italian 2", "Italian 3", \
+    "Italian 4", "Italian 5", "Italian 6", \
+    "Italian 7", "Italian 8", "Italian 9", \
+    "Italian 10", \
+    "Spanish 1", "Spanish 2", "Spanish 3", \
+    "Spanish 4", "Spanish 5", "Spanish 6", \
+    "Spanish 7", "Spanish 8", "Spanish 9", \
+    "Spanish 10", \
+]
+
 
 ######################################################
 ######################################################
@@ -1393,6 +1418,78 @@ def rando_color_scheme(armorStyle):
     retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
 
     return retVal
+
+
+def rando_voice(nationality, race):
+    ### INPUT VALIDATION ###
+    if not isinstance(nationality, str):
+        raise TypeError('nationality is not a string')
+    elif nationality not in listOfNations:
+        raise ValueError('Invalid nationality')
+    elif not isinstance(race, str):
+        raise TypeError('gender is not a string')
+    elif race not in listOfRaces:
+        raise ValueError('Invalid race')
+
+    ### LOCAL VARIABLES ###
+    retVal = None       # Will hold a string from listOfVoices
+    tmpVoiceList = []   # Will hold a dynamically built list of nation-appropriate voices
+
+    ### CHOOSE A VOICE ###
+    # Setup dynamically built lists of appropriate voices
+    if nationality in [ "Argentina", "Brazil", "Mexico", "Spain" ]:
+        if race == "0 - Caucasian":
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        elif race == "3 - Hispanic":
+            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
+    elif nationality in [ "Australia", "United Kingdom" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+    elif nationality in [ "Canada" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+    elif nationality in [ "Belgium" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+    elif nationality in [ "France" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+    elif nationality in [ "Germany" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("German") >= 0 ]
+    elif nationality in [ "China", "Greece", "Israel", "Japan", "Poland", "Russia", "Saudi Arabia", "South Korea", "Sweden", "Ukraine" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+    elif nationality in [ "India", "Ireland", "Scotland" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+    elif nationality in [ "Egypt", "Nigeria", "Netherlands", "Norway", "South Africa" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+    elif nationality in [ "Italy" ]:
+        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Italian") >= 0 ]
+    elif nationality in [ "USA" ]:
+        if race in [ "0 - Caucasian", "1 - Afican", "2 - Asian" ]:
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+        elif race == "3 - Hispanic":
+            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+    else:
+        raise RuntimeError("rando_voice:\tNationality '{}' is not implemented".format(nationality))
+
+
+    # Randomly select from dynamically built list
+    if tmpVoiceList.__len__() == 0:
+        raise RuntimeError("rando_voice:\tDid not dynamically add any voices to the list")
+    else:
+        retVal = tmpVoiceList[randint(0, tmpVoiceList.__len__() - 1)]
+
+    return retVal
+
 
 ######################################################
 ######################################################
