@@ -50,7 +50,7 @@ listOfColorSchemes = [ \
         "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
         "2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
-        "Urban", "Emo", "Parallel", \
+        "Urban", "Goth", "Parallel", \
 ]
 
 listOfHelmetHats = [ \
