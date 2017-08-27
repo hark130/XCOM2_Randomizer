@@ -43,6 +43,16 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Add Armor Style and Color Scheme notes to the Character Info Biography
     [ ] Urban color scheme should equal increased chance for camo patterns everywhere
     [ ] Urban color scheme should equal higher probability for urban camo patterns
+    [ ] Emo color scheme should:
+      [ ] Maximize piercings
+      [ ] Maximize certain face paint (e.g., Pris, eye black, eyeliner)
+      [ ] Maximize tattoos (black and red)
+      [ ] Maximize emo hair styles (bows, pigtails?)
+      [ ] Minimize facial hair (clean shaven, stubble, and 5 o'clock shadow)
+      [ ] Hair color (black, violet, green, purple, red)
+      [ ] Hats (bows, fedoras, skull caps, pigtails, etc)
+      [ ] Lightest skin tone
+    [X] Rename Emo color style to Goth
     [X] Extra input validation on get_color()... if colorToMatch == None and secondColorToMatch != None... error
     [X] Implemenet Color class
       [X] Members
