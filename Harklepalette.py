@@ -29,9 +29,7 @@ class Color:
         "Orange", "Orange Yellow", "Yellow", \
         "Yellow Green", "Green", "Green Blue", \
         "Blue", \
-        # "Blue", "Blue Indigo", "Indigo", \
         "Blue Violet", "Violet", "Violet Red", \
-        # "Indigo Violet", "Violet", "Violet Red", \
         "Greyscale", \
     ]
     validTypes = [ \
@@ -78,10 +76,7 @@ class Color:
         greenHue = 120
         greenBlueHue = 180
         blueHue = 240
-        # blueIndigoHue = 255
-        # indigoHue = 270
         blueVioletHue = 270
-        # indigoVioletHue = 285
         violetHue = 300
         violetRedHue = 330
         upperLimitHue = 360
@@ -105,25 +100,12 @@ class Color:
             retVal = "Green"
         elif self.hue >= ((greenHue + greenBlueHue) / 2) and self.hue < ((greenBlueHue + blueHue) / 2):
             retVal = "Green Blue"
-        ############## OLD VISIBLE LIGHT SPECTRUM COLORS ##############
-        # elif self.hue >= ((greenBlueHue + blueHue) / 2) and self.hue < ((blueHue + blueIndigoHue) / 2):
-        #     retVal = "Blue"
-        # elif self.hue >= ((blueHue + blueIndigoHue) / 2) and self.hue < ((blueIndigoHue + indigoHue) / 2):
-        #     retVal = "Blue Indigo"
-        # elif self.hue >= ((blueIndigoHue + indigoHue) / 2) and self.hue < ((indigoHue + indigoVioletHue) / 2):
-        #     retVal = "Indigo"
-        # elif self.hue >= ((indigoHue + indigoVioletHue) / 2) and self.hue < ((indigoVioletHue + violetHue) / 2):
-        #     retVal = "Indigo Violet"
-        # elif self.hue >= ((indigoVioletHue + violetHue) / 2) and self.hue < ((violetHue + violetRedHue) / 2):
-        #     retVal = "Violet"
-        ############## NEW COLOR WHEEL COLORS ##############
         elif self.hue >= ((greenBlueHue + blueHue) / 2) and self.hue < ((blueHue + blueVioletHue) / 2):
             retVal = "Blue"
         elif self.hue >= ((blueHue + blueVioletHue) / 2) and self.hue < ((blueVioletHue + violetHue) / 2):
             retVal = "Blue Violet"
         elif self.hue >= ((blueVioletHue + violetHue) / 2) and self.hue < ((violetHue + violetRedHue) / 2):
             retVal = "Violet"
-        ############## OLD COLOR WHEEL COLORS ##############
         elif self.hue >= ((violetHue + violetRedHue) / 2) and self.hue < ((violetRedHue + upperLimitHue) / 2):
             retVal = "Violet Red"
         elif self.hue >= ((violetRedHue + upperLimitHue) / 2) and self.hue <= upperLimitHue:
@@ -215,9 +197,7 @@ class ColorPalette:
         "Orange", "Orange Yellow", "Yellow", \
         "Yellow Green", "Green", "Green Blue", \
         "Blue", \
-        # "Blue", "Blue Indigo", "Indigo", \
         "Blue Violet", "Violet", "Violet Red", \
-        # "Indigo Violet", "Violet", "Violet Red", \
         "Greyscale", \
     ]
     validTypes = [ \
@@ -247,9 +227,7 @@ class ColorPalette:
     ]
     listOfTertiaryColors = [ \
         "Red Orange", "Orange Yellow", "Yellow Green", \
-        # "Green Blue", "Blue Indigo", "Indigo", \
         "Green Blue", "Blue Violet", \
-        # "Indigo Violet", "Violet Red", \
         "Violet Red", \
     ]
     # Assign colors to this list programtically during __init__()
@@ -261,10 +239,6 @@ class ColorPalette:
     # Assign black colors to this list during __init__()
     listOfBlackColors = []
     scheme = ""
-    # # Store the colors selected under this palette
-    # mainColor = Color(0, 0, 0, 0)
-    # secondaryColor = Color(0, 0, 0, 0)
-    # weaponColor = Color(0, 0, 0, 0)
 
 
     def __init__(self, scheme):
@@ -347,25 +321,6 @@ class ColorPalette:
         return retVal
 
     
-    # Color(#HSV)
-    # Main
-    # self.listOfColors.append(Color(2, 32, 45, 26))
-    # self.listOfColors.append(Color(49, 25, 68, 22))
-    # self.listOfColors.append(Color(50, 24, 63, 13))
-    # self.listOfColors.append(Color(51, 26, 57, 16))
-    # self.listOfColors.append(Color(52, 24, 53, 18))
-    # self.listOfColors.append(Color(53, 22, 42, 22))
-    # self.listOfColors.append(Color(54, 20, 31, 26))
-    # self.listOfColors.append(Color(55, 19, 21, 31))
-    # Secondary
-    # self.listOfColors.append(Color(0, 39, 49, 14))
-    # self.listOfColors.append(Color(4, 43, 49, 17))
-    # self.listOfColors.append(Color(6, 33, 56, 31))
-    # self.listOfColors.append(Color(8, 34, 61, 22))
-    # self.listOfColors.append(Color(21, 24, 56, 20))
-    # self.listOfColors.append(Color(28, 40, 60, 20))
-    # self.listOfColors.append(Color(36, 27, 66, 23))
-    # self.listOfColors.append(Color(84, 19, 100, 48))
     def is_it_brown(self, someColor):
         ### INPUT VALIDATION ###
         if not isinstance(someColor, Color):
@@ -377,47 +332,38 @@ class ColorPalette:
         ### CHECK COLOR ###
         # 1.1. Brown == Dark Orange
         # https://en.wikipedia.org/wiki/Hue
-        if someColor.wheelColor == "Orange" and someColor.wheelColor == "Dark":
-            print("Dark Orange")  # DEBUGGING
-            print_color_object(someColor)  # DEBUGGING
+        if someColor.wheelColor == "Orange" and someColor.brightness == "Dark":
+            # print("Dark Orange")  # DEBUGGING
+            # print_color_object(someColor)  # DEBUGGING
             retVal = True
         # 1.2. Wingin' It
-        elif someColor.wheelColor == "Red Orange" and someColor.wheelColor == "Dark":
-            print("Dark Red Orange")  # DEBUGGING
-            print_color_object(someColor)  # DEBUGGING
+        elif someColor.wheelColor == "Red Orange" and someColor.brightness == "Dark":
+            # print("Dark Red Orange")  # DEBUGGING
+            # print_color_object(someColor)  # DEBUGGING
             retVal = True
         # 1.3. Wingin' It
-        elif someColor.wheelColor == "Orange Yellow" and someColor.wheelColor == "Dark":
-            print("Dark Orange Yellow")  # DEBUGGING
-            print_color_object(someColor)  # DEBUGGING
+        elif someColor.wheelColor == "Orange Yellow" and someColor.brightness == "Dark":
+            # print("Dark Orange Yellow")  # DEBUGGING
+            # print_color_object(someColor)  # DEBUGGING
             retVal = True
-        # 2. Low saturation in Yellow-Red region
-        # http://www.greatreality.com/color/ColorHVC.htm
-        ## 2.1. Check Wheel Color against Saturation
-        # if someColor.wheelColor in [ "Red", "Red Orange", "Orange", "Orange Yellow", "Yellow" ]:
-        #     if someColor.sat > 50:
-        #         retVal = True
-        ## 2.2. Check Hue against Saturation
-        # if someColor.hue >= 0 and someColor.hue <= 40:
-        #     if someColor.sat > 33:
-        #         retVal = True
-        # 3. ???
-        # http://www.december.com/html/spec/colorhsl.html        
-        # 4. Wingin' It
+
+        # 2. Wingin' It
         if (someColor.hue >= 0 and someColor.hue <= 40) or someColor.hue >= 330:
             if (someColor.sat - (someColor.val * 1)) >= 40:
                 retVal = True
                 # print_color_object(someColor)  # DEBUGGING
-        # 5. Wingin' It
+
+        # 3. Wingin' It
         if (someColor.hue >= 0 and someColor.hue <= 40) or someColor.hue >= 330:
             if someColor.val <= 35:
                 retVal = True
-        # 6. Wingin' It
+
+        # 4. Wingin' It
         if (someColor.hue >= 0 and someColor.hue <= 55) or someColor.hue >= 330:
             if someColor.val <= 25:
                 retVal = True
 
-        # 7. Remove Greyscale colors
+        # 5. Remove Greyscale colors
         if (someColor.wheelColor == "Greyscale"):
             retVal = False
 
@@ -501,7 +447,6 @@ class ColorPalette:
             retVal = self.get_goth_colors(colorToMatch, secondColorToMatch)
         elif self.scheme == "Parallel":
             retVal = self.get_parallel_colors(colorToMatch, secondColorToMatch)
-        ############# IMPLEMENT MORE COLOR SCHEMES HERE #############
         else:
             raise RuntimeError("get_color:\tHow did we get here?!")
 
@@ -539,8 +484,6 @@ class ColorPalette:
         # 2. Count the colors in the list
         numColors = self.count_colors(matchThisColor)
         if numColors <= 0:
-            # raise ValueError("Could not find any {} colors".format(matchThisColor))
-            # print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
             matchThisColor = "Greyscale"
             numColors = self.count_colors(matchThisColor)
         # 3. Randomly choose a color
@@ -586,8 +529,6 @@ class ColorPalette:
         # 2. Count the colors in the list
         numColors = self.count_colors(matchThisColor)
         if numColors <= 0:
-            # raise ValueError("Could not find any {} colors".format(matchThisColor))
-            # print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
             matchThisColor = "Greyscale"
             numColors = self.count_colors(matchThisColor)
         # 3. Randomly choose a color
@@ -631,8 +572,6 @@ class ColorPalette:
         # 2. Count the colors in the list
         numColors = self.count_colors(matchThisColor)
         if numColors <= 0:
-            # raise ValueError("Could not find any {} colors".format(matchThisColor))
-            # print("Could not find any {} colors".format(matchThisColor))  # DEBUGGING
             matchThisColor = "Greyscale"
             numColors = self.count_colors(matchThisColor)
         # 3. Randomly choose a color
@@ -676,10 +615,6 @@ class ColorPalette:
             secondIndex = self.validColors.index(secondColorToMatch.wheelColor)
             if ((mainIndex + 1) != secondIndex and (mainIndex - 1) != secondIndex) and \
             ((mainIndex + secondIndex) != (self.validColors.__len__() - 2)):
-                # print("Main Color:\tIndex {}".format(mainIndex))  # DEBUGGING
-                # print_color_object(colorToMatch)  # DEBUGGING
-                # print("Secondary Color:\tIndex {}".format(secondIndex))  # DEBUGGING
-                # print_color_object(secondColorToMatch)  # DEBUGGING
                 raise ValueError("Main and Secondary colors are not analogous to each other")
 
         ### GET COLOR ###
@@ -779,13 +714,11 @@ class ColorPalette:
             #### 2.2.b.i Randomize offset for complementary color (NOTE: Should be 6)
             if (self.validColors.__len__() - 1) % 2 == 0:  # Even (NOTE: Minus 1 for Greyscale)
                 offset = (self.validColors.__len__() - 1) / 2
-                # print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
             else:  # Odd
                 randNum = randint(0, 1)
                 if randNum == 0:
                     randNum = -1
                 offset = (self.validColors.__len__() - 1 + randNum) / 2
-                # print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
             #### 2.2.b.ii Determine the color at that offset
             complementaryColor = self.spin_a_color(matchThisColor, int(offset), True)
 
@@ -839,10 +772,6 @@ class ColorPalette:
             matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
         ## 1.2. Select Weapon
         elif secondColorToMatch is not None:
-            # print("Main Type:\t{}".format(type(colorToMatch)))  # DEBUGGING
-            # print("2nd Type:\t{}".format(type(secondColorToMatch)))  # DEBUGGING
-            # print("Main Dir:\t{}".format(dir(colorToMatch)))  # DEBUGGING
-            # print("2nd Dir:\t{}".format(dir(secondColorToMatch)))  # DEBUGGING
             if self.spin_a_color(colorToMatch.wheelColor, 4, True) != secondColorToMatch.wheelColor and \
             self.spin_a_color(colorToMatch.wheelColor, -4, True) != secondColorToMatch.wheelColor:
                 raise ValueError("Main and Secondary colors do not appear to be in a triad")
@@ -864,7 +793,6 @@ class ColorPalette:
             #### 2.2.b.i Randomize offset for complementary color (NOTE: Should be 4 or -4)
             if (self.validColors.__len__() - 1) % 3 == 0:  # NOTE: Minus 1 for Greyscale
                 offset = (self.validColors.__len__() - 1) / 3
-                # print("Wheel is even at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
             else:  # Not a multiple of three (?)
                 randNum = randint(0, 1)
                 if randNum == 0:
@@ -872,7 +800,6 @@ class ColorPalette:
                 while ((self.validColors.__len__() - 1 + randNum) % 3 != 0):
                     randNum = randNum + randNum
                 offset = (self.validColors.__len__() - 1 + randNum) / 3
-                # print("Wheel is odd at {} colors and offset is {}".format(self.validColors.__len__() - 1, offset))  # DEBUGGING
             #### 2.2.b.ii Determine the color at that offset
             triadColor = self.spin_a_color(matchThisColor, int(offset), True)
 
@@ -925,16 +852,8 @@ class ColorPalette:
             matchThisColor = self.validColors[randint(0, self.validColors.__len__() - 1)]
         ## 1.2. Select Weapon
         elif secondColorToMatch is not None:
-            # print("Main Type:\t{}".format(type(colorToMatch)))  # DEBUGGING
-            # print("2nd Type:\t{}".format(type(secondColorToMatch)))  # DEBUGGING
-            # print("Main Dir:\t{}".format(dir(colorToMatch)))  # DEBUGGING
-            # print("2nd Dir:\t{}".format(dir(secondColorToMatch)))  # DEBUGGING
             if self.spin_a_color(colorToMatch.wheelColor, 5, True) != secondColorToMatch.wheelColor and \
             self.spin_a_color(colorToMatch.wheelColor, -5, True) != secondColorToMatch.wheelColor:
-                # print_color_object(colorToMatch)  # DEBUGGING
-                # print_color_object(secondColorToMatch)  # DEBUGGING
-                # print("Main:\t{}".format(self.validColors.index(colorToMatch.wheelColor)))  # DEBUGGING
-                # print("2nd:\t{}".format(self.validColors.index(secondColorToMatch.wheelColor)))  # DEBUGGING
                 raise ValueError("Main and Secondary colors do not appear to be split complementary")
             elif self.spin_a_color(colorToMatch.wheelColor, 5, True) != secondColorToMatch.wheelColor:
                 matchThisColor = self.spin_a_color(colorToMatch.wheelColor, 5, True)
@@ -1290,15 +1209,6 @@ class ColorPalette:
             ( 80, 38, 27 ), \
         ]
 
-        # mainColors = []
-        # for combo in listOfColorCombos:
-        #     # print("Main Color:\t{}".format(combo[0]))  # DEBUGGING
-        #     mainColors.append(combo[0])
-
-        # for combo in listOfColorCombos:
-        #     if mainColors.count(combo[0]) is not 1:
-        #         print("Too many {}s".format(combo[0]))  # DEBUGGING
-
         ### GET COLOR ###
         # 1. Determine starting color
         ## 1.1. Select Main
@@ -1341,8 +1251,6 @@ class ColorPalette:
                     break
 
         if not retVal:
-            # print("Main:\t{}".format(colorToMatch.num))  # DEBUGGING
-            # print("2nd:\t{}".format(secondColorToMatch))  # DEBUGGING
             raise RuntimeError("get_urban_colors:\tCould not match color combo tuple to input")
 
         return retVal
@@ -1385,10 +1293,6 @@ class ColorPalette:
                 randNum = randint(0, self.listOfGothColors.__len__() - 1)
                 retVal = self.listOfGothColors[randNum]
             else:
-                # if colorToMatch:
-                #     print_color_object(colorToMatch)  # DEBUGGING
-                # if secondColorToMatch:
-                #     print_color_object(secondColorToMatch)  # DEBUGGING
                 raise RuntimeError("get_goth_colors:\tHow did we get here?")
         ## 1.3. Select Weapon
         else:
@@ -1602,46 +1506,26 @@ class MainArmorPalette(ColorPalette):
                     self.listOfEarthyColors.append(swatch)
                 elif swatch.brightness == "Light":
                     self.listOfEarthyColors.append(swatch)
-                    # print("This is being added as 'light brown'")  # DEBUGGING
-                    # print_color_object(swatch)
             elif swatch.wheelColor.find("Green") >= 0 and swatch.brightness == "Light":
                 self.listOfEarthyColors.append(swatch)
-                # print("This is being added as 'light green'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor == "Green" and swatch.brightness == "Medium":
                 self.listOfEarthyColors.append(swatch)
-                # print("This is being added as 'medium green'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
                 self.listOfEarthyColors.append(swatch)
             # Build the list of black colors
             if swatch.wheelColor == "Greyscale" and swatch.brightness == "Dark":
                 self.listOfBlackColors.append(swatch)
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.num in [ 94, 95 ]:  # These Colors register as Dark Green Blue
                 self.listOfBlackColors.append(swatch)
-                # print("This is being manually added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             # Build the list of goth colors
             # NOTE: All black colors are also added to the goth color list
             if swatch.wheelColor == "Red" and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor.find("Blue") >= 0 and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor.find("Violet") >= 0 and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
-
-        # print("Earth Tones:\t\n")
-        # for swatch in self.listOfEarthyColors:
-        #     print_color_object(swatch)
 
 
 class SecondaryArmorPalette(ColorPalette):
@@ -1655,9 +1539,8 @@ class SecondaryArmorPalette(ColorPalette):
             raise ValueError("Invalid color scheme")
         elif scheme not in self.implementedSchemes:
             raise RuntimeError("This valid color scheme has not yet been implemented")
-        # print("This is the SecondaryArmorPalette __init__()")  # DEBUGGING
+
         ### INITIALIZAITON ###
-        # super().__init__(scheme)
         self.scheme = scheme
         self.listOfColors = []
         self.listOfBrownColors = []
@@ -1789,30 +1672,16 @@ class SecondaryArmorPalette(ColorPalette):
             if swatch.wheelColor == "Greyscale" and swatch.brightness == "Dark":
                 self.listOfBlackColors.append(swatch)
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.num in [ 91, 92, 97 ]:  # These Colors register as Dark Green Blue
                 self.listOfBlackColors.append(swatch)
-                # print("This is being manually added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             # Build the list of goth colors
             # NOTE: All black colors are also added to the goth color list
             if swatch.wheelColor == "Red" and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor.find("Blue") >= 0 and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
             elif swatch.wheelColor.find("Violet") >= 0 and swatch.brightness == "Dark":
                 self.listOfGothColors.append(swatch)
-                # print("This is being added as 'Goth'")  # DEBUGGING
-                # print_color_object(swatch)
-
-        # print("Earth Tones:\t\n")
-        # for swatch in self.listOfEarthyColors:
-        #     print_color_object(swatch)
 
 
 # class WeaponColorPalette(ColorPalette):
