@@ -1533,7 +1533,8 @@ if __name__ == "__main__":
 
     # 3. APPEARANCE
     print("APPEARANCE:")
-    print("\t{}:\t{}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+    print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+    print("\tArmor Color Scheme:  {}".format(armorColorScheme))  # DEBUGGING
     for key in appearanceList:
         if key in appearanceOptions.keys():
             if appearanceOptions[key] != None:
