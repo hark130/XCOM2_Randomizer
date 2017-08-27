@@ -71,7 +71,7 @@ This is a python script to randomize XCOM2 character customizations for me
         [X] Members
             [x] Number of Colors in List [NOT IMPLEMENTED]
             [X] List of Colors
-        [/] Methods
+        [X] Methods
             [X] Count a color
             [X] Find a color based on scheme
                 [X] Monochromatic
@@ -92,6 +92,7 @@ This is a python script to randomize XCOM2 character customizations for me
                     [X] Random
                 [X] Urban
                 [X] Goth
+                [X] Parallel
         [X] Inherit Child Color Palette Classes
             [X] Main Armor Color
             [X] Secondary Armor Color
@@ -119,6 +120,7 @@ Update:
     * Earthy - Random
     * Urban
     * Goth
+    * Parallel
 ### MISC
     * Helmet and upper face prop cannot be equipped together
     * Weapon patterns and armor patterns are identical
