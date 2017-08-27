@@ -5,27 +5,7 @@ from Harklepalette import print_color_object
 from Harklepalette import SecondaryArmorPalette
 from Harklepalette import WeaponColorPalette
 from random import randint
-# import Harklepalette
 import os
-
-'''
-Face:
-Hair:
-Facial Hair:
-Hair Color:
-Eye Color:
-Race:
-    0 - Caucasian
-    1 - Afican
-    2 - Asian
-    3 - Hispanic
-Skin Color:
-Main Armor Color:
-Secondary Armor Color:
-Weapon Color:
-Voice:
-Attitude:
-'''
 
 
 ######################################################
@@ -193,22 +173,6 @@ listOfRaces = [ \
 ################################
 ### GENERIC HELPER FUNCTIONS ###
 ################################
-
-
-# def print_color_object(colorToPrint):
-#     ### INPUT VALIDATION ###
-#     if not isinstance(colorToPrint, Color):
-#         raise TypeError("Color to print is not a Color object")
-
-#     print("Color Num:\t{}".format(colorToPrint.num))
-#     print("Color Hue:\t{}".format(colorToPrint.hue))
-#     print("Color Sat:\t{}".format(colorToPrint.sat))
-#     print("Color Val:\t{}".format(colorToPrint.val))
-#     print("Color Type:\t{}".format(colorToPrint.colorType))
-#     print("Brightness:\t{}".format(colorToPrint.brightness))
-#     print("Wheel Color:\t{}\n".format(colorToPrint.wheelColor))
-
-#     return
 
 
 def convert_num_to_word(number, capitalize = False):
@@ -1424,22 +1388,9 @@ def rando_color_scheme(armorStyle):
 
     ### LOCAL VARIABLES ###
     tmpInt = randint(0, listOfColorSchemes.__len__() - 1)  # Uncomment this once more color schemes are implemented in ColorPalette
-    # tmpInt = randint(0, 4)
     
     ### RANDOMIZE A COLOR SCHEME ###
-    ############ IMPLEMENT ARMOR STYLE INFLUENCES... LATER ############
-    # retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
-    # retVal = listOfColorSchemes[0]  # Monochromatic - Primary Colors
-    # retVal = listOfColorSchemes[1]  # Monochromatic - Secondary Colors
-    # retVal = listOfColorSchemes[2]  # Monochromatic - Tertiary Colors
-    # retVal = listOfColorSchemes[3]  # 2 Colors - Analogous
-    # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
-    # retVal = listOfColorSchemes[9]  # 2 Colors - Earthy
-    # retVal = listOfColorSchemes[11]  # Random Earthy
-    # retVal = listOfColorSchemes[12]  # Urban
-    # retVal = listOfColorSchemes[13]  # Goth
-    retVal = listOfColorSchemes[14]  # Parallel
-    # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
+    retVal = listOfColorSchemes[tmpInt]  # Uncomment this once more color schemes are implemented in ColorPalette
 
     return retVal
 
@@ -1565,20 +1516,20 @@ if __name__ == "__main__":
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
     print("\n")
-    # print("CHARACTER INFO:")
-    # for key in charInfoList:
-    #     if key in charOptions.keys():
-    #         if charOptions[key] != None:
-    #             print("\t{}:  {}".format(key, charOptions[key]))
-    # print("\n")
+    print("CHARACTER INFO:")
+    for key in charInfoList:
+        if key in charOptions.keys():
+            if charOptions[key] != None:
+                print("\t{}:  {}".format(key, charOptions[key]))
+    print("\n")
 
     # 2. PROPS
-    # print("PROPS:")
-    # for key in propsList:
-    #     if key in propsOptions.keys():
-    #         if propsOptions[key] != None:
-    #             print("\t{}:  {}".format(key, propsOptions[key]))
-    # print("\n")
+    print("PROPS:")
+    for key in propsList:
+        if key in propsOptions.keys():
+            if propsOptions[key] != None:
+                print("\t{}:  {}".format(key, propsOptions[key]))
+    print("\n")
 
     # 3. APPEARANCE
     print("APPEARANCE:")
@@ -1590,10 +1541,10 @@ if __name__ == "__main__":
     print("\n")
 
     ### TESTING ###
-    print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
-    print_color_object(mainColorObject)  # DEBUGGING
-    print_color_object(secondaryColorObject)  # DEBUGGING
-    print_color_object(weaponColorObject)  # DEBUGGING
+    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
+    # print_color_object(mainColorObject)  # DEBUGGING
+    # print_color_object(secondaryColorObject)  # DEBUGGING
+    # print_color_object(weaponColorObject)  # DEBUGGING
     # print(dir(mainArmorColors))
     # for swatch in mainArmorColors.listOfBrownColors:
     #     print("{} is Brown".format(swatch.num))
