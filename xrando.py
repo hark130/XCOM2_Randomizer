@@ -1437,7 +1437,8 @@ def rando_color_scheme(armorStyle):
     # retVal = listOfColorSchemes[9]  # 2 Colors - Earthy
     # retVal = listOfColorSchemes[11]  # Random Earthy
     # retVal = listOfColorSchemes[12]  # Urban
-    retVal = listOfColorSchemes[13]  # Goth
+    # retVal = listOfColorSchemes[13]  # Goth
+    retVal = listOfColorSchemes[14]  # Parallel
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal

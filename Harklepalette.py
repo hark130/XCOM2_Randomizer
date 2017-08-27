@@ -236,7 +236,7 @@ class ColorPalette:
         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
         # This line is missing "3 Colors - Earthy"
         "2 Colors - Earthy", "Random Earthy", \
-        "Urban", "Goth", \
+        "Urban", "Goth", "Parallel", \
 
     ]
     listOfPrimaryColors = [ \
@@ -499,6 +499,8 @@ class ColorPalette:
             retVal = self.get_urban_colors(colorToMatch, secondColorToMatch)
         elif self.scheme == "Goth":
             retVal = self.get_goth_colors(colorToMatch, secondColorToMatch)
+        elif self.scheme == "Parallel":
+            retVal = self.get_parallel_colors(colorToMatch, secondColorToMatch)
         ############# IMPLEMENT MORE COLOR SCHEMES HERE #############
         else:
             raise RuntimeError("get_color:\tHow did we get here?!")
@@ -1415,6 +1417,44 @@ class ColorPalette:
 
         return retVal
 
+
+    def get_parallel_colors(self, colorToMatch = None, secondColorToMatch = None):
+        '''
+            PURPOSE:    Get parallel Color.nums from the list of Colors in this palette
+            INPUT:        
+                        colorToMatch - Main Armor Color of type "Color" to match against
+                        secondColorToMatch - Secondary Armor Color, of type "Color", if any
+            OUTPUT:     Color class that is has the same num member as colorToMatch and secondColorToMatch
+        '''
+        ### LOCAL VARIABLES ###
+        retVal = None                  # Function's return value of type Color
+        randNum = 0                    # Holds a randomized value
+
+        ### GET COLOR ###
+        # 1. Determine starting color
+        ## 1.1. Select Main
+        if colorToMatch is None:
+            # Randomize color
+            retVal = self.listOfColors[randint(0, self.listOfColors.__len__() - 1)]
+        ## 1.2. Select Secondary
+        elif secondColorToMatch is None:
+            # The lists are of different lengths?
+            if colorToMatch.num > self.listOfColors.__len__():
+                raise RuntimeError("The Color Palette lists are not the same length")
+            # colorToMatch number is in the listOfColors
+            else:
+                for swatch in self.listOfColors:
+                    if colorToMatch.num == swatch.num:
+                        retVal = swatch
+                        break
+        ## 1.3. Select Weapon
+        else:
+            for swatch in self.listOfColors:
+                if colorToMatch.num == swatch.num:
+                    retVal = swatch
+                    break
+
+        return retVal
     
     
 class MainArmorPalette(ColorPalette):
