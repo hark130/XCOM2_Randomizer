@@ -1597,10 +1597,26 @@ if __name__ == "__main__":
     # for swatch in mainArmorColors.listOfBrownColors:
     #     print("{} is Brown".format(swatch.num))
     # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
+    # darkestColor = mainArmorColors.listOfColors[0]
     # for swatch in mainArmorColors.listOfColors:
-    #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
-    #         print("{} is light green?".format(swatch.num))
-    #         print_color_object(swatch)
+    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
+    # #         print("{} is light green?".format(swatch.num))
+    # #         print_color_object(swatch)
+    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
+    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
+    #         darkestColor = swatch
+    # print("Darkest Main Color:")
+    # print_color_object(darkestColor)
+    # darkestColor = secondaryArmorColors.listOfColors[0]
+    # for swatch in secondaryArmorColors.listOfColors:
+    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
+    # #         print("{} is light green?".format(swatch.num))
+    # #         print_color_object(swatch)
+    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
+    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
+    #         darkestColor = swatch
+    # print("Darkest Secondary Color:")
+    # print_color_object(darkestColor)
     # print_color_object(Color(94, 207, 100, 4))
     # print_color_object(Color(95, 204, 24, 8))
 
