@@ -1436,7 +1436,8 @@ def rando_color_scheme(armorStyle):
     # retVal = listOfColorSchemes[4]  # 2 Colors - Complementary
     # retVal = listOfColorSchemes[9]  # 2 Colors - Earthy
     # retVal = listOfColorSchemes[11]  # Random Earthy
-    retVal = listOfColorSchemes[12]  # Urban
+    # retVal = listOfColorSchemes[12]  # Urban
+    retVal = listOfColorSchemes[13]  # Goth
     # print("Rando Color Scheme returns:\t{}\n".format(retVal))  # DEBUGGING
 
     return retVal
@@ -1600,5 +1601,6 @@ if __name__ == "__main__":
     #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
     #         print("{} is light green?".format(swatch.num))
     #         print_color_object(swatch)
-
+    # print_color_object(Color(94, 207, 100, 4))
+    # print_color_object(Color(95, 204, 24, 8))
 
