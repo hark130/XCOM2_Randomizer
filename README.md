@@ -41,6 +41,8 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] WRT Main and Secondary Armor colors, Dark (or at least Medium) probably looks better with Light and vice versa... especially Greyscale
     [ ] Refactor Earthy color randomization... probably better served in an adaptation of count_colors but implement count_specific_colors(wheelColor, brightness) and then implement get_specific_color_index(wheelColor, brightness, index)
     [ ] Add Armor Style and Color Scheme notes to the Character Info Biography
+    [ ] Urban color scheme should equal increased chance for camo patterns everywhere
+    [ ] Urban color scheme should equal higher probability for urban camo patterns
     [X] Extra input validation on get_color()... if colorToMatch == None and secondColorToMatch != None... error
     [X] Implemenet Color class
       [X] Members
@@ -69,16 +71,16 @@ This is a python script to randomize XCOM2 character customizations for me
           [X] 2 Colors
             [X] Analogous
             [X] Complementary
-          [ ] 3 Colors
-            [ ] Triad
-            [ ] Complementary
-            [ ] Secondary
-          [ ] Random
-          [/] Earthy
+          [X] 3 Colors
+            [X] Triad
+            [X] Complementary
+            [X] Secondary
+          [X] Random
+          [x] Earthy
             [X] 2 Colors
             [?] 3 Colors
-            [ ] Random
-          [ ] Urban
+            [X] Random
+          [X] Urban
           [ ] Emo
       [X] Inherit Child Color Palette Classes
         [X] Main Armor Color
