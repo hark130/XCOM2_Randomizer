@@ -182,6 +182,30 @@ class Color:
         return retVal
 
 
+    def calculate_darkness(self):
+        '''
+            PURPOSE:    Translate Color's darkness into a calculated value
+            INPUT:      None
+            OUTPUT:     A value representative of the Color's darkness
+            NOTE:       The larger the value, the darker the color
+        '''
+        ### LOCAL VARIABLES ###
+        retVal = -1  # Used to hold the computed sum of saturation and value
+        satWeight = .5
+        valWeight = 2 - satWeight
+
+        ### INPUT VALIDATION ###
+        if self.wheelColor == "" or self.wheelColor == "UNDEFINED":
+            pass  # Return -1
+        elif self.wheelColor not in self.validColors:
+            raise ValueError("Invalid wheel color")
+        else:
+            ### DETERMINE BRIGHTNESS ###
+            retVal = (self.sat * satWeight) + ((100 - self.val) * valWeight)
+
+        return retVal
+
+
 class ColorPalette:
     'This class can randomly choose complimentary colors from a collection based on established color schemes'
 
@@ -396,6 +420,31 @@ class ColorPalette:
         # 7. Remove Greyscale colors
         if (someColor.wheelColor == "Greyscale"):
             retVal = False
+
+        return retVal
+
+
+    def get_darkest_color(self, listOfColors):
+        ### INPUT VALIDATION ###
+        if not isinstance(listOfColors, list):
+            raise TypeError("List of colors is not a list")
+        elif listOfColors.__len__() == 0:
+            raise ValueError("List of colors is empty")
+        else:
+            for item in listOfColors:
+                if not isinstance(item, Color):
+                    raise TypeError("List of colors contains a non-Color item")
+
+        ### LOCAL VARIABLES ###
+        retVal = None       # Will hold the darkest color
+
+        ### GET COLOR ###
+        for item in listOfColors:
+            if not retVal:
+                retVal = item
+            else:
+                if item.calculate_darkness() > retVal.calculate_darkness():
+                    retVal = item
 
         return retVal
     
@@ -1316,14 +1365,19 @@ class ColorPalette:
         ## 1.1. Select Main
         if colorToMatch is None:
             # Randomize a goth color
-            randNum = randint(0, self.listOfGothColors.__len__() - 1)
-            retVal = self.listOfGothColors[randNum]
+            randNum = randint(1, 100)
+            # 50% Random
+            if randNum > 50:
+                randNum = randint(0, self.listOfGothColors.__len__() - 1)
+                retVal = self.listOfGothColors[randNum]
+            # 50% Blackest black
+            else:
+                retVal = self.get_darkest_color(self.listOfBlackColors)
         ## 1.2. Select Secondary
         elif secondColorToMatch is None:
             if (colorToMatch.wheelColor != "Greyscale" or colorToMatch.brightness != "Dark") and colorToMatch.num not in [ 94, 95 ]:
-                # Main is a non-black color so randomize a black Secondary color
-                randNum = randint(0, self.listOfBlackColors.__len__() - 1)
-                retVal = self.listOfBlackColors[randNum]
+                # Main is a non-black color so choose the darkest Secondary color
+                retVal = self.get_darkest_color(self.listOfBlackColors)
             elif (colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Dark") or colorToMatch.num in [ 94, 95 ]:
                 # Main is a black color so randomize a goth Secondary color
                 randNum = randint(0, self.listOfGothColors.__len__() - 1)
@@ -1342,10 +1396,9 @@ class ColorPalette:
                 # Main is black so copy it
                 if colorToMatch in self.listOfGothColors and colorToMatch in self.listOfBlackColors:
                     retVal = colorToMatch
-                # Main is not black so randomize a black color
+                # Main is not black so choose the darkest color
                 else:
-                    randNum = randint(0, self.listOfBlackColors.__len__() - 1)
-                    retVal = self.listOfBlackColors[randNum]
+                    retVal = self.get_darkest_color(self.listOfBlackColors)
             elif ((colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Dark") or colorToMatch.num in [ 94, 95 ]) and \
             ((secondColorToMatch.wheelColor == "Greyscale" and secondColorToMatch.brightness == "Dark") or secondColorToMatch.num in [ 91, 92, 97 ]):
                 # Main and Secondary are both black to randomize a goth color
