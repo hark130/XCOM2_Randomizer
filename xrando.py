@@ -29,7 +29,9 @@ listOfColorSchemes = [ \
         "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
         "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-        "2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
+        "2 Colors - Earthy", \
+        # "3 Colors - Earthy" not yet implemented
+        "Random Earthy", \
         "Urban", "Goth", "Parallel", \
 ]
 
@@ -1440,42 +1442,44 @@ def rando_voice(nationality, race):
     if nationality in [ "Argentina", "Brazil", "Mexico", "Spain" ]:
         if race == "0 - Caucasian":
             tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
-            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
         elif race == "3 - Hispanic":
-            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
-    elif nationality in [ "Australia", "United Kingdom" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Spanish") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Spanish") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Spanish") >= 0 ]
+    elif nationality in [ "Australia" ]:
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Australian") >= 0 ]
+    elif nationality in [ "United Kingdom" ]:
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
     elif nationality in [ "Canada" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("French") >= 0 ]
     elif nationality in [ "Belgium" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("French") >= 0 ]
     elif nationality in [ "France" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("French") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("French") >= 0 ]
     elif nationality in [ "Germany" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("German") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("German") >= 0 ]
     elif nationality in [ "China", "Greece", "Israel", "Japan", "Poland", "Russia", "Saudi Arabia", "South Korea", "Sweden", "Ukraine" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
     elif nationality in [ "India", "Ireland", "Scotland" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
     elif nationality in [ "Egypt", "Nigeria", "Netherlands", "Norway", "South Africa" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("UK") >= 0 ]
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("American") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("UK") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
     elif nationality in [ "Italy" ]:
-        tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Italian") >= 0 ]
+        tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Italian") >= 0 ]
     elif nationality in [ "USA" ]:
         if race in [ "0 - Caucasian", "1 - Afican", "2 - Asian" ]:
             tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
         elif race == "3 - Hispanic":
-            tmpVoiceList = tmpVoiceList + [ voice in listOfVoices if voice.find("Spanish") >= 0 ]
+            tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("Spanish") >= 0 ]
             tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
             tmpVoiceList = tmpVoiceList + [ voice for voice in listOfVoices if voice.find("American") >= 0 ]
     else:
@@ -1608,6 +1612,7 @@ if __name__ == "__main__":
     # 3.9.3. Store the Weapon Color Object's number
     appearanceOptions["Weapon Color"] = weaponColorObject.num
     # 3.10. Voice
+    appearanceOptions["Voice"] = rando_voice(charOptions["Nationality"], appearanceOptions["Race"])
     # 3.11. Attitude
 
     ### PRINT RANDOMIZED OPTIONS ###
