@@ -232,8 +232,10 @@ class ColorPalette:
     listOfBrownColors = []
     # Assign browns and other select colors to this during __init__()
     listOfEarthyColors = []
-    # Assign goth colors to this during __init__()
+    # Assign goth colors to this list during __init__()
     listOfGothColors = []
+    # Assign black colors to this list during __init__()
+    listOfBlackColors = []
     scheme = ""
     # # Store the colors selected under this palette
     # mainColor = Color(0, 0, 0, 0)
@@ -1301,7 +1303,7 @@ class ColorPalette:
             INPUT:        
                         colorToMatch - Main Armor Color of type "Color" to match against
                         secondColorToMatch - Secondary Armor Color, of type "Color", if any
-            OUTPUT:        Color class that is in an urban color along with colorToMatch and secondColorToMatch
+            OUTPUT:     Color class that is in a goth color along with colorToMatch and secondColorToMatch
             NOTE:
                         Black will dominate this color scheme.  If any previous color is not Black, the rest will be
         '''
@@ -1313,13 +1315,50 @@ class ColorPalette:
         # 1. Determine starting color
         ## 1.1. Select Main
         if colorToMatch is None:
-            pass
+            # Randomize a goth color
+            randNum = randint(0, self.listOfGothColors.__len__() - 1)
+            retVal = self.listOfGothColors[randNum]
         ## 1.2. Select Secondary
         elif secondColorToMatch is None:
-            pass
+            if (colorToMatch.wheelColor != "Greyscale" or colorToMatch.brightness != "Dark") and colorToMatch.num not in [ 94, 95 ]:
+                # Main is a non-black color so randomize a black Secondary color
+                randNum = randint(0, self.listOfBlackColors.__len__() - 1)
+                retVal = self.listOfBlackColors[randNum]
+            elif (colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Dark") or colorToMatch.num in [ 94, 95 ]:
+                # Main is a black color so randomize a goth Secondary color
+                randNum = randint(0, self.listOfGothColors.__len__() - 1)
+                retVal = self.listOfGothColors[randNum]
+            else:
+                # if colorToMatch:
+                #     print_color_object(colorToMatch)  # DEBUGGING
+                # if secondColorToMatch:
+                #     print_color_object(secondColorToMatch)  # DEBUGGING
+                raise RuntimeError("get_goth_colors:\tHow did we get here?")
         ## 1.3. Select Weapon
         else:
-            pass
+            # Main or Secondary is not black
+            if ((colorToMatch.wheelColor != "Greyscale" or colorToMatch.brightness != "Dark") and colorToMatch.num not in [ 94, 95 ]) or \
+            ((secondColorToMatch.wheelColor != "Greyscale" or secondColorToMatch.brightness != "Dark") and secondColorToMatch.num not in [ 91, 92, 97 ]):
+                # Main is black so copy it
+                if colorToMatch in self.listOfGothColors and colorToMatch in self.listOfBlackColors:
+                    retVal = colorToMatch
+                # Main is not black so randomize a black color
+                else:
+                    randNum = randint(0, self.listOfBlackColors.__len__() - 1)
+                    retVal = self.listOfBlackColors[randNum]
+            elif ((colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Dark") or colorToMatch.num in [ 94, 95 ]) and \
+            ((secondColorToMatch.wheelColor == "Greyscale" and secondColorToMatch.brightness == "Dark") or secondColorToMatch.num in [ 91, 92, 97 ]):
+                # Main and Secondary are both black to randomize a goth color
+                randNum = randint(0, self.listOfGothColors.__len__() - 1)
+                retVal = self.listOfGothColors[randNum]
+            else:
+                if colorToMatch:
+                    print("Main in goth list:\t{}".format(colorToMatch in self.listOfGothColors))  # DEBUGGING
+                    print("Main in black list:\t{}\n".format(colorToMatch in self.listOfBlackColors))  # DEBUGGING
+                    print_color_object(colorToMatch)  # DEBUGGING
+                if secondColorToMatch:
+                    print_color_object(secondColorToMatch)  # DEBUGGING
+                raise RuntimeError("get_goth_colors:\tHow did we get here?")
 
         return retVal
 
@@ -1344,6 +1383,7 @@ class MainArmorPalette(ColorPalette):
         self.listOfBrownColors = []
         self.listOfEarthyColors = []
         self.listOfGothColors = []
+        self.listOfBlackColors = []
         self.listOfColors.append(Color(0, 72, 59, 20))
         self.listOfColors.append(Color(1, 118, 41, 24))
         self.listOfColors.append(Color(2, 32, 45, 26))
@@ -1460,9 +1500,9 @@ class MainArmorPalette(ColorPalette):
                 # Browns are earthy colors as well
                 self.listOfEarthyColors.append(swatch)
             elif swatch.num in [ 0, 1, 2, 3, 5, 6, 16, 23, 28, 29, \
-                                    30, 31, 32, 33, 34, 49, 50, 51, 52, 53, \
-                                    54, 55, 56, 57, 58, 59, 60, 61, 62, 63, \
-                                    64, 65, 71, 75, 78, 80, 81, 97 ]:
+                                 30, 31, 32, 33, 34, 49, 50, 51, 52, 53, \
+                                 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, \
+                                 64, 65, 71, 75, 78, 80, 81, 97 ]:
                 self.listOfEarthyColors.append(swatch)
             elif swatch.wheelColor == "Orange":
                 if swatch.brightness == "Medium" or swatch.brightness == "Dark":
@@ -1481,14 +1521,29 @@ class MainArmorPalette(ColorPalette):
                 # print_color_object(swatch)
             elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
                 self.listOfEarthyColors.append(swatch)
-            # Build the list of goth colors
+            # Build the list of black colors
             if swatch.wheelColor == "Greyscale" and swatch.brightness == "Dark":
+                self.listOfBlackColors.append(swatch)
                 self.listOfGothColors.append(swatch)
                 # print("This is being added as 'Goth'")  # DEBUGGING
                 # print_color_object(swatch)
             elif swatch.num in [ 94, 95 ]:  # These Colors register as Dark Green Blue
-                self.listOfGothColors.append(swatch)
+                self.listOfBlackColors.append(swatch)
                 # print("This is being manually added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            # Build the list of goth colors
+            # NOTE: All black colors are also added to the goth color list
+            if swatch.wheelColor == "Red" and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            elif swatch.wheelColor.find("Blue") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            elif swatch.wheelColor.find("Violet") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
                 # print_color_object(swatch)
 
         # print("Earth Tones:\t\n")
@@ -1514,6 +1569,8 @@ class SecondaryArmorPalette(ColorPalette):
         self.listOfColors = []
         self.listOfBrownColors = []
         self.listOfEarthyColors = []
+        self.listOfGothColors = []
+        self.listOfBlackColors = []
         self.listOfColors.append(Color(0, 39, 49, 14))
         self.listOfColors.append(Color(1, 48, 20, 20))
         self.listOfColors.append(Color(2, 38, 28, 34))
@@ -1635,14 +1692,29 @@ class SecondaryArmorPalette(ColorPalette):
                 self.listOfEarthyColors.append(swatch)
             elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
                 self.listOfEarthyColors.append(swatch)
-            # Build the list of goth colors
+            # Build the list of black colors
             if swatch.wheelColor == "Greyscale" and swatch.brightness == "Dark":
+                self.listOfBlackColors.append(swatch)
                 self.listOfGothColors.append(swatch)
                 # print("This is being added as 'Goth'")  # DEBUGGING
                 # print_color_object(swatch)
             elif swatch.num in [ 91, 92, 97 ]:  # These Colors register as Dark Green Blue
-                self.listOfGothColors.append(swatch)
+                self.listOfBlackColors.append(swatch)
                 # print("This is being manually added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            # Build the list of goth colors
+            # NOTE: All black colors are also added to the goth color list
+            if swatch.wheelColor == "Red" and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            elif swatch.wheelColor.find("Blue") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
+                # print_color_object(swatch)
+            elif swatch.wheelColor.find("Violet") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+                # print("This is being added as 'Goth'")  # DEBUGGING
                 # print_color_object(swatch)
 
         # print("Earth Tones:\t\n")
