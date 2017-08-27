@@ -189,6 +189,12 @@ listOfVoices = [ \
     "Spanish 10", \
 ]
 
+listOfAttitudes = [ \
+    "By The Book", "Laid Back", "Normal", \
+    "Twitchy", "Happy-Go-Lucky", "Hard Luck", \
+    "Intense", \
+]
+
 
 ######################################################
 ######################################################
@@ -1495,6 +1501,50 @@ def rando_voice(nationality, race):
     return retVal
 
 
+def rando_attitude(armorStyle):
+    ### INPUT VALIDATION ###
+    if not isinstance(armorStyle, str):
+        raise TypeError('armorStyle is not a string')
+    elif armorStyle not in listOfArmorStyles:
+        raise ValueError('Invalid armorStyle')
+
+    ### LOCAL VARIABLES ###
+    retVal = None       # Will hold a string from listOfAttitudes
+    tmpAttList = []     # Will hold a dynamically built list of style-appropriate attitudes
+
+    ### CHOOSE A VOICE ###
+    # Setup dynamically built lists of appropriate voices
+    if armorStyle in [ "Base" ]:
+        tmpAttList = tmpAttList + [ attitude for attitude in listOfAttitudes if attitude.__len__() > 0 ]
+    elif armorStyle in [ "Anarchy", "Chaotic" ]:
+        tmpAttList = tmpAttList + [ attitude for attitude in listOfAttitudes if attitude.__len__() > 0 ]
+        tmpAttList.remove("By The Book")
+        tmpAttList.append("Laid Back")
+        tmpAttList.append("Twitchy")
+        tmpAttList.append("Hard Luck")
+        tmpAttList.append("Intense")
+    elif armorStyle in [ "ADVENT" ]:
+        tmpAttList = tmpAttList + [ attitude for attitude in listOfAttitudes if attitude.__len__() > 0 ]
+        tmpAttList.append("By The Book")
+        tmpAttList.append("Normal")
+        tmpAttList.append("Twitchy")
+        tmpAttList.append("Hard Luck")
+        tmpAttList.append("Intense")
+    elif armorStyle in [ "Alien" ]:
+        tmpAttList = tmpAttList + [ attitude for attitude in listOfAttitudes if attitude.__len__() > 0 ]
+        tmpAttList.remove("Laid Back")
+        tmpAttList.remove("Happy-Go-Lucky")
+    else:
+        raise RuntimeError("rando_voice:\tNationality '{}' is not implemented".format(nationality))
+    # Randomly select from dynamically built list
+    if tmpAttList.__len__() == 0:
+        raise RuntimeError("rando_attitude:\tDid not dynamically add any attitudes to the list")
+    else:
+        retVal = tmpAttList[randint(0, tmpAttList.__len__() - 1)]
+
+    return retVal
+
+
 ######################################################
 ######################################################
 ################### MAIN EXECUTION ###################
@@ -1614,6 +1664,7 @@ if __name__ == "__main__":
     # 3.10. Voice
     appearanceOptions["Voice"] = rando_voice(charOptions["Nationality"], appearanceOptions["Race"])
     # 3.11. Attitude
+    appearanceOptions["Attitude"] = rando_attitude(propsOptions["Armor Style"])
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
