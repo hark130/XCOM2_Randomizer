@@ -1692,3 +1692,186 @@ class WeaponColorPalette(MainArmorPalette):
     def __init__(self, scheme):
         super().__init__(scheme)
 
+
+class EyeColorPalette(ColorPalette):
+    'This class can randomly choose eye colors from a collection based on established color schemes'
+
+    validArmorStyles = [ \
+        "Base", "Anarchy", "Chaotic", \
+        "ADVENT", "Alien", \
+    ]
+    validNationalities = [ \
+        "Argentina", "Australia", "Belgium", "Brazil", "Canada", "China", \
+        "Egypt", "France", "Germany", "Greece", "India", "Ireland", "Israel", \
+        "Italy", "Japan", "Mexico", "Netherlands", "Nigeria", "Norway", \
+        "Poland", "Russia", "Saudi Arabia", "Scotland", "South Africa", \
+        "South Korea", "Spain", "Sweden", "Ukraine", "United Kingdom", "USA", \
+    ]
+    validRaces = [ \
+        "0 - Caucasian", "1 - Afican", "2 - Asian", \
+        "3 - Hispanic", \
+    ]
+    validGenders = [ "Male", "Female" ]
+
+    armorStyle = ""
+    nationality = ""
+    race = ""
+    gender = ""
+
+    listOfNormalEyeColors = []
+
+    def __init__(self, scheme, armorStyle, nationality, race, gender, mainColor):
+        ### INPUT VALIDATION ###
+        if not isinstance(scheme, str):
+            raise TypeError("Color scheme is not an string")
+        elif scheme not in self.validSchemes:
+            raise ValueError("Invalid color scheme")
+        elif scheme not in self.implementedSchemes:
+            raise RuntimeError("The '{}' color scheme has not yet been implemented".format(scheme))
+        elif not isinstance(armorStyle, str):
+            raise TypeError("armorStyle is not an string")
+        elif armorStyle not in self.validArmorStyles:
+            raise ValueError("Invalid armorStyle")
+        elif not isinstance(nationality, str):
+            raise TypeError("nationality is not an string")
+        elif nationality not in self.validNationalities:
+            raise ValueError("Invalid nationality")
+        elif not isinstance(race, str):
+            raise TypeError("race is not an string")
+        elif race not in self.validRaces:
+            raise ValueError("Invalid race")
+        elif not isinstance(gender, str):
+            raise TypeError("gender is not an string")
+        elif gender not in self.validGenders:
+            raise ValueError("Invalid gender")
+        elif not isinstance(mainColor, Color):
+            raise TypeError("mainColor is not a valid Color type")
+
+        ### INITIALIZAITON ###
+        self.scheme = scheme
+        self.armorStyle = armorStyle
+        self.nationality = nationality
+        self.race = race
+        self.gender = gender
+        self.listOfColors = []
+        self.listOfBrownColors = []
+        self.listOfEarthyColors = []
+        self.listOfGothColors = []
+        self.listOfBlackColors = []
+        self.listOfColors.append(Color(0, 18, 100, 27))
+        self.listOfColors.append(Color(1, 11, 68, 90))
+        self.listOfColors.append(Color(2, 22, 42, 100))
+        self.listOfColors.append(Color(3, 233, 52, 67))
+        self.listOfColors.append(Color(4, 231, 38, 100))
+        self.listOfColors.append(Color(5, 210, 15, 100))
+        self.listOfColors.append(Color(6, 134, 38, 52))
+        self.listOfColors.append(Color(7, 122, 39, 99))
+        self.listOfColors.append(Color(8, 68, 19, 100))
+        self.listOfColors.append(Color(9, 35, 64, 91))
+        self.listOfColors.append(Color(10, 38, 55, 100))
+        self.listOfColors.append(Color(11, 60, 43, 100))
+        self.listOfColors.append(Color(12, 347, 92, 70))
+        self.listOfColors.append(Color(13, 36, 100, 100))
+        self.listOfColors.append(Color(14, 60, 100, 100))
+        self.listOfColors.append(Color(15, 69, 100, 100))
+        self.listOfColors.append(Color(16, 180, 63, 100))
+        self.listOfColors.append(Color(17, 212, 93, 100))
+        self.listOfColors.append(Color(18, 300, 64, 100))
+        self.listOfColors.append(Color(19, 270, 100, 100))
+        self.listOfColors.append(Color(20, 0, 0, 100))
+        self.listOfColors.append(Color(21, 0, 0, 14))
+
+
+        for swatch in self.listOfColors:
+            # Build the list of brown colors
+            if self.is_it_brown(swatch):
+                self.listOfBrownColors.append(swatch)
+            # Build the list of earthy colors
+                # Browns are earthy colors as well
+                self.listOfEarthyColors.append(swatch)
+            elif swatch.wheelColor == "Orange":
+                if swatch.brightness == "Medium" or swatch.brightness == "Dark":
+                    self.listOfEarthyColors.append(swatch)
+                elif swatch.brightness == "Light":
+                    self.listOfEarthyColors.append(swatch)
+            elif swatch.wheelColor.find("Green") >= 0 and swatch.brightness == "Light":
+                self.listOfEarthyColors.append(swatch)
+            elif swatch.wheelColor == "Green" and swatch.brightness == "Medium":
+                self.listOfEarthyColors.append(swatch)
+            elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
+                self.listOfEarthyColors.append(swatch)
+            # Build the list of black colors
+            if swatch.wheelColor == "Greyscale" and swatch.brightness == "Dark":
+                self.listOfBlackColors.append(swatch)
+                self.listOfGothColors.append(swatch)
+            elif swatch.wheelColor == "Green Blue" and swatch.brightness == "Dark":
+                self.listOfBlackColors.append(swatch)
+                self.listOfGothColors.append(swatch)
+            # Build the list of goth colors
+            # NOTE: All black colors are also added to the goth color list
+            if swatch.wheelColor == "Red" and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+            elif swatch.wheelColor.find("Blue") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+            elif swatch.wheelColor.find("Violet") >= 0 and swatch.brightness == "Dark":
+                self.listOfGothColors.append(swatch)
+            # Build the list of normal eye colors
+            if self.is_it_brown(swatch) and swatch.wheelColor.find("Green") >= 0:
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tHazel (brown/green)")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif self.is_it_brown(swatch) and swatch.wheelColor.find("Yellow") >= 0:
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tHazel (brown/gold)")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif self.is_it_brown(swatch) and swatch.brightness == "Light":
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tHazel (light brown)")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif swatch.wheelColor.find("Blue") >= 0 and swatch.wheelColor.find("Violet") < 0:
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tBlue")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif self.is_it_brown(swatch):
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tBrown")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif swatch.wheelColor == "Greyscale" and swatch.brightness == "Light":
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tGrey")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+            elif swatch.wheelColor.find("Green") >= 0:
+                self.listOfNormalEyeColors.append(swatch)
+                # print("Normal Eye Color:\tGreen")  # DEBUGGING
+                # print_color_object(swatch)  # DEBUGGING
+
+
+    def get_eye_color(self):
+        ### LOCAL VARIABLES ###
+        retVal = None       # Color object chosen as eye color
+        randNum = 0         # Holds temporary random numbers
+
+        ### GET COLOR ###
+        # 1. Real or Fake
+
+        # 2. Logic Branch
+        # 2.1. Real
+        # 2.1.1. General Averages
+            # Blue 21%
+            # Grey 21%
+            # Green 11%
+            # Brown 47%
+
+        # 2.2. Fake
+        # 2.2.1. Attactive eyes
+        # http://www.allaboutvision.com/conditions/eye-color-green.htm
+            # Green: 20.3%
+            # Light blue: 16.9%
+            # Hazel: 16.0%
+            # Dark blue: 15.2%
+            # Gray: 10.9%
+            # Honey: 7.9%
+            # Amethyst: 6.9%
+            # Brown: 5.9%
+
+
