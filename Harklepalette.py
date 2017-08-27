@@ -210,7 +210,10 @@ class ColorPalette:
 		"Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
 		"2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
 		"3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
+		# This line is missing "3 Colors - Earthy"
 		"2 Colors - Earthy", "Random Earthy", \
+		"Urban", \
+
 	]
 	listOfPrimaryColors = [ \
 		"Red", "Yellow", "Blue", \
@@ -396,16 +399,16 @@ class ColorPalette:
 	def get_color(self, colorToMatch = None, secondColorToMatch = None):
 		### INPUT VALIDATION ###
 		if not isinstance(colorToMatch, Color) and colorToMatch is not None:
-			print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
+			# print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
 			raise TypeError("Color to match is not of type Color or NoneType")
 		elif not isinstance(secondColorToMatch, Color) and secondColorToMatch is not None:
-			print("get_color():\secondColorToMatch is of type {}\n".format(secondColorToMatch))  # DEBUGGING
+			# print("get_color():\tsecondColorToMatch is of type {}\n".format(secondColorToMatch))  # DEBUGGING
 			raise TypeError("Second color to match is not of type Color or NoneType")
 		elif not colorToMatch and secondColorToMatch:
 			raise RuntimeError("Main color is blank but Secondary color is not")
 		elif self.scheme not in self.implementedSchemes:
 			# print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
-			print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
+			# print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
 			raise RuntimeError("This perfectly valid color scheme has not yet been implemented")
 
 		### LOCAL VARIABLES ###
@@ -439,9 +442,11 @@ class ColorPalette:
 			retVal = self.get_two_earthy_colors(colorToMatch, secondColorToMatch)
 		elif self.scheme == "Random Earthy":
 			retVal = self.get_random_earthy_colors(colorToMatch, secondColorToMatch)
+		elif self.scheme == "Urban":
+			retVal = self.get_urban_colors(colorToMatch, secondColorToMatch)
 		############# IMPLEMENT MORE COLOR SCHEMES HERE #############
 		else:
-			raise RuntimeError("How did we get here?!")
+			raise RuntimeError("get_color:\tHow did we get here?!")
 
 		return retVal
 
@@ -1165,8 +1170,125 @@ class ColorPalette:
 		return retVal
 
 		
-		
+	def get_urban_colors(self, colorToMatch = None, secondColorToMatch = None):
+		'''
+			PURPOSE:	Get urban colors from the list of Colors in this palette
+			INPUT:		
+						colorToMatch - Main Armor Color of type "Color" to match against
+						secondColorToMatch - Secondary Armor Color, of type "Color", if any
+			OUTPUT:		Color class that is in an urban color along with colorToMatch and secondColorToMatch
+			NOTE:
+						This function is unique, as of yet, because it builds from a pred-defined list of tuple Color.num combos.
+						These pre-defined tuples of Color.num combos are taken from XCOM 2 cityscape screenshots
+		'''
+		### LOCAL VARIABLES ###
+		retVal = None  				# Function's return value of type Color
+		randNum = 0					# Holds a randomized value
+		mainCount = 0				# Counts the number of Main duplicates
+		listOfColorCombos = [ \
+			# Urban Scheme 01
+			( 61, 44, 82 ), \
+			( 57, 97, 83 ), \
+			# Urban Scheme 02
+			( 25, 41, 73 ), \
+			( 4, 87, 73 ), \
+			# Urban Scheme 03
+			( 40, 78, 88 ), \
+			( 41, 77, 89 ), \
+			# Urban Scheme 04
+			( 69, 71, 13 ), \
+			( 80, 20, 12 ), \
+			# Urban Scheme 05
+			( 83, 14, 48 ), \
+			( 35, 73, 85 ), \
+			# Urban Scheme 06
+			( 93, 84, 15 ), \
+			( 75, 96, 71 ), \
+			# Urban Scheme 07
+			( 19, 18, 72 ), \
+			( 41, 40, 12 ), \
+			# Urban Scheme 08
+			( 60, 96, 81 ), \
+			( 91, 64, 28 ), \
+			# Urban Scheme 09
+			( 68, 20, 54 ), \
+			( 62, 94, 55 ), \
+			# Urban Scheme 10
+			( 57, 9, 41 ), \
+			( 53, 60, 41 ), \
+			# Urban Scheme 11
+			( 20, 41, 81 ), \
+			( 4, 11, 29 ), \
+			# Urban Scheme 12
+			( 18, 36, 91 ), \
+			( 22, 35, 91 ), \
+			# Urban Scheme 13
+			( 59, 56, 90 ), \
+			( 68, 17, 90 ), \
+			# Urban Scheme 14
+			( 96, 56, 7 ), \
+			( 64, 50, 7 ), \
+			# Urban Scheme 15
+			( 19, 70, 26 ), \
+			( 80, 38, 27 ), \
+		]
 
+		# mainColors = []
+		# for combo in listOfColorCombos:
+		# 	# print("Main Color:\t{}".format(combo[0]))  # DEBUGGING
+		# 	mainColors.append(combo[0])
+
+		# for combo in listOfColorCombos:
+		# 	if mainColors.count(combo[0]) is not 1:
+		# 		print("Too many {}s".format(combo[0]))  # DEBUGGING
+
+		### GET COLOR ###
+		# 1. Determine starting color
+		## 1.1. Select Main
+		if colorToMatch is None:
+			# 1.1.1. Randomize tuple
+			randNum = randint(0, listOfColorCombos.__len__() - 1)
+
+			for swatch in self.listOfColors:
+				if swatch.num == listOfColorCombos[randNum][0]:
+					retVal = swatch
+				if retVal:
+					break
+		## 1.2. Select Secondary
+		elif secondColorToMatch is None:
+			for combo in listOfColorCombos:
+				if colorToMatch.num == combo[0]:
+					mainCount += 1
+			randNum = randint(1, mainCount)
+
+			for combo in listOfColorCombos:
+				if colorToMatch.num == combo[0]:
+					randNum -= 1
+
+					if randNum == 0:
+						for swatch in self.listOfColors:
+							if swatch.num == combo[1]:
+								retVal = swatch
+								break
+				if retVal:
+					break
+		## 1.3. Select Weapon
+		else:
+			for combo in listOfColorCombos:
+				if colorToMatch.num == combo[0] and secondColorToMatch.num == combo[1]:
+					for swatch in self.listOfColors:
+						if swatch.num == combo[2]:
+							retVal = swatch
+							break
+				if retVal:
+					break
+
+		if not retVal:
+			print("Main:\t{}".format(colorToMatch.num))  # DEBUGGING
+			print("2nd:\t{}".format(secondColorToMatch))  # DEBUGGING
+			raise RuntimeError("get_urban_colors:\tCould not match color combo tuple to input")
+
+		return retVal
 	
 	
 class MainArmorPalette(ColorPalette):
