@@ -52,6 +52,9 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] Hair color (black, violet, green, purple, red)
         [ ] Hats (bows, fedoras, skull caps, pigtails, etc)
         [ ] Lightest skin tone
+    [ ] Eye Color
+        [ ] Small chance for Aniridia
+        [ ] Small chance for Ocular albinism
     [X] Rename Emo color style to Goth
     [X] Extra input validation on get_color()... if colorToMatch == None and secondColorToMatch != None... error
     [X] Implemenet Color class
@@ -97,6 +100,17 @@ This is a python script to randomize XCOM2 character customizations for me
             [X] Main Armor Color
             [X] Secondary Armor Color
             [X] Weapon Color
+            [/] Eye Color
+                [ ] Determine nomal eye color
+                    [ ] Amber (e.g., yellowish/golden, russet/coppery)
+                    [ ] Blue (Finland 89%, Scotland, 50%, England 48%, Belgium 29%, France 20%, US 16.6%, Spain 16.6%)
+                    [ ] Brown (Europe, Asia, Africa, Americas)
+                    [ ] Gray
+                    [ ] Green
+                    [ ] Hazel (e.g., brown/green, brown/gold, light brown)
+                    [ ] Red (albinism)
+                    [ ] Violet (albinism)
+                [ ] Possibly overwrite that with a fake color (contact lens)
 
 
 ## NOTES/RESEARCH
