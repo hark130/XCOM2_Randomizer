@@ -1850,19 +1850,145 @@ class EyeColorPalette(ColorPalette):
         ### LOCAL VARIABLES ###
         retVal = None       # Color object chosen as eye color
         randNum = 0         # Holds temporary random numbers
+        realColor = True    # Determines whether or not to randomize real or fake colors
+        tmpColorList = [ ]  # Dynamically built list of Colors to randomize from
 
         ### GET COLOR ###
-        # 1. Real or Fake
+        # 1. Real or Fake?
+        randNum = randint(1, 100)
+        # 100% Fake
+        if self.armorStyle == "Alien" or self.scheme in [ "Urban", "Goth"]:
+            realColor = False
+        # 75% Fake
+        elif self.armorStyle == "Anarchy":
+            if randNum <= 75:
+                realColor = False
+        # 50% Fake
+        elif self.armorStyle == "Chaotic" or self.scheme.find("Monochromatic") >= 0:
+            if randNum <= 50:
+                realColor = False
+        # 5% Female
+        elif self.gender == "Female":
+            if randNum <= 5:
+                realColor = False
+        # 3% Male
+        else:
+            if randNum <= 3:
+                realColor = False
+
+        # 2. Build Dynamic List
+        randNum = randint(1, 100)
+        # 2.1. Real eye color
+        if realColor:
+            print("Randomizing from real eye colors")  # DEBUGGING
+            # Asians and Africans have brown eyes
+            if self.race in [ "1 - Afican", "2 - Asian" ]:
+                # Add brown eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if self.is_it_brown(pigment)] 
+            # Ireland has 77% light eyes (blue, green)
+            elif self.nationality == "Ireland" and randNum <= 77:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+                # Add green eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+            # Poland a bit less at 69% (blue, green)
+            elif self.nationality == "Poland" and randNum <= 69:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+                # Add green eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+            # Greece 24% for (blue, green)
+            elif self.nationality == "Greece" and randNum <= 24:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+                # Add green eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+            # 57% of Scots have blue eyes
+            elif self.nationality == "Scotland" and randNum <= 57:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            # 29% of Scots have green eyes
+            elif self.nationality == "Scotland" and randNum <= (57 + 29):
+                # Add green eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+            # 14% of Scots have brown eyes
+            elif self.nationality == "Scotland" and randNum <= (57 + 29 + 14):
+                # Add brown eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if self.is_it_brown(pigment)] 
+            # 48% of Brits have blue eyes
+            elif self.nationality == "United Kingdom" and randNum <= 48:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            elif self.nationality == "Belgium" and randNum <= 29:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            elif self.nationality == "France" and randNum <= 20:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            elif self.nationality == "USA" and randNum <= 17:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            elif self.nationality == "Spain" and randNum <= 17:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+            # In The Netherlands approximately 80% of the inhabitants have green or blue eyes
+            elif self.nationality == "Netherlands" and randNum <= 80:
+                # Add blue eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+                # Add green eye colors
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+            # Germany (especially the northern part of the country) follows with almost 70% having lighter eye colours
+            elif self.nationality == "Germany" and randNum <= 70:
+                # Light colored eyes
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.brightness == "Light"]
+            # Other ”northern” countries like The Netherlands, Scotland have light eyed peoples too
+            elif self.nationality in [ "Netherlands" ]:
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors ]
+                # Double up on light colored eyes
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.brightness == "Light"]
+            # Sweden, Norway and all have high percentages of light eyed people
+            elif self.nationality in [ "Sweden", "Norway" ]:
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors ]
+                # Triple up on light colored eyes
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.brightness == "Light"]
+                tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.brightness == "Light"]
+            else:  # General Averages
+                # Blue 21%
+                if randNum <= 21:
+                    # Add blue eye colors
+                    tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Blue") >= 0]
+                # Grey 21%
+                elif randNum <= (21 + 21):
+                    # Add grey eye colors
+                    tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor == "Greyscale"]
+                # Green 11%
+                elif randNum <= (21 + 21 + 11):
+                    # Add green eye colors
+                    tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.wheelColor.find("Green") >= 0]
+                # Brown 47%
+                elif randNum <= (21 + 21 + 11 + 47):
+                    # Add brown eye colors
+                    tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if self.is_it_brown(pigment)] 
+        # 2.2. Fake eye color
+        else:  
+            print("Randomizing from fake eye colors")  # DEBUGGING
+            tmpColorList = self.listOfColors
+            pass  # Impelement later
+            
+        # 3. Randomize a color from the list
+        retVal = tmpColorList[randint(0, tmpColorList.__len__() - 1)]
+
+        return retVal
+
+        # Alien == Yellow, Red, Orange, Darkest
 
         # 2. Logic Branch
-        # 2.1. Real
-        # 2.1.1. General Averages
-            # Blue 21%
-            # Grey 21%
-            # Green 11%
-            # Brown 47%
+        # 2.2. Fake 3% for men 5% for women
+            # 7.442 B people
+            # 200 M people wear contacts
+            # 85% – Clear or have faint tinting
+            # Color lenses= 30%
 
-        # 2.2. Fake
         # 2.2.1. Attactive eyes
         # http://www.allaboutvision.com/conditions/eye-color-green.htm
             # Green: 20.3%
@@ -1874,4 +2000,12 @@ class EyeColorPalette(ColorPalette):
             # Amethyst: 6.9%
             # Brown: 5.9%
 
-
+# listOfColorSchemes = [ \
+#         "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
+#         "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
+#         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
+#         "2 Colors - Earthy", \
+#         # "3 Colors - Earthy" not yet implemented
+#         "Random Earthy", \
+#         "Urban", "Goth", "Parallel", \
+# ]

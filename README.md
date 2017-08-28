@@ -11,6 +11,12 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] Include a certain number of Jrs. and IIIds
         [ ] Format the biography to match default in-game creations
         [ ] Implement age
+            [ ] Then modify eye color with this information:
+                * Over 30 million Americans wear contact lenses
+                * Two-thirds of all contact lens wearers are female
+                * Ten percent are age 18 or under
+                * Fifteen percent are between the ages of 18-24
+                * 50 percent are 25 to 44 years old
     [ ] Expand on Props
         [ ] Establish color selection for tattoos (implement color wheel?)
         [ ] Armor style ADVENT only gets long sleeve arms
@@ -20,7 +26,8 @@ This is a python script to randomize XCOM2 character customizations for me
             [ ] Percentage of people with tattoos in Ireland: 36% of adults.
             [ ] Percentage of people with tattoos in UK: 29% of adults.
     [ ] Expand on Appearance
-        [ ] Everyone from Norway has Blue eyes (or colored contacts) and fair skin
+        [/] Everyone from Norway has Blue eyes (or colored contacts) 
+        [ ] Everyone from Norway has fair skin
         [ ] Base eye color on race (or colored contacts)
     [ ] Rando_Color_Scheme
         [ ] Modify (see: uncomment) randomization algorithm once more Color Schemes are implemented in ColorPalette
@@ -101,16 +108,15 @@ This is a python script to randomize XCOM2 character customizations for me
             [X] Secondary Armor Color
             [X] Weapon Color
             [/] Eye Color
-                [ ] Determine nomal eye color
-                    [ ] Amber (e.g., yellowish/golden, russet/coppery)
-                    [ ] Blue (Finland 89%, Scotland, 50%, England 48%, Belgium 29%, France 20%, US 16.6%, Spain 16.6%)
-                    [ ] Brown (Europe, Asia, Africa, Americas)
-                    [ ] Gray
-                    [ ] Green
-                    [ ] Hazel (e.g., brown/green, brown/gold, light brown)
+                [/] Determine nomal eye color
+                    [x] Amber (e.g., yellowish/golden, russet/coppery)
+                    [X] Blue (Finland 89%, Scotland, 50%, England 48%, Belgium 29%, France 20%, US 16.6%, Spain 16.6%)
+                    [X] Gray
+                    [X] Green
                     [ ] Red (albinism)
                     [ ] Violet (albinism)
-                [ ] Possibly overwrite that with a fake color (contact lens)
+                [x] Possibly overwrite that with a fake color (contact lens)
+                [ ] Determine fake eye color
 
 
 ## NOTES/RESEARCH

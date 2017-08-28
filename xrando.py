@@ -285,7 +285,8 @@ def rando_backstory(name, nationality, gender):
     ### PARSE NAME ###
     nameList = name.split(" ")
     # Handle errant spaces
-    nameList.remove("")
+    if "" in nameList:
+        nameList.remove("")
 
     # First name
     if nameList.__len__() > 0:
@@ -1680,9 +1681,9 @@ if __name__ == "__main__":
     eyeColors = EyeColorPalette(armorColorScheme, propsOptions["Armor Style"], charOptions["Nationality"], \
                                 appearanceOptions["Race"], charOptions["Gender"], mainColorObject)
     # 3.4.2. Randomize an Eye Color Object
-    # eyeColorObject = eyeColors.get_eye_color()
+    eyeColorObject = eyeColors.get_eye_color()
     # 3.4.3. Store the Eye Color Object's number
-    # appearanceOptions["Eye Color"] = eyeColorObject.num
+    appearanceOptions["Eye Color"] = eyeColorObject.num
 
     ### PRINT RANDOMIZED OPTIONS ###
     # 1. CHARACTER INFO
