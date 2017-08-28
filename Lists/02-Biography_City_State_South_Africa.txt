@@ -1,0 +1,75 @@
+Alice, Eastern Cape
+Bellville, Western Cape
+Benoni, Gauteng
+Bethlehem, Free State
+Bloemfontein, Free State
+Boksburg, Gauteng
+Brakpan, Gauteng
+Butterworth, Eastern Cape
+Cape Town, Western Cape
+Carletonville, Gauteng
+Constantia, Western Cape
+Durban, KwaZulu-Natal
+East London, Eastern Cape
+Emalahleni, Mpumalanga
+Empangeni, KwaZulu-Natal
+George, Western Cape
+Germiston, Gauteng
+Giyani, Limpopo
+Graaff-Reinet, Eastern Cape
+Grahamstown, Eastern Cape
+Hopefield, Western Cape
+Jagersfontein, Free State
+Johannesburg, Gauteng
+Kimberley, Northern Cape
+King William’s Town, Eastern Cape
+Klerksdorp, North West
+Kroonstad, Free State
+Krugersdorp, Gauteng
+Kuruman, Northern Cape
+Ladysmith, KwaZulu-Natal
+Lebowakgomo, Limpopo
+Mahikeng, North West
+Mmabatho, North West
+Mthatha, Eastern Cape
+Musina, Limpopo
+Nelspruit, Mpumalanga
+Newcastle, KwaZulu-Natal
+Odendaalsrus, Free State
+Oudtshoorn, Western Cape
+Paarl, Western Cape
+Parys, Free State
+Phalaborwa, Limpopo
+Phuthaditjhaba, Free State
+Pietermaritzburg, KwaZulu-Natal
+Pinetown, KwaZulu-Natal
+Polokwane, Limpopo
+Port Elizabeth, Eastern Cape
+Port Nolloth, Northern Cape
+Potchefstroom, North West
+Pretoria, Gauteng
+Queenstown, Eastern Cape
+Randburg, Gauteng
+Randfontein, Gauteng
+Roodepoort, Gauteng
+Rustenburg, North West
+Sasolburg, Free State
+Secunda, Mpumalanga
+Seshego, Limpopo
+Sibasa, Limpopo
+Simon’s Town, Western Cape
+Soweto, Gauteng
+Springs, Gauteng
+Stellenbosch, Western Cape
+Swellendam, Western Cape
+Thabazimbi, Limpopo
+Uitenhage, Eastern Cape
+Ulundi, KwaZulu-Natal
+Umlazi, KwaZulu-Natal
+Vanderbijlpark, Gauteng
+Vereeniging, Gauteng
+Virginia, Free State
+Welkom, Free State
+Worcester, Western Cape
+Zwelitsha, Eastern Cape
+
