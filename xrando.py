@@ -284,6 +284,9 @@ def rando_backstory(name, nationality, gender):
 
     ### PARSE NAME ###
     nameList = name.split(" ")
+    # Handle errant spaces
+    nameList.remove("")
+
     # First name
     if nameList.__len__() > 0:
         firstName = nameList[0]
@@ -408,11 +411,11 @@ def rando_city_state(nationality):
     ### LOCAL VARIABLES ###
     retVal = ""
     listOfCityStates = []
-    cityStateFile = os.path.join("Lists", "02-Biography_City_State_" + nationality + ".txt")
+    cityStateFile = os.path.join("Lists", "02-Biography_City_State_" + nationality.replace(" ", "_") + ".txt")
 
     ### READ LAST NAME ###
     if os.path.isfile(cityStateFile) is False:
-        cityStateFile = cityStateFile.replace(nationality, "USA")
+        cityStateFile = cityStateFile.replace(nationality.replace(" ", "_"), "USA")
     if os.path.isfile(cityStateFile) is False:
         raise OSError('Unable to find necessary list file')
 
@@ -495,7 +498,7 @@ def rando_last_name(nationality):
 
     ### READ LAST NAME ###
     if os.path.isfile(lastNameFile) is False:
-        lastNameFile = lastNameFile.replace(nationality, "USA")
+        lastNameFile = lastNameFile.replace(nationality.replace(" ", "_"), "USA")
     if os.path.isfile(lastNameFile) is False:
         raise OSError('Unable to find necessary list file')
 
