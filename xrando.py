@@ -459,10 +459,11 @@ def rando_first_name(nationality, gender):
     retVal = ""
     listOfFirstNames = []
     firstNameFile = os.path.join("Lists", "01-Name_First_" + gender + "_" + nationality.replace(" ", "_") + ".txt")
+    # print("First Name File:\t{}".format(firstNameFile))  # DEBUGGING 
 
     ### READ FIRST NAME ###
     if os.path.isfile(firstNameFile) is False:
-        firstNameFile = firstNameFile.replace(nationality, "USA")
+        firstNameFile = firstNameFile.replace(nationality.replace(" ", "_"), "USA")
     if os.path.isfile(firstNameFile) is False:
         raise OSError('Unable to find necessary list file')
 
