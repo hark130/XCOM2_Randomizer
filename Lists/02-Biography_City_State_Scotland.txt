@@ -1,0 +1,55 @@
+Glasgow, Glasgow City
+Edinburgh, City of Edinburgh
+Aberdeen, Aberdeen City
+Dundee, Dundee City
+Paisley, Renfrewshire
+East Kilbride, South Lanarkshire
+Livingston, West Lothian
+Hamilton, South Lanarkshire
+Cumbernauld, North Lanarkshire
+Dunfermline, Fife
+Kirkcaldy, Fife
+Ayr, South Ayrshire
+Perth, Perth and Kinross
+Inverness, Highland
+Kilmarnock, East Ayrshire
+Coatbridge, North Lanarkshire
+Greenock, Inverclyde
+Glenrothes, Fife
+Airdrie, North Lanarkshire
+Stirling, Stirling
+Falkirk, Falkirk
+Irvine, North Ayrshire
+Dumfries, Dumfries and Galloway
+Motherwell, North Lanarkshire
+Rutherglen, South Lanarkshire
+Wishaw, North Lanarkshire
+Cambuslang, South Lanarkshire
+Bearsden, East Dunbartonshire
+Clydebank, West Dunbartonshire
+Newton Mearns, East Renfrewshire
+Arbroath, Angus
+Musselburgh, East Lothian
+Bishopbriggs, East Dunbartonshire
+Elgin, Moray
+Renfrew, Renfrewshire
+Bathgate, West Lothian
+Bellshill, North Lanarkshire
+Alloa, Clackmannanshire
+Dumbarton, West Dunbartonshire
+Kirkintilloch, East Dunbartonshire
+Peterhead, Aberdeenshire
+Barrhead, East Renfrewshire
+Grangemouth, Falkirk
+Blantyre, South Lanarkshire
+St Andrews, Fife
+Kilwinning, North Ayrshire
+Johnstone, Renfrewshire
+Bonnyrigg, Midlothian
+Penicuik, Midlothian
+Viewpark, North Lanarkshire
+Erskine, Renfrewshire
+Broxburn, West Lothian
+Port Glasgow, Inverclyde
+Larkhall, South Lanarkshire
+
