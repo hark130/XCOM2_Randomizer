@@ -27,7 +27,7 @@ Jayden
 Lungelo
 Louis
 Pieter
-Shane 
+Shane
 Thomas
 Meyer Bosman
 Isaac
@@ -52,7 +52,7 @@ Vinesh
 Ferdinand
 Brett
 Arnold
-Kopano 
+Kopano
 Jeandré
 Yaseen
 Declan
@@ -64,10 +64,10 @@ Hosni
 Ruan
 Mao
 Brice
-Bike Rider 
+Bike Rider
 J-P
 Malusi Dosi
-Muawiyah 
+Muawiyah
 Is-Haque
 Njabulo
 Piant
@@ -79,7 +79,7 @@ Wikus
 Ruwaldo
 Divashen
 Kevin
-Justin 
+Justin
 Errol
 Eeshaan
 Seth

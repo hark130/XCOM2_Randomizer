@@ -1,4 +1,4 @@
-Caitlin 
+Caitlin
 Sarah
 Megan
 Kayla
@@ -33,15 +33,15 @@ Nicole
 Ruth
 Olivia
 Malaika
-Sameera 
+Sameera
 Jana
 Abbi
 Laila
 Robyn
 Isabel
-Joanna 
+Joanna
 Aisha
-Erin 
+Erin
 Nthabiseng
 Claire
 Julia
@@ -88,7 +88,7 @@ Monica
 Andrea
 Gemma
 Buhle
-Isla 
+Isla
 Mishka
 Saajidah
 Laetitia
