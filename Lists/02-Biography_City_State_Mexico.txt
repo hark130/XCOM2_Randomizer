@@ -1,0 +1,117 @@
+Acapulco, Guerrero
+Aguascalientes, Aguascalientes
+Buenavista, México
+Campeche, Campeche
+Cancún, Quintana Roo
+Celaya, Guanajuato
+Chalco De Díaz Covarrubias, México
+Chetumal, Quintana Roo
+Chicoloapan De Juárez, México
+Chihuahua, Chihuahua
+Chilpancingo, Guerrero
+Chimalhuacán, México
+Ciudad Acuña, Coahuila
+Ciudad Apodaca, Nuevo León
+Ciudad Benito Juárez, Nuevo León
+Ciudad Cuauhtémoc, Chihuahua
+Ciudad De Villa De Álvarez, Colima
+Ciudad Del Carmen, Campeche
+Ciudad López Mateos, México
+Ciudad Madero, Tamaulipas
+Ciudad Nicolás Romero, México
+Ciudad Obregón, Sonora
+Ciudad Valles, San Luis Potosí
+Ciudad Victoria, Tamaulipas
+Coacalco De Berriozábal, México
+Coatzacoalcos, Veracruz
+Colima, Colima
+Córdoba, Veracruz
+Cuautitlán Izcalli, México
+Cuautitlán, México
+Cuautla, Morelos
+Cuernavaca, Morelos
+Culiacán, Sinaloa
+Delicias, Chihuahua
+Durango, Durango
+Ecatepec, México
+Ensenada, Baja California
+Fresnillo, Zacatecas
+General Escobedo, Nuevo León
+Gómez Palacio, Durango
+Guadalajara, Jalisco
+Guadalupe, Nuevo León
+Guadalupe, Zacatecas
+Guaymas, Sonora
+Hermosillo, Sonora
+Hidalgo Del Parral, Chihuahua
+Iguala, Guerrero
+Irapuato, Guanajuato
+Ixtapaluca, México
+Jiutepec, Morelos
+Juárez, Chihuahua
+La Paz, Baja California Sur
+León, Guanajuato
+Los Mochis, Sinaloa
+Manzanillo, Colima
+Matamoros, Tamaulipas
+Mazatlán, Sinaloa
+Mérida, Yucatán
+Mexicali, Baja California
+Mexico City, Distrito Federal
+Minatitlán, Veracruz
+Miramar, Tamaulipas
+Monclova, Coahuila
+Monterrey, Nuevo León
+Morelia, Michoacán
+Naucalpan, México
+Naucalpan, México
+Navojoa, Sonora
+Nezahualcóyotl, México
+Nogales, Sonora
+Nuevo Laredo, Tamaulipas
+Oaxaca, Oaxaca
+Ojo De Agua, México
+Orizaba, Veracruz
+Pachuca, Hidalgo
+Piedras Negras, Coahuila
+Playa Del Carmen, Quintana Roo
+Poza Rica, Veracruz
+Puebla, Puebla
+Puerto Vallarta, Jalisco
+Querétaro, Querétaro
+Reynosa, Tamaulipas
+Salamanca, Guanajuato
+Saltillo, Coahuila
+San Cristóbal De Las Casas, Chiapas
+San Juan Bautista Tuxtepec, Oaxaca
+San Juan Del Río, Querétaro
+San Luis Potosí, San Luis Potosí
+San Luis Río Colorado, Sonora
+San Nicolás De Los Garza, Nuevo León
+San Pablo De Las Salinas, México
+San Pedro Garza García, Nuevo León
+Santa Catarina, Nuevo León
+Soledad De Graciano Sánchez, San Luis Potosí
+Tampico, Tamaulipas
+Tapachula, Chiapas
+Tehuacán, Puebla
+Tepexpan, México
+Tepic, Nayarit
+Texcoco, México
+Tijuana, Baja California
+Tlalnepantla, México
+Tlaquepaque, Jalisco
+Toluca, México
+Tonalá, Jalisco
+Torreón, Coahuila
+Tulancingo, Hidalgo
+Tuxtla Gutiérrez, Chiapas
+Uruapan, Michoacán
+Veracruz, Boca Del Río Municipality, Veracruz
+Veracruz, Veracruz
+Villahermosa, Tabasco
+Xalapa, Veracruz
+Xico, México
+Zacatecas, Zacatecas
+Zamora, Michoacán
+Zapopan, Jalisco
