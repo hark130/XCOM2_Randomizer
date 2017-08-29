@@ -17,6 +17,7 @@ This is a python script to randomize XCOM2 character customizations for me
                 * Ten percent are age 18 or under
                 * Fifteen percent are between the ages of 18-24
                 * 50 percent are 25 to 44 years old
+        [ ] Include a percent chance they were adopted abroad
     [ ] Expand on Props
         [ ] Establish color selection for tattoos (implement color wheel?)
         [ ] Armor style ADVENT only gets long sleeve arms
