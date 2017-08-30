@@ -992,14 +992,14 @@ class ColorPalette:
 
         ### GET COLOR ###
         # Two Color Schemes
-        # 1. Brown(dark) → Brown(light)
-        # 2. Brown(medium) → Brown(dark)
-        # 3. Green(dark) → Yellow
-        # 4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
-        # 5. Green(light) → Greyscale(dark)... NOT IMPLEMENTED
-        # 6. Brown(light) or Greyscale(light) → Brown(reddish)
-        # 7. Green(medium) → Brown(medium)
-        # 8. Orange → Green(dark)
+        # 1. Brown(dark) --> Brown(light)
+        # 2. Brown(medium) --> Brown(dark)
+        # 3. Green(dark) --> Yellow
+        # 4. Brown(light) --> Greyscale(light)... Orange(light) == Brown(light) for this scheme
+        # 5. Green(light) --> Greyscale(dark)... NOT IMPLEMENTED
+        # 6. Brown(light) or Greyscale(light) --> Brown(reddish)
+        # 7. Green(medium) --> Brown(medium)
+        # 8. Orange --> Green(dark)
 
         # 1. Determine starting color
         ## 1.1. Select Main
@@ -1011,22 +1011,22 @@ class ColorPalette:
             while retVal is None:
                 # 1.1.1. Randomize an earthy color
                 tmpColor = self.listOfEarthyColors[randint(0, self.listOfEarthyColors.__len__() - 1)]
-                # 1.1.1.1. Brown(dark) → Brown(light)
+                # 1.1.1.1. Brown(dark) --> Brown(light)
                 if randNum == 1:
                     if self.is_it_brown(tmpColor):
                         if tmpColor.brightness == "Dark":
                             retVal = tmpColor
-                # 1.1.1.2. Brown(medium) → Brown(dark)
+                # 1.1.1.2. Brown(medium) --> Brown(dark)
                 elif randNum == 2:
                     if self.is_it_brown(tmpColor):
                         if tmpColor.brightness == "Medium":
                             retVal = tmpColor
-                # 1.1.1.3. Green(dark) → Yellow
+                # 1.1.1.3. Green(dark) --> Yellow
                 elif randNum == 3:
                     if tmpColor.wheelColor == "Green":
                         if tmpColor.brightness == "Dark":
                             retVal = tmpColor
-                # 1.1.1.4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
+                # 1.1.1.4. Brown(light) --> Greyscale(light)... Orange(light) == Brown(light) for this scheme
                 elif randNum == 4:
                     if self.is_it_brown(tmpColor):
                         if tmpColor.brightness == "Light":
@@ -1034,14 +1034,14 @@ class ColorPalette:
                     elif tmpColor.wheelColor.find("Orange") >= 0:
                         if tmpColor.brightness == "Light":
                             retVal = tmpColor
-                # 1.1.1.5. Green(light) → Greyscale(dark)
+                # 1.1.1.5. Green(light) --> Greyscale(dark)
                 # NOTE: Not implemented since there are no Light Green colors in 
                 #     the Main Armor Color Palette
                 # elif randNum == 5:
                 #     if tmpColor.wheelColor.find("Green") >= 0:
                 #         if tmpColor.brightness == "Light":
                 #             retVal = tmpColor
-                # 1.1.1.6. Brown(light) or Greyscale(light) → Brown(reddish)
+                # 1.1.1.6. Brown(light) or Greyscale(light) --> Brown(reddish)
                 elif randNum == 6:
                     if self.is_it_brown(tmpColor):
                         if tmpColor.brightness == "Light":
@@ -1049,12 +1049,12 @@ class ColorPalette:
                     elif tmpColor.wheelColor == "Greyscale":
                         if tmpColor.brightness == "Light":
                             retVal = tmpColor
-                # 1.1.1.7. Green(medium) → Brown(medium)
+                # 1.1.1.7. Green(medium) --> Brown(medium)
                 elif randNum == 7:
                     if tmpColor.wheelColor == "Green":
                         if tmpColor.brightness == "Medium":
                             retVal = tmpColor
-                # 1.1.1.8. Orange → Green(dark)
+                # 1.1.1.8. Orange --> Green(dark)
                 elif randNum == 8:
                     if tmpColor.wheelColor == "Orange" and tmpColor.brightness != "Light" and not self.is_it_brown(tmpColor):
                         retVal = tmpColor
@@ -1070,45 +1070,45 @@ class ColorPalette:
             while retVal is None:
                 # 1.1.1. Randomize an earthy color
                 tmpColor = self.listOfEarthyColors[randint(0, self.listOfEarthyColors.__len__() - 1)]
-                # 1.1.1.1. Brown(dark) → Brown(light)
+                # 1.1.1.1. Brown(dark) --> Brown(light)
                 if self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Dark":
                     # print("Two Color Earthy Scheme:\t1")  # DEBUGGING
                     if self.is_it_brown(tmpColor) and tmpColor.brightness != "Dark":
                         retVal = tmpColor
-                # 1.1.1.2. Brown(medium) → Brown(dark)
+                # 1.1.1.2. Brown(medium) --> Brown(dark)
                 elif self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Medium":
                     # print("Two Color Earthy Scheme:\t2")  # DEBUGGING
                     if self.is_it_brown(tmpColor) and tmpColor.brightness == "Dark":
                         retVal = tmpColor
-                # 1.1.1.3. Green(dark) → Yellow
+                # 1.1.1.3. Green(dark) --> Yellow
                 elif colorToMatch.wheelColor == "Green" and colorToMatch.brightness == "Dark":
                     # print("Two Color Earthy Scheme:\t3")  # DEBUGGING
                     if tmpColor.wheelColor.find("Yellow") >= 0:
                         retVal = tmpColor
-                # 1.1.1.4. Brown(light) → Greyscale(light)... Orange(light) == Brown(light) for this scheme
+                # 1.1.1.4. Brown(light) --> Greyscale(light)... Orange(light) == Brown(light) for this scheme
                 elif colorToMatch.wheelColor == "Orange" and colorToMatch.brightness == "Light":
                     # print("Two Color Earthy Scheme:\t4")  # DEBUGGING
                     if tmpColor.wheelColor == "Greyscale" and tmpColor.brightness == "Light":
                         retVal = tmpColor
-                # 1.1.1.5. Green(light) → Greyscale(dark)
+                # 1.1.1.5. Green(light) --> Greyscale(dark)
                 # NOTE: Not implemented since there are no Light Green colors in 
                 #     the Main Armor Color Palette
                 # elif colorToMatch.wheelColor.find("Green") >= 0 and colorToMatch.brightness == "Light":
                 #     print("Two Color Earthy Scheme:\t5")  # DEBUGGING
                 #     if tmpColor.wheelColor == "Greyscale" and tmpColor.brightness == "Dark":
                 #         retVal = tmpColor
-                # 1.1.1.6. Brown(light) or Greyscale(light) → Brown(reddish)
+                # 1.1.1.6. Brown(light) or Greyscale(light) --> Brown(reddish)
                 elif (self.is_it_brown(colorToMatch) and colorToMatch.brightness == "Light") or \
                 (colorToMatch.wheelColor == "Greyscale" and colorToMatch.brightness == "Light"):
                     # print("Two Color Earthy Scheme:\t6")  # DEBUGGING
                     if self.is_it_brown(tmpColor) and tmpColor.wheelColor.find("Red") >= 0:
                         retVal = tmpColor
-                # 1.1.1.7. Green(medium) → Brown(medium)
+                # 1.1.1.7. Green(medium) --> Brown(medium)
                 elif colorToMatch.wheelColor == "Green" and colorToMatch.brightness == "Medium":
                     # print("Two Color Earthy Scheme:\t7")  # DEBUGGING
                     if self.is_it_brown(tmpColor) and tmpColor.brightness == "Medium":
                         retVal = tmpColor
-                # 1.1.1.8. Orange → Green(dark)
+                # 1.1.1.8. Orange --> Green(dark)
                 elif colorToMatch.wheelColor == "Orange" and colorToMatch.brightness != "Light" and not self.is_it_brown(colorToMatch):
                     # print("Two Color Earthy Scheme:\t8")  # DEBUGGING
                     if tmpColor.wheelColor.find("Green") >= 0 and tmpColor.brightness != "Light":
