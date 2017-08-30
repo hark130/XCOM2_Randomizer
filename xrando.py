@@ -172,7 +172,7 @@ listOfVoices = [ \
     "American English 4", "American English 5", "American English 6", \
     "American English 7", "American English 8", "American English 9", \
     "American English 10", \
-    "UK English 1", "UK English 2", "UK English 3", \
+    "UK English 1", "UK English 2", "UK English 3", "UK English 4", \
     "Australian English 1", "Australian English 2", \
     "French 1", "French 2", "French 3", \
     "French 4", "French 5", "French 6", \
