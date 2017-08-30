@@ -2,6 +2,7 @@
 This is a python script to randomize XCOM2 character customizations for me
 
 ## TO DO
+    [ ] Include logic to verify Python 3.5
     [/] Expand on Character Info
         [ ] Backstory function incorporates 'majority dead' in narrative
         [/] Implement other racial first names (male and female)
@@ -19,6 +20,11 @@ This is a python script to randomize XCOM2 character customizations for me
                 * 50 percent are 25 to 44 years old
         [ ] Include a percent chance they were adopted abroad
     [ ] Expand on Props
+        [ ] Decrease bandana chance (I don't like them)
+        [ ] Include Rookie and Veteran armor options
+            [ ] Rookies have left/right arm and left/right shoulder
+            [ ] Torso 10-14 for rookie armor?
+            [ ] Slicked-back braid not for rookies?
         [ ] Establish color selection for tattoos (implement color wheel?)
         [ ] Armor style ADVENT only gets long sleeve arms
         [ ] Refactor tattoo % based on data (don't forget to inflate):
