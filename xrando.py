@@ -80,7 +80,9 @@ listOfArmorLegs = [ \
 listOfArmorTorso = [ \
     "Torso 0", "Torso 1", "Torso 2", \
     "Torso 3", "Torso 4", "Torso 5", \
-    "Torso 6", "Torso 7", \
+    "Torso 6", "Torso 7", "Torso 8", \
+    "Torso 9", "Torso 10", "Torso 11", \
+    "Torso 12", "Torso 13", "Torso 14", \
 ]
 
 listOfUpperFaceProps = [
