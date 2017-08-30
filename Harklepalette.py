@@ -207,7 +207,8 @@ class ColorPalette:
         "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
         "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-        "2 Colors - Earthy", "3 Colors - Earthy", "Random Earthy", \
+        # This line is missing "3 Colors - Earthy" 
+        "2 Colors - Earthy", "Random Earthy", \
         "Urban", "Goth", "Parallel", \
     ]
     implementedSchemes = [ \
@@ -407,7 +408,7 @@ class ColorPalette:
             raise RuntimeError("Main color is blank but Secondary color is not")
         elif self.scheme not in self.implementedSchemes:
             # print("get_color():\tcolorToMatch is of type {}\n".format(colorToMatch))  # DEBUGGING
-            # print("get_color():\tself.scheme is {}\n".format(self.scheme))  # DEBUGGING
+            # print("get_color():\tself.scheme is {} of type {}\n".format(self.scheme, type(self.scheme)))  # DEBUGGING
             raise RuntimeError("This perfectly valid color scheme has not yet been implemented")
 
         ### LOCAL VARIABLES ###
@@ -1691,6 +1692,7 @@ class WeaponColorPalette(MainArmorPalette):
 
     def __init__(self, scheme):
         super().__init__(scheme)
+        # pass
 
 
 class EyeColorPalette(ColorPalette):
@@ -1941,7 +1943,7 @@ class EyeColorPalette(ColorPalette):
             elif self.nationality == "Germany" and randNum <= 70:
                 # Light colored eyes
                 tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if pigment.brightness == "Light"]
-            # Other ”northern” countries like The Netherlands, Scotland have light eyed peoples too
+            # Other northern countries like The Netherlands and Scotland have light eyed peoples too
             elif self.nationality in [ "Netherlands" ]:
                 tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors ]
                 # Double up on light colored eyes
@@ -1986,7 +1988,7 @@ class EyeColorPalette(ColorPalette):
         # 2.2. Fake 3% for men 5% for women
             # 7.442 B people
             # 200 M people wear contacts
-            # 85% – Clear or have faint tinting
+            # 85% - Clear or have faint tinting
             # Color lenses= 30%
 
         # 2.2.1. Attactive eyes
