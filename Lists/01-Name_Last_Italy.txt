@@ -1,144 +1,153 @@
-Rome, Lazio
-Milan, Lombardy
-Naples, Campania
-Turin, Piedmont
-Palermo, Sicily
-Genoa, Liguria
-Bologna, Emilia-Romagna
-Florence, Tuscany
-Bari, Apulia
-Catania, Sicily
-Venice, Veneto
-Verona, Veneto
-Messina, Sicily
-Padua, Veneto
-Trieste, Friuli-Venezia Giulia
-Taranto, Apulia
-Brescia, Lombardy
-Parma, Emilia-Romagna
-Prato, Tuscany
-Modena, Emilia-Romagna
-Reggio Calabria, Calabria
-Reggio Emilia, Emilia-Romagna
-Perugia, Umbria
-Ravenna, Emilia-Romagna
-Livorno, Tuscany
-Cagliari, Sardinia
-Foggia, Apulia
-Rimini, Emilia-Romagna
-Salerno, Campania
-Ferrara, Emilia-Romagna
-Sassari, Sardinia
-Latina, Lazio
-Giugliano In Campania, Campania
-Monza, Lombardy
-Syracuse, Sicily
-Pescara, Abruzzo
-Bergamo, Lombardy
-Forlì, Emilia-Romagna
-Trento, Trentino-Alto Adige
-Vicenza, Veneto
-Terni, Umbria
-Bolzano, Trentino-Alto Adige
-Novara, Piedmont
-Piacenza, Emilia-Romagna
-Ancona, Marche
-Andria, Apulia
-Arezzo, Tuscany
-Udine, Friuli-Venezia Giulia
-Cesena, Emilia-Romagna
-Lecce, Apulia
-Pesaro, Marche
-Barletta, Apulia
-Alessandria, Piedmont
-La Spezia, Liguria
-Pisa, Tuscany
-Catanzaro, Calabria
-Pistoia, Tuscany
-Guidonia Montecelio, Lazio
-Lucca, Tuscany
-Brindisi, Apulia
-Torre Del Greco, Campania
-Como, Lombardy
-Treviso, Veneto
-Busto Arsizio, Lombardy
-Marsala, Sicily
-Grosseto, Tuscany
-Sesto San Giovanni, Lombardy
-Pozzuoli, Campania
-Varese, Lombardy
-Fiumicino, Lazio
-Casoria, Campania
-Asti, Piedmont
-Caserta, Campania
-Cinisello Balsamo, Lombardy
-Gela, Sicily
-Aprilia, Lazio
-Ragusa, Sicily
-Pavia, Lombardy
-Cremona, Lombardy
-Carpi, Emilia-Romagna
-Quartu Sant'Elena, Sardinia
-Lamezia Terme, Calabria
-Altamura, Apulia
-Imola, Emilia-Romagna
-L’Aquila, Abruzzo
-Massa, Tuscany
-Trapani, Sicily
-Cosenza, Calabria
-Viterbo, Lazio
-Potenza, Basilicata
-Castellammare Di Stabia, Campania
-Afragola, Campania
-Vittoria, Sicily
-Vigevano, Lombardy
-Crotone, Calabria
-Pomezia, Lazio
-Caltanissetta, Sicily
-Carrara, Tuscany
-Viareggio, Tuscany
-Savona, Liguria
-Fano, Marche
-Matera, Basilicata
-Legnano, Lombardy
-Olbia, Sardinia
-Benevento, Campania
-Marano Di Napoli, Campania
-Acerra, Campania
-Molfetta, Apulia
-Agrigento, Sicily
-Faenza, Emilia-Romagna
-Cerignola, Apulia
-Moncalieri, Piedmont
-Foligno, Umbria
-Manfredonia, Apulia
-Tivoli, Lazio
-Cuneo, Piedmont
-Trani, Apulia
-Bisceglie, Apulia
-Bagheria, Sicily
-Bitonto, Apulia
-Portici, Campania
-Sanremo, Liguria
-Teramo, Abruzzo
-Avellino, Campania
-Modica, Sicily
-Anzio, Lazio
-Montesilvano, Abruzzo
-Siena, Tuscany
-Cava De' Tirreni, Campania
-San Severo, Apulia
-Velletri, Lazio
-Ercolano, Campania
-Gallarate, Lombardy
-Aversa, Campania
-Civitavecchia, Lazio
-Acireale, Sicily
-Rovigo, Veneto
-Mazara Del Vallo, Sicily
-Chieti, Abruzzo
-Pordenone, Friuli-Venezia Giulia
-Battipaglia, Campania
-Scafati, Campania
-Rho, Lombardy
-Scandicci, Tuscany
+Alfonsi
+Alfonso
+Altera
+Angelo
+Arcuri
+Auriemma
+Baresi
+Baroffio
+Bellini
+Bellucci
+Beneventi
+Bianchi
+Bianchi
+Boni
+Borroni
+Brichese
+Bruno
+Buccho
+Campagna
+Canali
+Capone
+Caruso
+Castiglione
+Ciccone
+Cocci
+Cociarelli
+Colombo
+Colombo
+Conti
+Conti
+Costa
+Costa
+Davide
+De Luca
+De Luca
+De Marco
+De Rose
+Dellucci
+Detti
+Di Donato
+Di Maggio
+Di Traglia
+Donati
+Donini
+Endrizzi
+Eneide
+Esposito
+Esposito
+Fallaci
+Fanucci
+Faugno
+Fazio
+Ferrari
+Ferrari
+Ferri
+Fiorentino
+Folliero
+Gallo
+Gallo
+Gelli
+Genovese
+Gentile
+Gentilini
+Giordano
+Giordano
+Golino
+Greco
+Greco
+Iadanza
+Lettiere
+Li Fonti
+Lo Duca
+Loggia
+Lombardi
+Lombardi
+Lombardo
+Longo
+Lorenzo
+Lori
+Lucciano
+Mancini
+Mancini
+Manna
+Marcello
+Marchesi
+Marino
+Marino
+Mazzanti
+Mazzi
+Mele
+Milani
+Milano
+Miniati
+Monaldo
+Montalti
+Montalto
+Moretti
+Moretti
+Napolitano
+Necci
+Neri
+Nucci
+Offredi
+Onio
+Opizzi
+Oscuro
+Ossani
+Pagnotto
+Palazzo
+Palermo
+Panicucci
+Passero
+Piazza
+Piccio
+Pinto
+Pirozzi
+Pisani
+Pisano
+Pugliesi
+Ricci
+Ricci
+Rivera
+Rizzo
+Rizzo
+Romano
+Romano
+Rosiello
+Rossi
+Rossi
+Rua
+Russo
+Russo
+Sabbatini
+Sagese
+Sal
+Schiavone
+Scutari
+Siciliano
+Tocci
+Toscani
+Toscano
+Trevisan
+Trevisani
+Udinese
+Udinesi
+Vecellio
+Vecoli
+Venturi
+Violante
+Zampa
+Zetticci
+Zito
+Zullo
