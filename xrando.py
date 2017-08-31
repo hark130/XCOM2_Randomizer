@@ -259,6 +259,23 @@ def convert_num_to_word(number, capitalize = False):
 ################################
 
 
+def rando_name():
+    ### LOCAL VARIABLES ###
+    retVal = ""     # Will hold one of the entries from listOfNations
+    randInt = 0     # Randomly generated number
+    randInt = randint(1, 10000)
+
+    if randint > 9982:
+        retVal = "Israel"
+    elif randint > 9283:
+        retVal = "USA"
+    elif randint > 9272:
+        retVal = "Norway"
+    ############## CONTINUE HERE ###########
+
+    return retVal
+
+
 def rando_backstory(name, nationality, gender):
     ### INPUT VALIDATION ###
     if not isinstance(name, str):
@@ -1592,7 +1609,8 @@ if __name__ == "__main__":
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
     # 1.1. Nationality
-    charOptions["Nationality"] = listOfNations[randint(0, listOfNations.__len__() - 1)]
+    # charOptions["Nationality"] = listOfNations[randint(0, listOfNations.__len__() - 1)]
+    charOptions["Nationality"] = rando_nation()
     # 1.2. Gender
     if randint(1, 100) > 49:
         charOptions["Gender"] = listOfGenders[1]
