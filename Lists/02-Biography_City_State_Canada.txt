@@ -1,0 +1,200 @@
+La Tuque, Quebec
+Senneterre, Quebec
+Rouyn-Noranda, Quebec
+Val-d'Or, Quebec
+Greater Sudbury, Ontario
+Kawartha Lakes, Ontario
+Timmins, Ontario
+Ottawa, Ontario
+Gillam, Manitoba
+Sept-Îles, Quebec
+Norfolk County, Ontario
+Leaf Rapids, Manitoba
+Haldimand County, Ontario
+Snow Lake, Manitoba
+Saguenay, Quebec
+Gaspé, Quebec
+Hamilton, Ontario
+Port-Cartier, Quebec
+Prince Edward County, Ontario
+Lynn Lake, Manitoba
+Brant, Ontario
+Calgary, Alberta
+Shawinigan, Quebec
+Témiscaming, Quebec
+Elliot Lake, Ontario
+Huntsville, Ontario
+Chibougamau, Quebec
+Caledon, Ontario
+Edmonton, Alberta
+Saint-Raymond, Quebec
+Laurentian Hills, Ontario
+Toronto, Ontario
+Bracebridge, Ontario
+Iroquois Falls, Ontario
+Mont-Laurier, Quebec
+Dégelis, Quebec
+Belleterre, Quebec
+Moosonee, Ontario
+Baie-Saint-Paul, Quebec
+Cochrane, Ontario
+South Bruce Peninsula, Ontario
+Kearney, Ontario
+Lakeshore, Ontario
+Blind River, Ontario
+Mississippi Mills, Ontario
+Gravenhurst, Ontario
+Northeastern Manitoulin and the Islands, Ontario
+Quinte West, Ontario
+Mirabel, Quebec
+Fermont, Quebec
+Winnipeg, Manitoba
+Greater Napanee, Ontario
+La Malbaie, Quebec
+Rivière-Rouge, Quebec
+Quebec City, Quebec
+Kingston, Ontario
+Lévis, Quebec
+St. John's, Newfoundland
+Bécancour, Quebec
+Percé, Quebec
+Amos, Quebec
+London, Ontario
+Chandler, Quebec
+Whitehorse, Yukon
+Gracefield, Quebec
+Abbotsford, British Columbia
+Baie Verte, Newfoundland
+Montreal, Quebec
+Saint-Félicien, Quebec
+Milton, Ontario
+Sherbrooke, Quebec
+Gatineau, Quebec
+Pohénégamook, Quebec
+Rimouski, Quebec
+Baie-Comeau, Quebec
+Thunder Bay, Ontario
+North Bay, Ontario
+Plympton-Wyoming, Ontario
+Prince George, British Columbia
+Surrey, British Columbia
+Saint John, New Brunswick
+Happy Valley-Goose Bay, Newfoundland
+Minto, Ontario
+Kamloops, British Columbia
+Clarence-Rockland, Ontario
+Erin, Ontario
+Cookshire-Eaton, Quebec
+Dolbeau-Mistassini, Quebec
+Mississauga, Ontario
+Trois-Rivières, Quebec
+Georgina, Ontario
+The Blue Mountains, Ontario
+Innisfil, Ontario
+Essex, Ontario
+Mono, Ontario
+Halton Hills, Ontario
+New Tecumseth, Ontario
+Vaughan, Ontario
+Brampton, Ontario
+Sainte-Anne-des-Monts, Quebec
+Toronto, Ontario
+Montreal, Quebec
+Vancouver, British Columbia
+Calgary, Alberta
+Edmonton, Alberta
+Ottawa–Gatineau, Ontario
+Winnipeg, Manitoba
+Quebec City, Quebec
+Hamilton, Ontario
+Kitchener, Ontario
+London, Ontario
+Victoria, British Columbia
+Halifax, Nova Scotia
+Oshawa, Ontario
+Windsor, Ontario
+Saskatoon, Saskatchewan
+St. Catharines–Niagara, Ontario
+Regina, Saskatchewan
+St. John's, Newfoundland
+Kelowna, British Columbia
+Barrie, Ontario
+Sherbrooke, Quebec
+Guelph, Ontario
+Abbotsford, British Columbia
+Kingston, Ontario
+Kanata, Ontario
+Trois-Rivières, Quebec
+Moncton, New Brunswick
+Chicoutimi-Jonquière, Quebec
+Milton, Ontario
+Red Deer, Alberta
+Brantford, Ontario
+Thunder Bay, Ontario
+White Rock, British Columbia
+Nanaimo, British Columbia
+Sudbury, Ontario
+Lethbridge, Alberta
+Saint-Jean-sur-Richelieu, Quebec
+Peterborough, Ontario
+Kamloops, British Columbia
+Saint-Jérôme, Quebec
+Chilliwack, British Columbia
+Sarnia, Ontario
+Châteauguay, Quebec
+Drummondville, Quebec
+Belleville, Ontario
+Fort McMurray, Alberta
+Sault Ste. Marie, Ontario
+Prince George, British Columbia
+Medicine Hat, Alberta
+Welland-Pelham, Ontario
+Grande Prairie, Alberta
+Airdrie, Alberta
+Granby, Quebec
+Fredericton, New Brunswick
+Saint John, New Brunswick
+Beloeil, Quebec
+North Bay, Ontario
+Saint-Hyacinthe, Quebec
+Brandon, Manitoba
+Vernon, British Columbia
+Cornwall, Ontario
+Joliette, Quebec
+Courtenay, British Columbia
+Charlottetown, Prince Edward Island
+Victoriaville, Quebec
+Chatham, Ontario
+Georgetown, Ontario
+St. Thomas, Ontario
+Woodstock, Ontario
+Bowmanville-Newcastle, Ontario
+Salaberry-de-Valleyfield, Quebec
+Shawinigan, Quebec
+Rimouski, Quebec
+Spruce Grove, Alberta
+Sorel-Tracy, Quebec
+Campbell River, British Columbia
+Prince Albert, Saskatchewan
+Penticton, British Columbia
+Mission, British Columbia
+Leamington, Ontario
+Moose Jaw, Saskatchewan
+Stouffville, Ontario
+Lloydminster, Alberta
+Orillia, Ontario
+Stratford, Ontario
+Orangeville, Ontario
+Cape Breton-Sydney, Nova Scotia
+Bradford, Ontario
+Leduc, Alberta
+Timmins, Ontario
+Okotoks, Alberta
+Saint-Georges, Quebec
+Keswick-Elmhurst Beach, Ontario
+Bolton, Ontario
+Val-d'Or, Quebec
+Cochrane, Alberta
+Quispamsis-Rothesay, New Brunswick
+Midland, Ontario
+Innisfil, Ontario
