@@ -1721,6 +1721,7 @@ class EyeColorPalette(ColorPalette):
     gender = ""
 
     listOfNormalEyeColors = []
+    listOfFakeEyeColors = []
 
     def __init__(self, scheme, armorStyle, nationality, race, gender, mainColor):
         ### INPUT VALIDATION ###
@@ -1782,7 +1783,6 @@ class EyeColorPalette(ColorPalette):
         self.listOfColors.append(Color(19, 270, 100, 100))
         self.listOfColors.append(Color(20, 0, 0, 100))
         self.listOfColors.append(Color(21, 0, 0, 14))
-
 
         for swatch in self.listOfColors:
             # Build the list of brown colors
@@ -1846,6 +1846,11 @@ class EyeColorPalette(ColorPalette):
                 self.listOfNormalEyeColors.append(swatch)
                 # print("Normal Eye Color:\tGreen")  # DEBUGGING
                 # print_color_object(swatch)  # DEBUGGING
+
+        for swatch in self.listOfColors:
+            # Build the list of fake eye colors
+            if swatch not in self.listOfNormalEyeColors:
+                self.listOfFakeEyeColors.append(swatch)
 
 
     def get_eye_color(self):
@@ -1974,7 +1979,7 @@ class EyeColorPalette(ColorPalette):
         # 2.2. Fake eye color
         else:  
             print("Randomizing from fake eye colors")  # DEBUGGING
-            tmpColorList = self.listOfColors
+            tmpColorList = self.listOfFakeEyeColors
             pass  # Impelement later
             
         # 3. Randomize a color from the list
