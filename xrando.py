@@ -259,19 +259,74 @@ def convert_num_to_word(number, capitalize = False):
 ################################
 
 
-def rando_name():
+def rando_nation():
     ### LOCAL VARIABLES ###
     retVal = ""     # Will hold one of the entries from listOfNations
-    randInt = 0     # Randomly generated number
-    randInt = randint(1, 10000)
+    randNum = 0     # Randomly generated number
+    randNum = randint(1, 10000)
 
-    if randint > 9982:
+    if randNum > 9982:
         retVal = "Israel"
-    elif randint > 9283:
+    elif randNum > 9283:
         retVal = "USA"
-    elif randint > 9272:
+    elif randNum > 9272:
         retVal = "Norway"
-    ############## CONTINUE HERE ###########
+    elif randNum > 9262:
+        retVal = "Ireland"
+    elif randNum > 6291:
+        retVal = "China"
+    elif randNum > 6151:
+        retVal = "United Kingdom"
+    elif randNum > 6032:
+        retVal = "South Africa"
+    elif randNum > 5621:
+        retVal = "Nigeria"
+    elif randNum > 2748:
+        retVal = "India"
+    elif randNum > 2670:
+        retVal = "Canada"
+    elif randNum > 2575:
+        retVal = "Ukraine"
+    elif randNum > 2563:
+        retVal = "Scotland"
+    elif randNum > 2527:
+        retVal = "Netherlands"
+    elif randNum > 2504:
+        retVal = "Greece"
+    elif randNum > 2052:
+        retVal = "Brazil"
+    elif randNum > 2030:
+        retVal = "Sweden"
+    elif randNum > 1960:
+        retVal = "Saudi Arabia"
+    elif randNum > 1682:
+        retVal = "Mexico"
+    elif randNum > 1509:
+        retVal = "Germany"
+    elif randNum > 1484:
+        retVal = "Belgium"
+    elif randNum > 1386:
+        retVal = "Spain"
+    elif randNum > 1079:
+        retVal = "Russia"
+    elif randNum > 809:
+        retVal = "Japan"
+    elif randNum > 670:
+        retVal = "France"
+    elif randNum > 618:
+        retVal = "Australia"
+    elif randNum > 509:
+        retVal = "South Korea"
+    elif randNum > 427:
+        retVal = "Poland"
+    elif randNum > 299:
+        retVal = "Italy"
+    elif randNum > 95:
+        retVal = "Egypt"
+    elif randNum > 0:
+        retVal = "Argentina"
+    else:
+        raise RuntimeError("rando_nation:  How did we get here?")
 
     return retVal
 
