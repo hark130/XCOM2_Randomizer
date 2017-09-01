@@ -1887,7 +1887,7 @@ class EyeColorPalette(ColorPalette):
         randNum = randint(1, 100)
         # 2.1. Real eye color
         if realColor:
-            print("Randomizing from real eye colors")  # DEBUGGING
+            # print("Randomizing from real eye colors")  # DEBUGGING
             # Asians and Africans have brown eyes
             if self.race in [ "1 - Afican", "2 - Asian" ]:
                 # Add brown eye colors
@@ -1978,7 +1978,7 @@ class EyeColorPalette(ColorPalette):
                     tmpColorList = tmpColorList + [ pigment for pigment in self.listOfNormalEyeColors if self.is_it_brown(pigment)] 
         # 2.2. Fake eye color
         else:  
-            print("Randomizing from fake eye colors")  # DEBUGGING
+            # print("Randomizing from fake eye colors")  # DEBUGGING
             tmpColorList = self.listOfFakeEyeColors
             pass  # Impelement later
             
@@ -2007,12 +2007,3 @@ class EyeColorPalette(ColorPalette):
             # Amethyst: 6.9%
             # Brown: 5.9%
 
-# listOfColorSchemes = [ \
-#         "Monochromatic - Primary", "Monochromatic - Secondary", "Monochromatic - Tertiary", \
-#         "2 Colors - Analogous", "2 Colors - Complementary", "3 Colors - Triad", \
-#         "3 Colors - Split Complementary", "3 Colors - Secondary", "Random", \
-#         "2 Colors - Earthy", \
-#         # "3 Colors - Earthy" not yet implemented
-#         "Random Earthy", \
-#         "Urban", "Goth", "Parallel", \
-# ]
