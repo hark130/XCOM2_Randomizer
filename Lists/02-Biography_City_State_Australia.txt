@@ -1,0 +1,96 @@
+Sydney
+Adelaide
+Albany
+Albury–Wodonga
+Ballarat
+Bathurst
+Bendigo
+Bowral–Mittagong
+Brisbane
+Bunbury
+Bundaberg
+Busselton
+Cairns
+Canberra–Queanbeyan
+Coffs Harbour
+Darwin
+Devonport
+Dubbo
+Ellenbrook
+Geelong
+Geraldton
+Gladstone–Tannum Sands
+Gold Coast–Tweed Heads
+Hervey Bay
+Hobart
+Kalgoorlie–Boulder
+Launceston
+Mackay
+Melbourne
+Mildura–Wentworth
+Newcastle–Maitland
+Nowra–Bomaderry
+Orange
+Perth
+Port Macquarie
+Rockhampton
+Shepparton–Mooroopna
+Sunshine Coast
+Tamworth
+Toowoomba
+Townsville
+Traralgon–Morwell
+Wagga Wagga
+Warragul–Drouin
+Warrnambool
+Wollongong
+Sydney
+Melbourne
+Brisbane
+Perth
+Adelaide
+Gold Coast
+Canberra–Queanbeyan
+Newcastle
+Central Coast
+Wollongong
+Sunshine Coast
+Hobart
+Townsville
+Geelong
+Cairns
+Darwin
+Toowoomba
+Ballarat
+Bendigo
+Albury–Wodonga
+Mackay
+Launceston
+Mandurah
+Maitland
+Bunbury
+Rockhampton
+Bundaberg
+Hervey Bay
+Wagga Wagga
+Melton
+Coffs Harbour
+Shepparton–Mooroopna
+Port Macquarie
+Tamworth
+Orange
+Mildura–Buronga
+Sunbury
+Pakenham
+Dubbo
+Gladstone
+Geraldton
+Bathurst
+Kalgoorlie–Boulder
+Warrnambool
+Nowra–Bomaderry
+Lismore
+Albany
+Mount Gambier
+Traralgon
+Alice Springs
