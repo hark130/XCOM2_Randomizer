@@ -397,7 +397,7 @@ def rando_backstory(name, nationality, gender):
     # Hometown
     homeTown = rando_city_state(nationality)
     if homeTown.__len__() > 0:
-        retVal = retVal + " in " + homeTown
+        retVal = retVal + " in " + homeTown + " " + nationality
     retVal = retVal + ".\n\t\t"
     # Siblings
     if numSiblings > 0:
@@ -420,7 +420,7 @@ def rando_backstory(name, nationality, gender):
     retVal = retVal + "As an adult, " + firstName + " was a "
     retVal = retVal + rando_occupation()
     if randint(1, 10) > 4:
-        retVal = retVal + " in " + rando_city_state(nationality) + "."
+        retVal = retVal + " in " + rando_city_state(nationality) + " " + nationality + "."
     else:
         retVal = retVal + "."
     retVal = retVal + "\n\t\t"
@@ -549,6 +549,8 @@ def rando_first_name(nationality, gender):
         [listOfFirstNames.append(name) for name in fnFile.read().split('\n') if name.__len__() > 0]
 
     ### RANDOMIZE A NAME ###
+    if listOfFirstNames.__len__() == 0:
+        print("List of First Names is empty for nationality {} and gender {}".format(nationality, gender))  # DEBUGGING
     retVal = listOfFirstNames[randint(0, listOfFirstNames.__len__() - 1)]
 
     return retVal
