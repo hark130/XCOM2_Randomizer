@@ -1,0 +1,309 @@
+São Paulo, São Paulo 
+Rio de Janeiro, Rio de Janeiro 
+Brasília, Distrito Federal 
+Salvador, Bahia 
+Fortaleza, Ceará 
+Belo Horizonte, Minas Gerais 
+Manaus, Amazonas 
+Curitiba, Paraná 
+Recife, Pernambuco 
+Porto Alegre, Rio Grande do Sul 
+Goiânia, Goiás 
+Belém, Pará 
+Guarulhos, São Paulo 
+Campinas, São Paulo 
+São Luís, Maranhão 
+São Gonçalo, Rio de Janeiro 
+Maceió, Alagoas 
+Duque de Caxias, Rio de Janeiro 
+Natal, Rio Grande do Norte 
+Campo Grande, Mato Grosso do Sul 
+Teresina, Piauí 
+São Bernardo do Campo, São Paulo 
+João Pessoa, Paraíba 
+Nova Iguaçu, Rio de Janeiro 
+Santo André, São Paulo 
+Osasco, São Paulo 
+São José dos Campos, São Paulo 
+Jaboatão dos Guararapes, Pernambuco 
+Ribeirão Preto, São Paulo 
+Uberlândia, Minas Gerais 
+Contagem, Minas Gerais 
+Sorocaba, São Paulo 
+Aracaju, Sergipe 
+Feira de Santana, Bahia 
+Cuiabá, Mato Grosso 
+Joinville, Santa Catarina 
+Juiz de Fora, Minas Gerais 
+Londrina, Paraná 
+Aparecida de Goiânia, Goiás 
+Porto Velho, Rondônia 
+Ananindeua, Pará 
+Niterói, Rio de Janeiro 
+Belford Roxo, Rio de Janeiro 
+Serra, Espírito Santo 
+Campos dos Goytacazes, Rio de Janeiro 
+Vila Velha, Espírito Santo 
+Caxias do Sul, Rio Grande do Sul 
+Florianópolis, Santa Catarina 
+Macapá, Amapá 
+São João de Meriti, Rio de Janeiro 
+Mauá, São Paulo 
+São José do Rio Preto, São Paulo 
+Santos, São Paulo 
+Mogi das Cruzes, São Paulo 
+Betim, Minas Gerais 
+Diadema, São Paulo 
+Campina Grande, Paraíba 
+Jundiaí, São Paulo 
+Maringá, Paraná 
+Montes Claros, Minas Gerais 
+Carapicuíba, São Paulo 
+Piracicaba, São Paulo 
+Olinda, Pernambuco 
+Cariacica, Espírito Santo 
+Rio Branco, Acre 
+Anápolis, Goiás 
+Bauru, São Paulo 
+Vitória, Espírito Santo 
+Caucaia, Ceará 
+São Vicente, São Paulo 
+Itaquaquecetuba, São Paulo 
+Caruaru, Pernambuco 
+Vitória da Conquista, Bahia 
+Franca, São Paulo 
+Blumenau, Santa Catarina 
+Pelotas, Rio Grande do Sul 
+Canoas, Rio Grande do Sul 
+Ponta Grossa, Paraná 
+Petrolina, Pernambuco 
+Boa Vista, Roraima 
+Ribeirão das Neves, Minas Gerais 
+Paulista, Pernambuco 
+Uberaba, Minas Gerais 
+Cascavel, Paraná 
+Guarujá, São Paulo 
+Taubaté, São Paulo 
+Praia Grande, São Paulo 
+São José dos Pinhais, Paraná 
+Limeira, São Paulo 
+Petrópolis, Rio de Janeiro 
+Santarém, Pará 
+Camaçari, Bahia 
+Mossoró, Rio Grande do Norte 
+Suzano, São Paulo 
+Palmas, Tocantins 
+Governador Valadares, Minas Gerais 
+Santa Maria, Rio Grande do Sul 
+Taboão da Serra, São Paulo 
+Gravataí, Rio Grande do Sul 
+Várzea Grande, Mato Grosso 
+Sumaré, São Paulo 
+Juazeiro do Norte, Ceará 
+Marabá, Pará 
+Barueri, São Paulo 
+Embu das Artes, São Paulo 
+Foz do Iguaçu, Paraná 
+Volta Redonda, Rio de Janeiro 
+Ipatinga, Minas Gerais 
+Imperatriz, Maranhão 
+Viamão, Rio Grande do Sul 
+Novo Hamburgo, Rio Grande do Sul 
+Parnamirim, Rio Grande do Norte 
+São Carlos, São Paulo 
+Macaé, Rio de Janeiro 
+Magé, Rio de Janeiro 
+São José, Santa Catarina 
+Indaiatuba, São Paulo 
+Colombo, Paraná 
+Sete Lagoas, Minas Gerais 
+Cotia, São Paulo 
+Marília, São Paulo 
+Divinópolis, Minas Gerais 
+Arapiraca, Alagoas 
+Americana, São Paulo 
+Itaboraí, Rio de Janeiro 
+São Leopoldo, Rio Grande do Sul 
+Araraquara, São Paulo 
+Jacareí, São Paulo 
+Itapevi, São Paulo 
+Presidente Prudente, São Paulo 
+Maracanaú, Ceará 
+Itabuna, Bahia 
+Juazeiro, Bahia 
+Hortolândia, São Paulo 
+Rondonópolis, Mato Grosso 
+Santa Luzia, Minas Gerais 
+Dourados, Mato Grosso do Sul 
+Cabo Frio, Rio de Janeiro 
+Rio Verde, Goiás 
+Cachoeiro de Itapemirim, Espírito Santo 
+Chapecó, Santa Catarina 
+Criciúma, Santa Catarina 
+Itajaí, Santa Catarina 
+Rio Grande, Rio Grande do Sul 
+Alvorada, Rio Grande do Sul 
+Sobral, Ceará 
+Cabo de Santo Agostinho, Pernambuco 
+Rio Claro, São Paulo 
+Passo Fundo, Rio Grande do Sul 
+Luziânia, Goiás 
+Parauapebas, Pará 
+Lauro de Freitas, Bahia 
+Araçatuba, São Paulo 
+Castanhal, Pará 
+Angra dos Reis, Rio de Janeiro 
+Águas Lindas de Goiás, Goiás 
+Santa Bárbara d'Oeste, São Paulo 
+Ferraz de Vasconcelos, São Paulo 
+Nova Friburgo, Rio de Janeiro 
+Barra Mansa, Rio de Janeiro 
+Nossa Senhora do Socorro, Sergipe 
+Guarapuava, Paraná 
+Ilhéus, Bahia 
+São José de Ribamar, Maranhão 
+Ibirité, Minas Gerais 
+Teresópolis, Rio de Janeiro 
+Araguaína, Tocantins 
+Mesquita, Rio de Janeiro 
+Francisco Morato, São Paulo 
+Itapecerica da Serra, São Paulo 
+Itu, São Paulo 
+Jaraguá do Sul, Santa Catarina 
+Linhares, Espírito Santo 
+Timon, Maranhão 
+Poços de Caldas, Minas Gerais 
+Bragança Paulista, São Paulo 
+Pindamonhangaba, São Paulo 
+Caxias, Maranhão 
+Jequié, Bahia 
+Palhoça, Santa Catarina 
+Teixeira de Freitas, Bahia 
+São Caetano do Sul, São Paulo 
+Lages, Santa Catarina 
+Itapetininga, São Paulo 
+Nilópolis, Rio de Janeiro 
+Valparaíso de Goiás, Goiás 
+Barreiras, Bahia 
+Alagoinhas, Bahia 
+Camaragibe, Pernambuco 
+Abaetetuba, Pará 
+Paranaguá, Paraná 
+Parnaíba, Piauí 
+Maricá, Rio de Janeiro 
+Patos de Minas, Minas Gerais 
+Mogi Guaçu, São Paulo 
+Franco da Rocha, São Paulo 
+Porto Seguro, Bahia 
+Pouso Alegre, Minas Gerais 
+Jaú, São Paulo 
+Queimados, Rio de Janeiro 
+Teófilo Otoni, Minas Gerais 
+Botucatu, São Paulo 
+Sapucaia do Sul, Rio Grande do Sul 
+Atibaia, São Paulo 
+Garanhuns, Pernambuco 
+Vitória de Santo Antão, Pernambuco 
+Rio das Ostras, Rio de Janeiro 
+Santa Rita, Paraíba 
+Barbacena, Minas Gerais 
+Araucária, Paraná 
+Sabará, Minas Gerais 
+Simões Filho, Bahia 
+Toledo, Paraná 
+Varginha, Minas Gerais 
+Sinop, Mato Grosso 
+Cametá, Pará 
+Balneário Camboriú, Santa Catarina 
+Apucarana, Paraná 
+Ji-Paraná, Rondônia 
+Araras, São Paulo 
+Uruguaiana, Rio Grande do Sul 
+Crato, Ceará 
+Santana de Parnaíba, São Paulo 
+Pinhais, Paraná 
+Cubatão, São Paulo 
+Santa Cruz do Sul, Rio Grande do Sul 
+Cachoeirinha, Rio Grande do Sul 
+São Mateus, Espírito Santo 
+Conselheiro Lafaiete, Minas Gerais 
+Itapipoca, Ceará 
+Resende, Rio de Janeiro 
+Brusque, Santa Catarina 
+Campo Largo, Paraná 
+Marituba, Pará 
+Maranguape, Ceará 
+Araruama, Rio de Janeiro 
+Colatina, Espírito Santo 
+Bragança, Pará 
+Valinhos, São Paulo 
+Bagé, Rio Grande do Sul 
+Guarapari, Espírito Santo 
+Sertãozinho, São Paulo 
+Ribeirão Pires, São Paulo 
+Itaguaí, Rio de Janeiro 
+São Félix do Xingu, Pará 
+Codó, Maranhão 
+Vespasiano, Minas Gerais 
+Jandira, São Paulo 
+Catanduva, São Paulo 
+Barretos, São Paulo 
+Paulo Afonso, Bahia 
+Paço do Lumiar, Maranhão 
+Guaratinguetá, São Paulo 
+Birigui, São Paulo 
+Trindade, Goiás 
+Votorantim, São Paulo 
+Barcarena, Pará 
+Itabira, Minas Gerais 
+Tatuí, São Paulo 
+Várzea Paulista, São Paulo 
+Arapongas, Paraná 
+Araguari, Minas Gerais 
+Três Lagoas, Mato Grosso do Sul 
+Salto, São Paulo 
+Caraguatatuba, São Paulo 
+Itatiba, São Paulo 
+Poá, São Paulo 
+Eunápolis, Bahia 
+Bento Gonçalves, Rio Grande do Sul 
+Almirante Tamandaré, Paraná 
+Formosa, Goiás 
+Igarassu, Pernambuco 
+Santana, Amapá 
+Passos, Minas Gerais 
+Parintins, Amazonas 
+Ubá, Minas Gerais 
+São Lourenço da Mata, Pernambuco 
+Ourinhos, São Paulo 
+Açailândia, Maranhão 
+Altamira, Pará 
+Coronel Fabriciano, Minas Gerais 
+Corumbá, Mato Grosso do Sul 
+Umuarama, Paraná 
+Tucuruí, Pará 
+Paragominas, Pará 
+Novo Gama, Goiás 
+Muriaé, Minas Gerais 
+Patos, Paraíba 
+Piraquara, Paraná 
+Ariquemes, Rondônia 
+Cambé, Paraná 
+Ituiutaba, Minas Gerais 
+Tubarão, Santa Catarina 
+Santa Cruz do Capibaribe, Pernambuco 
+Araxá, Minas Gerais 
+Lagarto, Sergipe 
+Bacabal, Maranhão 
+Senador Canedo, Goiás 
+Erechim, Rio Grande do Sul 
+Santo Antônio de Jesus, Bahia 
+Assis, São Paulo 
+Iguatu, Ceará 
+Itumbiara, Goiás 
+Lavras, Minas Gerais 
+Catalão, Goiás 
+Japeri, Rio de Janeiro 
+Tailândia, Pará 
+Leme, São Paulo 
+Paulínia, São Paulo 
