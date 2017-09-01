@@ -33,12 +33,12 @@ This is a python script to randomize XCOM2 character customizations for me
             [ ] Percentage of people with tattoos in Canada: 38% of adults.
             [ ] Percentage of people with tattoos in Ireland: 36% of adults.
             [ ] Percentage of people with tattoos in UK: 29% of adults.
-    [ ] Expand on Appearance
-        [/] Everyone from Norway has Blue eyes (or colored contacts) 
+    [/] Expand on Appearance
+        [X] Everyone from Norway has Blue eyes (or colored contacts) 
         [ ] Everyone from Norway has fair skin
-        [ ] Base eye color on race (or colored contacts)
-    [ ] Rando_Color_Scheme
-        [ ] Modify (see: uncomment) randomization algorithm once more Color Schemes are implemented in ColorPalette
+        [X] Base eye color on race (or colored contacts)
+    [/] Rando_Color_Scheme
+        [X] Modify (see: uncomment) randomization algorithm once more Color Schemes are implemented in ColorPalette
         [ ] Investigate ADVENT armor appearance and tie that to "ADVENT" armor style
         [ ] Investigate Alien armor appearance and tie that to "Alien" armor style
         [ ] Chaotic should have an increased chance for Random Chaos color scheme
@@ -50,7 +50,7 @@ This is a python script to randomize XCOM2 character customizations for me
             [ ] People with XCOM in their backstory have an increased chance for an XCOM tattoo
             [ ] Mentions of certain words (see: prison, torture) will generate a starting scar
     [ ] Refactor redundant (?) determine_wheel_color() elif chain so the redundancies aren't redundant
-    [ ] Refacotr redundant (?) division of mono_primary(), mono_secondary(), etc into a single function
+    [ ] Refactor redundant (?) division of mono_primary(), mono_secondary(), etc into a single function
     [ ] Implement a method to verify the same color isn't chosen a second time (necessary?  Dupe colors between Primary and Secondary?)
     [ ] Implement a get_color() wrapper in Weapon Color Palette to sometimes, based on armor style, return normal colored weapons (see: Greyscale)  Function should vary percent chances for normal weapon color based on armor style
     [ ] WRT Main and Secondary Armor colors, Dark (or at least Medium) probably looks better with Light and vice versa... especially Greyscale
