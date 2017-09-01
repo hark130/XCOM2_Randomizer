@@ -540,10 +540,10 @@ def rando_first_name(nationality, gender):
     # print("First Name File:\t{}".format(firstNameFile))  # DEBUGGING 
 
     ### READ FIRST NAME ###
+    # if os.path.isfile(firstNameFile) is False:
+    #     firstNameFile = firstNameFile.replace(nationality.replace(" ", "_"), "USA")
     if os.path.isfile(firstNameFile) is False:
-        firstNameFile = firstNameFile.replace(nationality.replace(" ", "_"), "USA")
-    if os.path.isfile(firstNameFile) is False:
-        raise OSError('Unable to find necessary list file')
+        raise OSError('Unable to find necessary list file {} for nationality {}, gender {}'.format(firstNameFile, nationality, gender))
 
     with open(firstNameFile, "r") as fnFile:    
         [listOfFirstNames.append(name) for name in fnFile.read().split('\n') if name.__len__() > 0]
@@ -574,10 +574,10 @@ def rando_last_name(nationality):
     lastNameFile = os.path.join("Lists", "01-Name_Last_" + nationality.replace(" ", "_") + ".txt")
 
     ### READ LAST NAME ###
+    # if os.path.isfile(lastNameFile) is False:
+    #     lastNameFile = lastNameFile.replace(nationality.replace(" ", "_"), "USA")
     if os.path.isfile(lastNameFile) is False:
-        lastNameFile = lastNameFile.replace(nationality.replace(" ", "_"), "USA")
-    if os.path.isfile(lastNameFile) is False:
-        raise OSError('Unable to find necessary list file')
+        raise OSError('Unable to find necessary list file {} for nationality {}'.format(lastNameFile, nationality))
 
     with open(lastNameFile, "r") as fnFile:    
         [listOfLastNames.append(name) for name in fnFile.read().split('\n') if name.__len__() > 0]
