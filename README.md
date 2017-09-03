@@ -4,6 +4,7 @@ This is a python script to randomize XCOM2 character customizations for me
 ## TO DO
     [ ] Build in parameters to choose certain character aspects (e.g., nation, race, gender)
     [ ] Include logic to verify Python 3.5
+    [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
     [/] Expand on Character Info
         [ ] Backstory function incorporates 'majority dead' in narrative
         [X] Implement other racial first names (male and female)
