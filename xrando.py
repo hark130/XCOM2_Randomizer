@@ -35,7 +35,7 @@ def parse_arguments():
     parser = ParseArgument()
     
     # Command line arguments
-    parser.add_argument('-W', required = False, action = 'store_true', help = 'Randomize for War of the Chosen expansion')
+    parser.add_argument('-W', "--WotC", required = False, action = 'store_true', help = 'Randomize for War of the Chosen expansion')
     
     # List of arguments from the command line
     args = parser.parse_args()
