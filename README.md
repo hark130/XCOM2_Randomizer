@@ -2,6 +2,17 @@
 This is a python script to randomize XCOM2 character customizations for me
 
 ## TO DO
+    [/] Implement Argument Parser
+        [/] -w (War of the Chosen expansion content and format)
+            [ ] Modify listOf<appropriate choices>
+            [/] Change order of print to match WotC interface
+        [ ] -g (Choose gender)
+        [ ] -n (Choose nation)
+        [ ] -r (Choose race)
+        [ ] -c (Choose color scheme)
+        [ ] -a (Choose armor style)
+        [ ] -p (Utilize population %s to choose race)
+            [ ] Add default rando back to rando_nation()
     [ ] Build in parameters to choose certain character aspects (e.g., nation, race, gender)
     [ ] Include logic to verify Python 3.5
     [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
