@@ -142,6 +142,7 @@ This is a python script to randomize XCOM2 character customizations for me
 ## NOTES/RESEARCH
 ### IMPLEMENTING NEW COLOR SCHEMES
 Update:
+
     * xrando: rando_color_scheme()
     * Harklepalette: ColorPalette.implementedSchemes[]
     * Harklepalette: ColorPalette.get_color()
