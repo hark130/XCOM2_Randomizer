@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from copy import deepcopy
 from Harklepalette import Color
 from Harklepalette import MainArmorPalette
@@ -7,6 +8,39 @@ from Harklepalette import WeaponColorPalette
 from Harklepalette import EyeColorPalette
 from random import randint
 import os
+
+
+######################################################
+######################################################
+##################### ARG PARSER #####################
+######################################################
+######################################################
+
+
+class ParseArgument(ArgumentParser):
+    
+    
+    def parse_error(self, message):
+        os.stderr.write("Error:  %s\n" % message)
+        self.print_help()
+        exit(2)
+        
+        
+def parse_arguments():
+    '''
+        Input - None
+        Output - Command line argument list from ParseArgument object
+    '''
+    # Parser object
+    parser = ParseArgument()
+    
+    # Command line arguments
+    parser.add_argument('-W', required = False, action = 'store_true', help = 'Randomize for War of the Chosen expansion')
+    
+    # List of arguments from the command line
+    args = parser.parse_args()
+    
+    return args
 
 
 ######################################################
@@ -1636,6 +1670,7 @@ def rando_attitude(armorStyle):
 
 if __name__ == "__main__":
     ### LOCAL VARIABLES ###
+    warOfTheChosen = False      # Are we randomzing for the War of the Chosen expansion?
     charOptions = {}
     charInfoList = [ "Name", "Biography", "Nationality", "Gender" ]
     propsOptions = {}
@@ -1662,6 +1697,13 @@ if __name__ == "__main__":
     secondaryColorObject = None # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
     weaponColorObject = None    # Variable to hold Color object returned by WeaponColorPalette.get_color()
     eyeColorObject = None       # Holds Color object returned by EyeColorPalette.get_eye_color()
+    
+    
+    ### PARSE XRANDO ARGUMENTS ###
+    args = parse_arguments()
+    if args.w:
+        warOfTheChosen = True
+        
 
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -1763,32 +1805,35 @@ if __name__ == "__main__":
     appearanceOptions["Eye Color"] = eyeColorObject.num
 
     ### PRINT RANDOMIZED OPTIONS ###
-    # 1. CHARACTER INFO
-    print("\n")
-    print("CHARACTER INFO:")
-    for key in charInfoList:
-        if key in charOptions.keys():
-            if charOptions[key] != None:
-                print("\t{}:  {}".format(key, charOptions[key]))
-    print("\n")
+    if warOfTheChosen:
+        print("WAR OF THE CHOSEN!")  # DEBUGGING
+    else:
+        # 1. CHARACTER INFO
+        print("\n")
+        print("CHARACTER INFO:")
+        for key in charInfoList:
+            if key in charOptions.keys():
+                if charOptions[key] != None:
+                    print("\t{}:  {}".format(key, charOptions[key]))
+        print("\n")
 
-    # 2. PROPS
-    print("PROPS:")
-    for key in propsList:
-        if key in propsOptions.keys():
-            if propsOptions[key] != None:
-                print("\t{}:  {}".format(key, propsOptions[key]))
-    print("\n")
+        # 2. PROPS
+        print("PROPS:")
+        for key in propsList:
+            if key in propsOptions.keys():
+                if propsOptions[key] != None:
+                    print("\t{}:  {}".format(key, propsOptions[key]))
+        print("\n")
 
-    # 3. APPEARANCE
-    print("APPEARANCE:")
-    print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
-    print("\tArmor Color Scheme:  {}".format(armorColorScheme))  # DEBUGGING
-    for key in appearanceList:
-        if key in appearanceOptions.keys():
-            if appearanceOptions[key] != None:
-                print("\t{}:  {}".format(key, appearanceOptions[key]))
-    print("\n")
+        # 3. APPEARANCE
+        print("APPEARANCE:")
+        print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
+        print("\tArmor Color Scheme:  {}".format(armorColorScheme))  # DEBUGGING
+        for key in appearanceList:
+            if key in appearanceOptions.keys():
+                if appearanceOptions[key] != None:
+                    print("\t{}:  {}".format(key, appearanceOptions[key]))
+        print("\n")
 
     ### TESTING ###
     # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
