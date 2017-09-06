@@ -1854,11 +1854,16 @@ class EyeColorPalette(ColorPalette):
 
 
     def get_eye_color(self):
+        '''
+            INPUT - None
+            OUTPUT - A tuple of a Color object and a string describing source of eye color
+        '''
         ### LOCAL VARIABLES ###
         retVal = None       # Color object chosen as eye color
         randNum = 0         # Holds temporary random numbers
         realColor = True    # Determines whether or not to randomize real or fake colors
         tmpColorList = [ ]  # Dynamically built list of Colors to randomize from
+        eyeColorSource = "" # Description of why this eye color was chosen
 
         ### GET COLOR ###
         # 1. Real or Fake?
@@ -1888,6 +1893,7 @@ class EyeColorPalette(ColorPalette):
         # 2.1. Real eye color
         if realColor:
             # print("Randomizing from real eye colors")  # DEBUGGING
+            eyeColorSource = "Natural Eye Color"
             # Asians and Africans have brown eyes
             if self.race in [ "1 - Afican", "2 - Asian" ]:
                 # Add brown eye colors
@@ -1980,12 +1986,14 @@ class EyeColorPalette(ColorPalette):
         else:  
             # print("Randomizing from fake eye colors")  # DEBUGGING
             tmpColorList = self.listOfFakeEyeColors
+            # Include more specificity here as you factor in To Do items (see below)
+            eyeColorSource = "Colored Contact Lenses"
             pass  # Impelement later
             
         # 3. Randomize a color from the list
         retVal = tmpColorList[randint(0, tmpColorList.__len__() - 1)]
 
-        return retVal
+        return (retVal, eyeColorSource)
 
         # Alien == Yellow, Red, Orange, Darkest
 
