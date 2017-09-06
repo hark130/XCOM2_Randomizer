@@ -598,7 +598,6 @@ def rando_first_name(nationality, gender):
 
 
 def rando_last_name(nationality):
-# def rando_last_name(nationality, gender):
     ### INPUT VALIDATION ###
     if not isinstance(nationality, str):
         raise TypeError('nationality is not a string')
@@ -1863,36 +1862,6 @@ def main():
 
 
     ### TESTING ###
-    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
-    # print_color_object(mainColorObject)  # DEBUGGING
-    # print_color_object(secondaryColorObject)  # DEBUGGING
-    # print_color_object(weaponColorObject)  # DEBUGGING
-    # print(dir(mainArmorColors))
-    # for swatch in mainArmorColors.listOfBrownColors:
-    #     print("{} is Brown".format(swatch.num))
-    # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
-    # darkestColor = mainArmorColors.listOfColors[0]
-    # for swatch in mainArmorColors.listOfColors:
-    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
-    # #         print("{} is light green?".format(swatch.num))
-    # #         print_color_object(swatch)
-    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
-    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
-    #         darkestColor = swatch
-    # print("Darkest Main Color:")
-    # print_color_object(darkestColor)
-    # darkestColor = secondaryArmorColors.listOfColors[0]
-    # for swatch in secondaryArmorColors.listOfColors:
-    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
-    # #         print("{} is light green?".format(swatch.num))
-    # #         print_color_object(swatch)
-    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
-    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
-    #         darkestColor = swatch
-    # print("Darkest Secondary Color:")
-    # print_color_object(darkestColor)
-    # print_color_object(Color(94, 207, 100, 4))
-    # print_color_object(Color(95, 204, 24, 8))
 
 
 if __name__ == "__main__":
