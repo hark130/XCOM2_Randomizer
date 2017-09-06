@@ -1,0 +1,39 @@
+
+CHARACTER INFO:
+	Name:  Priyanka Jyotiradha
+	Biography:  
+		Priyanka Jyotiradha was born to Rohan and Radhika Jyotiradha in Bhilwara India.
+		Priyanka grew up with one sibling.
+		As an adult, Priyanka was a Pickpocket.
+		Priyanka took up arms because her deepest wish is for humanity to live in peace one day.
+	Nationality:  India
+	Gender:  Female
+	Voice:  UK English 3
+	Attitude:  Happy-Go-Lucky
+
+HEAD:
+	Face:  Face A
+	Hair:  Afro
+	Eye Color:  0
+	Race:  2 - Asian
+	Helmet/Hat:  Delta 2
+	Upper Face Prop:  Half-framed Glasses
+	Lower Face Prop:  Biker Bandana
+	Face Paint:  Eye Black
+
+BODY:
+	Main Armor Color:  38
+	Secondary Armor Color:  79
+	Armor Pattern:  Wild
+	Arms:  Arms 1
+	Torso:  Torso 4
+	Legs:  Legs 4
+	Left Arm Tattoo:  Snake Wrap
+	Right Arm Tattoo:  None
+	Tattoo Color:  94
+
+WEAPON:
+	Weapon Color:  31
+	Weapon Pattern:  Hearts
+
+

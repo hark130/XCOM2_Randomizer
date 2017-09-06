@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+from collections import OrderedDict
 from copy import deepcopy
 from Harklepalette import Color
 from Harklepalette import MainArmorPalette
@@ -7,6 +9,41 @@ from Harklepalette import WeaponColorPalette
 from Harklepalette import EyeColorPalette
 from random import randint
 import os
+
+
+######################################################
+######################################################
+##################### ARG PARSER #####################
+######################################################
+######################################################
+
+
+class ParseArgument(ArgumentParser):
+    
+    
+    def parse_error(self, message):
+        os.stderr.write("Error:  %s\n" % message)
+        self.print_help()
+        exit(2)
+        
+        
+def parse_arguments():
+    '''
+        Input - None
+        Output - Command line argument list from ParseArgument object
+    '''
+    # Parser object
+    parser = ParseArgument()
+    
+    # Command line arguments
+    parser.add_argument("-f", "--file", required = False, action = "store_true", help = "Print character details to a file")
+    parser.add_argument("-q", "--quiet", required = False, action = "store_true", help = "Do not print to screen (inherint -f)")
+    parser.add_argument("-w", "--WotC", required = False, action = "store_true", help = "Randomize for War of the Chosen expansion")
+    
+    # List of arguments from the command line
+    args = parser.parse_args()
+    
+    return args
 
 
 ######################################################
@@ -250,6 +287,101 @@ def convert_num_to_word(number, capitalize = False):
 
     if capitalize is False:
         retVal = retVal.lower()
+
+    return retVal
+
+
+def print_char_to_file(sectionHeaderDict, charDetails):
+    '''
+        Input
+            sectionHeaderDict - OrderedDict of headers and list items to print
+            charDetails - Dictionary of all the character details to print
+        Output - Filename that was created
+        Note
+            Filename will be first_last.txt
+            Spaces in the name will be replaced by underscores
+    '''
+    ### INPUT VALIDATION ###
+    if not isinstance(sectionHeaderDict, dict):
+        raise TypeError("Not a dict")
+    elif not isinstance(charDetails, dict):
+        raise TypeError("Not a dict")
+    elif sectionHeaderDict.__len__() < 3:
+        raise ValueError("Not enough sections")
+    elif charDetails.__len__() == 0:
+        raise ValueError("Character details are empty")
+    # This is the common thread between both version
+    elif "CHARACTER INFO" not in sectionHeaderDict.keys():
+        raise ValueError("Character info missing")
+    # This key is necessary to create the filename
+    elif "Name" not in charDetails.keys():
+        raise ValueError("Character name missing")
+    elif charDetails["Name"].__len__() < 2 or charDetails["Name"] is None:
+        raise ValueError("Invalid character name")
+
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    tempFilename = ""
+    fileNumber = 0
+
+    ### BUILD FILENAME ###
+    # Get the character's name
+    retVal = charDetails["Name"]
+    # Remove leading space
+    if retVal[0] == " ":
+        retVal = retVal[1:]
+    # Remove trailing space
+    if retVal[retVal.__len__() - 1] == " " and retVal.__len__() > 1:
+        retVal = retVal[:retVal.__len__() - 2]
+    # Replace spaces
+    retVal = retVal.replace(" ", "_")
+    # Replace odd characters
+    retVal = retVal.replace("À", "A")
+    retVal = retVal.replace("Ã", "A")
+    retVal = retVal.replace("á", "a")
+    retVal = retVal.replace("ä", "a")
+    retVal = retVal.replace("å", "a")
+    retVal = retVal.replace("é", "e")
+    retVal = retVal.replace("ë", "e")
+    retVal = retVal.replace("è", "e")
+    retVal = retVal.replace("Í", "I")
+    retVal = retVal.replace("ï", "i")
+    retVal = retVal.replace("í", "i")
+    retVal = retVal.replace("ñ", "n")
+    retVal = retVal.replace("Õ", "O")
+    retVal = retVal.replace("ó", "o")
+    retVal = retVal.replace("ô", "o")
+    retVal = retVal.replace("õ", "o")
+    retVal = retVal.replace("ú", "u")
+    retVal = retVal.replace("ù", "u")    
+
+    ### VALIDATE FILENAME ###
+    while True:
+        # Add fileNumber
+        if fileNumber == 0:
+            tempFilename = retVal
+        else:
+            tempFilename = retVal + str(fileNumber) 
+        # Add file type
+        tempFilename = tempFilename + ".txt"
+
+        if os.path.exists(tempFilename):
+            fileNumber += 1
+        else:
+            retVal = tempFilename
+            break
+
+    ### PRINT TO THE FILE ###
+    with open(tempFilename, "w") as outFile:
+        outFile.write("\n")
+        for header in sectionHeaderDict:
+            outFile.write(header + ":\n")
+            for listEntry in sectionHeaderDict[header]:
+                if listEntry in charDetails.keys():
+                    if charDetails[listEntry] != None:
+                        outFile.write("\t{}:  {}\n".format(listEntry, charDetails[listEntry]))
+            outFile.write("\n")
+        outFile.write("\n")
 
     return retVal
 
@@ -557,7 +689,6 @@ def rando_first_name(nationality, gender):
 
 
 def rando_last_name(nationality):
-# def rando_last_name(nationality, gender):
     ### INPUT VALIDATION ###
     if not isinstance(nationality, str):
         raise TypeError('nationality is not a string')
@@ -1634,25 +1765,24 @@ def rando_attitude(armorStyle):
 ######################################################
 
 
-if __name__ == "__main__":
+def main():
     ### LOCAL VARIABLES ###
-    charOptions = {}
+    charDetails = {}  # One dictionary to rule them all
     charInfoList = [ "Name", "Biography", "Nationality", "Gender" ]
-    propsOptions = {}
     propsList = [ \
         "Helmet/Hat", "Arms", "Legs", \
         "Torso", "Upper Face Prop", "Lower Face Prop", \
         "Armor Pattern", "Weapon Pattern", "Face Paint", \
         "Left Arm Tattoo", "Right Arm Tattoo", "Tattoo Color", \
-        "Scars"\
+        "Scars", \
     ]
-    appearanceOptions = {}
     appearanceList = [ \
         "Face", "Hair", "Facial Hair", \
         "Hair Color", "Eye Color", "Race", \
         "Skin Color", "Main Armor Color", "Secondary Armor Color", \
         "Weapon Color", "Voice", "Attitude", \
     ]
+    sectionHeaderDict = OrderedDict()  # Ordered dictionary of section headers and lists to print
     armorColorScheme = ""
     mainArmorColors = None
     secondaryArmorColors = None
@@ -1662,82 +1792,159 @@ if __name__ == "__main__":
     secondaryColorObject = None # Variable to hold Color object returned by SecondaryArmorPalette.get_color()
     weaponColorObject = None    # Variable to hold Color object returned by WeaponColorPalette.get_color()
     eyeColorObject = None       # Holds Color object returned by EyeColorPalette.get_eye_color()
+    # War of the Chosen variables
+    warOfTheChosen = False      # Are we randomzing for the War of the Chosen expansion?
+    wotcCharInfoList = charInfoList + [ "Voice", "Attitude" ]
+    wotcHeadList = appearanceList[:appearanceList.index("Main Armor Color")] + \
+        [ "Helmet/Hat", "Upper Face Prop", "Lower Face Prop", "Face Paint", "Scars" ]
+    wotcBodyList = [ \
+        "Main Armor Color", "Secondary Armor Color", "Armor Pattern", \
+        "Arms", "Torso", "Legs", \
+        "Left Arm Tattoo", "Right Arm Tattoo", "Tattoo Color", \
+    ]
+    wotcWeaponList = [ "Weapon Color", "Weapon Pattern" ]
+    # Other command line variables
+    saveToFile = False          # Save character info to a file?
+    outFilename = ""            # Filename to save the file to
+    quietMode = False           # Indicates whether or not to print to screen
+    
+
+    ### PARSE XRANDO ARGUMENTS ###
+    args = parse_arguments()
+    # print("Args:\t{}".format(args))  # DEBUGGING
+
+    #############################################################
+    # -w, --WotC, "Randomize for War of the Chosen expansion"
+    #############################################################
+    try:
+        # War of the Chosen
+        if args.WotC:
+            # Set boolean
+            warOfTheChosen = True
+
+            # Build sectionHeaderDict for War of the Chosen
+            sectionHeaderDict["CHARACTER INFO"] = wotcCharInfoList
+            sectionHeaderDict["HEAD"] = wotcHeadList
+            sectionHeaderDict["BODY"] = wotcBodyList
+            sectionHeaderDict["WEAPON"] = wotcWeaponList
+
+            # Modify existing lists
+            # 1. CHARACTER INFO
+            # Nationality
+            listOfNations = listOfNations + [ \
+                "Colombia", "Indonesia", "Iran", \
+                "Pakistan", "Portugal", "Turkey", \
+                "Venezuela", \
+            ]
+            listOfNations.remove("Saudi Arabia")
+            # 2. HEAD
+            # 3. BODY
+            # 4. WEAPON
+    except:
+        pass
+
+    # Base XCOM 2
+    if sectionHeaderDict.__len__() == 0:
+        # Build sectionHeaderDict for Base XCOM 2
+        sectionHeaderDict["CHARACTER INFO"] = charInfoList
+        sectionHeaderDict["PROPS"] = propsList
+        sectionHeaderDict["APPEARANCE"] = appearanceList
+
+    #############################################################
+    # -f, --file, "Print character details to a file"
+    #############################################################
+    try:
+        if args.file:
+            # Set boolean
+            saveToFile = True
+    except:
+        pass
+
+    #############################################################
+    # -q, --quiet, "Do not print to screen (inherint -f)"
+    #############################################################
+    try:
+        if args.quiet:
+            # Set boolean
+            quietMode = True
+            saveToFile = True
+    except:
+        pass
 
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
     # 1.1. Nationality
-    # charOptions["Nationality"] = listOfNations[randint(0, listOfNations.__len__() - 1)]
-    charOptions["Nationality"] = rando_nation()
+    charDetails["Nationality"] = rando_nation()
     # 1.2. Gender
     if randint(1, 100) > 49:
-        charOptions["Gender"] = listOfGenders[1]
+        charDetails["Gender"] = listOfGenders[1]
     else:
-        charOptions["Gender"] = listOfGenders[0]
+        charDetails["Gender"] = listOfGenders[0]
     # 1.3. Name
-    charOptions["Name"] = rando_name(charOptions["Nationality"], \
-                                     charOptions["Gender"])
+    charDetails["Name"] = rando_name(charDetails["Nationality"], \
+                                     charDetails["Gender"])
     # 1.4. Backstory
-    charOptions["Biography"] = rando_backstory(charOptions["Name"], \
-                                               charOptions["Nationality"], \
-                                               charOptions["Gender"])
+    charDetails["Biography"] = rando_backstory(charDetails["Name"], \
+                                               charDetails["Nationality"], \
+                                               charDetails["Gender"])
 
     # 2. PROPS
     # 2.1. Armor
-    propsOptions["Arms"], propsOptions["Legs"], propsOptions["Torso"], propsOptions["Armor Style"] = rando_armor()
+    charDetails["Arms"], charDetails["Legs"], charDetails["Torso"], charDetails["Armor Style"] = rando_armor()
     # 2.2. Helmet/Hat
-    propsOptions["Helmet/Hat"] = rando_helmet_hat(propsOptions["Armor Style"])
+    charDetails["Helmet/Hat"] = rando_helmet_hat(charDetails["Armor Style"])
     # 2.3. Upper Face
-    propsOptions["Upper Face Prop"] = rando_upper_face(charOptions["Gender"])
+    charDetails["Upper Face Prop"] = rando_upper_face(charDetails["Gender"])
     # 2.4. Lower Face
-    propsOptions["Lower Face Prop"] = rando_lower_face(charOptions["Nationality"])
+    charDetails["Lower Face Prop"] = rando_lower_face(charDetails["Nationality"])
     # 2.5. Armor Pattern
-    propsOptions["Armor Pattern"] = rando_armor_pattern(propsOptions["Armor Style"])
+    charDetails["Armor Pattern"] = rando_armor_pattern(charDetails["Armor Style"])
     # 2.5. Weapon Pattern
-    propsOptions["Weapon Pattern"] = rando_weapon_pattern(propsOptions["Armor Style"], \
-                                                          propsOptions["Armor Pattern"])
+    charDetails["Weapon Pattern"] = rando_weapon_pattern(charDetails["Armor Style"], \
+                                                         charDetails["Armor Pattern"])
     # 2.6. Face Paint
-    propsOptions["Face Paint"] = rando_face_paint(propsOptions["Armor Style"])
+    charDetails["Face Paint"] = rando_face_paint(charDetails["Armor Style"])
     # 2.7. Left and Right Arm Tattoos
-    propsOptions["Left Arm Tattoo"], propsOptions["Right Arm Tattoo"], propsOptions["Tattoo Color"] = rando_tattoos(propsOptions["Armor Style"])
+    charDetails["Left Arm Tattoo"], charDetails["Right Arm Tattoo"], charDetails["Tattoo Color"] = rando_tattoos(charDetails["Armor Style"])
     # 2.8. Scars
     # Not implementing scars because I want to choose scars as my characters get injured on mission
 
     # 3. APPEARANCE
     # 3.1. Face
-    appearanceOptions["Face"] = listOfFaces[randint(0, listOfFaces.__len__() - 1)]
+    charDetails["Face"] = listOfFaces[randint(0, listOfFaces.__len__() - 1)]
     # 3.5. Race
-    appearanceOptions["Race"] = rando_race(charOptions["Nationality"])
+    charDetails["Race"] = rando_race(charDetails["Nationality"])
     # 3.2. All Hair Styles
     # 3.2.1. Hair
-    appearanceOptions["Hair"] = rando_hair_style(propsOptions["Armor Style"], \
-                                                 charOptions["Gender"], \
-                                                 charOptions["Nationality"], \
-                                                 appearanceOptions["Race"])
+    charDetails["Hair"] = rando_hair_style(charDetails["Armor Style"], \
+                                           charDetails["Gender"], \
+                                           charDetails["Nationality"], \
+                                           charDetails["Race"])
     # 3.2.2. Facial Hair
-    appearanceOptions["Facial Hair"] = rando_facial_hair(propsOptions["Armor Style"], \
-                                                         charOptions["Gender"], \
-                                                         charOptions["Nationality"], \
-                                                         appearanceOptions["Race"])
+    charDetails["Facial Hair"] = rando_facial_hair(charDetails["Armor Style"], \
+                                                         charDetails["Gender"], \
+                                                         charDetails["Nationality"], \
+                                                         charDetails["Race"])
     # 3.3. Hair Color
 
     # 3.6. Skin Color
     # 3.7. Main Armor Color
     # 3.7.1. Randomize a Color Scheme
-    armorColorScheme = rando_color_scheme(propsOptions["Armor Style"])
+    armorColorScheme = rando_color_scheme(charDetails["Armor Style"])
     # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
     # 3.7.2. Instanstiate Main Armor Colors Object
     mainArmorColors = MainArmorPalette(armorColorScheme)
     # 3.7.3. Randomize a Main Armor Color
     mainColorObject = mainArmorColors.get_color()
     # 3.7.4. Store the Main Armor Color Object's number
-    appearanceOptions["Main Armor Color"] = mainColorObject.num
+    charDetails["Main Armor Color"] = mainColorObject.num
     # 3.8. Secondary Armor Color
     # 3.8.1. Instanstiate Secondary Armor Colors Object
     secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
     # 3.8.2. Randomize a Secondary Armor Color Object
     secondaryColorObject = secondaryArmorColors.get_color(mainColorObject)
     # 3.8.3. Store the Secondary Armor Color Object's number
-    appearanceOptions["Secondary Armor Color"] = secondaryColorObject.num
+    charDetails["Secondary Armor Color"] = secondaryColorObject.num
     # 3.9. Weapon Color
     # 3.9.1. Instantiate Weapon Color Object
     weaponColors = WeaponColorPalette(armorColorScheme)
@@ -1745,80 +1952,42 @@ if __name__ == "__main__":
     weaponColorObject = weaponColors.get_color(mainColorObject, secondaryColorObject)
     
     # 3.9.3. Store the Weapon Color Object's number
-    appearanceOptions["Weapon Color"] = weaponColorObject.num
+    charDetails["Weapon Color"] = weaponColorObject.num
     # 3.10. Voice
-    appearanceOptions["Voice"] = rando_voice(charOptions["Nationality"], appearanceOptions["Race"])
+    charDetails["Voice"] = rando_voice(charDetails["Nationality"], charDetails["Race"])
     # 3.11. Attitude
-    appearanceOptions["Attitude"] = rando_attitude(propsOptions["Armor Style"])
+    charDetails["Attitude"] = rando_attitude(charDetails["Armor Style"])
 
 
     # 3.4. Eye Color
     # 3.4.1. Instantiate Eye Color Palette
     # EyeColorPalette(scheme, armorStyle, nationality, race, gender, mainColor)
-    eyeColors = EyeColorPalette(armorColorScheme, propsOptions["Armor Style"], charOptions["Nationality"], \
-                                appearanceOptions["Race"], charOptions["Gender"], mainColorObject)
+    eyeColors = EyeColorPalette(armorColorScheme, charDetails["Armor Style"], charDetails["Nationality"], \
+                                charDetails["Race"], charDetails["Gender"], mainColorObject)
     # 3.4.2. Randomize an Eye Color Object
     eyeColorObject = eyeColors.get_eye_color()
     # 3.4.3. Store the Eye Color Object's number
-    appearanceOptions["Eye Color"] = eyeColorObject.num
+    charDetails["Eye Color"] = eyeColorObject.num
 
     ### PRINT RANDOMIZED OPTIONS ###
-    # 1. CHARACTER INFO
-    print("\n")
-    print("CHARACTER INFO:")
-    for key in charInfoList:
-        if key in charOptions.keys():
-            if charOptions[key] != None:
-                print("\t{}:  {}".format(key, charOptions[key]))
-    print("\n")
+    if not quietMode:
+        print("\n")
+        for header in sectionHeaderDict:
+            print(header + ":")
+            for listEntry in sectionHeaderDict[header]:
+                if listEntry in charDetails.keys():
+                    if charDetails[listEntry] != None:
+                        print("\t{}:  {}".format(listEntry, charDetails[listEntry]))
+            print("\n")
 
-    # 2. PROPS
-    print("PROPS:")
-    for key in propsList:
-        if key in propsOptions.keys():
-            if propsOptions[key] != None:
-                print("\t{}:  {}".format(key, propsOptions[key]))
-    print("\n")
-
-    # 3. APPEARANCE
-    print("APPEARANCE:")
-    print("\t{}:  {}".format("Armor Style", propsOptions["Armor Style"]))  # DEBUGGING
-    print("\tArmor Color Scheme:  {}".format(armorColorScheme))  # DEBUGGING
-    for key in appearanceList:
-        if key in appearanceOptions.keys():
-            if appearanceOptions[key] != None:
-                print("\t{}:  {}".format(key, appearanceOptions[key]))
-    print("\n")
+    ### PRINT FILE ###
+    if saveToFile:
+        outFilename = print_char_to_file(sectionHeaderDict, charDetails)
+        if not quietMode:
+            print("\nExported character to:\t{}".format(outFilename))
 
     ### TESTING ###
-    # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
-    # print_color_object(mainColorObject)  # DEBUGGING
-    # print_color_object(secondaryColorObject)  # DEBUGGING
-    # print_color_object(weaponColorObject)  # DEBUGGING
-    # print(dir(mainArmorColors))
-    # for swatch in mainArmorColors.listOfBrownColors:
-    #     print("{} is Brown".format(swatch.num))
-    # print_color_object(Color(41, 18, 15, 45))  # DEBUGGING
-    # darkestColor = mainArmorColors.listOfColors[0]
-    # for swatch in mainArmorColors.listOfColors:
-    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
-    # #         print("{} is light green?".format(swatch.num))
-    # #         print_color_object(swatch)
-    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
-    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
-    #         darkestColor = swatch
-    # print("Darkest Main Color:")
-    # print_color_object(darkestColor)
-    # darkestColor = secondaryArmorColors.listOfColors[0]
-    # for swatch in secondaryArmorColors.listOfColors:
-    # #     if swatch.num in [ 0, 1, 28, 33, 34, 79, 80, 81 ]:
-    # #         print("{} is light green?".format(swatch.num))
-    # #         print_color_object(swatch)
-    #     # print("Main Color #{} Darkness:\t{}".format(swatch.num, swatch.calculate_darkness()))
-    #     if swatch.calculate_darkness() > darkestColor.calculate_darkness():
-    #         darkestColor = swatch
-    # print("Darkest Secondary Color:")
-    # print_color_object(darkestColor)
-    # print_color_object(Color(94, 207, 100, 4))
-    # print_color_object(Color(95, 204, 24, 8))
 
+
+if __name__ == "__main__":
+    main()
