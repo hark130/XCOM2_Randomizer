@@ -38,6 +38,7 @@ def parse_arguments():
     # Command line arguments
     parser.add_argument("-f", "--file", required = False, action = "store_true", help = "Print character details to a file")
     parser.add_argument("-q", "--quiet", required = False, action = "store_true", help = "Do not print to screen (inherint -f)")
+    parser.add_argument("-v", "--verbose", required = False, action = "store_true", help = "Verbose output")
     parser.add_argument("-w", "--WotC", required = False, action = "store_true", help = "Randomize for War of the Chosen expansion")
     
     # List of arguments from the command line
@@ -1807,6 +1808,7 @@ def main():
     saveToFile = False          # Save character info to a file?
     outFilename = ""            # Filename to save the file to
     quietMode = False           # Indicates whether or not to print to screen
+    verboseMode = False         # Indicates whether or not to include extra character information
     
 
     ### PARSE XRANDO ARGUMENTS ###
@@ -1871,6 +1873,14 @@ def main():
     except:
         pass
 
+    #############################################################    
+    # -v, --verbose, "Verbose output"
+    #############################################################
+    try:
+        if args.verbose:
+            # Set boolean
+            verboseMode = True
+    
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
     # 1.1. Nationality
@@ -1922,32 +1932,32 @@ def main():
                                            charDetails["Race"])
     # 3.2.2. Facial Hair
     charDetails["Facial Hair"] = rando_facial_hair(charDetails["Armor Style"], \
-                                                         charDetails["Gender"], \
-                                                         charDetails["Nationality"], \
-                                                         charDetails["Race"])
+                                                   charDetails["Gender"], \
+                                                   charDetails["Nationality"], \
+                                                   charDetails["Race"])
     # 3.3. Hair Color
 
     # 3.6. Skin Color
     # 3.7. Main Armor Color
     # 3.7.1. Randomize a Color Scheme
-    armorColorScheme = rando_color_scheme(charDetails["Armor Style"])
+    charDetails["Color Scheme"] = rando_color_scheme(charDetails["Armor Style"])
     # print("Armor Color Scheme:\t{}\n".format(armorColorScheme))  # DEBUGGING
     # 3.7.2. Instanstiate Main Armor Colors Object
-    mainArmorColors = MainArmorPalette(armorColorScheme)
+    mainArmorColors = MainArmorPalette(charDetails["Color Scheme"])
     # 3.7.3. Randomize a Main Armor Color
     mainColorObject = mainArmorColors.get_color()
     # 3.7.4. Store the Main Armor Color Object's number
     charDetails["Main Armor Color"] = mainColorObject.num
     # 3.8. Secondary Armor Color
     # 3.8.1. Instanstiate Secondary Armor Colors Object
-    secondaryArmorColors = SecondaryArmorPalette(armorColorScheme)
+    secondaryArmorColors = SecondaryArmorPalette(charDetails["Color Scheme"])
     # 3.8.2. Randomize a Secondary Armor Color Object
     secondaryColorObject = secondaryArmorColors.get_color(mainColorObject)
     # 3.8.3. Store the Secondary Armor Color Object's number
     charDetails["Secondary Armor Color"] = secondaryColorObject.num
     # 3.9. Weapon Color
     # 3.9.1. Instantiate Weapon Color Object
-    weaponColors = WeaponColorPalette(armorColorScheme)
+    weaponColors = WeaponColorPalette(charDetails["Color Scheme"])
     # 3.9.2. Randomize a Weapon Color Object
     weaponColorObject = weaponColors.get_color(mainColorObject, secondaryColorObject)
     
@@ -1962,12 +1972,15 @@ def main():
     # 3.4. Eye Color
     # 3.4.1. Instantiate Eye Color Palette
     # EyeColorPalette(scheme, armorStyle, nationality, race, gender, mainColor)
-    eyeColors = EyeColorPalette(armorColorScheme, charDetails["Armor Style"], charDetails["Nationality"], \
+    eyeColors = EyeColorPalette(charDetails["Color Scheme"], charDetails["Armor Style"], charDetails["Nationality"], \
                                 charDetails["Race"], charDetails["Gender"], mainColorObject)
     # 3.4.2. Randomize an Eye Color Object
-    eyeColorObject = eyeColors.get_eye_color()
+    (eyeColorObject, charDetails["Eye Color Source"]) = eyeColors.get_eye_color()
     # 3.4.3. Store the Eye Color Object's number
     charDetails["Eye Color"] = eyeColorObject.num
+    
+    if verboseMode:
+        sectionHeaderDict["ADDITIONAL INFORMATION"] = [ "Armor Style", "Color Scheme", "Eye Color Source" ]        
 
     ### PRINT RANDOMIZED OPTIONS ###
     if not quietMode:
