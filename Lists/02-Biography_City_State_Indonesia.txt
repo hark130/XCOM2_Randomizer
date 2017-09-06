@@ -1,0 +1,98 @@
+Denpasar, Bali
+Bandung, Java
+Banjar, Java
+Batu, Java
+Bekasi, Java
+Blitar, Java
+Bogor, Java
+Cianjur, Java
+Cilegon, Java
+Cimahi, Java
+Cirebon, Java
+Depok, Java
+Jakarta, Java
+Kediri, Java
+Madiun, Java
+Magelang, Java
+Malang, Java
+Mojokerto, Java
+Pasuruan, Java
+Pekalongan, Java
+Probolinggo, Java
+Salatiga, Java
+Semarang, Java
+Serang, Java
+South Tangerang, Java
+Sukabumi, Java
+Surabaya, Java
+Surakarta, Java
+Tasikmalaya, Java
+Tangerang, Java
+Tegal, Java
+Yogyakarta, Java
+Balikpapan, Kalimantan
+Banjarbaru, Kalimantan
+Banjarmasin, Kalimantan
+Bontang, Kalimantan
+Palangkaraya, Kalimantan
+Pontianak, Kalimantan
+Samarinda, Kalimantan
+Singkawang, Kalimantan
+Tarakan, Tarakan
+Tenggarong, Kalimantan
+Ambon, Ambon
+Tual, Kai
+Ternate, Ternate
+Tidore, Tidore
+Bima, Sumbawa
+Mataram, Lombok
+Kupang, Timor
+Atambua, Timor
+Jayapura, New Guinea
+Merauke, New Guinea
+Kota Sorong, New Guinea
+Manokwari, New Guinea
+Bau-Bau, Buton
+Bitung, Sulawesi
+Gorontalo, Sulawesi
+Kendari, Sulawesi
+Kotamobagu, Sulawesi
+Makassar, Sulawesi
+Manado, Sulawesi
+Palu, Sulawesi
+Pare-Pare, Sulawesi
+Palopo, Sulawesi
+Tomohon, Sulawesi
+Banda Aceh, Sumatra
+Bandar Lampung, Sumatra
+Batam, Batam
+Bengkulu, Sumatra
+Binjai, Sumatra
+Bukittinggi, Sumatra
+Dumai, Sumatra
+Gunungsitoli, Sumatra
+Jambi, Sumatra
+Langsa, Sumatra
+Lhokseumawe, Sumatra
+Lubuklinggau, Sumatra
+Medan, Sumatra
+Metro, Sumatra
+Padang, Sumatra
+Padang Panjang, Sumatra
+Padang Sidempuan, Sumatra
+Pagar Alam, Sumatra
+Palembang, Sumatra
+Pangkal Pinang, Bangka
+Pariaman, Sumatra
+Payakumbuh, Sumatra
+Pekanbaru, Sumatra
+Pematang Siantar, Sumatra
+Prabumulih, Sumatra
+Sabang, Weh Island
+Sawah Lunto, Sumatra
+Sibolga, Sumatra
+Solok, Sumatra
+Sungai Penuh, Sumatra
+Tanjung Balai, Sumatra
+Tanjung Pinang, Bintan
+Tebing Tinggi, Sumatra
