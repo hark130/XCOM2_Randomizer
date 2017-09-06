@@ -2,7 +2,11 @@
 This is a python script to randomize XCOM2 character customizations for me
 
 ## TO DO
-    [ ] Compare all WotC character options to Base XCOM screenshots 
+    [ ] War of the Chosen
+        [ ] Compare all WotC character options to Base XCOM screenshots
+        [ ] Implement new nations, and lists, into rando_nation() and related functions
+    [ ] class ColorPalette
+        [ ] Implement get_lightest_color() method
     [/] Implement Argument Parser
         [X] -w (War of the Chosen expansion content and format)
             [X] Modify listOf<appropriate choices>
