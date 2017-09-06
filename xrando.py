@@ -37,6 +37,7 @@ def parse_arguments():
     
     # Command line arguments
     parser.add_argument("-f", "--file", required = False, action = "store_true", help = "Print character details to a file")
+    parser.add_argument("-q", "--quiet", required = False, action = "store_true", help = "Do not print to screen (inherint -f)")
     parser.add_argument("-w", "--WotC", required = False, action = "store_true", help = "Randomize for War of the Chosen expansion")
     
     # List of arguments from the command line
@@ -1805,13 +1806,16 @@ def main():
     # Other command line variables
     saveToFile = False          # Save character info to a file?
     outFilename = ""            # Filename to save the file to
+    quietMode = False           # Indicates whether or not to print to screen
     
 
     ### PARSE XRANDO ARGUMENTS ###
     args = parse_arguments()
     # print("Args:\t{}".format(args))  # DEBUGGING
 
+    #############################################################
     # -w, --WotC, "Randomize for War of the Chosen expansion"
+    #############################################################
     try:
         # War of the Chosen
         if args.WotC:
@@ -1846,10 +1850,23 @@ def main():
         sectionHeaderDict["PROPS"] = propsList
         sectionHeaderDict["APPEARANCE"] = appearanceList
 
+    #############################################################
     # -f, --file, "Print character details to a file"
+    #############################################################
     try:
         if args.file:
             # Set boolean
+            saveToFile = True
+    except:
+        pass
+
+    #############################################################
+    # -q, --quiet, "Do not print to screen (inherint -f)"
+    #############################################################
+    try:
+        if args.quiet:
+            # Set boolean
+            quietMode = True
             saveToFile = True
     except:
         pass
@@ -1953,19 +1970,21 @@ def main():
     charDetails["Eye Color"] = eyeColorObject.num
 
     ### PRINT RANDOMIZED OPTIONS ###
-    print("\n")
-    for header in sectionHeaderDict:
-        print(header + ":")
-        for listEntry in sectionHeaderDict[header]:
-            if listEntry in charDetails.keys():
-                if charDetails[listEntry] != None:
-                    print("\t{}:  {}".format(listEntry, charDetails[listEntry]))
+    if not quietMode:
         print("\n")
+        for header in sectionHeaderDict:
+            print(header + ":")
+            for listEntry in sectionHeaderDict[header]:
+                if listEntry in charDetails.keys():
+                    if charDetails[listEntry] != None:
+                        print("\t{}:  {}".format(listEntry, charDetails[listEntry]))
+            print("\n")
 
     ### PRINT FILE ###
     if saveToFile:
         outFilename = print_char_to_file(sectionHeaderDict, charDetails)
-        print("\nExported character to:\t{}".format(outFilename))
+        if not quietMode:
+            print("\nExported character to:\t{}".format(outFilename))
 
     ### TESTING ###
 
