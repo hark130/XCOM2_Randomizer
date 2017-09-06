@@ -18,7 +18,7 @@ This is a python script to randomize XCOM2 character customizations for me
         [X] -q (Quiet... no stdout)
         [X] -f (Filename... output to a file)
         [X] -v (Verbose... provides Armor Style and Color Scheme)
-    [ ] Include logic to verify Python 3.5
+    [X] Include logic to verify Python 3.5
     [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
     [/] Expand on Character Info
         [ ] Indonesians don't have family names (https://en.wikipedia.org/wiki/Indonesia)
