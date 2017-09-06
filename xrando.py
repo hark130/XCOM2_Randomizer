@@ -740,7 +740,12 @@ def rando_name(nationality, gender):
 
     ### GET LAST NAME ###
     if retVal.__len__() > 0:
-        retVal = retVal + " " + rando_last_name(nationality)
+        # Indonesians don't have family names
+        # https://en.wikipedia.org/wiki/Indonesia
+        if nationality != "Indonesia":
+            retVal = retVal + " " + rando_last_name(nationality)
+    else:
+        raise RuntimeError("rando_name:  rando_first_name() returned an empty string")
 
     return retVal
 
