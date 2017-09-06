@@ -11,6 +11,8 @@ from random import randint
 import os
 import sys
 
+if sys.version_info[0] < 3 or (sys.version_info[0] == 3 and sys.version_info[1] < 5):
+    print("This script requires Python 3.5 to run as written.")
 
 ######################################################
 ######################################################
@@ -1886,6 +1888,8 @@ def main():
         if args.verbose:
             # Set boolean
             verboseMode = True
+    except:
+        pass
     
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
