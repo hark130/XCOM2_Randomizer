@@ -22,6 +22,7 @@ This is a python script to randomize XCOM2 character customizations for me
     [ ] Include logic to verify Python 3.5
     [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
     [/] Expand on Character Info
+        [ ] Indonesians don't have family names (https://en.wikipedia.org/wiki/Indonesia)
         [ ] Backstory function incorporates 'majority dead' in narrative
         [X] Implement other racial first names (male and female)
         [X] Implement other racial last names
