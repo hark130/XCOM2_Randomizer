@@ -36,7 +36,8 @@ def parse_arguments():
     parser = ParseArgument()
     
     # Command line arguments
-    parser.add_argument('-w', "--WotC", required = False, action = 'store_true', help = 'Randomize for War of the Chosen expansion')
+    parser.add_argument("-f", "--file", required = False, action = "store_true", help = "Print character details to a file")
+    parser.add_argument("-w", "--WotC", required = False, action = "store_true", help = "Randomize for War of the Chosen expansion")
     
     # List of arguments from the command line
     args = parser.parse_args()
@@ -289,10 +290,99 @@ def convert_num_to_word(number, capitalize = False):
     return retVal
 
 
-def print_char_to_file():
-    
+def print_char_to_file(sectionHeaderDict, charDetails):
+    '''
+        Input
+            sectionHeaderDict - OrderedDict of headers and list items to print
+            charDetails - Dictionary of all the character details to print
+        Output - Filename that was created
+        Note
+            Filename will be first_last.txt
+            Spaces in the name will be replaced by underscores
+    '''
+    ### INPUT VALIDATION ###
+    if not isinstance(sectionHeaderDict, dict):
+        raise TypeError("Not a dict")
+    elif not isinstance(charDetails, dict):
+        raise TypeError("Not a dict")
+    elif sectionHeaderDict.__len__() < 3:
+        raise ValueError("Not enough sections")
+    elif charDetails.__len__() == 0:
+        raise ValueError("Character details are empty")
+    # This is the common thread between both version
+    elif "CHARACTER INFO" not in sectionHeaderDict.keys():
+        raise ValueError("Character info missing")
+    # This key is necessary to create the filename
+    elif "Name" not in charDetails.keys():
+        raise ValueError("Character name missing")
+    elif charDetails["Name"].__len__() < 2 or charDetails["Name"] is None:
+        raise ValueError("Invalid character name")
 
-    return
+    ### LOCAL VARIABLES ###
+    retVal = ""
+    tempFilename = ""
+    fileNumber = 0
+
+    ### BUILD FILENAME ###
+    # Get the character's name
+    retVal = charDetails["Name"]
+    # Remove leading space
+    if retVal[0] == " ":
+        retVal = retVal[1:]
+    # Remove trailing space
+    if retVal[retVal.__len__() - 1] == " " and retVal.__len__() > 1:
+        retVal = retVal[:retVal.__len__() - 2]
+    # Replace spaces
+    retVal = retVal.replace(" ", "_")
+    # Replace odd characters
+    retVal = retVal.replace("À", "A")
+    retVal = retVal.replace("Ã", "A")
+    retVal = retVal.replace("á", "a")
+    retVal = retVal.replace("ä", "a")
+    retVal = retVal.replace("å", "a")
+    retVal = retVal.replace("é", "e")
+    retVal = retVal.replace("ë", "e")
+    retVal = retVal.replace("è", "e")
+    retVal = retVal.replace("Í", "I")
+    retVal = retVal.replace("ï", "i")
+    retVal = retVal.replace("í", "i")
+    retVal = retVal.replace("ñ", "n")
+    retVal = retVal.replace("Õ", "O")
+    retVal = retVal.replace("ó", "o")
+    retVal = retVal.replace("ô", "o")
+    retVal = retVal.replace("õ", "o")
+    retVal = retVal.replace("ú", "u")
+    retVal = retVal.replace("ù", "u")    
+
+    ### VALIDATE FILENAME ###
+    while True:
+        # Add fileNumber
+        if fileNumber == 0:
+            tempFilename = retVal
+        else:
+            tempFilename = retVal + str(fileNumber) 
+        # Add file type
+        tempFilename = tempFilename + ".txt"
+
+        if os.path.exists(tempFilename):
+            fileNumber += 1
+        else:
+            retVal = tempFilename
+            break
+
+    ### PRINT TO THE FILE ###
+    with open(tempFilename, "w") as outFile:
+        outFile.write("\n")
+        for header in sectionHeaderDict:
+            outFile.write(header + ":\n")
+            for listEntry in sectionHeaderDict[header]:
+                if listEntry in charDetails.keys():
+                    if charDetails[listEntry] != None:
+                        outFile.write("\t{}:  {}\n".format(listEntry, charDetails[listEntry]))
+            outFile.write("\n")
+        outFile.write("\n")
+
+    return retVal
 
 
 ################################
@@ -1712,11 +1802,16 @@ def main():
         "Left Arm Tattoo", "Right Arm Tattoo", "Tattoo Color", \
     ]
     wotcWeaponList = [ "Weapon Color", "Weapon Pattern" ]
+    # Other command line variables
+    saveToFile = False          # Save character info to a file?
+    outFilename = ""            # Filename to save the file to
     
 
     ### PARSE XRANDO ARGUMENTS ###
     args = parse_arguments()
     # print("Args:\t{}".format(args))  # DEBUGGING
+
+    # -w, --WotC, "Randomize for War of the Chosen expansion"
     try:
         # War of the Chosen
         if args.WotC:
@@ -1751,6 +1846,13 @@ def main():
         sectionHeaderDict["PROPS"] = propsList
         sectionHeaderDict["APPEARANCE"] = appearanceList
 
+    # -f, --file, "Print character details to a file"
+    try:
+        if args.file:
+            # Set boolean
+            saveToFile = True
+    except:
+        pass
 
     ### RANDOMIZE OPTIONS ###
     # 1. CHARACTER INFO
@@ -1860,6 +1962,10 @@ def main():
                     print("\t{}:  {}".format(listEntry, charDetails[listEntry]))
         print("\n")
 
+    ### PRINT FILE ###
+    if saveToFile:
+        outFilename = print_char_to_file(sectionHeaderDict, charDetails)
+        print("\nExported character to:\t{}".format(outFilename))
 
     ### TESTING ###
 
