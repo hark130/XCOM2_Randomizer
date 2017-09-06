@@ -15,7 +15,7 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] -p (Utilize population %s to choose race)
             [ ] Add default rando back to rando_nation()
         [ ] -t (Tech level... different options at different tech levels)
-        [ ] -q (Quiet... no stdout)
+        [X] -q (Quiet... no stdout)
         [X] -f (Filename... output to a file)
         [ ] -v (Verbose... provides Armor Style and Color Scheme)
     [ ] Build in parameters to choose certain character aspects (e.g., nation, race, gender)
