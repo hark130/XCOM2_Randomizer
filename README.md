@@ -17,8 +17,7 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] -t (Tech level... different options at different tech levels)
         [X] -q (Quiet... no stdout)
         [X] -f (Filename... output to a file)
-        [ ] -v (Verbose... provides Armor Style and Color Scheme)
-    [ ] Build in parameters to choose certain character aspects (e.g., nation, race, gender)
+        [X] -v (Verbose... provides Armor Style and Color Scheme)
     [ ] Include logic to verify Python 3.5
     [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
     [/] Expand on Character Info
