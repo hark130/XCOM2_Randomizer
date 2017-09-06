@@ -2,10 +2,11 @@
 This is a python script to randomize XCOM2 character customizations for me
 
 ## TO DO
+    [ ] Compare all WotC character options to Base XCOM screenshots 
     [/] Implement Argument Parser
-        [/] -w (War of the Chosen expansion content and format)
-            [ ] Modify listOf<appropriate choices>
-            [/] Change order of print to match WotC interface
+        [X] -w (War of the Chosen expansion content and format)
+            [X] Modify listOf<appropriate choices>
+            [X] Change order of print to match WotC interface
         [ ] -g (Choose gender)
         [ ] -n (Choose nation)
         [ ] -r (Choose race)
@@ -14,7 +15,9 @@ This is a python script to randomize XCOM2 character customizations for me
         [ ] -p (Utilize population %s to choose race)
             [ ] Add default rando back to rando_nation()
         [ ] -t (Tech level... different options at different tech levels)
-        [ ] -f (Output File... add epilog so it tells you the name)
+        [ ] -q (Quiet... no stdout)
+        [X] -f (Filename... output to a file)
+        [ ] -v (Verbose... provides Armor Style and Color Scheme)
     [ ] Build in parameters to choose certain character aspects (e.g., nation, race, gender)
     [ ] Include logic to verify Python 3.5
     [ ] 2 Colors Complementary always starts with Main color 1 or pink (88)?
@@ -142,13 +145,18 @@ This is a python script to randomize XCOM2 character customizations for me
 
 
 ## NOTES/RESEARCH
-### IMPLEMENTING NEW COLOR SCHEMES
-Update:
+### NEW FEATURE IMPLEMENTATION
+New Color Scheme:
 
     * xrando: rando_color_scheme()
     * Harklepalette: ColorPalette.implementedSchemes[]
     * Harklepalette: ColorPalette.get_color()
     * Harklepalette: Add new method (called by ColorPalette.get_color())
+
+New Command Line Option:
+
+    * xrando: parse_arguments()
+    * xrando: main()
 ### [COLOR SCHEMES](http://www.hgtv.com/design/decorating/design-101/color-wheel-primer):
     * Monochromatic - Primary
     * Monochromatic - Secondary
