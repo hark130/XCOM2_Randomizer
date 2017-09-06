@@ -1,0 +1,581 @@
+Istanbul
+Ankara
+Izmir
+Bursa
+Adana
+Gaziantep
+Konya
+Antalya
+Kayseri
+Mersin
+Eskişehir
+Diyarbakır
+Samsun
+Denizli
+Şanlıurfa
+Adapazarı, Sakarya
+Malatya
+Kahramanmaraş
+Erzurum
+Van
+Batman
+Elâzığ
+Izmit, Kocaeli
+Manisa
+Sivas
+Gebze, Kocaeli
+Balıkesir
+Tarsus, Mersin
+Kütahya
+Trabzon
+Çorum
+Çorlu, Tekirdağ
+Adıyaman
+Osmaniye
+Kırıkkale
+Antakya, Hatay
+Aydın
+Iskenderun, Hatay
+Uşak
+Aksaray
+Afyon
+Isparta
+Inegöl, Bursa
+Tekirdağ
+Edirne
+Darıca, Kocaeli
+Ordu
+Karaman
+Gölcük, Kocaeli
+Siirt
+Körfez, Kocaeli
+Kızıltepe, Mardin
+Düzce
+Tokat
+Bolu
+Derince, Kocaeli
+Turgutlu, Manisa
+Bandırma, Balıkesir
+Nazilli, Aydın
+Kırşehir
+Niğde
+Zonguldak
+Ceyhan, Adana
+Karabük
+Siverek, Şanlıurfa
+Akhisar, Manisa
+Lüleburgaz, Kırklareli
+Ereğli, Zonguldak
+Ağrı
+Polatlı, Ankara
+Rize
+Salihli, Manisa
+Ereğli, Konya
+Cizre, Şırnak
+Nizip, Gaziantep
+Çanakkale
+Yalova
+Alanya, Antalya
+Giresun
+Viranşehir, Şanlıurfa
+Bingöl
+Amasya
+Kastamonu
+Elbistan, Kahramanmaraş
+Erzincan
+Nevşehir
+Nusaybin, Mardin
+Kartepe, Kocaeli
+Çayırova, Kocaeli
+Mardin
+Manavgat, Antalya
+Bafra, Samsun
+Kilis
+Kadirli, Osmaniye
+Kars
+Iğdır
+Ünye, Ordu
+Kozan, Adana
+Soma, Manisa
+Silopi, Şırnak
+Ödemiş, Izmir
+Muş
+Burdur
+Yozgat
+Fethiye, Muğla
+Erciş, Van
+Çerkezköy, Tekirdağ
+Dörtyol, Hatay
+Çankırı
+Kırıkhan, Hatay
+Söke, Aydın
+Kırklareli
+Hakkâri
+Şırnak
+Doğubayazıt, Ağrı
+Başiskele, Kocaeli
+Kuşadası, Aydın
+Ergani, Diyarbakır
+Tavşanlı, Kütahya
+Muğla
+Turhal, Tokat
+Yüksekova, Hakkâri
+Tatvan, Bitlis
+Reyhanlı, Hatay
+Kahta, Adıyaman
+Akşehir, Konya
+Bergama, Izmir
+Erbaa, Tokat
+Bozüyük, Bilecik
+Çarşamba, Samsun
+Mustafakemalpaşa, Bursa
+Patnos, Ağrı
+Orhangazi, Bursa
+Bismil, Diyarbakır
+Sorgun, Yozgat
+Keşan, Edirne
+Midyat, Mardin
+Merzifon, Amasya
+Bartın
+Kapaklı, Tekirdağ
+Milas, Muğla
+Karacabey, Bursa
+Suruç, Şanlıurfa
+Edremit, Balıkesir
+Tire, Izmir
+Fatsa, Ordu
+Silifke, Mersin
+Alaşehir, Manisa
+Didim, Aydın
+Serik, Antalya
+Bilecik
+Karamürsel, Kocaeli
+Bitlis
+Birecik, Şanlıurfa
+Karaköprü, Şanlıurfa
+Samandağ, Hatay
+Erdemli, Mersin
+Ceylanpınar, Şanlıurfa
+Gönen, Balıkesir
+Dilovası, Kocaeli
+Düziçi, Osmaniye
+Uzunköprü, Edirne
+Biga, Çanakkale
+Seydişehir, Konya
+Silvan, Diyarbakır
+Afşin, Kahramanmaraş
+Burhaniye, Balıkesir
+Suluova, Amasya
+Bucak, Burdur
+Sinop
+Develi, Kayseri
+Bulancak, Giresun
+Bor, Niğde
+Safranbolu, Karabük
+Akçaabat, Trabzon
+Ayvalık, Balıkesir
+Marmaris, Muğla
+Payas, Hatay
+Sungurlu, Çorum
+Beypazarı, Ankara
+Zile, Tokat
+Kozlu, Zonguldak
+Sandıklı, Afyon
+Bodrum, Muğla
+Bayburt
+Anamur, Mersin
+Karapınar, Konya
+Niksar, Tokat
+Terme, Samsun
+Ilgın, Konya
+Islahiye, Gaziantep
+Beyşehir, Konya
+Erzin, Hatay
+Bolvadin, Afyon
+Tunceli
+Yenişehir, Bursa
+Yerköy, Yozgat
+Çumra, Konya
+Karasu, Sakarya
+Babaeski, Kırklareli
+Malkara, Tekirdağ
+Çan, Çanakkale
+Kumluca, Antalya
+Kurtalan, Siirt
+Ortaca, Muğla
+Şereflikoçhisar, Ankara
+Pazarcık, Kahramanmaraş
+Mut, Mersin
+Gölbaşı, Adıyaman
+Tosya, Kastamonu
+Vezirköprü, Samsun
+Boyabat, Sinop
+Osmancık, Çorum
+Besni, Adıyaman
+Sarıkamış, Kars
+Simav, Kütahya
+Dinar, Afyon
+Artvin
+Gümüşhane
+Susurluk, Balıkesir
+Akçakale, Şanlıurfa
+Kilimli, Zonguldak
+Harbiye, Hatay
+Idil, Şırnak
+Ardeşen, Rize
+Dalaman, Muğla
+Gelibolu, Çanakkale
+Erdek, Balıkesir
+Gazipaşa, Antalya
+Akçakoca, Düzce
+Çaycuma, Zonguldak
+Çeşme, Izmir
+Kemer, Antalya
+Belen, Hatay
+Saray, Tekirdağ
+Iznik, Bursa
+Alaca, Çorum
+Gerede, Bolu
+Devrek, Zonguldak
+Akdağmadeni, Yozgat
+Kaman, Kırşehir
+Serinyol, Hatay
+Kozluk, Batman
+Bulanık, Muş
+Sarıkaya, Yozgat
+Kulu, Konya
+Şarkışla, Sivas
+Korkuteli, Antalya
+Oltu, Erzurum
+Geyve, Sakarya
+Imamoğlu, Adana
+Çine, Aydın
+Çivril, Denizli
+Göksun, Kahramanmaraş
+Derik, Mardin
+Hilvan, Şanlıurfa
+Çayeli, Rize
+Iskilip, Çorum
+Havza, Samsun
+Yahyalı, Kayseri
+Hayrabolu, Tekirdağ
+Incirliova, Aydın
+Kovancılar, Elâzığ
+Güroymak, Bitlis
+Muratlı, Tekirdağ
+Malazgirt, Muş
+Diyadin, Ağrı
+Emirdağ, Afyon
+Alaplı, Zonguldak
+Bostaniçi, Van
+Gediz, Kütahya
+Sarayköy, Denizli
+Yalvaç, Isparta
+Mahmutlar, Antalya
+Demirci, Manisa
+Ortaköy, Aksaray
+Turgutreis, Muğla
+Karaağaç, Hatay
+Yatağan, Muğla
+Nurdağı, Gaziantep
+Çiftlikköy, Yalova
+Battalgazi, Malatya
+Çermik, Diyarbakır
+Dargeçit, Mardin
+Genç, Bingöl
+Dursunbey, Balıkesir
+Horasan, Erzurum
+Gümüşhacıköy, Amasya
+Kızılcahamam, Ankara
+Pamukova, Sakarya
+Eğirdir, Isparta
+Şarköy, Tekirdağ
+Boğazlıyan, Yozgat
+Hopa, Artvin
+Yeşilli, Mardin
+Dikili, Izmir
+Ahlat, Bitlis
+Ardahan
+Ürgüp, Nevşehir
+Çekmece, Hatay
+Taşköprü, Kastamonu
+Zeytinli, Balıkesir
+Eskil, Aksaray
+Muradiye, Van
+Espiye, Giresun
+Bozyazı, Mersin
+Bigadiç, Balıkesir
+Kırkağaç, Manisa
+Saruhanlı, Manisa
+Demre, Antalya
+Kızılpınar, Tekirdağ
+Pazar, Rize
+Cihanbeyli, Konya
+Marmaraereğlisi, Tekirdağ
+Altınoluk, Balıkesir
+Banaz, Uşak
+Görele, Giresun
+Buldan, Denizli
+Elmalı, Antalya
+Araklı, Trabzon
+Of, Trabzon
+Çaldıran, Van
+Şemdinli, Hakkâri
+Denizciler, Hatay
+Arhavi, Artvin
+Side, Antalya
+Armutalan, Muğla
+Vakfıkebir, Trabzon
+Aybastı, Ordu
+Karakoçan, Elâzığ
+Obaköy, Antalya
+Narlıca, Hatay
+Türkoğlu, Kahramanmaraş
+Solhan, Bingöl
+Çay, Afyon
+Osmaneli, Bilecik
+Kadınhanı, Konya
+Pelitli, Trabzon
+Sürmene, Trabzon
+Kelkit, Gümüşhane
+Pasinler, Erzurum
+Kağızman, Kars
+Suşehri, Sivas
+Ilıca, Antalya
+Sarıgöl, Manisa
+Tirebolu, Giresun
+Başkale, Van
+Bayramiç, Çanakkale
+Karaçulha, Muğla
+Korgan, Ordu
+Eşme, Uşak
+Gölhisar, Burdur
+Sındırgı, Balıkesir
+Arsin, Trabzon
+Ortaklar, Aydın
+Bahçe, Osmaniye
+Edremit, Van
+Uludere, Şırnak
+Konaklı, Antalya
+Kocaali, Sakarya
+Çağlayancerit, Kahramanmaraş
+Germencik, Aydın
+Kadıkendi, Şanlıurfa
+Şarkikaraağaç, Isparta
+Çelebibağı, Van
+Bünyan, Kayseri
+Çınarcık, Yalova
+Şuhut, Afyon
+Tavas, Denizli
+Mucur, Kırşehir
+Beşikdüzü, Trabzon
+Kumru, Ordu
+Nallıhan, Ankara
+Acıpayam, Denizli
+Kınık, Izmir
+Sason, Batman
+Vize, Kırklareli
+Hasköy, Muş
+Finike, Antalya
+Doğanşehir, Malatya
+Iscehisar, Afyon
+Özalp, Van
+Çifteler, Eskişehir
+Kuzuculu, Hatay
+Tömük, Mersin
+Küçükköy, Balıkesir
+Ezine, Çanakkale
+Taşova, Amasya
+Pınarhisar, Kırklareli
+Kargıpınarı, Mersin
+Avanos, Nevşehir
+Yeniceköy, Bursa
+Gördes, Manisa
+Gölköy, Ordu
+Zara, Sivas
+Umurlu, Aydın
+Gerze, Sinop
+Ondokuzmayıs, Samsun
+Datça, Muğla
+Pınarbaşı, Kayseri
+Çınar, Diyarbakır
+Ayancık, Sinop
+Lice, Diyarbakır
+Alaçam, Samsun
+Serinhisar, Denizli
+Yalıkavak, Muğla
+Yomra, Trabzon
+Yeşilköy, Hatay
+Havran, Balıkesir
+Çukurca, Hakkâri
+Bozova, Şanlıurfa
+Lapseki, Çanakkale
+Altınova, Balıkesir
+Emet, Kütahya
+Akçay, Balıkesir
+Divriği, Sivas
+Davutlar, Aydın
+Karaağaç, Edirne
+Derinkuyu, Nevşehir
+Çekerek, Yozgat
+Ermenek, Karaman
+Borçka, Artvin
+Mazıdağı, Mardin
+Alaçatı, Izmir
+Keskin, Kırıkkale
+Kandıra, Kocaeli
+Ahmetli, Manisa
+Şefaatli, Yozgat
+Çamaş, Ordu
+Haymana, Ankara
+Bayat, Çorum
+Büyükyoncalı, Tekirdağ
+Tomarza, Kayseri
+Sultanhanı, Aksaray
+Kepez, Çanakkale
+Tunçbilek, Kütahya
+Adilcevaz, Bitlis
+Bozdoğan, Aydın
+Gevaş, Van
+Gelinkaya, Mardin
+Aşkale, Erzurum
+Kangal, Sivas
+Turgutalp, Manisa
+Köşk, Aydın
+Yahşihan, Kırıkkale
+Cikcilli, Antalya
+Acarlar, Aydın
+Pozantı, Adana
+Yenice, Karabük
+Sivrihisar, Eskişehir
+Eruh, Siirt
+Gölmarmara, Manisa
+Kulp, Diyarbakır
+Söğüt, Bilecik
+Taşucu, Mersin
+Odabaşı, Hatay
+Fındıklı, Rize
+Perşembe, Ordu
+Gölyaka, Düzce
+Şebinkarahisar, Giresun
+Araban, Gaziantep
+Hassa, Hatay
+Akçadağ, Malatya
+Savaştepe, Balıkesir
+Kaynaşlı, Düzce
+Karayılan, Hatay
+Reşadiye, Tokat
+Hizan, Bitlis
+Sarayönü, Konya
+Hani, Diyarbakır
+Palu, Elâzığ
+Inebolu, Kastamonu
+Honaz, Denizli
+Gürün, Sivas
+Beşiri, Batman
+Yunak, Konya
+Yeşilhisar, Kayseri
+Avsallar, Antalya
+Yıldızeli, Sivas
+Varto, Muş
+Mavikent, Antalya
+Halfeti, Şanlıurfa
+Pertek, Tunceli
+Küçükdalyan, Hatay
+Çerkeş, Çankırı
+Yazıkonak, Elâzığ
+Akbez, Hatay
+Tekebaşı, Hatay
+Karaçoban, Erzurum
+Karataş, Adana
+Konacık, Muğla
+Hınıs, Erzurum
+Ipsala, Edirne
+Çobanlar, Afyon
+Havsa, Edirne
+Çatalağzı, Zonguldak
+Yakınca, Malatya
+Beyoğlu, Kahramanmaraş
+Çayırhan, Ankara
+Sahilkent, Antalya
+Gülşehir, Nevşehir
+Darende, Malatya
+Ladik, Samsun
+Koru, Yalova
+Kestel, Antalya
+Eleşkirt, Ağrı
+Sultanköy, Tekirdağ
+Dilek, Malatya
+Yeniçiftlik, Tekirdağ
+Turunçova, Antalya
+Gözcüler, Hatay
+Köyceğiz, Muğla
+Sarılar, Antalya
+Eynesil, Giresun
+Ladik, Konya
+Aydıncık, Mersin
+Tuzluca, Iğdır
+Çelikhan, Adıyaman
+Söğütlü, Trabzon
+Yenice, Mersin
+Kiraz, Izmir
+Kabala, Mardin
+Dicle, Diyarbakır
+Toprakkale, Osmaniye
+Yeşilyurt, Malatya
+Yurtbaşı, Elâzığ
+Bostanbaşı, Malatya
+Yeniceoba, Konya
+Savur, Mardin
+Kale, Denizli
+Savuca, Aydın
+Andırın, Kahramanmaraş
+Keşap, Giresun
+Hekimhan, Malatya
+Ismil, Konya
+Yenice, Ankara
+Narlı, Kahramanmaraş
+Kuyucak, Aydın
+Gürgentepe, Ordu
+Çilimli, Düzce
+Orhaneli, Bursa
+Beldibi, Muğla
+Göle, Ardahan
+Aktepe, Hatay
+Ayvacık, Çanakkale
+Çayıralan, Yozgat
+Bozkır, Konya
+Saraykent, Yozgat
+Tonya, Trabzon
+Kavak, Samsun
+Keçiborlu, Isparta
+Ovaeymir, Aydın
+Çolaklı, Antalya
+Içeriçumra, Konya
+Maçka, Trabzon
+Bitez, Muğla
+Yağlıdere, Giresun
+Çarşıbaşı, Trabzon
+Durağan, Sinop
+Kozaklı, Nevşehir
+Piraziz, Giresun
+Bekbele, Hatay
+Şekeroba, Kahramanmaraş
+Arıtaş, Kahramanmaraş
+Atça, Aydın
+Gökçebey, Zonguldak
+Ulukışla, Niğde
+Gülüç, Zonguldak
+Altınova, Yalova
+Sakçagöze, Gaziantep
+Atayurt, Mersin
+Işıklar, Afyon
+Uluborlu, Isparta
+Göynük, Bolu
+Ilgaz, Çankırı
+Atakent, Mersin
+Çiçekdağı, Kırşehir
+Gökçe, Mardin
+Buharkent, Aydın
+Velimeşe, Tekirdağ
+Şiran, Gümüşhane
