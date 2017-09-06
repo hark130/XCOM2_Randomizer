@@ -1,0 +1,1119 @@
+Bogotá, Cundinamarca
+Medellín, Antioquia
+Cali, Valle del Cauca
+Barranquilla, Atlántico
+Cartagena, Bolívar
+Cúcuta, Norte de Santander
+Bucaramanga, Santander
+Ibagué, Tolima
+Soledad, Atlántico
+Pereira, Risaralda
+Santa Marta, Magdalena
+Soacha, Cundinamarca
+San Juan de Pasto, Nariño
+Montería, Córdoba
+Villavicencio, Meta
+Manizales, Caldas
+Bello, Antioquia
+Valledupar, Cesar
+Neiva, Huila
+Buenaventura, Valle del Cauca
+Palmira, Valle del Cauca
+Armenia, Quindío
+Popayán, Cauca
+Floridablanca, Santander
+Sincelejo, Sucre
+Itagüí, Antioquia
+Magangué, Bolívar
+Tuluá, Valle del Cauca
+Barrancabermeja, Santander
+Dosquebradas, Risaralda
+Envigado, Antioquia
+Riohacha, La Guajira
+Cartago, Valle del Cauca
+Guadalajara de Buga, Valle del Cauca
+Tunja, Boyacá
+Florencia, Caquetá
+Villa del Rosario, Norte de Santander
+Apartadó, Antioquia
+Tumaco, Nariño
+Maicao, La Guajira
+Turbo, Antioquia
+Uribia, La Guajira
+Piedecuesta, Santander
+Sogamoso, Boyacá
+Quibdó, Chocó
+Santa Cruz de Lorica, Córdoba
+Ipiales, Nariño
+Fusagasugá, Cundinamarca
+Facatativá, Cundinamarca
+Duitama, Boyacá
+Yopal, Casanare
+Ocaña, Norte de Santander
+Pitalito, Huila
+Ciénaga, Magdalena
+Zipaquirá, Cundinamarca
+Malambo, Atlántico
+Rionegro, Antioquia
+Chía, Cundinamarca
+Girardot, Cundinamarca
+Jamundí, Valle del Cauca
+Yumbo, Valle del Cauca
+Sahagún, Córdoba
+Caucasia, Antioquia
+Sabanalarga, Atlántico
+Cereté, Córdoba
+Aguachica, Cesar
+Santander de Quilichao, Cauca
+Tierralta, Córdoba
+Espinal, Tolima
+Arauca, Arauca
+Calarcá, Quindío
+Montelíbano, Córdoba
+La Dorada, Caldas
+Candelaria, Valle del Cauca
+Santa Rosa de Cabal, Risaralda
+San Juan de Girón, Santander
+Garzón, Huila
+Caldas, Antioquia
+Carmen de Bolivar, Bolívar
+Manaure, La Guajira
+Los Patios, Norte de Santander
+San Andrés, Archipiélago de San Andrés
+Mosquera, Cundinamarca
+San Andrés de Sotavento, Córdoba
+Turbaco, Bolívar
+Madrid, Cundinamarca
+Planeta Rica, Córdoba
+Funza, Cundinamarca
+Copacabana, Antioquia
+Arjona, Bolívar
+Chigorodó, Antioquia
+Corozal, Sucre
+Zona Bananera, Magdalena
+Fundación, Magdalena
+San Vicente del Caguán, Caquetá
+Florida, Valle del Cauca
+Chiquinquirá, Boyacá
+Puerto Asís, Putumayo
+El Banco, Magdalena
+El Cerrito, Valle del Cauca
+Riosucio, Caldas
+Acacías, Meta
+San José del Guaviare, Guaviare
+Agustín Codazzi, Cesar
+Chinchiná, Caldas
+Pamplona, Norte de Santander
+Ciénaga de Oro, Córdoba
+La Estrella, Antioquia
+La Plata, Huila
+Baranoa, Atlántico
+San Marcos, Sucre
+Samaniego, Nariño
+Puerto Boyacá, Boyacá
+Granada, Meta
+Plato, Magdalena
+Pradera, Valle del Cauca
+Necoclí, Antioquia
+Sevilla, Valle del Cauca
+Tame, Arauca
+Chaparral, Tolima
+San Onofre, Sucre
+Villamaría, Caldas
+La Ceja, Antioquia
+El Bagre, Antioquia
+El Tambo, Cauca
+Marinilla, Antioquia
+María La Baja, Bolívar
+Cajicá, Cundinamarca
+Valle del Guamuez, Putumayo
+Sabaneta, Antioquia
+Puerto Tejada, Cauca
+Bolívar, Cauca
+Orito, Putumayo
+San Gil, Santander
+Chinú, Córdoba
+Carepa, Antioquia
+Saravena, Arauca
+Girardota, Antioquia
+Ayapel, Córdoba
+Barbosa, Antioquia
+Líbano, Tolima
+Andes, Antioquia
+Santa Cruz de Mompox, Bolívar
+Túquerres, Nariño
+Yarumal, Antioquia
+El Carmen de Viboral, Antioquia
+Zarzal, Valle del Cauca
+Montenegro, Quindío
+Guarne, Antioquia
+San Pelayo, Córdoba
+Puerto Berrío, Antioquia
+Urrao, Antioquia
+Sonsón, Antioquia
+La Vega, Cauca
+Leticia, Amazonas
+Caloto, Cauca
+Arauquita, Arauca
+Sampués, Sucre
+Ubaté, Cundinamarca
+Pivijay, Magdalena
+Piendamó, Cauca
+Mocoa, Putumayo
+Aracataca, Magdalena
+Dagua, Valle del Cauca
+Puerto Libertador, Córdoba
+Anserma, Caldas
+Segovia, Antioquia
+Guamo, Tolima
+Tibú, Norte de Santander
+Cajibío, Cauca
+Roldanillo, Valle del Cauca
+Abrego, Norte de Santander
+Valencia, Córdoba
+Cimitarra, Santander
+Quimbaya, Quindío
+Santa Rosa del Sur, Bolívar
+Ortega, Tolima
+San Juan del Cesar, La Guajira
+La Tebaida, Quindío
+Quinchía, Risaralda
+San Vicente de Chucurí, Santander
+Miranda, Cauca
+Patía, Cauca
+Tarazá, Antioquia
+Mariquita, Tolima
+Melgar, Tolima
+San Juan Nepomuceno, Bolívar
+Puerto Rico, Caquetá
+Campoalegre, Huila
+Galapa, Atlántico
+Guaduas, Cundinamarca
+Guacarí, Valle del Cauca
+Páez, Cauca
+La Unión, Valle del Cauca
+Sibaté, Cundinamarca
+Majagual, Sucre
+Pueblo Nuevo, Córdoba
+Puerto Wilches, Santander
+San Bernardo del Viento, Córdoba
+Fresno, Tolima
+La Virginia, Risaralda
+Ariguaní, Magdalena
+Santa Rosa de Osos, Antioquia
+Cumbal, Nariño
+Chimichagua, Cesar
+Lebrija, Santander
+Silvia, Cauca
+Caicedonia, Valle del Cauca
+Caldono, Cauca
+Bosconia, Cesar
+Arboletes, Antioquia
+San Luis de Sincé, Sucre
+Barbacoas, Nariño
+Timbío, Cauca
+San Agustín, Huila
+Planadas, Tolima
+Rionegro, Santander
+Socorro, Santander
+Alto Baudó, Chocó
+Cáceres, Antioquia
+Puerto López, Meta
+San Pedro de Urabá, Antioquia
+Cumaribo, Vichada
+Cartagena del Chairá, Caquetá
+Guapi, Cauca
+Mitú, Vaupés
+Aguazul, Casanare
+Corinto, Cauca
+Ciudad Bolívar, Antioquia
+Gigante, Huila
+Neira, Caldas
+Tolú, Sucre
+Coyaima, Tolima
+Flandes, Tolima
+La Unión, Nariño
+Purificación, Tolima
+Puerto Colombia, Atlántico
+Paipa, Boyacá
+Belén de Umbría, Risaralda
+Curumaní, Cesar
+Circasia, Quindío
+Olaya Herrera, Nariño
+Honda, Tolima
+Palermo, Huila
+La Mesa, Cundinamarca
+Amagá, Antioquia
+Paz de Ariporo, Casanare
+San Pablo, Bolívar
+Inzá, Cauca
+Buenos Aires, Cauca
+Zaragoza, Antioquia
+Sitionuevo, Magdalena
+Fonseca, La Guajira
+Toribio, Cauca
+Pensilvania, Caldas
+Acevedo, Huila
+Barrancas, La Guajira
+El Santuario, Antioquia
+San Antero, Córdoba
+Barbosa, Santander
+El Charco, Nariño
+Samaná, Caldas
+Rioblanco, Tolima
+Guamal, Magdalena
+Pacho, Cundinamarca
+Sabanagrande, Atlántico
+Sandoná, Nariño
+Manzanares, Caldas
+Ituango, Antioquia
+Puebloviejo, Magdalena
+El Copey, Cesar
+Supía, Caldas
+Argelia, Cauca
+Morales, Cauca
+Villeta, Cundinamarca
+Aguadas, Caldas
+La Macarena, Meta
+Tocancipá, Cundinamarca
+Dabeiba, Antioquia
+Santo Tomás, Atlántico
+La Calera, Cundinamarca
+Isnos, Huila
+Palmar de Varela, Atlántico
+Istmina, Chocó
+San Carlos, Córdoba
+Balboa, Cauca
+Moñitos, Córdoba
+Santa Bárbara, Antioquia
+Luruaco, Atlántico
+Villanueva, La Guajira
+Algeciras, Huila
+Santa Ana, Magdalena
+Natagaima, Tolima
+San Benito Abad, Sucre
+Mahates, Bolívar
+Santa Fe de Antioquia, Antioquia
+Repelón, Atlántico
+Pinillos, Bolívar
+Remedios, Antioquia
+Sardinata, Norte de Santander
+Fredonia, Antioquia
+Puerto Guzmán, Putumayo
+Sucre, Sucre
+Buesaco, Nariño
+La Montañita, Caquetá
+Chiriguaná, Cesar
+La Jagua de Ibirico, Cesar
+San Pedro, Antioquia
+Ataco, Tolima
+La Paz, Cesar
+Moniquirá, Boyacá
+Fortul, Arauca
+San Miguel, Putumayo
+Villanueva, Casanare
+Dibulla, La Guajira
+Puerto Escondido, Córdoba
+Rovira, Tolima
+Ovejas, Sucre
+Bugalagrande, Valle del Cauca
+San Jacinto, Bolívar
+El Doncello, Caquetá
+Marsella, Risaralda
+Concordia, Antioquia
+Silvania, Cundinamarca
+San Martín, Meta
+Sopó, Cundinamarca
+Río Viejo, Bolívar
+Vista Hermosa, Meta
+Medio Atrato, Chocó
+San Juan de Urabá, Antioquia
+Timbiquí, Cauca
+Tabio, Cundinamarca
+Albania, La Guajira
+El Paso, Cesar
+Villagarzón, Putumayo
+Calamar, Bolívar
+Ansermanuevo, Valle del Cauca
+Santacruz, Nariño
+Nechí, Antioquia
+Amalfi, Antioquia
+Almaguer, Cauca
+El Colegio, Cundinamarca
+El Zulia, Norte de Santander
+Salamina, Caldas
+Abejorral, Antioquia
+Frontino, Antioquia
+Yolombó, Antioquia
+Timaná, Huila
+San Alberto, Cesar
+Cota, Cundinamarca
+Cajamarca, Tolima
+Aipe, Huila
+Sabana de Torres, Santander
+Vélez, Santander
+Achí, Bolívar
+Chocontá, Cundinamarca
+Lérida, Tolima
+San Vicente, Antioquia
+Solano, Caquetá
+López, Cauca
+Los Palmitos, Sucre
+Albán, Nariño
+Ginebra, Valle del Cauca
+San Luis, Tolima
+Suárez, Cauca
+Campo de La Cruz, Atlántico
+El Retorno, Guaviare
+Buenavista, Córdoba
+Tolú Viejo, Sucre
+Ponedera, Atlántico
+El Retén, Magdalena
+Tiquisio, Bolívar
+Venadillo, Tolima
+Málaga, Santander
+Trujillo, Valle del Cauca
+Morales, Bolívar
+Tenjo, Cundinamarca
+Simití, Bolívar
+Pupiales, Nariño
+San Lorenzo, Nariño
+Astrea, Cesar
+Cogua, Cundinamarca
+Salgar, Antioquia
+Santa Rosa, Bolívar
+San Roque, Antioquia
+Andalucía, Valle del Cauca
+San Pablo, Nariño
+El Carmen de Chucurí, Santander
+Tadó, Chocó
+Palestina, Caldas
+Inírida, Guainía
+La Unión, Antioquia
+Los Córdobas, Córdoba
+Mercaderes, Cauca
+Don Matías, Antioquia
+El Paujil, Caquetá
+La Cruz, Nariño
+Samacá, Boyacá
+Guadalupe, Huila
+Villanueva, Bolívar
+Alcalá, Valle del Cauca
+Teorama, Norte de Santander
+Apía, Risaralda
+Totoró, Cauca
+Riofrío, Valle del Cauca
+Puerto Rico, Meta
+Canalete, Córdoba
+San Martín, Cesar
+Puerto Gaitán, Meta
+Galeras, Sucre
+Valdivia, Antioquia
+Toledo, Norte de Santander
+San Sebastián de Buenavista, Magdalena
+Pueblo Bello, Cesar
+Taminango, Nariño
+Tocaima, Cundinamarca
+El Piñon, Magdalena
+Retiro, Antioquia
+Montecristo, Bolívar
+Roberto Payán, Nariño
+Guachucal, Nariño
+Cañasgordas, Antioquia
+Betulia, Antioquia
+Puerto Nare, Antioquia
+Rivera, Huila
+Convención, Norte de Santander
+Aquitania, Boyacá
+Cumaral, Meta
+Villapinzón, Cundinamarca
+Pelaya, Cesar
+Garagoa, Boyacá
+Caparrapí, Cundinamarca
+Chibolo, Magdalena
+Caqueza, Cundinamarca
+Mutatá1, Antioquia
+Anzoátegui, Tolima
+San Pedro, Sucre
+Yacopí, Cundinamarca
+Magüi, Nariño
+Támesis, Antioquia
+Hatonuevo, La Guajira
+El Carmen, Norte de Santander
+Bajo Baudó, Chocó
+Los Andes, Nariño
+Puerto Triunfo, Antioquia
+Peñol, Antioquia
+Tauramena, Casanare
+Nueva Granada, Magdalena
+Leguízamo, Putumayo
+Puerto Concordia, Meta
+Tarqui, Huila
+Toro, Valle del Cauca
+Pailitas, Cesar
+San Carlos, Antioquia
+Restrepo, Valle del Cauca
+San Pedro, Valle del Cauca
+Guática, Risaralda
+Sotara, Cauca
+Nariño, Antioquia
+Yotoco, Valle del Cauca
+Puerto Salgar, Cundinamarca
+Guaranda, Sucre
+Calima, Valle del Cauca
+Santuario, Risaralda
+Arenal del Sur, Bolívar
+Bolívar, Valle del Cauca
+Santa Bárbara, Nariño
+San Antonio, Tolima
+San Estanislao, Bolívar
+Pácora, Caldas
+Nobsa, Boyacá
+Landázuri, Santander
+Mistrató, Risaralda
+Barranco de Loba, Bolívar
+Cocorná, Antioquia
+Cotorra, Córdoba
+Yondó, Antioquia
+Anorí, Antioquia
+Saldaña, Tolima
+Puracé, Cauca
+Ricaurte, Nariño
+Sabanas de San Angel, Magdalena
+Marquetalia, Caldas
+Chinácota, Norte de Santander
+Purísima, Córdoba
+Jambaló, Cauca
+La Gloria, Cesar
+Juan de Acosta, Atlántico
+Unguía, Chocó
+Puente Nacional, Santander
+Gamarra, Cesar
+Jardín, Antioquia
+Río de Oro, Cesar
+Ventaquemada, Boyacá
+Obando, Valle del Cauca
+Suaza, Huila
+Villa Rica, Cauca
+Riosucio1, Chocó
+San Bernardo, Nariño
+San Martín de Loba, Bolívar
+Suesca, Cundinamarca
+Puerto Caicedo, Putumayo
+Nilo, Cundinamarca
+El Tambo, Nariño
+La Victoria, Valle del Cauca
+Pijiño del Carmen, Magdalena
+Momil, Córdoba
+Tamalameque, Cesar
+Bolívar, Santander
+El Tablón de Gómez, Nariño
+Becerril, Cesar
+Belén de Bajirá, Chocó[1][2]
+Polonuevo, Atlántico
+San José del Fragua, Caquetá
+Manatí, Atlántico
+Policarpa, Nariño
+San Diego, Cesar
+Guaitarilla, Nariño
+Chimá, Córdoba
+Viotá, Cundinamarca
+Tello, Huila
+San Rafael, Antioquia
+El Rosal, Cundinamarca
+Córdoba, Nariño
+Turbaná, Bolívar
+Venecia, Antioquia
+Sopetrán, Antioquia
+Urumita, La Guajira
+Titiribí, Antioquia
+Anolaima, Cundinamarca
+Puerto Carreño, Vichada
+Sibundoy, Putumayo
+La Vega, Cundinamarca
+Santa Rosa de Viterbo, Boyacá
+Mapiripán, Meta
+Viterbo, Caldas
+Potosí, Nariño
+El Playón, Santander
+Córdoba, Bolívar
+Condoto, Chocó
+Armero, Tolima
+Subachoque, Cundinamarca
+Medio San Juan, Chocó
+Cómbita, Boyacá
+San Fernando, Bolívar
+Saboyá, Boyacá
+Filandia, Quindío
+Morroa, Sucre
+El Pital, Huila
+San Sebastián, Cauca
+Aranzazu, Caldas
+Chachagüí, Nariño
+Jericó, Antioquia
+Monterrey, Casanare
+Filadelfia, Caldas
+La Apartada, Córdoba
+Rosas, Cauca
+Tibasosa, Boyacá
+San Calixto, Norte de Santander
+Tenerife, Magdalena
+Ráquira, Boyacá
+Angostura, Antioquia
+Ebéjico, Antioquia
+Uribe, Meta
+Guasca, Cundinamarca
+Santa Lucía, Atlántico
+San Juan de Betulia, Sucre
+San Antonio del Tequendama, Cundinamarca
+Litoral de San Juan, Chocó
+Fómeque, Cundinamarca
+Santa Catalina, Bolívar
+Candelaria, Atlántico
+Villa de Leyva, Boyacá
+Mosquera, Nariño
+Pueblo Rico, Risaralda
+Distracción, La Guajira
+Ubalá, Cundinamarca
+Belalcázar, Caldas
+Carmen del Atrato, Chocó
+Agua de Dios, Cundinamarca
+Linares, Nariño
+Arbeláez, Cundinamarca
+Leiva, Nariño
+Algarrobo, Magdalena
+Medio Baudó, Chocó
+Clemencia, Bolívar
+Providencia, Nariño
+Icononzo, Tolima
+San Jerónimo, Antioquia
+La Argentina, Huila
+Santo Domingo, Antioquia
+Guachetá, Cundinamarca
+Anapoima, Cundinamarca
+Milán, Caquetá
+Trinidad, Casanare
+Hatillo de Loba, Bolívar
+Curití, Santander
+Cumbitara, Nariño
+La Florida, Nariño
+Charalá, Santander
+El Rosario, Nariño
+Palmito, Sucre
+Altos del Rosario, Bolívar
+Coveñas, Sucre
+Manaure, Cesar
+Miraflores, Guaviare
+Nemocón, Cundinamarca
+Vegachí, Antioquia
+Gómez Plata, Antioquia
+Villahermosa, Tolima
+Calamar, Guaviare
+Maní, Casanare
+Colombia, Huila
+Choachí, Cundinamarca
+Pasca, Cundinamarca
+La Cumbre, Valle del Cauca
+Curillo, Caquetá
+Zambrano, Bolívar
+Santa Bárbara de Pinto, Magdalena
+Valparaíso, Caquetá
+Cicuco, Bolívar
+Talaigua Nuevo, Bolívar
+Belén de Los Andaquies, Caquetá
+Fuente de oro, Meta
+Caimito, Sucre
+Francisco Pizarro, Nariño
+Simijaca, Cundinamarca
+San Luis, Antioquia
+Oiba, Santander
+Los Santos, Santander
+Suaita, Santander
+La Esperanza, Norte de Santander
+Mogotes, Santander
+La Sierra, Cauca
+San Jacinto del Cauca, Bolívar
+San Pablo de Borbur, Boyacá
+Tubará, Atlántico
+Tangua, Nariño
+Gachancipá, Cundinamarca
+Chita, Boyacá
+Ramiriquí, Boyacá
+Oporapa, Huila
+El Tarra, Norte de Santander
+Mesetas, Meta
+Cunday, Tolima
+El Águila, Valle del Cauca
+Risaralda, Caldas
+Puerto Lleras, Meta
+Iquira, Huila
+Cachirá, Norte de Santander
+La Primavera, Vichada
+Toca, Boyacá
+Otanche, Boyacá
+Acandí, Chocó
+Gachetá, Cundinamarca
+La Unión, Sucre
+Pauna, Boyacá
+San Bernardo, Cundinamarca
+Socotá, Boyacá
+Consaca, Nariño
+Palestina, Huila
+Lloró, Chocó
+Betania, Antioquia
+Concordia, Magdalena
+Muzo, Boyacá
+Saladoblanco, Huila
+Santa María, Huila
+Sasaima, Cundinamarca
+Chitagá, Norte de Santander
+Restrepo, Meta
+Guateque, Boyacá
+Hacarí, Norte de Santander
+Umbita, Boyacá
+Argelia, Antioquia
+Hato Corozal, Casanare
+Cachipay, Cundinamarca
+Yacuanquer, Nariño
+Bojaya, Chocó
+La Palma, Cundinamarca
+Medina, Cundinamarca
+Sesquilé, Cundinamarca
+San Juan de Río Seco, Cundinamarca
+Granada, Antioquia
+Vijes, Valle del Cauca
+San Andrés, Santander
+Susa, Cundinamarca
+Lenguazaque, Cundinamarca
+Pesca, Boyacá
+Tibaná, Boyacá
+Suán, Atlántico
+Campamento, Antioquia
+Cisneros, Antioquia
+Miraflores, Boyacá
+Colón, Nariño
+Génova, Quindío
+Peque, Antioquia
+Palocabildo, Tolima
+Santa Rosa, Cauca
+Lejanías, Meta
+El Dovio, Valle del Cauca
+Cértegui, Chocó
+Liborina, Antioquia
+Salazar, Norte de Santander
+Zapatoca, Santander
+El Roble, Sucre
+Margarita, Bolívar
+El Cairo, Valle del Cauca
+Soatá, Boyacá
+Mallama, Nariño
+Falan, Tolima
+Arboledas, Norte de Santander
+Sucre, Santander
+González, Cesar
+San Juan de Arama, Meta
+Santiago, Putumayo
+Baraya, Huila
+Victoria, Caldas
+Dolores, Tolima
+Herveo, Tolima
+Solita, Caquetá
+Bahía Solano, Chocó
+Belén, Boyacá
+Coello, Tolima
+Ancuyá, Nariño
+Tuta, Boyacá
+Puerres, Nariño
+Alvarado, Tolima
+Sotaquirá, Boyacá
+Buenavista, Sucre
+Sucre, Cauca
+Simacota, Santander
+San Zenón, Magdalena
+Guamal, Meta
+Siachoque, Boyacá
+Bojacá, Cundinamarca
+Tesalia, Huila
+Usiacurí, Atlántico
+Arroyohondo, Bolívar
+Regidor, Bolívar
+Boavita, Boyacá
+Quípama, Boyacá
+Briceño, Antioquia
+La Celia, Risaralda
+Prado, Tolima
+Remolino, Magdalena
+Puerto Santander, Norte de Santander
+Zapayán, Magdalena
+Carmen de Carupa, Cundinamarca
+Agrado, Huila
+La Belleza, Santander
+Marmato, Caldas
+Bagadó, Chocó
+Junín, Cundinamarca
+Entrerrios, Antioquia
+Cucutilla, Norte de Santander
+Nunchía, Casanare
+La Tola, Nariño
+Salamina, Magdalena
+Chipaque, Cundinamarca
+La Playa, Norte de Santander
+Aratoca, Santander
+Carmen de Apicalá, Tolima
+Padilla, Cauca
+Cerro San Antonio, Magdalena
+Uramita, Antioquia
+San Francisco, Cundinamarca
+Pueblorrico, Antioquia
+Soplaviento, Bolívar
+Versalles, Valle del Cauca
+Teruel, Huila
+Ospina, Nariño
+Quipile, Cundinamarca
+Sabanalarga, Antioquia
+Unión Panamericana, Chocó
+Ricaurte, Cundinamarca
+Cuaspud, Nariño
+Río Iro, Chocó
+Pedraza, Magdalena
+Une, Cundinamarca
+Pore, Casanare
+Maripí, Boyacá
+Río Quito, Chocó
+Güicán, Boyacá
+Nóvita, Chocó
+Yaguará, Huila
+Santana, Boyacá
+Iles, Nariño
+El Guamo, Bolívar
+Apulo, Cundinamarca
+Cantagallo, Bolívar
+El Peñón, Bolívar
+Yalí, Antioquia
+Nocaima, Cundinamarca
+Vergara, Cundinamarca
+Orocué, Casanare
+Tausa, Cundinamarca
+Caicedo, Antioquia
+Ambalema, Tolima
+Barichara, Santander
+Angelópolis, Antioquia
+Maceo, Antioquia
+Nuquí, Chocó
+Socha, Boyacá
+Turmequé, Boyacá
+San José, Caldas
+Tena, Cundinamarca
+Atrato, Chocó
+Montebello, Antioquia
+Imués, Nariño
+Sapuyes, Nariño
+Arboleda, Nariño
+Jenesano, Boyacá
+Paratebueno, Cundinamarca
+Anza, Antioquia
+San Luis de Palenque, Casanare
+Coromoro, Santander
+Villavieja, Huila
+San Andrés de Cuerquía, Antioquia
+El Molino, La Guajira
+Salento, Quindío
+Tarso, Antioquia
+Támara, Casanare
+Piamonte, Cauca
+Castilla la Nueva, Meta
+La Pintada, Antioquia
+San Pedro de Cartago, Nariño
+Cucunubá, Cundinamarca
+Funes, Nariño
+La Peña, Cundinamarca
+Puerto Nariño, Amazonas
+Villanueva, Santander
+Buriticá, Antioquia
+Tasco, Boyacá
+Guaca, Santander
+Casabianca, Tolima
+Norcasia, Caldas
+Ubaque, Cundinamarca
+Granada, Cundinamarca
+El Castillo, Meta
+El Peñol, Nariño
+Aldana, Nariño
+Macheta, Cundinamarca
+San Francisco, Putumayo
+Ragonvalia, Norte de Santander
+Motavita, Boyacá
+La Merced, Caldas
+Chitaraque, Boyacá
+Argelia, Valle del Cauca
+Tona, Santander
+Guatavita, Cundinamarca
+Pijao, Quindío
+Contadero, Nariño
+Heliconia, Antioquia
+Fosca, Cundinamarca
+Cubará, Boyacá
+San Carlos de Guaroa, Meta
+Belén, Nariño
+Bochalema, Norte de Santander
+Quetame, Cundinamarca
+Santa Isabel, Tolima
+San Cristóbal, Bolívar
+Hobo, Huila
+La Llanada, Nariño
+Puerto Parra, Santander
+San Francisco, Antioquia
+Albania, Caquetá
+San Luis de Gaceno, Boyacá
+Florián, Santander
+Guayatá, Boyacá
+Balboa, Risaralda
+Gramalote, Norte de Santander
+Valparaíso, Antioquia
+Cerrito, Santander
+Firavitoba, Boyacá
+Roncesvalles, Tolima
+Guadalupe, Antioquia
+Villarrica, Tolima
+Coloso, Sucre
+El Cantón del San Pablo, Chocó
+Belmira, Antioquia
+Valle de San Juan, Tolima
+Capitanejo, Santander
+Sutamarchán, Boyacá
+Nuevo Colón, Boyacá
+Chíquiza, Boyacá
+Florencia, Cauca
+Albán, Cundinamarca
+Soracá, Boyacá
+Gachalá, Cundinamarca
+Concepción, Santander
+Buenavista, Boyacá
+Labateca, Norte de Santander
+Matanza, Santander
+Guatapé, Antioquia
+Nátaga, Huila
+Molagavita, Santander
+Ulloa, Valle del Cauca
+San José de Pare, Boyacá
+Onzaga, Santander
+Toledo, Antioquia
+Tota, Boyacá
+Gualmatán, Nariño
+Gámeza, Boyacá
+La Paz, Santander
+El Peñón, Santander
+Guadalupe, Santander
+El Cocuy, Boyacá
+Nimaima, Cundinamarca
+Caramanta, Antioquia
+Vigía del Fuerte, Antioquia
+Paime, Cundinamarca
+Pandi, Cundinamarca
+Córdoba, Quindío
+Piedras, Tolima
+Chiscas, Boyacá
+Betulia, Santander
+Labranzagrande, Boyacá
+Valle de San José, Santander
+Silos, Norte de Santander
+San Cayetano, Cundinamarca
+Mongua, Boyacá
+Paz de Río, Boyacá
+Ciénega, Boyacá
+Togüí, Boyacá
+Fúquene, Cundinamarca
+Paicol, Huila
+Carcasí, Santander
+Arcabuco, Boyacá
+Armenia, Antioquia
+Alpujarra, Tolima
+Zetaquira, Boyacá
+Gambita, Santander
+Colón, Putumayo
+Cubarral, Meta
+Chipatá, Santander
+Carmen del Darien, Chocó
+Murillo, Tolima
+Boyacá, Boyacá
+San José del Palmar, Chocó
+Chivatá, Boyacá
+Villa Caro, Norte de Santander
+Piojó, Atlántico
+Zipacón, Cundinamarca
+Monguí, Boyacá
+Ocamonte, Santander
+El Peñón, Cundinamarca
+Supatá, Cundinamarca
+Útica, Cundinamarca
+Providencia, Archipiélago de San Andrés
+Floresta, Boyacá
+Caracolí, Antioquia
+San José de Miranda, Santander
+Tibacuy, Cundinamarca
+Hispania, Antioquia
+Topaipí, Cundinamarca
+Pamplonita, Norte de Santander
+San Mateo, Boyacá
+Guayabetal, Cundinamarca
+Sutatausa, Cundinamarca
+Jericó, Boyacá
+Macanal, Boyacá
+Quebradanegra, Cundinamarca
+Cabrera, Cundinamarca
+Tenza, Boyacá
+Santa María, Boyacá
+Manta, Cundinamarca
+San Miguel de Sema, Boyacá
+Cucaita, Boyacá
+Sutatenza, Boyacá
+Bucarasica, Norte de Santander
+Suárez, Tolima
+Concepción, Antioquia
+Herrán, Norte de Santander
+San Cayetano, Norte de Santander
+Albania, Santander
+Santa Helena del Opón, Santander
+Pacoa, Vaupés
+Pinchote, Santander
+Guavatá, Santander
+Barranco Minas, Guainía
+El Encanto, Amazonas
+Somondoco, Boyacá
+Cerinza, Boyacá
+Duranía, Norte de Santander
+Güepsa, Santander
+Coper, Boyacá
+Giraldo, Antioquia
+Chalán, Sucre
+Nariño, Nariño
+Vianí, Cundinamarca
+Chaguaní, Cundinamarca
+Campohermoso, Boyacá
+Caldas, Boyacá
+Contratación, Santander
+El Espino, Boyacá
+Enciso, Santander
+Carolina, Antioquia
+Puerto Rondón, Arauca
+Venecia, Cundinamarca
+Mutiscua, Norte de Santander
+San Benito, Santander
+Gama, Cundinamarca
+Sáchica, Boyacá
+Tipacoque, Boyacá
+Alejandría, Antioquia
+Tarapacá, Amazonas
+Puerto Colombia, Guainía
+Chinavita, Boyacá
+Murindó, Antioquia
+Morelia, Caquetá
+La Pedrera, Amazonas
+Susacón, Boyacá
+Tópaga, Boyacá
+Páramo, Santander
+Suratá, Santander
+Cravo Norte, Arauca
+Cabuyaro, Meta
+Guayabal de Siquima, Cundinamarca
+La Uvita, Boyacá
+Juradó, Chocó
+Altamira, Huila
+Marulanda, Caldas
+Gutiérrez, Cundinamarca
+Sipí, Chocó
+Viracachá, Boyacá
+Jesús María, Santander
+Lourdes, Norte de Santander
+Sabanalarga, Casanare
+Páez, Boyacá
+Chima, Santander
+Elías, Huila
+La Chorrera, Amazonas
+Covarachía, Boyacá
+El Dorado, Meta
+Santa Rosalía, Vichada
+Caruru, Vaupés
+Barranca de Upía, Meta
+La Capilla, Boyacá
+Charta, Santander
+Santa Sofía, Boyacá
+San José de La Montaña, Antioquia
+Pachavita, Boyacá
+Buenavista, Quindío
+Gachantivá, Boyacá
+Mapiripana, Guainía
+Tibirita, Cundinamarca
+Rondón, Boyacá
+Galán, Santander
+Sora, Boyacá
+San Joaquín, Santander
+Pulí, Cundinamarca
+Tinjacá, Boyacá
+Olaya, Antioquia
+Palmar, Santander
+Oicatá, Boyacá
+Sativanorte, Boyacá
+Confines, Santander
+Macaravita, Santander
+Briceño, Boyacá
+Jerusalén, Cundinamarca
+La Jagua del Pilar, La Guajira
+Encino, Santander
+Abriaquí, Antioquia
+San Miguel, Santander
+Santiago, Norte de Santander
+Bituima, Cundinamarca
+Paya, Boyacá
+Recetor, Casanare
+Cácota, Norte de Santander
+Corrales, Boyacá
+Guataquí, Cundinamarca
+Betéitiva, Boyacá
+Palmas del Socorro, Santander
+Pajarito, Boyacá
+Hato, Santander
+Puerto Santander, Amazonas
+Vetas, Santander
+Santa Bárbara, Santander
+El Guacamayo, Santander
+Almeida, Boyacá
+El Calvario, Meta
+Guapotá, Santander
+Tutazá, Boyacá
+Chivor, Boyacá
+Pana Pana, Guainía
+Villagómez, Cundinamarca
+Guacamayas, Boyacá
+Aguada, Santander
+Iza, Boyacá
+Nariño, Cundinamarca
+Cepitá, Santander
+Cuítiva, Boyacá
+Beltrán, Cundinamarca
+San Eduardo, Boyacá
+Cabrera, Santander
+Berbeo, Boyacá
+San Juanito, Meta
+Panqueba, Boyacá
+Chameza, Casanare
+California, Santander
+Sácama, Casanare
+La Victoria, Boyacá
+Miriti - Paraná, Amazonas
+Tununguá, Boyacá
+Cacahual, Guainía
+Pisba, Boyacá
+Puerto Arica, Amazonas
+San Felipe, Guainía
+Sativasur, Boyacá
+La Salina, Casanare
+Puerto Alegría, Amazonas
+Yavaraté, Vaupés
+Jordán, Santander
+Taraira, Vaupés
+La Victoria, Amazonas
+Busbanzá, Boyacá
+Papunahua, Vaupés
+Morichal Nuevo, Guainía
+La Guadalupe, Guainía
