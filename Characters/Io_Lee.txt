@@ -1,0 +1,43 @@
+
+CHARACTER INFO:
+	Name:  Íõ Lee
+	Biography:  
+		Íõ Lee was born to Xie and Lee (deceased) Lee in Leshan China.
+		As an adult, Íõ was a Gladiator in Yingkou China.
+		Íõ reportedly escaped from a high-security prison facility but at this point XCOM is not in a position to turn away skilled fighters regardless of their background.
+	Nationality:  China
+	Gender:  Male
+	Voice:  American English 8
+	Attitude:  Intense
+
+HEAD:
+	Face:  Face C
+	Hair:  Top Knot
+	Facial Hair:  None
+	Eye Color:  12
+	Race:  2 - Asian
+	Helmet/Hat:  Kaiser Helmet
+	Upper Face Prop:  Hippie Sunglasses
+	Lower Face Prop:  None
+	Face Paint:  Maori B
+
+BODY:
+	Main Armor Color:  7
+	Secondary Armor Color:  91
+	Armor Pattern:  Stripes
+	Arms:  Arms 8
+	Torso:  Torso 5
+	Legs:  Legs 6
+	Left Arm Tattoo:  None
+	Right Arm Tattoo:  None
+
+WEAPON:
+	Weapon Color:  94
+	Weapon Pattern:  Shemagh
+
+ADDITIONAL INFORMATION:
+	Armor Style:  Anarchy
+	Color Scheme:  Goth
+	Eye Color Source:  Colored Contact Lenses
+
+

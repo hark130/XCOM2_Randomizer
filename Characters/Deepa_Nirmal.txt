@@ -1,0 +1,44 @@
+
+CHARACTER INFO:
+	Name:  Deepa Nirmal
+	Biography:  
+		Deepa Nirmal was born to Akshay and Sam Nirmal in Danapur India.
+		Deepa grew up with four siblings, two of which are still living.
+		As an adult, Deepa was a Lobbyist.
+		Deepa has joined the resistance for mysterious reasons but Central Officer Bradford vouches for her.
+	Nationality:  India
+	Gender:  Female
+	Voice:  UK English 4
+	Attitude:  Laid Back
+
+HEAD:
+	Face:  Face B
+	Hair:  Top Braid
+	Eye Color:  11
+	Race:  2 - Asian
+	Helmet/Hat:  Voodoo Top Hat A
+	Upper Face Prop:  Lip Ring
+	Lower Face Prop:  Samurai Mask A
+	Face Paint:  Maori C
+
+BODY:
+	Main Armor Color:  64
+	Secondary Armor Color:  64
+	Armor Pattern:  Blots
+	Arms:  Arms 7
+	Torso:  Torso 6
+	Legs:  Legs 5
+	Left Arm Tattoo:  None
+	Right Arm Tattoo:  Death Sleeve
+	Tattoo Color:  94
+
+WEAPON:
+	Weapon Color:  64
+	Weapon Pattern:  None
+
+ADDITIONAL INFORMATION:
+	Armor Style:  Anarchy
+	Color Scheme:  Parallel
+	Eye Color Source:  Colored Contact Lenses
+
+
