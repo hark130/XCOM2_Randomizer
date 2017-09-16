@@ -1,0 +1,47 @@
+
+CHARACTER INFO:
+	Name:  Abdul Santharam
+	Biography:  
+		Abdul Santharam was adopted by Rakesh and Sarah (deceased) Sadhwani in Bhiwandi India.
+		Abdul grew up with two siblings, one of which is still living.
+		As an adult, Abdul was a Shrimper in Patiala India.
+		Given a rare opportunity, Abdul was able to free a captured XCOM agent and help them return to safety.
+		    Abdul continued to aid XCOM in ferrying all manner of refugees as a link in a new underground network of safe houses.
+		    Eventually, he was compromised but was able to escape to another safe house in the network.
+		    Today, Abdul has joined an XCOM field team and continues to aid people who wish to escape to safety.
+	Nationality:  India
+	Gender:  Male
+	Voice:  UK English 3
+	Attitude:  Intense
+
+HEAD:
+	Face:  Face B
+	Hair:  Short Mohawk
+	Facial Hair:  Short Sideburns
+	Eye Color:  12
+	Race:  3 - Hispanic
+	Helmet/Hat:  Goggles on Forehead
+	Upper Face Prop:  None
+	Lower Face Prop:  Cigar
+	Face Paint:  Beserker
+
+BODY:
+	Main Armor Color:  53
+	Secondary Armor Color:  81
+	Armor Pattern:  Shemagh
+	Arms:  Arms 11
+	Torso:  Torso 6
+	Legs:  Legs 6
+	Left Arm Tattoo:  None
+	Right Arm Tattoo:  None
+
+WEAPON:
+	Weapon Color:  9
+	Weapon Pattern:  Shemagh
+
+ADDITIONAL INFORMATION:
+	Armor Style:  Anarchy
+	Color Scheme:  2 Colors - Analogous
+	Eye Color Source:  Colored Contact Lenses
+
+
