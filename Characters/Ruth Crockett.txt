@@ -1,0 +1,43 @@
+
+
+CHARACTER INFO:
+	Name:  Ruth Crockett
+	Biography:  
+		Ruth Crockett was born to William and Pamela Crockett in Jacksonville, Illinois USA.
+		As an adult, Ruth was a Tax Lawyer in Rancho Cucamonga, California USA.
+		A close friend of Ruth's was killed in cold blood by a local ADVENT Trooper.
+		    Angry with grief, Ruth sought out a nearby resistance cell to stop this from ever happening again.
+	Nationality:  USA
+	Gender:  Female
+	Voice:  American English 4
+	Attitude:  Happy-Go-Lucky
+
+
+HEAD:
+	Face:  Face C
+	Hair:  Loose Ponytail Thick
+	Eye Color:  0
+	Race:  0 - Caucasian
+	Helmet/Hat:  Boonie Hat
+	Upper Face Prop:  Earring
+	Lower Face Prop:  Biker Bandana
+	Face Paint:  Skull
+
+
+BODY:
+	Main Armor Color:  13
+	Secondary Armor Color:  80
+	Armor Pattern:  Zebra
+	Arms:  Arms 0
+	Torso:  Torso 4
+	Legs:  Legs 3
+	Left Arm Tattoo:  XCOM Sleeve
+	Right Arm Tattoo:  XCOM Sleeve
+	Tattoo Color:  94
+
+
+WEAPON:
+	Weapon Color:  72
+	Weapon Pattern:  None
+
+
