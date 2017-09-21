@@ -1,0 +1,44 @@
+
+CHARACTER INFO:
+	Name:  Huang Liáng
+	Biography:  
+		Huang Liáng was born to Chen (deceased) and Daisy Liáng in Danjiangkou China.
+		Huang grew up with four siblings, three of which are still living.
+		As an adult, Huang was a Odontologist in Huainan China.
+		Homeless and starving after losing everything after an ADVENT raid, Huang was resigned to stealing to survive.
+		    These skills eventually led Huang to be recruited, although she would say saved, by XCOM.
+	Nationality:  China
+	Gender:  Female
+	Voice:  American English 3
+	Attitude:  Twitchy
+
+HEAD:
+	Face:  Face C
+	Hair:  Pigtails
+	Eye Color:  19
+	Race:  2 - Asian
+	Helmet/Hat:  Muzzle
+	Upper Face Prop:  None
+	Lower Face Prop:  Samurai Mask A
+	Face Paint:  GateKeeper
+
+BODY:
+	Main Armor Color:  88
+	Secondary Armor Color:  90
+	Armor Pattern:  Stripes
+	Arms:  Arms 9
+	Torso:  Torso 6
+	Legs:  Legs 7
+	Left Arm Tattoo:  None
+	Right Arm Tattoo:  None
+
+WEAPON:
+	Weapon Color:  88
+	Weapon Pattern:  None
+
+ADDITIONAL INFORMATION:
+	Armor Style:  Anarchy
+	Color Scheme:  Monochromatic - Secondary
+	Eye Color Source:  Colored Contact Lenses
+
+
